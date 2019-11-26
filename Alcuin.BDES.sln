@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alcuin.BDES", "Alcuin.BDES\Alcuin.BDES.csproj", "{3FC65198-760E-4019-B2FF-B6299F3F5E9F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C3ABEBEE-7656-4547-BC28-12E1CE632EF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alcuin.BDES.IntegrationTests", "Tests\Alcuin.BDES.IntegrationTests\Alcuin.BDES.IntegrationTests.csproj", "{B5E983DE-8DAA-4588-9106-DCEFC8BA1092}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FC65198-760E-4019-B2FF-B6299F3F5E9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FC65198-760E-4019-B2FF-B6299F3F5E9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FC65198-760E-4019-B2FF-B6299F3F5E9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FC65198-760E-4019-B2FF-B6299F3F5E9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5E983DE-8DAA-4588-9106-DCEFC8BA1092}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5E983DE-8DAA-4588-9106-DCEFC8BA1092}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5E983DE-8DAA-4588-9106-DCEFC8BA1092}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5E983DE-8DAA-4588-9106-DCEFC8BA1092}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B5E983DE-8DAA-4588-9106-DCEFC8BA1092} = {C3ABEBEE-7656-4547-BC28-12E1CE632EF2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C1CA11C3-453B-4780-A30E-AF5DDA9BDF95}
+	EndGlobalSection
+EndGlobal

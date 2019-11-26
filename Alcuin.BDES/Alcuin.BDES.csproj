@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3FC65198-760E-4019-B2FF-B6299F3F5E9F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alcuin.BDES</RootNamespace>
+    <AssemblyName>Alcuin.BDES</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\Alcuin.BDES.ruleset</CodeAnalysisRuleSet>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\Alcuin.BDES.ruleset</CodeAnalysisRuleSet>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=19.11.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Cells.19.11.0\lib\net40\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper, Version=12.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.12.2.1\lib\net47\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\Colander.cs" />
+    <Compile Include="Domain\Columns\DateColumn.cs" />
+    <Compile Include="Domain\Columns\NumericColumn.cs" />
+    <Compile Include="Domain\Columns\OutputColumnNames.cs" />
+    <Compile Include="Domain\Columns\TextColumn.cs" />
+    <Compile Include="Helper\ObjectExtensions.cs" />
+    <Compile Include="Indicators\IndicatorProvider.cs" />
+    <Compile Include="Indicators\IndicatorValue.cs" />
+    <Compile Include="Indicators\Parser\FormulaAnalyzer.cs" />
+    <Compile Include="Indicators\Parser\Token.cs" />
+    <Compile Include="Indicators\Parser\TokenDefinition.cs" />
+    <Compile Include="Indicators\Parser\Tokenizer.cs" />
+    <Compile Include="Indicators\Parser\TokenMatch.cs" />
+    <Compile Include="Indicators\Parser\TokenType.cs" />
+    <Compile Include="Domain\Transcodification\TextTranscoder.cs" />
+    <Compile Include="Indicators\AgregateFunction.cs" />
+    <Compile Include="Indicators\ColumnType.cs" />
+    <Compile Include="Indicators\Parser\Raw\RawIndicatorReader.cs" />
+    <Compile Include="Indicators\LogicalOperator.cs" />
+    <Compile Include="Indicators\MatchCondition.cs" />
+    <Compile Include="Indicators\Operator.cs" />
+    <Compile Include="Indicators\Parser\Raw\IndicatorMapper.cs" />
+    <Compile Include="Indicators\TransformationFunction.cs" />
+    <Compile Include="IRequest.cs" />
+    <Compile Include="Events\MonitoringMsgPublishedEventArgs.cs" />
+    <Compile Include="Monitoring\MonitoringManager.cs" />
+    <Compile Include="Events\ProcessingFinishedEventArgs.cs" />
+    <Compile Include="Request.cs" />
+    <Compile Include="Events\StepChangedEventArgs.cs" />
+    <Compile Include="Workflow\Commands\ColumnControlCommand.cs" />
+    <Compile Include="Workflow\Commands\CellContentControlCommand.cs" />
+    <Compile Include="Domain\Absence\AbsenceColumnProvider.cs" />
+    <Compile Include="Domain\Columns\ColumnNames.cs" />
+    <Compile Include="Domain\Columns\Column.cs" />
+    <Compile Include="Workflow\Commands\Command.cs" />
+    <Compile Include="Workflow\Commands\DuplicateValueControlCommand.cs" />
+    <Compile Include="Workflow\Commands\FileLoadCommand.cs" />
+    <Compile Include="Workflow\Commands\FileNameControlCommand.cs" />
+    <Compile Include="Workflow\Commands\IndicatorComputeCommand.cs" />
+    <Compile Include="Workflow\Commands\IndicatorLoadCommand.cs" />
+    <Compile Include="Workflow\Commands\OutputGenerateCommand.cs" />
+    <Compile Include="Workflow\Commands\SheetControlCommand.cs" />
+    <Compile Include="Domain\Columns\ColumnProviderFactory.cs" />
+    <Compile Include="Domain\Exceptions\DataExtractionException.cs" />
+    <Compile Include="Model\ContractType.cs" />
+    <Compile Include="Domain\Disease\DiseaseColumnProvider.cs" />
+    <Compile Include="Domain\Effectif\EffectifColumnProvider.cs" />
+    <Compile Include="Domain\FileTab.cs" />
+    <Compile Include="Domain\Group.cs" />
+    <Compile Include="Domain\Columns\IColumnProvider.cs" />
+    <Compile Include="Indicators\Indicator.cs" />
+    <Compile Include="Domain\Exceptions\ProcessingException.cs" />
+    <Compile Include="Domain\Columns\RepositoryColumn.cs" />
+    <Compile Include="Domain\Transcodification\ContractTerminationNatureTranscoder.cs" />
+    <Compile Include="Domain\Transcodification\CSPTranscoder.cs" />
+    <Compile Include="Domain\Transcodification\NationalityTranscoder.cs" />
+    <Compile Include="Domain\Transcodification\RecognitionTypeTranscoder.cs" />
+    <Compile Include="Model\ContractTerminationNature.cs" />
+    <Compile Include="Model\Gender.cs" />
+    <Compile Include="Domain\Transcodification\ContractTypeTranscoder.cs" />
+    <Compile Include="Domain\Transcodification\GenderTranscoder.cs" />
+    <Compile Include="Domain\Transcodification\Transcoder.cs" />
+    <Compile Include="Model\Nationality.cs" />
+    <Compile Include="Model\RecognitionType.cs" />
+    <Compile Include="Step.cs" />
+    <Compile Include="Helper\StringExtensions.cs" />
+    <Compile Include="Model\CSP.cs" />
+    <Compile Include="Domain\Sheet.cs" />
+    <Compile Include="RequestFactory.cs" />
+    <Compile Include="Model\Disease.cs" />
+    <Compile Include="Monitoring\IMonitoringManager.cs" />
+    <Compile Include="Monitoring\MonitoringCode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Workflow\Workflow.cs" />
+    <Compile Include="Workflow\ProcessingContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <AdditionalFiles Include="stylecop.json" />
+    <None Include="Ressources\RawIndicators.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="Ressources\RawIndicators.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
