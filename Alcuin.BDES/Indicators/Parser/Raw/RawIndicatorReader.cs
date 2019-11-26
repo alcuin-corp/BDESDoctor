@@ -12,14 +12,18 @@ namespace Alcuin.BDES.Indicators.Parser.Raw
     {
         public IEnumerable<Indicator> ReadFile(string path)
         {
-            using var reader = new StreamReader(path);
-            using var csv = new CsvReader(reader);
-            csv.Configuration.RegisterClassMap<IndicatorMapper>();
-            csv.Configuration.Delimiter = ";";
-            csv.Configuration.BadDataFound = null;
-            foreach (var indicator in csv.GetRecords<Indicator>())
+            using (var reader = new StreamReader(path))
             {
-                yield return indicator;
+                using (var csv = new CsvReader(reader))
+                {
+                    csv.Configuration.RegisterClassMap<IndicatorMapper>();
+                    csv.Configuration.Delimiter = ";";
+                    csv.Configuration.BadDataFound = null;
+                    foreach (var indicator in csv.GetRecords<Indicator>())
+                    {
+                        yield return indicator;
+                    }
+                }
             }
         }
     }
