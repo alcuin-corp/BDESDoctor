@@ -11,11 +11,11 @@ namespace Alcuin.BDES.Workflow.Commands
     internal class IndicatorComputeCommand : Command
     {
         public IndicatorComputeCommand(IMonitoringManager monitoringManager)
-            : base(Step.DataAnalyzing, monitoringManager)
+            : base(Step.DataAnalyzing, monitoringManager, 75)
         {
         }
 
-        public override void Process(ProcessingContext processingContext)
+        protected override void Process(ProcessingContext processingContext)
         {
             foreach (var sheet in processingContext.AvailableSheets)
             {

@@ -7,11 +7,11 @@ namespace Alcuin.BDES.Workflow.Commands
     internal class FileLoadCommand : Command
     {
         public FileLoadCommand(IMonitoringManager monitoringManager)
-            : base(Step.FileAnalyzing, monitoringManager)
+            : base(Step.FileAnalyzing, monitoringManager, 2)
         {
         }
 
-        public override void Process(ProcessingContext processingContext)
+        protected override void Process(ProcessingContext processingContext)
         {
             var filePath = processingContext.FilePath;
             if (!File.Exists(filePath))
@@ -20,6 +20,7 @@ namespace Alcuin.BDES.Workflow.Commands
             }
 
             processingContext.Workbook = new Aspose.Cells.Workbook(filePath);
+            processingContext.ProgressRate++;
         }
     }
 }

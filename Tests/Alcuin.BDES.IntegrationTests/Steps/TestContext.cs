@@ -1,20 +1,24 @@
 ﻿using System.Collections.Generic;
+using Alcuin.BDES.Monitoring;
 
 namespace Alcuin.BDES.IntegrationTests.Steps
 {
-    internal class RequestTestContext
+    internal class TestContext
     {
-        public RequestTestContext()
+        public TestContext()
         {
             this.PublishedMessages = new Dictionary<string, List<string>>();
+            this.ReceivedProgressRates = new List<int>();
         }
 
         public bool IsFinished { get; set; }
-        
+
         public bool IsFailed { get; set; }
 
-        public Dictionary<string, List<string>> PublishedMessages;
+        public Dictionary<string, List<string>> PublishedMessages { get; }
+
+        public List<int> ReceivedProgressRates { get; }
     }
 
-    
+
 }
