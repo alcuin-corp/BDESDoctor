@@ -15,13 +15,13 @@ namespace Alcuin.BDES.IntegrationTests.Steps
         public void ThenAllMonitoringMessageShouldBeNotified()
         {
             var request = this.context.Get<IRequest>();
-            var requestContext = this.context.Get<RequestTestContext>();
+            var requestContext = this.context.Get<TestContext>();
             foreach (var messageList in request.PublishedMessages)
             {
                 Assert.IsTrue(requestContext.PublishedMessages.TryGetValue(messageList.Key, out var notifiedMessages));
                 foreach (var message in messageList.Value)
                 {
-                    Assert.Contains(message, notifiedMessages);
+                    Assert.Contains(message.Message, notifiedMessages);
                 }
             }
         }
@@ -29,8 +29,15 @@ namespace Alcuin.BDES.IntegrationTests.Steps
         [Then(@"I should get a notification when the process is finished")]
         public void ThenIShouldGetANotificationWhenTheProcessIsFinished()
         {
-            var requestContext = this.context.Get<RequestTestContext>();
+            var requestContext = this.context.Get<TestContext>();
             Assert.IsTrue(requestContext.IsFinished);
+        }
+
+        [Then(@"I should get a progress rate notification at (.*) %")]
+        public void ThenIShouldGetAProgressRateNotificationAt(int value)
+        {
+            var requestContext = this.context.Get<TestContext>();
+            Assert.Contains(value, requestContext.ReceivedProgressRates);
         }
 
 

@@ -14,11 +14,11 @@ namespace Alcuin.BDES.Workflow.Commands
         private const string ExpectedFileExtension = ".xlsx";
 
         public FileNameControlCommand(IMonitoringManager monitoringManager)
-            : base(Step.FileAnalyzing, monitoringManager)
+            : base(Step.FileAnalyzing, monitoringManager, 1)
         {
         }
 
-        public override void Process(ProcessingContext processingContext)
+        protected override void Process(ProcessingContext processingContext)
         {
             var currentExtension = Path.GetExtension(processingContext.FileName);
             if (!ExpectedFileExtension.Equals(currentExtension, StringComparison.OrdinalIgnoreCase))

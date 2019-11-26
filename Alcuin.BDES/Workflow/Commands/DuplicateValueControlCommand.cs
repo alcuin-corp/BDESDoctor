@@ -11,11 +11,11 @@ namespace Alcuin.BDES.Workflow.Commands
     internal class DuplicateValueControlCommand : Command
     {
         public DuplicateValueControlCommand(IMonitoringManager monitoringManager)
-            : base(Step.DataAnalyzing, monitoringManager)
+            : base(Step.DataAnalyzing, monitoringManager, 10)
         {
         }
 
-        public override void Process(ProcessingContext processingContext)
+        protected override void Process(ProcessingContext processingContext)
         {
             var columnsToCheck = processingContext.AvailableSheets
                 .SelectMany(x => x.AvailableColumns)

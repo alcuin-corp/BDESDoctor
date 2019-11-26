@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 
@@ -16,7 +15,7 @@ namespace Alcuin.BDES.IntegrationTests.Steps
         [Then(@"I should found the following log")]
         public void IShouldFoundTheFollowingMonitoringMessages(Table table)
         {
-            var publishedMessages = GetPublishedMessages();
+            var publishedMessages = this.context.Get<TestContext>().PublishedMessages;
             var expectedMessage = table.Rows.Select(row => new { Code = row["Code"], Message = row["Message"] });
             foreach (var item in expectedMessage)
             {
@@ -28,21 +27,13 @@ namespace Alcuin.BDES.IntegrationTests.Steps
         [Then(@"I should found the following (.*) messages")]
         public void IShouldFoundTheFollowingMessages(string messageCode, Table table)
         {
-            var publishedMessages = GetPublishedMessages();
+            var publishedMessages = this.context.Get<TestContext>().PublishedMessages;
             Assert.IsTrue(publishedMessages.TryGetValue(messageCode, out var actualMessages), $"Missing code {messageCode} in published messages");
             var expectedMessage = table.Rows.Select(row => row["Message"]);
             foreach (var message in expectedMessage)
             {
                 Assert.Contains(message, actualMessages, $"Missing monitoring message : {message}");
             }
-        }
-
-        private Dictionary<string, List<string>> GetPublishedMessages()
-        {
-            var request = this.context.Get<IRequest>();
-            var dictionnary = request.PublishedMessages as Dictionary<string, List<string>>;
-            var publishedMessages = dictionnary;
-            return publishedMessages;
         }
 
         [Then(@"the process should fail")]

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Alcuin.BDES.Monitoring;
 
 namespace Alcuin.BDES
 {
@@ -7,11 +8,15 @@ namespace Alcuin.BDES
     {
         event EventHandler<MonitoringMsgPublishedEventArgs> MonitoringMsgPublished;
 
-        event EventHandler<ProcessingFinishedEventArgs> ProcessFinished;
+        event EventHandler<ProcessFinishedEventArgs> ProcessFinished;
 
         event EventHandler<StepChangedEventArgs> StepChanged;
 
-        int RequestId { get; }
+        event EventHandler<ProgressEventArgs> OnProgress;
+
+        public string OutputFilePath { get; }
+
+        public string LogFilePath { get; }
 
         bool IsFinished { get; }
 
@@ -19,7 +24,7 @@ namespace Alcuin.BDES
 
         Step CurrentStep { get; }
 
-        IEnumerable<KeyValuePair<string, List<string>>> PublishedMessages { get; }
+        IEnumerable<KeyValuePair<string, List<MonitoringMessage>>> PublishedMessages { get; }
 
         void Run();
     }
