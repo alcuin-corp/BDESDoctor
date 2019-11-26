@@ -2,9 +2,9 @@
 
 namespace Alcuin.BDES
 {
-    public class ProcessingFinishedEventArgs : EventArgs
+    public class ProcessFinishedEventArgs : EventArgs
     {
-        public ProcessingFinishedEventArgs(bool isFailed)
+        public ProcessFinishedEventArgs(bool isFailed)
         {
             this.IsFailed = isFailed;
         }

@@ -15,12 +15,12 @@ namespace Alcuin.BDES.Workflow.Commands
         private readonly IndicatorProvider indicatorProvider;
 
         public IndicatorLoadCommand(IMonitoringManager monitoringManager)
-            : base(Step.IndicatorComputing, monitoringManager)
+            : base(Step.IndicatorComputing, monitoringManager, 20)
         {
             this.indicatorProvider = new IndicatorProvider();
         }
 
-        public override void Process(ProcessingContext processingContext)
+        protected override void Process(ProcessingContext processingContext)
         {
             var allIndicators = this.indicatorProvider.GetAll()
                 .ToList();

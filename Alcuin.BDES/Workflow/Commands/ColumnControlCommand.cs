@@ -15,12 +15,12 @@ namespace Alcuin.BDES.Workflow.Commands
         private readonly ColumnProviderFactory columnProviderFactory;
 
         public ColumnControlCommand(IMonitoringManager monitoringManager)
-            : base(Step.FileAnalyzing, monitoringManager)
+            : base(Step.FileAnalyzing, monitoringManager, 5)
         {
             this.columnProviderFactory = new ColumnProviderFactory();
         }
 
-        public override void Process(ProcessingContext processingContext)
+        protected override void Process(ProcessingContext processingContext)
         {
             var foundedSheets = processingContext.AvailableSheets;
             foreach (var sheet in foundedSheets)

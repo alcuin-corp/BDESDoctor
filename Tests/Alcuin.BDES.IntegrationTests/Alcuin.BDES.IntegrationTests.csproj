@@ -46,10 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\FileControlSteps.cs" />
     <Compile Include="Steps\FileGenerationSteps.cs" />
-    <Compile Include="Steps\FileRequestProcessingSteps.cs" />
+    <Compile Include="Steps\RequestProcessingSteps.cs" />
     <Compile Include="Steps\IndicatorControlStep.cs" />
     <Compile Include="Steps\RawIndicatorGenerationStep.cs" />
-    <Compile Include="Steps\RequestContext.cs" />
+    <Compile Include="Steps\TestContext.cs" />
     <Compile Include="Steps\StepBase.cs" />
     <Compile Include="Steps\WorkflowControlSteps.cs" />
   </ItemGroup>

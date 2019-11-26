@@ -1,7 +1,4 @@
 ﻿Feature: File format control
-	In order to validate file format
-	As a user
-	I want to check file name extension.
 
 Scenario: Processing file with wrong extension should fail
 	Given I have a workbook Alcuin.xls

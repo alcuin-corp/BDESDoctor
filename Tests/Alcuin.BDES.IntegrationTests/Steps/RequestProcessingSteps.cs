@@ -5,17 +5,17 @@ using TechTalk.SpecFlow;
 namespace Alcuin.BDES.IntegrationTests.Steps
 {
     [Binding]
-    public sealed class FileRequestProcessingSteps : StepBase
+    public sealed class RequestProcessingSteps : StepBase
     {
         private readonly ManualResetEventSlim manualResetEventSlim;
 
-        private readonly RequestTestContext requestContext;
+        private readonly TestContext testContext;
 
-        public FileRequestProcessingSteps(ScenarioContext injectedContext) : base(injectedContext)
+        public RequestProcessingSteps(ScenarioContext injectedContext) : base(injectedContext)
         {
             this.manualResetEventSlim = new ManualResetEventSlim();
-            this.requestContext = new RequestTestContext();
-            this.context.Set(this.requestContext);
+            this.testContext = new TestContext();
+            this.context.Set(this.testContext);
         }
 
         [When(@"I start processing the file (.*) for the period of (.*)")]
@@ -24,15 +24,21 @@ namespace Alcuin.BDES.IntegrationTests.Steps
             var year = int.Parse(yearStr);
             var request = RequestFactory.Create(filePath, year);
             this.context.Set(request);
+            request.OnProgress += Request_OnProgress;
             request.MonitoringMsgPublished += Request_MonitoringMsgPublished;
             request.ProcessFinished += Request_ProcessFinished;
             RunAndWaitForProcessing(request);
         }
 
-        private void Request_ProcessFinished(object sender, ProcessingFinishedEventArgs e)
+        private void Request_OnProgress(object sender, ProgressEventArgs e)
         {
-            this.requestContext.IsFinished = true;
-            this.requestContext.IsFailed = e.IsFailed;
+            this.testContext.ReceivedProgressRates.Add(e.ProgressRate);
+        }
+
+        private void Request_ProcessFinished(object sender, ProcessFinishedEventArgs e)
+        {
+            this.testContext.IsFinished = true;
+            this.testContext.IsFailed = e.IsFailed;
         }
 
         private void RunAndWaitForProcessing(IRequest request)
@@ -45,12 +51,13 @@ namespace Alcuin.BDES.IntegrationTests.Steps
 
         private void Request_MonitoringMsgPublished(object sender, MonitoringMsgPublishedEventArgs e)
         {
-            if (!this.requestContext.PublishedMessages.TryGetValue(e.MonitoringCode, out var messages))
+
+            if (!this.testContext.PublishedMessages.TryGetValue(e.Code, out var messages))
             {
-                this.requestContext.PublishedMessages[e.MonitoringCode] = messages = new List<string> { e.MonitoringMessage };
+                this.testContext.PublishedMessages[e.Code] = messages = new List<string> { e.Message };
             }
 
-            messages.Add(e.MonitoringMessage);
+            messages.Add(e.Message);
         }
     }
 }
