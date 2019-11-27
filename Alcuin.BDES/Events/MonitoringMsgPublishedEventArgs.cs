@@ -3,19 +3,23 @@
 // </copyright>
 
 using System;
+using Alcuin.BDES.Monitoring;
 
 namespace Alcuin.BDES
 {
     public class MonitoringMsgPublishedEventArgs : EventArgs
     {
-        internal MonitoringMsgPublishedEventArgs(string monitoringCode, string monitoringMessage)
+        internal MonitoringMsgPublishedEventArgs(MonitoringMessage monitoringMsg)
         {
-            this.MonitoringCode = monitoringCode;
-            this.MonitoringMessage = monitoringMessage;
+            this.Code = monitoringMsg.Code;
+            this.Message = monitoringMsg.Message;
+            this.Step = monitoringMsg.Step;
         }
 
-        public string MonitoringCode { get; }
+        public string Code { get; }
 
-        public string MonitoringMessage { get; }
+        public string Message { get; }
+
+        public Step Step { get; }
     }
 }

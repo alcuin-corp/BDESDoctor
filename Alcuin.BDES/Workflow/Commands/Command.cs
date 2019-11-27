@@ -8,17 +8,27 @@ namespace Alcuin.BDES.Workflow.Commands
 {
     internal abstract class Command
     {
-        public Command(Step currentphase, IMonitoringManager monitoringManager)
+        public Command(Step currentphase, IMonitoringManager monitoringManager, int progressRate)
         {
             this.CurrentStep = currentphase;
             this.MonitoringManager = monitoringManager;
+            this.ProgressRate = progressRate;
         }
+
+        public int ProgressRate { get; }
 
         public Step CurrentStep { get; }
 
         protected IMonitoringManager MonitoringManager { get; }
 
-        public abstract void Process(ProcessingContext processingContext);
+        public void Execute(ProcessingContext processingContext)
+        {
+            processingContext.CurrentStep = this.CurrentStep;
+            this.Process(processingContext);
+            processingContext.ProgressRate = this.ProgressRate;
+        }
+
+        protected abstract void Process(ProcessingContext processingContext);
 
         protected void PublishSucces(string succesMessage)
         {

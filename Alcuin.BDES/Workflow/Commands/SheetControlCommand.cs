@@ -10,7 +10,7 @@ namespace Alcuin.BDES.Workflow.Commands
         private readonly List<Sheet> tabs;
 
         public SheetControlCommand(IMonitoringManager monitoringManager)
-            : base(Step.FileAnalyzing, monitoringManager)
+            : base(Step.FileAnalyzing, monitoringManager, 3)
         {
             this.tabs = new List<Sheet>
             {
@@ -20,7 +20,7 @@ namespace Alcuin.BDES.Workflow.Commands
             };
         }
 
-        public override void Process(ProcessingContext processingContext)
+        protected override void Process(ProcessingContext processingContext)
         {
             var availableTabNames = processingContext.Workbook.Worksheets.ToDictionary(x => x.Name.ToLowerInvariant());
 
@@ -42,6 +42,8 @@ namespace Alcuin.BDES.Workflow.Commands
 
                     this.PublishWarning(this.GetMessageForMessingOptionalTab(tab.Name));
                 }
+
+                processingContext.ProgressRate++;
             }
 
             if (availableTabNames.Count > 0)

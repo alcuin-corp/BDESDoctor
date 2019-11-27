@@ -1,17 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using Alcuin.BDES.Domain;
-using Alcuin.BDES.Indicators;
 using Aspose.Cells;
 
 namespace Alcuin.BDES.Workflow
 {
     internal class ProcessingContext
     {
-        private bool isFinished;
-        private Step currentStep;
-
         public ProcessingContext(Request request)
         {
             this.Request = request;
@@ -24,15 +19,14 @@ namespace Alcuin.BDES.Workflow
 
         public Step CurrentStep
         {
-            get => this.currentStep;
-            set
-            {
-                if (this.currentStep != value)
-                {
-                    this.currentStep = value;
-                    this.Request.RaiseStepChanged(this.currentStep);
-                }
-            }
+            get => this.Request.CurrentStep;
+            set => this.Request.RaiseStepChanged(value);
+        }
+
+        public int ProgressRate
+        {
+            get => this.Request.ProgressRate;
+            set => this.Request.ProgressRate = value;
         }
 
         public ProcessingException ProcessingException { get; internal set; }
@@ -43,20 +37,11 @@ namespace Alcuin.BDES.Workflow
 
         public string FilePath => this.Request.FilePath;
 
-        public bool IsFinished
+        public bool IsFailed
         {
-            get => this.isFinished;
-            set
-            {
-                this.isFinished = value;
-                if (value)
-                {
-                    this.Request.RaiseProcessFinished(this.IsFailed);
-                }
-            }
+            get => this.Request.IsFailed;
+            set => this.Request.IsFailed = value;
         }
-
-        public bool IsFailed { get; set; }
 
         internal Workbook Workbook { get; set; }
 

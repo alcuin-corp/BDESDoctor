@@ -7,6 +7,7 @@ namespace Alcuin.BDES.Workflow
     using System;
     using System.Collections.Generic;
     using Alcuin.BDES.Domain;
+    using Alcuin.BDES.Indicators.Dumper;
     using Alcuin.BDES.Monitoring;
     using Alcuin.BDES.Workflow.Commands;
 
@@ -30,8 +31,7 @@ namespace Alcuin.BDES.Workflow
             {
                 foreach (var command in this.commands)
                 {
-                    this.ProcessingContext.CurrentStep = command.CurrentStep;
-                    command.Process(this.ProcessingContext);
+                    command.Execute(this.ProcessingContext);
                 }
             }
             catch (ProcessingException processingEx)
@@ -46,7 +46,8 @@ namespace Alcuin.BDES.Workflow
             }
             finally
             {
-                this.ProcessingContext.IsFinished = true;
+
+                this.ProcessingContext.Request.RaiseProcessFinished();
             }
         }
 
@@ -62,7 +63,7 @@ namespace Alcuin.BDES.Workflow
                 new CellContentControlCommand(this.monitoringManager),
                 new IndicatorLoadCommand(this.monitoringManager),
                 new IndicatorComputeCommand(this.monitoringManager),
-                new OutputGenerateCommand(this.monitoringManager)
+                new OutputGenerateCommand(this.monitoringManager, new IndicatorDumper())
             };
         }
     }

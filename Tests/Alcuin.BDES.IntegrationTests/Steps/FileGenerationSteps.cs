@@ -30,7 +30,6 @@ namespace Alcuin.BDES.IntegrationTests.Steps
         }
 
         [Given(@"the sheet (.*) also has the following content")]
-
         public void GivenTheWorkbookHasTheWorksheetWithTheFollowingContent(string sheetName, Table table)
         {
             var workbook = this.context.Get<Workbook>();

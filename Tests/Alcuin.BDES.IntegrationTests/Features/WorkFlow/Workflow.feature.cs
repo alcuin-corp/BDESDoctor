@@ -124,6 +124,21 @@ this.ScenarioInitialize(scenarioInfo);
 #line 9
  testRunner.And("all monitoring message should be notified", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 10
+ testRunner.And("I should get a progress rate notification at 1 %", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 11
+ testRunner.And("I should get a progress rate notification at 5 %", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 12
+ testRunner.And("I should get a progress rate notification at 15 %", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 13
+ testRunner.And("I should get a progress rate notification at 75 %", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
+ testRunner.And("I should get a progress rate notification at 100 %", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

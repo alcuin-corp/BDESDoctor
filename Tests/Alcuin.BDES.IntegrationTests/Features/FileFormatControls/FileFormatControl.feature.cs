@@ -35,8 +35,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.FileFormatControls
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "File format control", "\tIn order to validate file format\r\n\tAs a user\r\n\tI want to check file name extensi" +
-                    "on.", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "File format control", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,7 +79,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.FileFormatControls
         {
             string[] tagsOfScenario = ((string[])(null));
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Processing file with wrong extension should fail", null, ((string[])(null)));
-#line 6
+#line 3
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -100,16 +99,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
+#line 4
  testRunner.Given("I have a workbook Alcuin.xls", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 8
+#line 5
  testRunner.When("I start processing the file Alcuin.xls for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
+#line 6
  testRunner.Then("the process should fail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 10
+#line 7
  testRunner.And("the process should be exited in the FileAnalyzing step", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -117,7 +116,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table1.AddRow(new string[] {
                             "le format du fichier chargé est incorrect. Veuillez vérifier qu’il est bien au fo" +
                                 "rmat Excel avec l’extension .xlsx"});
-#line 11
+#line 8
  testRunner.And("I should found the following Erreur messages", ((string)(null)), table1, "And ");
 #line hidden
             }
@@ -130,7 +129,7 @@ this.ScenarioInitialize(scenarioInfo);
         {
             string[] tagsOfScenario = ((string[])(null));
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("File with correct extension should be accepted", null, ((string[])(null)));
-#line 15
+#line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -150,17 +149,17 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 16
+#line 13
  testRunner.Given("I have a workbook Alcuin.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 17
+#line 14
  testRunner.When("I start processing the file Alcuin.xlsx for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table2.AddRow(new string[] {
                             "Le format de fichier est correct."});
-#line 18
+#line 15
  testRunner.Then("I should found the following Succès messages", ((string)(null)), table2, "Then ");
 #line hidden
             }
