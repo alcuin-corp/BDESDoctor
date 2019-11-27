@@ -14,9 +14,9 @@ namespace Alcuin.BDES
 
         event EventHandler<ProgressEventArgs> OnProgress;
 
-        public string OutputFilePath { get; }
+        string OutputFilePath { get; }
 
-        public string LogFilePath { get; }
+        string LogFilePath { get; }
 
         bool IsFinished { get; }
 
