@@ -12,7 +12,7 @@ namespace Alcuin.BDES.Workflow.Commands
     internal class CellContentControlCommand : Command
     {
         public CellContentControlCommand(IMonitoringManager monitoringManager)
-            : base(Step.DataAnalyzing, monitoringManager, 15)
+            : base(Steps.DataAnalyzing, monitoringManager, 15)
         {
         }
 

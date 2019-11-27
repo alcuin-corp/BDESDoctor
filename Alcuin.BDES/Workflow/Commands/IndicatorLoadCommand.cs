@@ -15,7 +15,7 @@ namespace Alcuin.BDES.Workflow.Commands
         private readonly IndicatorProvider indicatorProvider;
 
         public IndicatorLoadCommand(IMonitoringManager monitoringManager)
-            : base(Step.IndicatorComputing, monitoringManager, 20)
+            : base(Steps.IndicatorComputing, monitoringManager, 20)
         {
             this.indicatorProvider = new IndicatorProvider();
         }

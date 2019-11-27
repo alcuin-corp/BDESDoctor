@@ -24,13 +24,24 @@ namespace Alcuin.BDES.IntegrationTests.Steps
             var year = int.Parse(yearStr);
             var request = RequestFactory.Create(filePath, year);
             this.context.Set(request);
-            request.OnProgress += Request_OnProgress;
-            request.MonitoringMsgPublished += Request_MonitoringMsgPublished;
-            request.ProcessFinished += Request_ProcessFinished;
+            SubscribeToEvents(request);
             RunAndWaitForProcessing(request);
         }
 
-        private void Request_OnProgress(object sender, ProgressEventArgs e)
+        private void SubscribeToEvents(IRequest request)
+        {
+            request.StepChanged += Request_StepChanged;
+            request.ProgressChanged += Request_OnProgress;
+            request.MonitoringMsgPublished += Request_MonitoringMsgPublished;
+            request.ProcessFinished += Request_ProcessFinished;
+        }
+
+        private void Request_StepChanged(object sender, StepChangedEventArgs e)
+        {
+            this.testContext.ChangedSteps.Add(e.CurrentStep);
+        }
+
+        private void Request_OnProgress(object sender, ProgressChangedEventArgs e)
         {
             this.testContext.ReceivedProgressRates.Add(e.ProgressRate);
         }

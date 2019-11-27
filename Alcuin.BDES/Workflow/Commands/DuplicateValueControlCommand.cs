@@ -3,6 +3,7 @@
 // </copyright>
 
 using System.Linq;
+using Alcuin.BDES.Domain;
 using Alcuin.BDES.Helper;
 using Alcuin.BDES.Monitoring;
 
@@ -11,7 +12,7 @@ namespace Alcuin.BDES.Workflow.Commands
     internal class DuplicateValueControlCommand : Command
     {
         public DuplicateValueControlCommand(IMonitoringManager monitoringManager)
-            : base(Step.DataAnalyzing, monitoringManager, 10)
+            : base(Steps.DataAnalyzing, monitoringManager, 10)
         {
         }
 

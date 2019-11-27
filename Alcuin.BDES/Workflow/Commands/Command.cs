@@ -8,7 +8,7 @@ namespace Alcuin.BDES.Workflow.Commands
 {
     internal abstract class Command
     {
-        public Command(Step currentphase, IMonitoringManager monitoringManager, int progressRate)
+        public Command(string currentphase, IMonitoringManager monitoringManager, int progressRate)
         {
             this.CurrentStep = currentphase;
             this.MonitoringManager = monitoringManager;
@@ -17,11 +17,11 @@ namespace Alcuin.BDES.Workflow.Commands
 
         public int ProgressRate { get; }
 
-        public Step CurrentStep { get; }
+        public string CurrentStep { get; }
 
         protected IMonitoringManager MonitoringManager { get; }
 
-        public void Execute(ProcessingContext processingContext)
+        public virtual void Execute(ProcessingContext processingContext)
         {
             processingContext.CurrentStep = this.CurrentStep;
             this.Process(processingContext);
@@ -32,17 +32,17 @@ namespace Alcuin.BDES.Workflow.Commands
 
         protected void PublishSucces(string succesMessage)
         {
-            this.MonitoringManager.AppendMessage(MonitoringCode.Succes, succesMessage);
+            this.MonitoringManager.AppendMessage(MonitoringCodes.Succes, succesMessage);
         }
 
         protected void PublishError(string errorMessage)
         {
-            this.MonitoringManager.AppendMessage(MonitoringCode.Error, errorMessage);
+            this.MonitoringManager.AppendMessage(MonitoringCodes.Error, errorMessage);
         }
 
         protected void PublishWarning(string warningMessage)
         {
-            this.MonitoringManager.AppendMessage(MonitoringCode.Warrning, warningMessage);
+            this.MonitoringManager.AppendMessage(MonitoringCodes.Warrning, warningMessage);
         }
     }
 }

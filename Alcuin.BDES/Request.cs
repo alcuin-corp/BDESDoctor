@@ -8,8 +8,6 @@ namespace Alcuin.BDES
 {
     public class Request : IRequest
     {
-        private readonly Dictionary<string, List<MonitoringMessage>> publishedMessages;
-
         private int progressRate;
 
         private bool isFinished;
@@ -18,7 +16,7 @@ namespace Alcuin.BDES
         {
             this.FilePath = filePath;
             this.ReferenceYear = referenceYear;
-            this.publishedMessages = new Dictionary<string, List<MonitoringMessage>>();
+            this.PublishedMessages = new Dictionary<string, List<MonitoringMessage>>();
             this.Indicators = new List<Indicator>();
         }
 
@@ -28,7 +26,9 @@ namespace Alcuin.BDES
 
         public event EventHandler<ProcessFinishedEventArgs> ProcessFinished;
 
-        public event EventHandler<ProgressEventArgs> OnProgress;
+        public event EventHandler<ProgressChangedEventArgs> ProgressChanged;
+
+        public Dictionary<string, List<MonitoringMessage>> PublishedMessages { get; }
 
         public string FilePath { get; }
 
@@ -40,7 +40,7 @@ namespace Alcuin.BDES
                 if (this.progressRate != value)
                 {
                     this.progressRate = value;
-                    this.RaiseOnPregress();
+                    this.RaiseProgressChanged();
                 }
             }
         }
@@ -51,7 +51,7 @@ namespace Alcuin.BDES
 
         public int ReferenceYear { get; }
 
-        public Step CurrentStep { get; private set; }
+        public string CurrentStep { get; private set; }
 
         public bool IsFailed { get; internal set; }
 
@@ -68,8 +68,6 @@ namespace Alcuin.BDES
             }
         }
 
-        public IEnumerable<KeyValuePair<string, List<MonitoringMessage>>> PublishedMessages => this.publishedMessages;
-
         internal List<Indicator> Indicators { get; private set; }
 
         public void Run()
@@ -81,9 +79,9 @@ namespace Alcuin.BDES
         internal void AppendMessage(string code, string message)
         {
             var monitoringMsg = new MonitoringMessage(code, message, this.CurrentStep);
-            if (!this.publishedMessages.TryGetValue(monitoringMsg.Code, out var storedMessages))
+            if (!this.PublishedMessages.TryGetValue(monitoringMsg.Code, out var storedMessages))
             {
-                this.publishedMessages[monitoringMsg.Code] = new List<MonitoringMessage> { monitoringMsg };
+                this.PublishedMessages[monitoringMsg.Code] = new List<MonitoringMessage> { monitoringMsg };
             }
             else
             {
@@ -93,7 +91,7 @@ namespace Alcuin.BDES
             this.MonitoringMsgPublished?.Invoke(this, new MonitoringMsgPublishedEventArgs(monitoringMsg));
         }
 
-        internal void RaiseStepChanged(Step step)
+        internal void RaiseStepChanged(string step)
         {
             if (this.CurrentStep != step)
             {
@@ -109,9 +107,9 @@ namespace Alcuin.BDES
             this.ProcessFinished?.Invoke(this, new ProcessFinishedEventArgs(this.IsFailed));
         }
 
-        private void RaiseOnPregress()
+        private void RaiseProgressChanged()
         {
-            this.OnProgress?.Invoke(this, new ProgressEventArgs(this.ProgressRate));
+            this.ProgressChanged?.Invoke(this, new ProgressChangedEventArgs(this.ProgressRate));
         }
     }
 }

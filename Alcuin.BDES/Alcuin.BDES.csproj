@@ -42,8 +42,14 @@
     <Reference Include="CsvHelper, Version=12.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
       <HintPath>..\packages\CsvHelper.12.2.1\lib\net47\CsvHelper.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Abstractions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=96bf224d23c43e59, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Abstractions.7.0.7\lib\net40\System.IO.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,7 +63,8 @@
     <Compile Include="Domain\Columns\NumericColumn.cs" />
     <Compile Include="Domain\Columns\OutputColumnNames.cs" />
     <Compile Include="Domain\Columns\TextColumn.cs" />
-    <Compile Include="Events\ProgressEventArgs.cs" />
+    <Compile Include="Events\ProgressChangedEventArgs.cs" />
+    <Compile Include="Helper\IFileSystemExtensions.cs" />
     <Compile Include="Helper\ObjectExtensions.cs" />
     <Compile Include="Indicators\Dumper\IIndicatorDumper.cs" />
     <Compile Include="Indicators\Dumper\IndicatorDumper.cs" />
@@ -84,6 +91,8 @@
     <Compile Include="Monitoring\MonitoringManager.cs" />
     <Compile Include="Events\ProcessFinishedEventArgs.cs" />
     <Compile Include="Monitoring\MonitoringMessage.cs" />
+    <Compile Include="Ninject\Bindings.cs" />
+    <Compile Include="Ninject\ServiceLocator.cs" />
     <Compile Include="Request.cs" />
     <Compile Include="Events\StepChangedEventArgs.cs" />
     <Compile Include="Workflow\Commands\ColumnControlCommand.cs" />
@@ -121,14 +130,14 @@
     <Compile Include="Domain\Transcodification\Transcoder.cs" />
     <Compile Include="Model\Nationality.cs" />
     <Compile Include="Model\RecognitionType.cs" />
-    <Compile Include="Step.cs" />
+    <Compile Include="Domain\Steps.cs" />
     <Compile Include="Helper\StringExtensions.cs" />
     <Compile Include="Model\CSP.cs" />
     <Compile Include="Domain\Sheet.cs" />
     <Compile Include="RequestFactory.cs" />
     <Compile Include="Model\Disease.cs" />
     <Compile Include="Monitoring\IMonitoringManager.cs" />
-    <Compile Include="Monitoring\MonitoringCode.cs" />
+    <Compile Include="Monitoring\MonitoringCodes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Workflow\Workflow.cs" />
     <Compile Include="Workflow\ProcessingContext.cs" />

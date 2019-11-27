@@ -14,7 +14,7 @@ namespace Alcuin.BDES.Workflow.Commands
         private const string ExpectedFileExtension = ".xlsx";
 
         public FileNameControlCommand(IMonitoringManager monitoringManager)
-            : base(Step.FileAnalyzing, monitoringManager, 1)
+            : base(Steps.FileAnalyzing, monitoringManager, 1)
         {
         }
 
