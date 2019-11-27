@@ -10,9 +10,9 @@ Scenario: Load and compute indicator withing 'Age equals value' computation in f
 		| 1257      | CGI       | Femme | Cadre   | 16/03/1988        |
 		| 1235      | Alcuin    | Femme | ouvrier | 16/03/1990        |
 	And I have the folowing indicators definition
-		| Domaine  | Sous Domaine      | Indicateur             | Champs | Formule                                                    |
-		| Effectif | Effectif au 31/12 | Jeunes de 34 ans       | Cadre  | ∑ [matricule] par [structure] dont  Age == 34              |
-		| Effectif | Effectif au 31/12 | Jeunes de 34 ou 33 ans | Cadre  | ∑ [matricule] par [structure] dont  Age == 31 ou Age == 33 |
+		| Onglet   | Domaine  | Sous Domaine      | Indicateur             | Champs | Formule                                                    |
+		| Effectif | Effectif | Effectif au 31/12 | Jeunes de 34 ans       | Cadre  | ∑ [matricule] par [structure] dont  Age == 34              |
+		| Effectif | Effectif | Effectif au 31/12 | Jeunes de 34 ou 33 ans | Cadre  | ∑ [matricule] par [structure] dont  Age == 31 ou Age == 33 |
 	When I start processing the file mybook.xlsx for the period of 2019
 	Then I should found the following indicators
 		| Indicator              | Group  | Count |
@@ -31,9 +31,9 @@ Scenario: Load and compute indicator withing 'Age less than value' computation i
 		| 1257      | CGI       | Femme | Cadre   | 16/03/1988        |
 		| 1235      | Alcuin    | Femme | ouvrier | 16/03/1990        |
 	And I have the folowing indicators definition
-		| Domaine  | Sous Domaine      | Indicateur                | Champs | Formule                                       |
-		| Effectif | Effectif au 31/12 | Jeunes de plus de 33 ans  | Cadre  | ∑ [matricule] par [structure] dont  Age >= 33 |
-		| Effectif | Effectif au 31/12 | Jeunes de moins de 33 ans | Cadre  | ∑ [matricule] par [structure] dont  Age << 33 |
+		| Onglet   | Domaine  | Sous Domaine      | Indicateur                | Champs | Formule                                       |
+		| Effectif | Effectif | Effectif au 31/12 | Jeunes de plus de 33 ans  | Cadre  | ∑ [matricule] par [structure] dont  Age >= 33 |
+		| Effectif | Effectif | Effectif au 31/12 | Jeunes de moins de 33 ans | Cadre  | ∑ [matricule] par [structure] dont  Age << 33 |
 	When I start processing the file mybook.xlsx for the period of 2019
 	Then I should found the following indicators
 		| Indicator                 | Group  | Count |

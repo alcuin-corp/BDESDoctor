@@ -15,6 +15,7 @@ namespace Alcuin.BDES.Indicators.Parser.Raw
             this.Map(m => m.Name).Name("Indicateur");
             this.Map(m => m.Field).Name("Champs");
             this.Map(m => m.Formula).Name("Formule");
+            this.Map(m => m.SheetName).Name("Onglet");
         }
     }
 }

@@ -27,6 +27,8 @@ namespace Alcuin.BDES.Indicators
 
         internal AgregateFunction AgregateFunction { get; set; }
 
+        public string SheetName { get; set; }
+
         public string Domain { get; set; }
 
         public string SubDomain { get; set; }

@@ -144,6 +144,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table3, "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
@@ -151,11 +152,13 @@ this.ScenarioInitialize(scenarioInfo);
                             "Formule"});
                 table4.AddRow(new string[] {
                             "Effectif",
+                            "Effectif",
                             "Effectif au 31/12",
                             "Jeunes de 34 ans",
                             "Cadre",
                             "∑ [matricule] par [structure] dont  Age == 34"});
                 table4.AddRow(new string[] {
+                            "Effectif",
                             "Effectif",
                             "Effectif au 31/12",
                             "Jeunes de 34 ou 33 ans",
@@ -265,6 +268,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table6, "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
@@ -272,11 +276,13 @@ this.ScenarioInitialize(scenarioInfo);
                             "Formule"});
                 table7.AddRow(new string[] {
                             "Effectif",
+                            "Effectif",
                             "Effectif au 31/12",
                             "Jeunes de plus de 33 ans",
                             "Cadre",
                             "∑ [matricule] par [structure] dont  Age >= 33"});
                 table7.AddRow(new string[] {
+                            "Effectif",
                             "Effectif",
                             "Effectif au 31/12",
                             "Jeunes de moins de 33 ans",

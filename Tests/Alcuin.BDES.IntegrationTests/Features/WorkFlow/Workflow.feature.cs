@@ -79,7 +79,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.WorkFlow
         {
             string[] tagsOfScenario = ((string[])(null));
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("All monitoring messages should be notified", null, ((string[])(null)));
-#line 2
+#line 3
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -99,7 +99,7 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 3
+#line 4
  testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table145 = new TechTalk.SpecFlow.Table(new string[] {
@@ -112,31 +112,48 @@ this.ScenarioInitialize(scenarioInfo);
                             "Alcuin",
                             "Cadre",
                             "Homme"});
-#line 4
+#line 5
  testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table145, "And ");
 #line hidden
-#line 7
- testRunner.When("I start processing the file mybook.xlsx for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
+                TechTalk.SpecFlow.Table table146 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Onglet",
+                            "Domaine",
+                            "Sous Domaine",
+                            "Indicateur",
+                            "Champs",
+                            "Formule"});
+                table146.AddRow(new string[] {
+                            "Effectif",
+                            "Effectif",
+                            "Effectif au 31/12",
+                            "Naissance 1986",
+                            "Cadre",
+                            "∑ [matricule] par [structure] dont [CSP] == \'Cadre\'"});
 #line 8
- testRunner.Then("I should get a notification when the process is finished", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 9
- testRunner.And("all monitoring message should be notified", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 10
- testRunner.And("I should get a progress rate notification at 1 %", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have the folowing indicators definition", ((string)(null)), table146, "And ");
 #line hidden
 #line 11
- testRunner.And("I should get a progress rate notification at 5 %", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I start processing the file mybook.xlsx for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
- testRunner.And("I should get a progress rate notification at 15 %", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I should get a notification when the process is finished", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 13
- testRunner.And("I should get a progress rate notification at 75 %", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("all monitoring message should be notified", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
+ testRunner.And("I should get a progress rate notification at 1 %", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 15
+ testRunner.And("I should get a progress rate notification at 5 %", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 16
+ testRunner.And("I should get a progress rate notification at 15 %", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 17
+ testRunner.And("I should get a progress rate notification at 75 %", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 18
  testRunner.And("I should get a progress rate notification at 100 %", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
