@@ -12,7 +12,7 @@ namespace Alcuin.BDES
 
         event EventHandler<StepChangedEventArgs> StepChanged;
 
-        event EventHandler<ProgressEventArgs> OnProgress;
+        event EventHandler<ProgressChangedEventArgs> ProgressChanged;
 
         public string OutputFilePath { get; }
 
@@ -22,9 +22,9 @@ namespace Alcuin.BDES
 
         bool IsFailed { get; }
 
-        Step CurrentStep { get; }
+        string CurrentStep { get; }
 
-        IEnumerable<KeyValuePair<string, List<MonitoringMessage>>> PublishedMessages { get; }
+        Dictionary<string, List<MonitoringMessage>> PublishedMessages { get; }
 
         void Run();
     }

@@ -4,6 +4,7 @@
 
 using System.IO;
 using System.Linq;
+using Alcuin.BDES.Domain;
 using Alcuin.BDES.Indicators.Dumper;
 using Alcuin.BDES.Monitoring;
 
@@ -14,7 +15,7 @@ namespace Alcuin.BDES.Workflow.Commands
         private readonly IIndicatorDumper indicatorDumper;
 
         public OutputGenerateCommand(IMonitoringManager monitoringManager, IIndicatorDumper indicatorDumper)
-            : base(Step.DataAnalyzing, monitoringManager, 95)
+            : base(Steps.OutputGeneration, monitoringManager, 95)
         {
             this.indicatorDumper = indicatorDumper;
         }

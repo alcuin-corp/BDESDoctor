@@ -1,4 +1,8 @@
-﻿using Aspose.Cells;
+﻿using System.IO;
+using System.IO.Abstractions;
+using Alcuin.BDES.Helper;
+using Alcuin.BDES.Ninject;
+using Aspose.Cells;
 using TechTalk.SpecFlow;
 
 namespace Alcuin.BDES.IntegrationTests.Steps
@@ -6,9 +10,12 @@ namespace Alcuin.BDES.IntegrationTests.Steps
     [Binding]
     public sealed class FileNameValidationSteps : StepBase
     {
+        private readonly IFileSystem fileSystem;
+
         public FileNameValidationSteps(ScenarioContext injectedContext)
             : base(injectedContext)
         {
+            ServiceLocator.Resolve(out this.fileSystem);
         }
 
         [Given(@"I have a workbook (.*)")]
@@ -17,6 +24,7 @@ namespace Alcuin.BDES.IntegrationTests.Steps
             var workbook = new Workbook();
             workbook.FileName = workbookName;
             this.context.Set(workbook);
+            this.fileSystem.SaveWorkbook(workbook);
         }
 
         [Given(@"it has also a workSheet (.*) with the following content")]
@@ -26,7 +34,7 @@ namespace Alcuin.BDES.IntegrationTests.Steps
             var workbook = this.context.Get<Workbook>();
             var workSheet = workbook.Worksheets.Add(sheetName);
             CopyTableContentIntoTheSheet(table, workSheet);
-            workbook.Save(workbook.FileName);
+            this.fileSystem.SaveWorkbook(workbook);
         }
 
         [Given(@"the sheet (.*) also has the following content")]
@@ -34,7 +42,9 @@ namespace Alcuin.BDES.IntegrationTests.Steps
         {
             var workbook = this.context.Get<Workbook>();
             var sheet = workbook.Worksheets[sheetName];
+            this.fileSystem.SaveWorkbook(workbook);
         }
+
 
         private static void CopyTableContentIntoTheSheet(Table table, Worksheet workSheet)
         {

@@ -8,14 +8,14 @@ namespace Alcuin.BDES
 {
     public class StepChangedEventArgs : EventArgs
     {
-        public StepChangedEventArgs(Step oldStep, Step currentStep)
+        public StepChangedEventArgs(string oldStep, string currentStep)
         {
             this.OldStep = oldStep;
             this.CurrentStep = currentStep;
         }
 
-        public Step CurrentStep { get; internal set; }
+        public string CurrentStep { get; internal set; }
 
-        public Step OldStep { get; internal set; }
+        public string OldStep { get; internal set; }
     }
 }

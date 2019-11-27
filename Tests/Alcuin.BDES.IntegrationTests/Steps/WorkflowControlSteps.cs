@@ -39,7 +39,5 @@ namespace Alcuin.BDES.IntegrationTests.Steps
             var requestContext = this.context.Get<TestContext>();
             Assert.Contains(value, requestContext.ReceivedProgressRates);
         }
-
-
     }
 }

@@ -2,9 +2,9 @@
 
 namespace Alcuin.BDES
 {
-    public class ProgressEventArgs : EventArgs
+    public class ProgressChangedEventArgs : EventArgs
     {
-        public ProgressEventArgs(int progressRate)
+        public ProgressChangedEventArgs(int progressRate)
         {
             this.ProgressRate = progressRate;
         }

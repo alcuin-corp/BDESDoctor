@@ -1,4 +1,8 @@
-﻿namespace Alcuin.BDES
+﻿using System.Reflection;
+using Alcuin.BDES.Ninject;
+using Ninject;
+
+namespace Alcuin.BDES
 {
     public static class RequestFactory
     {

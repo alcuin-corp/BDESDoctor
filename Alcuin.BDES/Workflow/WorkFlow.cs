@@ -38,7 +38,7 @@ namespace Alcuin.BDES.Workflow
             {
                 this.ProcessingContext.IsFailed = true;
                 this.ProcessingContext.ProcessingException = processingEx;
-                this.monitoringManager.AppendMessage(MonitoringCode.Error, processingEx.Message);
+                this.monitoringManager.AppendMessage(MonitoringCodes.Error, processingEx.Message);
             }
             catch (Exception ex)
             {
@@ -46,7 +46,7 @@ namespace Alcuin.BDES.Workflow
             }
             finally
             {
-
+                this.monitoringManager.Dump(this.ProcessingContext.GetLogPath());
                 this.ProcessingContext.Request.RaiseProcessFinished();
             }
         }

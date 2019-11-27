@@ -15,7 +15,7 @@ namespace Alcuin.BDES.Workflow.Commands
         private readonly ColumnProviderFactory columnProviderFactory;
 
         public ColumnControlCommand(IMonitoringManager monitoringManager)
-            : base(Step.FileAnalyzing, monitoringManager, 5)
+            : base(Steps.FileAnalyzing, monitoringManager, 5)
         {
             this.columnProviderFactory = new ColumnProviderFactory();
         }

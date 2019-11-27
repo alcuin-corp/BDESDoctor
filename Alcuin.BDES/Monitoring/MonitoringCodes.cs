@@ -1,6 +1,6 @@
 ﻿namespace Alcuin.BDES.Monitoring
 {
-    internal class MonitoringCode
+    internal class MonitoringCodes
     {
         public const string Error = "Erreur";
 

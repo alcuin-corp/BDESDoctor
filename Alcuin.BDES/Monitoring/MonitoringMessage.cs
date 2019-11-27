@@ -2,7 +2,7 @@
 {
     public class MonitoringMessage
     {
-        internal MonitoringMessage(string code, string message, Step step)
+        internal MonitoringMessage(string code, string message, string step)
         {
             this.Code = code;
             this.Message = message;
@@ -13,6 +13,6 @@
 
         public string Message { get; }
 
-        public Step Step { get; set; }
+        public string Step { get; set; }
     }
 }

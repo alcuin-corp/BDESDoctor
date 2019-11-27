@@ -1,16 +1,21 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.IO.Abstractions;
 using Alcuin.BDES.Domain.Columns;
+using Alcuin.BDES.Helper;
+using Alcuin.BDES.Ninject;
 using Aspose.Cells;
 
 namespace Alcuin.BDES.Indicators.Dumper
 {
     internal class IndicatorDumper : IIndicatorDumper
     {
+        private readonly IFileSystem fileSystem;
         private readonly string[] headers;
 
         public IndicatorDumper()
         {
+            ServiceLocator.Resolve(out this.fileSystem);
             this.headers = this.GetOutputFileHeaders();
         }
 
@@ -36,14 +41,7 @@ namespace Alcuin.BDES.Indicators.Dumper
                 }
             }
 
-            SaveWorkBook(outputFilePath, workBook);
-        }
-
-        private static void SaveWorkBook(string outputFilePath, Workbook workBook)
-        {
-            var outputDirectory = @"C:\DEV\Outputs";
-            Directory.CreateDirectory(outputDirectory);
-            workBook.Save(Path.Combine(outputDirectory, outputDirectory));
+            this.fileSystem.SaveWorkbook(workBook, outputFilePath);
         }
 
         private void AppendHeaders(Worksheet worksheet)

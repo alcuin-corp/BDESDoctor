@@ -20,6 +20,6 @@ namespace Alcuin.BDES
 
         public string Message { get; }
 
-        public Step Step { get; }
+        public string Step { get; }
     }
 }

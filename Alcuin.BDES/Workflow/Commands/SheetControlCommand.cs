@@ -10,7 +10,7 @@ namespace Alcuin.BDES.Workflow.Commands
         private readonly List<Sheet> tabs;
 
         public SheetControlCommand(IMonitoringManager monitoringManager)
-            : base(Step.FileAnalyzing, monitoringManager, 3)
+            : base(Steps.FileAnalyzing, monitoringManager, 3)
         {
             this.tabs = new List<Sheet>
             {

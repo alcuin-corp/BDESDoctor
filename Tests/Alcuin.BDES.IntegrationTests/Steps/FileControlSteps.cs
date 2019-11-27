@@ -51,7 +51,7 @@ namespace Alcuin.BDES.IntegrationTests.Steps
             Assert.IsFalse(request.IsFailed);
         }
 
-        [Then(@"the process should be exited in the (.*) step")]
+        [Then(@"the process should be exited in the step : (.*)")]
         public void ThenTheProcessShouldExitStep(string stepName)
         {
             var request = this.context.Get<IRequest>();

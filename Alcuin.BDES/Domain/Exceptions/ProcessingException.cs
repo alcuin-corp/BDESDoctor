@@ -8,12 +8,12 @@ namespace Alcuin.BDES.Domain
 {
     public class ProcessingException : Exception
     {
-        public ProcessingException(string message, Step step, Exception innerException = null)
+        public ProcessingException(string message, string step, Exception innerException = null)
             : base(message, innerException)
         {
             this.Step = step;
         }
 
-        public Step Step { get; }
+        public string Step { get; }
     }
 }

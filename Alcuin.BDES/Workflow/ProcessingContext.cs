@@ -13,11 +13,14 @@ namespace Alcuin.BDES.Workflow
             this.FileName = Path.GetFileName(this.FilePath);
             this.AvailableSheets = new List<Sheet>();
             this.ReferenceYear = request.ReferenceYear;
+            this.WorkingDirectory = Path.GetDirectoryName(this.FilePath);
         }
 
         public Request Request { get; }
 
-        public Step CurrentStep
+        public string WorkingDirectory { get; set; }
+
+        public string CurrentStep
         {
             get => this.Request.CurrentStep;
             set => this.Request.RaiseStepChanged(value);
@@ -48,5 +51,11 @@ namespace Alcuin.BDES.Workflow
         internal List<Sheet> AvailableSheets { get; set; }
 
         internal int ReferenceYear { get; set; }
+
+        internal string GetLogPath()
+        {
+            var logFileName = $"Log-{Path.GetFileNameWithoutExtension(this.FileName)}.txt";
+            return Path.Combine(this.WorkingDirectory, logFileName);
+        }
     }
 }
