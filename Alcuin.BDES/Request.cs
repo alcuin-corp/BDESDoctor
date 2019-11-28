@@ -8,7 +8,7 @@ using Alcuin.BDES.Workflow;
 
 namespace Alcuin.BDES
 {
-    public class Request : IRequest
+    internal class Request : IRequest
     {
         private int progressRate;
 

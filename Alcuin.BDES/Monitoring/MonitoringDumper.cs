@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Alcuin.BDES.Monitoring
 {
-    public class MonitoringDumper : IMonitoringDumper
+    internal class MonitoringDumper : IMonitoringDumper
     {
         private readonly IFileSystem fileSystem;
 

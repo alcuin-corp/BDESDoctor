@@ -116,7 +116,6 @@
     <Compile Include="Domain\Disease\DiseaseColumnProvider.cs" />
     <Compile Include="Domain\Effectif\EffectifColumnProvider.cs" />
     <Compile Include="Domain\FileTab.cs" />
-    <Compile Include="Domain\Group.cs" />
     <Compile Include="Domain\Columns\IColumnProvider.cs" />
     <Compile Include="Indicators\Indicator.cs" />
     <Compile Include="Domain\Exceptions\ProcessingException.cs" />
