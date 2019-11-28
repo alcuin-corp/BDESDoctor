@@ -2,17 +2,17 @@
 {
     public class MonitoringMessage
     {
-        internal MonitoringMessage(string code, string message, string step)
+        internal MonitoringMessage(MonitoringType monitoringType, string message, Step step)
         {
-            this.Code = code;
+            this.Type = monitoringType;
             this.Message = message;
             this.Step = step;
         }
 
-        public string Code { get; }
+        public MonitoringType Type { get; }
 
         public string Message { get; }
 
-        public string Step { get; set; }
+        public Step Step { get; set; }
     }
 }

@@ -139,7 +139,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table144.AddRow(new string[] {
                             "D’autres onglets existent dans votre fichier, ils ne seront pas pris en compte."});
 #line 13
- testRunner.Then("I should found the following Avertissement messages", ((string)(null)), table144, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table144, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

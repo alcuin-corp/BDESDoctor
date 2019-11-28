@@ -1,9 +1,13 @@
-﻿namespace Alcuin.BDES.Monitoring
+﻿using System;
+
+namespace Alcuin.BDES.Monitoring
 {
     internal interface IMonitoringManager
     {
-        void AppendMessage(string monitoringCode, string monitoringMessage);
+        void AppendMessage(MonitoringType monitoringType, string monitoringMessage);
 
-        void Dump(string filePath);
+        void Append(Exception exception);
+
+        void Dump();
     }
 }

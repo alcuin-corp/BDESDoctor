@@ -133,7 +133,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table47.AddRow(new string[] {
                             "La colonne \'Type de contrat\' de l’onglet \'effectifs\' est bien prise en compte."});
 #line 10
- testRunner.Then("I should found the following Succès messages", ((string)(null)), table47, "Then ");
+ testRunner.Then("I should found the following Succes messages", ((string)(null)), table47, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -197,7 +197,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "La colonne \'Type de contrat\' n\'est pas présente dans L\'onglet \'effectifs\', aucun " +
                                 "indicateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 21
- testRunner.Then("I should found the following Avertissement messages", ((string)(null)), table49, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table49, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -258,7 +258,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Certaines cellules textes sont vides dans votre fichier, les données vides ne ser" +
                                 "ont pas prises en compte dans les calculs."});
 #line 31
- testRunner.Then("I should found the following Avertissement messages", ((string)(null)), table51, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table51, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -320,7 +320,7 @@ this.ScenarioInitialize(scenarioInfo);
                                 "est pas reconnue \'Contrat\'. Les valeurs pouvant être utilisées sont «CDI, CDD, C" +
                                 "IE, Alternance, Professionnalisation, CTT, CUI, CAE»."});
 #line 41
- testRunner.Then("I should found the following Erreur messages", ((string)(null)), table53, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table53, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

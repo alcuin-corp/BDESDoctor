@@ -12,11 +12,11 @@ namespace Alcuin.BDES.Workflow.Commands
     internal class CellContentControlCommand : Command
     {
         public CellContentControlCommand(IMonitoringManager monitoringManager)
-            : base(Steps.DataAnalyzing, monitoringManager, 15)
+            : base(Step.DataAnalyzing, monitoringManager, 20)
         {
         }
 
-        protected override void Process(ProcessingContext processingContext)
+        protected override void Process(ProcessingContext processingContext, Request request)
         {
             var columnsToCheck = processingContext.AvailableSheets
                 .SelectMany(x => x.AvailableColumns);

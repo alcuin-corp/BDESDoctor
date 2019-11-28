@@ -27,6 +27,6 @@ Scenario: Load and compute indicators
 		| total des ouvrier | CGI    | 0     |
 		| indicateur 1      | Alcuin | 2     |
 		| indicateur 1      | CGI    | 1     |
-	And I should found the following Avertissement messages
+	And I should found the following Warrning messages
 		| Message                                                                                                                                        |
 		| L'indicateur 'indicateur 2' ne sera pas calculé, il se base sur la colonne 'salaire mensuel brut' qui est manquante dans l'onglet 'effectifs'. |

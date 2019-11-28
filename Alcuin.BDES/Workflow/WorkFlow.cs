@@ -7,63 +7,52 @@ namespace Alcuin.BDES.Workflow
     using System;
     using System.Collections.Generic;
     using Alcuin.BDES.Domain;
-    using Alcuin.BDES.Indicators.Dumper;
     using Alcuin.BDES.Monitoring;
     using Alcuin.BDES.Workflow.Commands;
 
-    internal class Workflow
+    internal class Workflow : IWorkflow
     {
-        private IMonitoringManager monitoringManager;
-        private List<Command> commands;
-
-        public Workflow(Request request)
+        public void Process(Request request)
         {
-            this.ProcessingContext = new ProcessingContext(request);
-            this.monitoringManager = new MonitoringManager(request);
-            this.InitilizeWorkflow();
-        }
-
-        public ProcessingContext ProcessingContext { get; }
-
-        public void Process()
-        {
+            var monitoringManager = new MonitoringManager(request);
+            var processingContext = new ProcessingContext();
             try
             {
-                foreach (var command in this.commands)
+                foreach (var command in this.GetCommands(monitoringManager))
                 {
-                    command.Execute(this.ProcessingContext);
+                    command.Execute(processingContext, request);
                 }
             }
-            catch (ProcessingException processingEx)
+            catch (Exception exception)
             {
-                this.ProcessingContext.IsFailed = true;
-                this.ProcessingContext.ProcessingException = processingEx;
-                this.monitoringManager.AppendMessage(MonitoringCodes.Error, processingEx.Message);
-            }
-            catch (Exception ex)
-            {
-                this.ProcessingContext.IsFailed = true;
+                request.IsFailed = true;
+                request.Exception = exception;
+
+                if (exception is ProcessingException)
+                {
+                    monitoringManager.Append(exception);
+                }
             }
             finally
             {
-                this.monitoringManager.Dump(this.ProcessingContext.GetLogPath());
-                this.ProcessingContext.Request.RaiseProcessFinished();
+                monitoringManager.Dump();
+                request.IsFinished = true;
             }
         }
 
-        private void InitilizeWorkflow()
+        private List<Command> GetCommands(IMonitoringManager monitoringManager)
         {
-            this.commands = new List<Command>
+            return new List<Command>
             {
-                new FileNameControlCommand(this.monitoringManager),
-                new FileLoadCommand(this.monitoringManager),
-                new SheetControlCommand(this.monitoringManager),
-                new ColumnControlCommand(this.monitoringManager),
-                new DuplicateValueControlCommand(this.monitoringManager),
-                new CellContentControlCommand(this.monitoringManager),
-                new IndicatorLoadCommand(this.monitoringManager),
-                new IndicatorComputeCommand(this.monitoringManager),
-                new OutputGenerateCommand(this.monitoringManager, new IndicatorDumper())
+                new FileNameControlCommand(monitoringManager),
+                new FileLoadCommand(monitoringManager),
+                new SheetControlCommand(monitoringManager),
+                new ColumnControlCommand(monitoringManager),
+                new DuplicateValueControlCommand(monitoringManager),
+                new CellContentControlCommand(monitoringManager),
+                new IndicatorLoadCommand(monitoringManager),
+                new IndicatorComputeCommand(monitoringManager),
+                new OutputGenerateCommand(monitoringManager)
             };
         }
     }

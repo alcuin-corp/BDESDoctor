@@ -127,7 +127,7 @@ this.ScenarioInitialize(scenarioInfo);
                                 "e. Veuillez vérifier que cet onglet est bien nommé ainsi et qu\'il est présent da" +
                                 "ns votre fichier."});
 #line 13
- testRunner.And("I should found the following Erreur messages", ((string)(null)), table139, "And ");
+ testRunner.And("I should found the following Error messages", ((string)(null)), table139, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -181,7 +181,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table141.AddRow(new string[] {
                             "L’onglet \'effectifs\' est bien pris en compte."});
 #line 23
- testRunner.Then("I should found the following Succès messages", ((string)(null)), table141, "Then ");
+ testRunner.Then("I should found the following Succes messages", ((string)(null)), table141, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

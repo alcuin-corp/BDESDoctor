@@ -1,4 +1,6 @@
-﻿namespace Alcuin.BDES.Indicators
+﻿using System.Collections.Generic;
+
+namespace Alcuin.BDES.Indicators
 {
     internal class MatchConditionDefinition
     {
@@ -6,6 +8,10 @@
 
         public Operator Operator { get; set; }
 
-        public object Values { get; set; }
+        public List<object> Values { get; set; }
+
+        public LogicalOperator LogicalOperatorToNextCondition { get; set; }
+
+        public TransformationFunction TransformationFunction { get; set; }
     }
 }

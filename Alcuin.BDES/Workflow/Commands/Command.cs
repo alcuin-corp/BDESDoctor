@@ -8,7 +8,7 @@ namespace Alcuin.BDES.Workflow.Commands
 {
     internal abstract class Command
     {
-        public Command(string currentphase, IMonitoringManager monitoringManager, int progressRate)
+        public Command(Step currentphase, IMonitoringManager monitoringManager, int progressRate)
         {
             this.CurrentStep = currentphase;
             this.MonitoringManager = monitoringManager;
@@ -17,32 +17,32 @@ namespace Alcuin.BDES.Workflow.Commands
 
         public int ProgressRate { get; }
 
-        public string CurrentStep { get; }
+        public Step CurrentStep { get; }
 
         protected IMonitoringManager MonitoringManager { get; }
 
-        public virtual void Execute(ProcessingContext processingContext)
+        public virtual void Execute(ProcessingContext processingContext, Request request)
         {
-            processingContext.CurrentStep = this.CurrentStep;
-            this.Process(processingContext);
-            processingContext.ProgressRate = this.ProgressRate;
+            request.CurrentStep = this.CurrentStep;
+            this.Process(processingContext, request);
+            request.ProgressRate = this.ProgressRate;
         }
 
-        protected abstract void Process(ProcessingContext processingContext);
+        protected abstract void Process(ProcessingContext processingContext, Request request);
 
         protected void PublishSucces(string succesMessage)
         {
-            this.MonitoringManager.AppendMessage(MonitoringCodes.Succes, succesMessage);
+            this.MonitoringManager.AppendMessage(MonitoringType.Succes, succesMessage);
         }
 
         protected void PublishError(string errorMessage)
         {
-            this.MonitoringManager.AppendMessage(MonitoringCodes.Error, errorMessage);
+            this.MonitoringManager.AppendMessage(MonitoringType.Error, errorMessage);
         }
 
         protected void PublishWarning(string warningMessage)
         {
-            this.MonitoringManager.AppendMessage(MonitoringCodes.Warrning, warningMessage);
+            this.MonitoringManager.AppendMessage(MonitoringType.Warrning, warningMessage);
         }
     }
 }

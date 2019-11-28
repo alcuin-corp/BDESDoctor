@@ -10,7 +10,7 @@ Scenario: Processing file with missing 'Effectif' worksheet should fail
 		| 1254     | John | CONNOR |
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then the process should fail
-	And I should found the following Erreur messages
+	And I should found the following Error messages
 		| Message                                                                                                                                                                            |
 		| L'onglet 'effectifs' n'est pas présent dans le fichier, cet onglet est obligatoire. Veuillez vérifier que cet onglet est bien nommé ainsi et qu'il est présent dans votre fichier. |
 
@@ -20,6 +20,6 @@ Scenario: Processing file within 'Effectifs' worksheet should have a success log
 		| Matricule | Nom  | Prenom |
 		| 1254      | John | CONNOR |
 	When I start processing the file mybook.xlsx for the period of 2015
-	Then I should found the following Succès messages
+	Then I should found the following Succes messages
 		| Message                                       |
 		| L’onglet 'effectifs' est bien pris en compte. |

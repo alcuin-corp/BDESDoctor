@@ -140,7 +140,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Des colonnes non reconnues sont présentes dans votre fichier, elles ne seront pas" +
                                 " prises en compte. Veuillez vérifier que les colonnes sont bien nommées."});
 #line 10
- testRunner.Then("I should found the following Avertissement messages", ((string)(null)), table137, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table137, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

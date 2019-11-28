@@ -254,7 +254,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "L\'indicateur \'indicateur 2\' ne sera pas calculé, il se base sur la colonne \'salai" +
                                 "re mensuel brut\' qui est manquante dans l\'onglet \'effectifs\'."});
 #line 30
- testRunner.And("I should found the following Avertissement messages", ((string)(null)), table12, "And ");
+ testRunner.And("I should found the following Warrning messages", ((string)(null)), table12, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

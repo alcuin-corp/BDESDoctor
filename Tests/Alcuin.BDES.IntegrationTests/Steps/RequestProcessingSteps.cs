@@ -63,9 +63,9 @@ namespace Alcuin.BDES.IntegrationTests.Steps
         private void Request_MonitoringMsgPublished(object sender, MonitoringMsgPublishedEventArgs e)
         {
 
-            if (!this.testContext.PublishedMessages.TryGetValue(e.Code, out var messages))
+            if (!this.testContext.PublishedMessages.TryGetValue(e.Type, out var messages))
             {
-                this.testContext.PublishedMessages[e.Code] = messages = new List<string> { e.Message };
+                this.testContext.PublishedMessages[e.Type] = messages = new List<string> { e.Message };
             }
 
             messages.Add(e.Message);

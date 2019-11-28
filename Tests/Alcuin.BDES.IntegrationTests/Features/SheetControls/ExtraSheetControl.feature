@@ -10,6 +10,6 @@ Scenario: Processing file having extra worksheets should have a warrning message
 		| Matricule | Nom  | Prenom |
 		| 1254      | John | CONNOR |
 	When I start processing the file mybook.xlsx for the period of 2015
-	Then I should found the following Avertissement messages
+	Then I should found the following Warrning messages
 		| Message                                                                         |
 		| D’autres onglets existent dans votre fichier, ils ne seront pas pris en compte. |

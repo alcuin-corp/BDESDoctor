@@ -138,7 +138,7 @@ this.ScenarioInitialize(scenarioInfo);
                                 " obligatoire, veuillez vérifier que la colonne est correctement nommée et que ce" +
                                 "lle-ci est présente dans l’onglet."});
 #line 10
- testRunner.Then("I should found the following Erreur messages", ((string)(null)), table71, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table71, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -210,7 +210,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table73.AddRow(new string[] {
                             "La colonne \'Sexe\' de l’onglet \'effectifs\' est bien prise en compte."});
 #line 21
- testRunner.Then("I should found the following Succès messages", ((string)(null)), table73, "Then ");
+ testRunner.Then("I should found the following Succes messages", ((string)(null)), table73, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -269,7 +269,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Dans l\'onglet «effectifs», la colonne «Sexe» à une valeur qui texte n’est pas rec" +
                                 "onnue \'Chat\'. Les valeurs pouvant être utilisées sont «Homme, Femme»."});
 #line 31
- testRunner.Then("I should found the following Erreur messages", ((string)(null)), table75, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table75, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -326,7 +326,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Certaines cellules textes sont vides dans votre fichier, les données vides ne ser" +
                                 "ont pas prises en compte dans les calculs."});
 #line 41
- testRunner.Then("I should found the following Avertissement messages", ((string)(null)), table77, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table77, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

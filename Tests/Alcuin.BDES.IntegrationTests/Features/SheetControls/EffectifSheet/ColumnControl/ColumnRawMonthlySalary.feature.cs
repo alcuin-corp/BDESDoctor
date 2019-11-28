@@ -131,7 +131,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "La colonne \'Salaire mensuel brut\' n\'est pas présente dans L\'onglet \'effectifs\', a" +
                                 "ucun indicateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 10
- testRunner.Then("I should found the following Avertissement messages", ((string)(null)), table105, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table105, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -225,7 +225,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "La colonne \'Salaire mensuel brut\' de l’onglet \'effectifs\' est bien prise en compt" +
                                 "e."});
 #line 21
- testRunner.Then("I should found the following Succès messages", ((string)(null)), table107, "Then ");
+ testRunner.Then("I should found the following Succes messages", ((string)(null)), table107, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -286,7 +286,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Certaines cellules numériques sont vides dans votre fichier, les données vides ne" +
                                 " seront pas prises en compte dans les calculs."});
 #line 31
- testRunner.Then("I should found the following Avertissement messages", ((string)(null)), table109, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table109, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -354,7 +354,7 @@ this.ScenarioInitialize(scenarioInfo);
                                 "numérique qui n’est pas dans le bon format. Le format attendu est « ####,## ». V" +
                                 "euillez vérifier que les valeurs numériques respectent ce format."});
 #line 42
- testRunner.Then("I should found the following Erreur messages", ((string)(null)), table111, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table111, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

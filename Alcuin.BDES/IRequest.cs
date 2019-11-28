@@ -22,9 +22,9 @@ namespace Alcuin.BDES
 
         bool IsFailed { get; }
 
-        string CurrentStep { get; }
+        Step CurrentStep { get; }
 
-        Dictionary<string, List<MonitoringMessage>> PublishedMessages { get; }
+        Dictionary<MonitoringType, List<MonitoringMessage>> PublishedMessages { get; }
 
         void Run();
     }

@@ -109,7 +109,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("the process should fail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 7
- testRunner.And("the process should be exited in the step : Vérification du format du fichier", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the process should be exited in the step : FileAnalyzing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
@@ -117,7 +117,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "le format du fichier chargé est incorrect. Veuillez vérifier qu’il est bien au fo" +
                                 "rmat Excel avec l’extension .xlsx"});
 #line 8
- testRunner.And("I should found the following Erreur messages", ((string)(null)), table1, "And ");
+ testRunner.And("I should found the following Error messages", ((string)(null)), table1, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -160,7 +160,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table2.AddRow(new string[] {
                             "Le format de fichier est correct."});
 #line 15
- testRunner.Then("I should found the following Succès messages", ((string)(null)), table2, "Then ");
+ testRunner.Then("I should found the following Succes messages", ((string)(null)), table2, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

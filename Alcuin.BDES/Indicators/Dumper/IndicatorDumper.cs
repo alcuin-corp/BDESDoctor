@@ -13,9 +13,9 @@ namespace Alcuin.BDES.Indicators.Dumper
         private readonly IFileSystem fileSystem;
         private readonly string[] headers;
 
-        public IndicatorDumper()
+        public IndicatorDumper(IFileSystem fileSystem)
         {
-            ServiceLocator.Resolve(out this.fileSystem);
+            this.fileSystem = fileSystem;
             this.headers = this.GetOutputFileHeaders();
         }
 

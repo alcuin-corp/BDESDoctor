@@ -15,12 +15,12 @@ namespace Alcuin.BDES.Workflow.Commands
         private readonly ColumnProviderFactory columnProviderFactory;
 
         public ColumnControlCommand(IMonitoringManager monitoringManager)
-            : base(Steps.FileAnalyzing, monitoringManager, 5)
+            : base(Step.FileAnalyzing, monitoringManager, 5)
         {
             this.columnProviderFactory = new ColumnProviderFactory();
         }
 
-        protected override void Process(ProcessingContext processingContext)
+        protected override void Process(ProcessingContext processingContext, Request request)
         {
             var foundedSheets = processingContext.AvailableSheets;
             foreach (var sheet in foundedSheets)
@@ -46,7 +46,7 @@ namespace Alcuin.BDES.Workflow.Commands
                         if (column.IsMandatory)
                         {
                             var message = GetMessingMandatoryColumnMessage(column.Header, sheet.Name);
-                            throw new ProcessingException(message, this.CurrentStep);
+                            throw new ProcessingException(message);
                         }
                         else
                         {
