@@ -56,7 +56,6 @@ namespace Alcuin.BDES.IntegrationTests.Steps
         {
             Assert.IsTrue(this.fileSystem.File.Exists(logFileName));
             var logMessages = this.fileSystem.File.ReadAllLines(logFileName);
-            var allAvailableMessages
         }
 
 

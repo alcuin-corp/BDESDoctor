@@ -76,6 +76,7 @@
     <None Include="Features\SheetControls\EffectifSheet\ColumnControl\ExtraColumnControl.feature" />
     <None Include="Features\SheetControls\EffectifSheet\EffectifSheetControl.feature" />
     <None Include="Features\FileFormatControls\FileFormatControl.feature" />
+    <None Include="Features\SheetControls\EffectifSheet\ColumnControl\EmptyColumnHeaderControl.feature" />
     <None Include="Features\SheetControls\ExtraSheetControl.feature" />
     <None Include="Features\WorkFlow\Workflow.feature" />
     <None Include="packages.config" />

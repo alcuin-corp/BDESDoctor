@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Alcuin.BDES.IntegrationTests.Features.SheetControls
+namespace Alcuin.BDES.IntegrationTests.Features.SheetControls.EffectifSheet.ColumnControl
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,22 +20,22 @@ namespace Alcuin.BDES.IntegrationTests.Features.SheetControls
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Extrasheet Control")]
-    public partial class ExtrasheetControlFeature
+    [NUnit.Framework.DescriptionAttribute("Empty Column Header Control")]
+    public partial class EmptyColumnHeaderControlFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "ExtraSheetControl.feature"
+#line 1 "EmptyColumnHeaderControl.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Extrasheet Control", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Empty Column Header Control", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,11 +74,11 @@ namespace Alcuin.BDES.IntegrationTests.Features.SheetControls
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Processing file having extra worksheets should have a warrning message")]
-        public virtual void ProcessingFileHavingExtraWorksheetsShouldHaveAWarrningMessage()
+        [NUnit.Framework.DescriptionAttribute("Processing file within empty column header should not fail")]
+        public virtual void ProcessingFileWithinEmptyColumnHeaderShouldNotFail()
         {
             string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Processing file having extra worksheets should have a warrning message", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Processing file within empty column header should not fail", null, ((string[])(null)));
 #line 3
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -102,44 +102,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
  testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table143 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table136 = new TechTalk.SpecFlow.Table(new string[] {
                             "Matricule",
                             "Structure",
+                            "",
+                            "",
+                            "Age",
                             "CSP",
                             "Sexe"});
-                table143.AddRow(new string[] {
+                table136.AddRow(new string[] {
                             "1254",
                             "Alcuin",
+                            "CAIO",
+                            "John",
+                            "33",
                             "CADRE",
                             "Homme"});
-                table143.AddRow(new string[] {
+                table136.AddRow(new string[] {
                             "1235",
                             "Alcuin",
+                            "LEGROS",
+                            "Isabelle",
+                            "33",
                             "CADRE",
                             "Femme"});
 #line 5
- testRunner.And("it has a workSheet Effectifs with the following content", ((string)(null)), table143, "And ");
+ testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table136, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table144 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Matricule",
-                            "Nom",
-                            "Prenom"});
-                table144.AddRow(new string[] {
-                            "1254",
-                            "John",
-                            "CONNOR"});
 #line 9
- testRunner.And("it has also a workSheet otherSheet with the following content", ((string)(null)), table144, "And ");
-#line hidden
-#line 12
  testRunner.When("I start processing the file mybook.xlsx for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table145 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Message"});
-                table145.AddRow(new string[] {
-                            "D’autres onglets existent dans votre fichier, ils ne seront pas pris en compte."});
-#line 13
- testRunner.Then("I should found the following Warrning messages", ((string)(null)), table145, "Then ");
+#line 10
+ testRunner.Then("I should get a progress rate notification at 20 %", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

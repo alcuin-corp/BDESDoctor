@@ -1,6 +1,6 @@
 ﻿namespace Alcuin.BDES.Monitoring
 {
-    public interface IMonitoringDumper
+    internal interface IMonitoringDumper
     {
         void Dump(Request request);
     }

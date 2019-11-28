@@ -20,6 +20,16 @@ namespace Alcuin.BDES.Workflow.Commands
             this.indicatorProvider = new IndicatorProvider();
         }
 
+        public override void Execute(ProcessingContext processingContext, Request request)
+        {
+            if (request.PublishedMessages.TryGetValue(MonitoringType.Error, out var errors) && errors.Any())
+            {
+                throw new System.Exception("le process ne peut pas continer");
+            }
+
+            base.Execute(processingContext, request);
+        }
+
         protected override void Process(ProcessingContext processingContext, Request request)
         {
             var allIndicators = this.indicatorProvider.GetAll()

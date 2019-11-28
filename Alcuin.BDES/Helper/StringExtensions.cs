@@ -26,7 +26,7 @@ namespace Alcuin.BDES.Helper
 
         public static string ToLowerString(this object obj)
         {
-            return obj.ToString().ToLowerInvariant();
+            return obj?.ToString().ToLowerInvariant();
         }
 
         public static bool EqualsTo(this string str, string value)

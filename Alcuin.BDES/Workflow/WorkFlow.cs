@@ -35,6 +35,7 @@ namespace Alcuin.BDES.Workflow
             }
             finally
             {
+                processingContext.Workbook?.Dispose();
                 monitoringManager.Dump();
                 request.IsFinished = true;
             }

@@ -10,3 +10,4 @@ Scenario: Processing file within extra columns in 'effectifs' worksheet should h
 	Then I should found the following Warrning messages
 		| Message                                                                                                                                                   |
 		| Des colonnes non reconnues sont présentes dans votre fichier, elles ne seront pas prises en compte. Veuillez vérifier que les colonnes sont bien nommées. |
+

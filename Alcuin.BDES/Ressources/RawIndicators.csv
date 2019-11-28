@@ -1,10 +1,3 @@
-﻿Domaine;Sous Domaine;Indicateur;Champs;Formule
-Effectif;Effectif au 31/12;Effectif permanent;Agent de Maitrise ;∑ matricule par [structure] dont le type de contrat est CDI et la CSP est Cadre
-Effectif;Effectif au 31/12;Effectif total au 31/12;Cadre;∑ [matricule] par [structure] dont le CSP est cadre
-Effectif;Effectif au 31/12;Effectif total au 31/12;Agent de [matricule] ;∑ matricule par [structure] dont le CSP est Agent de maitrise
-Effectif;Effectif au 31/12;Effectif total au 31/12;Employé;∑ [matricule] par [structure] dont le CSP est employé
-Effectif;Effectif au 31/12;Effectif total au 31/12;Ouvrier;∑ [matricule] par [structure] dont le CSP est ouvrier
-Effectif;Effectif au 31/12;Effectif total au 31/12;Technicien;∑ [matricule] par [structure] dont le CSP est technicien
-Effectif;Effectif au 31/12;Effectif permanent;Cadre;∑ [matricule] par [structure] dont le type de contrat est CDI et le Durée du temps de travail est 35h ou plus et la CSP est Cadre
-Effectif;Effectif au 31/12;Effectif permanent;Employé;∑ [matricule] par [structure] dont le type de contrat est CDI et le Durée du temps de travail est 35h ou plus et la CSP est Employé
-Effectif;Effectif au 31/12;Effectif permanent;Ouvrier;∑ [matricule] par [structure] dont le type de contrat est CDI et le Durée du temps de travail est 35h ou plus et la CSP est Ouvrier
+﻿Onglet;Domaine;Sous Domaine;Indicateur;Champs;Formule
+Effectifs;Effectif;Effectif au 31/12;Effectif permanent;Agent de Maitrise ;∑ [matricule] par [structure] dont [sexe] est 'Homme'
+Effectifs;Effectif;Effectif au 31/12;Effectif total au 31/12;Cadre;∑ [matricule] par [structure] dont [sexe] est 'Femme'

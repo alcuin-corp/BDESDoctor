@@ -28,7 +28,8 @@ namespace Alcuin.BDES.Workflow.Commands
                 var columnProvider = this.columnProviderFactory.Create(sheet.FileTab);
                 var headerInSheet = sheet.Cells.Rows[0]
                         .OfType<Cell>()
-                        .ToDictionary(x => x.Value.ToLowerString());
+                        .Where(x => x.StringValue.IsNotEmpty())
+                        .ToDictionary(x => x.StringValue.ToLowerInvariant());
 
                 foreach (var column in columnProvider.GetColumns())
                 {
@@ -46,7 +47,7 @@ namespace Alcuin.BDES.Workflow.Commands
                         if (column.IsMandatory)
                         {
                             var message = GetMessingMandatoryColumnMessage(column.Header, sheet.Name);
-                            throw new ProcessingException(message);
+                            this.PublishError(message);
                         }
                         else
                         {
