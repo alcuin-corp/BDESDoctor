@@ -14,18 +14,18 @@ namespace Alcuin.BDES.Workflow.Commands
         private const string ExpectedFileExtension = ".xlsx";
 
         public FileNameControlCommand(IMonitoringManager monitoringManager)
-            : base(Steps.FileAnalyzing, monitoringManager, 1)
+            : base(Step.FileAnalyzing, monitoringManager, 1)
         {
         }
 
-        protected override void Process(ProcessingContext processingContext)
+        protected override void Process(ProcessingContext processingContext, Request request)
         {
-            var currentExtension = Path.GetExtension(processingContext.FileName);
+            var currentExtension = Path.GetExtension(request.FilePath);
             if (!ExpectedFileExtension.Equals(currentExtension, StringComparison.OrdinalIgnoreCase))
             {
                 throw new ProcessingException(
                     "le format du fichier chargé est incorrect." +
-                    $" Veuillez vérifier qu’il est bien au format Excel avec l’extension {ExpectedFileExtension}", this.CurrentStep);
+                    $" Veuillez vérifier qu’il est bien au format Excel avec l’extension {ExpectedFileExtension}");
             }
 
             this.PublishSucces("Le format de fichier est correct.");

@@ -15,12 +15,12 @@ namespace Alcuin.BDES.Workflow.Commands
         private readonly IndicatorProvider indicatorProvider;
 
         public IndicatorLoadCommand(IMonitoringManager monitoringManager)
-            : base(Steps.IndicatorComputing, monitoringManager, 20)
+            : base(Step.IndicatorComputing, monitoringManager, 25)
         {
             this.indicatorProvider = new IndicatorProvider();
         }
 
-        protected override void Process(ProcessingContext processingContext)
+        protected override void Process(ProcessingContext processingContext, Request request)
         {
             var allIndicators = this.indicatorProvider.GetAll()
                 .ToList();
@@ -35,7 +35,7 @@ namespace Alcuin.BDES.Workflow.Commands
                     if (this.TryMapIndicatorColumns(availableColumn, indicator, out var missingColumn))
                     {
                         sheet.Indicators.Add(indicator);
-                        processingContext.Request.Indicators.Add(indicator);
+                        request.Indicators.Add(indicator);
                     }
                     else
                     {

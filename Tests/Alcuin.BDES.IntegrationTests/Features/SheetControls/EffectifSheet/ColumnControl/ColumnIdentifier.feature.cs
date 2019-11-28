@@ -129,7 +129,7 @@ this.ScenarioInitialize(scenarioInfo);
                                 "e est obligatoire, veuillez vérifier que la colonne est correctement nommée et q" +
                                 "ue celle-ci est présente dans l’onglet."});
 #line 10
- testRunner.Then("I should found the following Erreur messages", ((string)(null)), table79, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table79, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -192,7 +192,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table81.AddRow(new string[] {
                             "La colonne \'Matricule\' de l’onglet \'effectifs\' est bien prise en compte."});
 #line 21
- testRunner.Then("I should found the following Succès messages", ((string)(null)), table81, "Then ");
+ testRunner.Then("I should found the following Succes messages", ((string)(null)), table81, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -256,7 +256,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Dans l\'onglet «effectifs» des doublons de «Matricule» ont été trouvé. Veuillez vé" +
                                 "rifier qu’il n’y est pas de «Matricule» en double."});
 #line 32
- testRunner.Then("I should found the following Erreur messages", ((string)(null)), table83, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table83, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -315,7 +315,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Certaines cellules textes sont vides dans votre fichier, les données vides ne ser" +
                                 "ont pas prises en compte dans les calculs."});
 #line 42
- testRunner.Then("I should found the following Avertissement messages", ((string)(null)), table85, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table85, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -380,7 +380,7 @@ this.ScenarioInitialize(scenarioInfo);
                                 "épasse la limite des 255 caractères. Veuillez vérifier que les valeurs textes re" +
                                 "spectent cette limite."});
 #line 53
- testRunner.Then("I should found the following Erreur messages", ((string)(null)), table87, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table87, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

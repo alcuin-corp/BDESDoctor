@@ -126,7 +126,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "L\'onglet \'absences\' n\'est pas présent dans votre fichier, aucun indicateur lié au" +
                                 "x absences ne sera calculé lors de la conversion."});
 #line 13
- testRunner.And("I should found the following Avertissement messages", ((string)(null)), table14, "And ");
+ testRunner.And("I should found the following Warrning messages", ((string)(null)), table14, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -191,7 +191,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table17.AddRow(new string[] {
                             "L’onglet \'absences\' est bien pris en compte."});
 #line 26
- testRunner.Then("I should found the following Succès messages", ((string)(null)), table17, "Then ");
+ testRunner.Then("I should found the following Succes messages", ((string)(null)), table17, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Alcuin.BDES.Monitoring;
 
 namespace Alcuin.BDES.IntegrationTests.Steps
 {
@@ -7,19 +6,19 @@ namespace Alcuin.BDES.IntegrationTests.Steps
     {
         public TestContext()
         {
-            this.PublishedMessages = new Dictionary<string, List<string>>();
+            this.PublishedMessages = new Dictionary<MonitoringType, List<string>>();
             this.ReceivedProgressRates = new List<int>();
-            this.ChangedSteps = new List<string>();
+            this.ChangedSteps = new List<Step>();
         }
 
         public bool IsFinished { get; set; }
 
         public bool IsFailed { get; set; }
 
-        public Dictionary<string, List<string>> PublishedMessages { get; }
+        public Dictionary<MonitoringType, List<string>> PublishedMessages { get; }
 
         public List<int> ReceivedProgressRates { get; }
 
-        public List<string> ChangedSteps { get; }
+        public List<Step> ChangedSteps { get; }
     }
 }

@@ -12,20 +12,20 @@ namespace Alcuin.BDES.Workflow.Commands
         private readonly IFileSystem fileSystem;
 
         public FileLoadCommand(IMonitoringManager monitoringManager)
-            : base(Steps.FileAnalyzing, monitoringManager, 2)
+            : base(Step.FileAnalyzing, monitoringManager, 2)
         {
             ServiceLocator.Resolve(out this.fileSystem);
         }
 
-        protected override void Process(ProcessingContext processingContext)
+        protected override void Process(ProcessingContext processingContext, Request request)
         {
-            var filePath = processingContext.FilePath;
+            var filePath = request.FilePath;
             if (!this.fileSystem.File.Exists(filePath))
             {
-                throw new ProcessingException("Le fichier n'exsite pas !", this.CurrentStep);
+                throw new ProcessingException("Le fichier n'exsite pas !");
             }
 
-            processingContext.Workbook = this.fileSystem.LoadWorkbook(processingContext.FilePath);
+            processingContext.Workbook = this.fileSystem.LoadWorkbook(request.FilePath);
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Alcuin.BDES.Indicators
 
         public IEnumerable<Indicator> GetAll()
         {
-            foreach (var indicator in this.rawIndicatorReader.ReadFile("RawIndicators.csv"))
+            foreach (var indicator in this.rawIndicatorReader.ReadFile(@"Ressources\RawIndicators.csv"))
             {
                 var tokens = this.tokenizer.Tokenize(indicator.Formula).ToList();
                 var analyzer = new FormulaAnalyzer(tokens);

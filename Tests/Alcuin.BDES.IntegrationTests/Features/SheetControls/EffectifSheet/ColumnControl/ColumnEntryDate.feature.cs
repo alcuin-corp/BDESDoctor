@@ -131,7 +131,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "La colonne \'Date d\'entrée\' n\'est pas présente dans L\'onglet \'effectifs\', aucun in" +
                                 "dicateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 10
- testRunner.Then("I should found the following Avertissement messages", ((string)(null)), table63, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table63, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -212,7 +212,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table65.AddRow(new string[] {
                             "La colonne \'Date d\'entrée\' de l’onglet \'effectifs\' est bien prise en compte."});
 #line 21
- testRunner.Then("I should found the following Succès messages", ((string)(null)), table65, "Then ");
+ testRunner.Then("I should found the following Succes messages", ((string)(null)), table65, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -273,7 +273,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Certaines cellules dates sont vides dans votre fichier, les données vides ne sero" +
                                 "nt pas prises en compte dans les calculs."});
 #line 31
- testRunner.Then("I should found the following Avertissement messages", ((string)(null)), table67, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table67, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -333,7 +333,7 @@ this.ScenarioInitialize(scenarioInfo);
                                 " dans le bon format. Le format attendu est JJ/MM/AAAA. Veuillez vérifier que les" +
                                 " dates respectent ce format."});
 #line 41
- testRunner.Then("I should found the following Erreur messages", ((string)(null)), table69, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table69, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -3,7 +3,6 @@
 // </copyright>
 
 using System.Linq;
-using Alcuin.BDES.Domain;
 using Alcuin.BDES.Indicators;
 using Alcuin.BDES.Monitoring;
 
@@ -12,13 +11,13 @@ namespace Alcuin.BDES.Workflow.Commands
     internal class IndicatorComputeCommand : Command
     {
         public IndicatorComputeCommand(IMonitoringManager monitoringManager)
-            : base(Steps.DataAnalyzing, monitoringManager, 75)
+            : base(Step.DataAnalyzing, monitoringManager, 95)
         {
         }
 
-        protected override void Process(ProcessingContext processingContext)
+        protected override void Process(ProcessingContext processingContext, Request request)
         {
-            var rate = this.ComputeProgressionStep(processingContext);
+            var rate = this.ComputeProgressionStep(processingContext, request);
             foreach (var sheet in processingContext.AvailableSheets)
             {
 
@@ -26,10 +25,10 @@ namespace Alcuin.BDES.Workflow.Commands
                 {
                     foreach (var indicator in sheet.Indicators)
                     {
-                        processingContext.ProgressRate += (int)rate;
+                        request.ProgressRate += (int)rate;
                         var groupKey = indicator.GroupColumn.GetCleanCell(row);
                         var indicatorValue = indicator.GetGroupValue(groupKey);
-                        if (indicator.IsInclud(row, processingContext.ReferenceYear))
+                        if (indicator.IsInclud(row, request.ReferenceYear))
                         {
                             indicatorValue.Increment();
                             if (indicator.AgregateFunction == AgregateFunction.Avg)
@@ -43,9 +42,9 @@ namespace Alcuin.BDES.Workflow.Commands
             }
         }
 
-        private decimal ComputeProgressionStep(ProcessingContext processingContext)
+        private decimal ComputeProgressionStep(ProcessingContext processingContext, Request request)
         {
-            var rate = this.ProgressRate - processingContext.ProgressRate;
+            var rate = this.ProgressRate - request.ProgressRate;
             var opertationCount = processingContext.AvailableSheets.Sum(x => x.Indicators.Count * x.RowCount);
             return opertationCount == 0 ? 0 : rate / opertationCount;
         }

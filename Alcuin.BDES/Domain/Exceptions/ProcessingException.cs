@@ -4,16 +4,13 @@
 
 using System;
 
-namespace Alcuin.BDES.Domain
+namespace Alcuin.BDES
 {
     public class ProcessingException : Exception
     {
-        public ProcessingException(string message, string step, Exception innerException = null)
-            : base(message, innerException)
+        public ProcessingException(string message)
+            : base(message)
         {
-            this.Step = step;
         }
-
-        public string Step { get; }
     }
 }

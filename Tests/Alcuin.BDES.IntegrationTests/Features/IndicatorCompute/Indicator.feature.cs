@@ -160,12 +160,14 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table9, "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
                 table10.AddRow(new string[] {
+                            "Effectif",
                             "Effectif",
                             "Effectif au 31/12",
                             "Naissance 1986",
@@ -174,11 +176,13 @@ this.ScenarioInitialize(scenarioInfo);
                                 ">> reference"});
                 table10.AddRow(new string[] {
                             "Effectif",
+                            "Effectif",
                             "Effectif au 31/12",
                             "total des cadres",
                             "Agent de Maitrise",
                             "∑ [matricule] par [structure] dont [CSP] est \'Cadre\'"});
                 table10.AddRow(new string[] {
+                            "Effectif",
                             "Effectif",
                             "Effectif au 31/12",
                             "total des ouvrier",
@@ -186,11 +190,13 @@ this.ScenarioInitialize(scenarioInfo);
                             "∑ [matricule] par [structure] dont [CSP] est \'ouv\'"});
                 table10.AddRow(new string[] {
                             "Effectif",
+                            "Effectif",
                             "Effectif au 31/12",
                             "indicateur 1",
                             "Agent de Maitrise",
                             "∑ [matricule] par [structure] dont [CSP] est \'Cadre\' et [sexe] est \'H\'"});
                 table10.AddRow(new string[] {
+                            "Effectif",
                             "Effectif",
                             "Effectif au 31/12",
                             "indicateur 2",
@@ -248,7 +254,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "L\'indicateur \'indicateur 2\' ne sera pas calculé, il se base sur la colonne \'salai" +
                                 "re mensuel brut\' qui est manquante dans l\'onglet \'effectifs\'."});
 #line 30
- testRunner.And("I should found the following Avertissement messages", ((string)(null)), table12, "And ");
+ testRunner.And("I should found the following Warrning messages", ((string)(null)), table12, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

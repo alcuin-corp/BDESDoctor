@@ -131,7 +131,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "La colonne \'Type de reconnaissance\' n\'est pas présente dans L\'onglet \'effectifs\'," +
                                 " aucun indicateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 10
- testRunner.Then("I should found the following Avertissement messages", ((string)(null)), table113, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table113, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -198,7 +198,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "La colonne \'Type de reconnaissance\' de l’onglet \'effectifs\' est bien prise en com" +
                                 "pte."});
 #line 21
- testRunner.Then("I should found the following Succès messages", ((string)(null)), table115, "Then ");
+ testRunner.Then("I should found the following Succes messages", ((string)(null)), table115, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -259,7 +259,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Certaines cellules textes sont vides dans votre fichier, les données vides ne ser" +
                                 "ont pas prises en compte dans les calculs."});
 #line 31
- testRunner.Then("I should found the following Avertissement messages", ((string)(null)), table117, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table117, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -320,7 +320,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Dans l\'onglet «effectifs», la colonne «Type de reconnaissance» à une valeur qui t" +
                                 "exte n’est pas reconnue \'HTTP\'. Les valeurs pouvant être utilisées sont «RQTH»."});
 #line 41
- testRunner.Then("I should found the following Erreur messages", ((string)(null)), table119, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table119, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

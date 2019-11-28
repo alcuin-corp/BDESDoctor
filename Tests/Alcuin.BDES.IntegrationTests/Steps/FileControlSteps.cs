@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 
@@ -19,16 +20,17 @@ namespace Alcuin.BDES.IntegrationTests.Steps
             var expectedMessage = table.Rows.Select(row => new { Code = row["Code"], Message = row["Message"] });
             foreach (var item in expectedMessage)
             {
-                Assert.IsTrue(publishedMessages.TryGetValue(item.Code, out var actualMessages), $"Missing code {item.Code} in published messages");
+                Assert.IsTrue(publishedMessages.TryGetValue(GetMonitoringType(item.Code), out var actualMessages), $"Missing code {item.Code} in published messages");
                 Assert.Contains(item.Message, actualMessages, $"Missing monitoring message : {item.Message}");
             }
         }
 
         [Then(@"I should found the following (.*) messages")]
-        public void IShouldFoundTheFollowingMessages(string messageCode, Table table)
+        public void IShouldFoundTheFollowingMessages(string messageType, Table table)
         {
+            var montoringType = GetMonitoringType(messageType);
             var publishedMessages = this.context.Get<TestContext>().PublishedMessages;
-            Assert.IsTrue(publishedMessages.TryGetValue(messageCode, out var actualMessages), $"Missing code {messageCode} in published messages");
+            Assert.IsTrue(publishedMessages.TryGetValue(montoringType, out var actualMessages), $"Missing code {montoringType} in published messages");
             var expectedMessage = table.Rows.Select(row => row["Message"]);
             foreach (var message in expectedMessage)
             {
@@ -56,6 +58,12 @@ namespace Alcuin.BDES.IntegrationTests.Steps
         {
             var request = this.context.Get<IRequest>();
             Assert.AreEqual(stepName, request.CurrentStep.ToString());
+        }
+
+        private static MonitoringType GetMonitoringType(string messageType)
+        {
+            Assert.IsTrue(Enum.TryParse(messageType, out MonitoringType monitoringType), $"Unknown monitroing type :{messageType}");
+            return monitoringType;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using System.IO.Abstractions;
+using Alcuin.BDES.Ninject;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 
 namespace Alcuin.BDES.IntegrationTests.Steps
@@ -6,9 +8,12 @@ namespace Alcuin.BDES.IntegrationTests.Steps
     [Binding]
     public class WorkflowControlSteps : StepBase
     {
+        private readonly IFileSystem fileSystem;
+
         public WorkflowControlSteps(ScenarioContext injectedContext)
             : base(injectedContext)
         {
+            ServiceLocator.Resolve(out this.fileSystem);
         }
 
         [Then(@"all monitoring message should be notified")]
@@ -39,5 +44,21 @@ namespace Alcuin.BDES.IntegrationTests.Steps
             var requestContext = this.context.Get<TestContext>();
             Assert.Contains(value, requestContext.ReceivedProgressRates);
         }
+
+        [Then(@"I should found a log file : (.*)")]
+        public void ThenIShouldFoundALogFile(string logFileName)
+        {
+            Assert.IsTrue(this.fileSystem.File.Exists(logFileName));
+        }
+
+        [Then(@"the log file (.*) should contain all error and warrning message")]
+        public void ThenTheLogFileShouldContainAllErrorAndWarrningMessage(string logFileName)
+        {
+            Assert.IsTrue(this.fileSystem.File.Exists(logFileName));
+            var logMessages = this.fileSystem.File.ReadAllLines(logFileName);
+            var allAvailableMessages
+        }
+
+
     }
 }

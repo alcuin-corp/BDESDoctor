@@ -10,7 +10,7 @@ Scenario: Processing file with missing 'Absences' worksheet should fail
 		| 1254      | John | CONNOR |
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then the process should fail
-	And I should found the following Avertissement messages
+	And I should found the following Warrning messages
 		| Message                                                                                                                            |
 		| L'onglet 'absences' n'est pas présent dans votre fichier, aucun indicateur lié aux absences ne sera calculé lors de la conversion. |
 
@@ -23,6 +23,6 @@ Scenario: Processing file within 'Effectifs' worksheet should have a success log
 		| Matricule | Nom  | Prenom |
 		| 1254      | John | CONNOR |
 	When I start processing the file mybook.xlsx for the period of 2015
-	Then I should found the following Succès messages
+	Then I should found the following Succes messages
 		| Message                                      |
 		| L’onglet 'absences' est bien pris en compte. |

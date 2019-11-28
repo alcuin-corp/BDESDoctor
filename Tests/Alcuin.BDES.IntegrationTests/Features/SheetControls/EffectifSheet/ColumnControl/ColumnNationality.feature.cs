@@ -131,7 +131,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "La colonne \'Nationalité\' n\'est pas présente dans L\'onglet \'effectifs\', aucun indi" +
                                 "cateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 10
- testRunner.Then("I should found the following Avertissement messages", ((string)(null)), table97, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table97, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -191,7 +191,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table99.AddRow(new string[] {
                             "La colonne \'Nationalité\' de l’onglet \'effectifs\' est bien prise en compte."});
 #line 20
- testRunner.Then("I should found the following Succès messages", ((string)(null)), table99, "Then ");
+ testRunner.Then("I should found the following Succes messages", ((string)(null)), table99, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -252,7 +252,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Certaines cellules textes sont vides dans votre fichier, les données vides ne ser" +
                                 "ont pas prises en compte dans les calculs."});
 #line 30
- testRunner.Then("I should found the following Avertissement messages", ((string)(null)), table101, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table101, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -314,7 +314,7 @@ this.ScenarioInitialize(scenarioInfo);
                                 "pas reconnue \'Australienne\'. Les valeurs pouvant être utilisées sont «Francaise," +
                                 " autre»."});
 #line 40
- testRunner.Then("I should found the following Erreur messages", ((string)(null)), table103, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table103, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

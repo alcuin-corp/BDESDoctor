@@ -11,15 +11,15 @@ namespace Alcuin.BDES
     {
         internal MonitoringMsgPublishedEventArgs(MonitoringMessage monitoringMsg)
         {
-            this.Code = monitoringMsg.Code;
+            this.Type = monitoringMsg.Type;
             this.Message = monitoringMsg.Message;
             this.Step = monitoringMsg.Step;
         }
 
-        public string Code { get; }
+        public MonitoringType Type { get; }
 
         public string Message { get; }
 
-        public string Step { get; }
+        public Step Step { get; }
     }
 }

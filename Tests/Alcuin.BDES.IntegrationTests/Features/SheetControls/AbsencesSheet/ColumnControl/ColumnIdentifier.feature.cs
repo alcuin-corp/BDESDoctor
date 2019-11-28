@@ -141,7 +141,7 @@ this.ScenarioInitialize(scenarioInfo);
                                 " est obligatoire, veuillez vérifier que la colonne est correctement nommée et qu" +
                                 "e celle-ci est présente dans l’onglet."});
 #line 13
- testRunner.And("I should found the following Erreur messages", ((string)(null)), table20, "And ");
+ testRunner.And("I should found the following Error messages", ((string)(null)), table20, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -210,7 +210,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table23.AddRow(new string[] {
                             "La colonne \'Matricule\' de l’onglet \'absences\' est bien prise en compte."});
 #line 26
- testRunner.Then("I should found the following Succès messages", ((string)(null)), table23, "Then ");
+ testRunner.Then("I should found the following Succes messages", ((string)(null)), table23, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -280,7 +280,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Certaines cellules textes sont vides dans votre fichier, les données vides ne ser" +
                                 "ont pas prises en compte dans les calculs."});
 #line 39
- testRunner.Then("I should found the following Avertissement messages", ((string)(null)), table26, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table26, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -351,7 +351,7 @@ this.ScenarioInitialize(scenarioInfo);
                                 "passe la limite des 255 caractères. Veuillez vérifier que les valeurs textes res" +
                                 "pectent cette limite."});
 #line 52
- testRunner.Then("I should found the following Erreur messages", ((string)(null)), table29, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table29, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

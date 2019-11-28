@@ -132,7 +132,7 @@ this.ScenarioInitialize(scenarioInfo);
                                 "let \'effectifs\', aucun indicateur lié à cette colonne ne sera calculé lors de la" +
                                 " conversion."});
 #line 10
- testRunner.Then("I should found the following Avertissement messages", ((string)(null)), table129, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table129, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -199,7 +199,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "La colonne \'Durée du temps de travail hebdomadaire\' de l’onglet \'effectifs\' est b" +
                                 "ien prise en compte."});
 #line 21
- testRunner.Then("I should found the following Succès messages", ((string)(null)), table131, "Then ");
+ testRunner.Then("I should found the following Succes messages", ((string)(null)), table131, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -260,7 +260,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Certaines cellules numériques sont vides dans votre fichier, les données vides ne" +
                                 " seront pas prises en compte dans les calculs."});
 #line 31
- testRunner.Then("I should found the following Avertissement messages", ((string)(null)), table133, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table133, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -323,7 +323,7 @@ this.ScenarioInitialize(scenarioInfo);
                                 "est « ####,## ». Veuillez vérifier que les valeurs numériques respectent ce form" +
                                 "at."});
 #line 41
- testRunner.Then("I should found the following Erreur messages", ((string)(null)), table135, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table135, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

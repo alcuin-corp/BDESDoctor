@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Alcuin.BDES.Indicators;
 using Alcuin.BDES.Monitoring;
+using Alcuin.BDES.Ninject;
+using Alcuin.BDES.Workflow;
 
 namespace Alcuin.BDES
 {
@@ -12,11 +14,13 @@ namespace Alcuin.BDES
 
         private bool isFinished;
 
+        private Step currentStep;
+
         internal Request(string filePath, int referenceYear)
         {
             this.FilePath = filePath;
             this.ReferenceYear = referenceYear;
-            this.PublishedMessages = new Dictionary<string, List<MonitoringMessage>>();
+            this.PublishedMessages = new Dictionary<MonitoringType, List<MonitoringMessage>>();
             this.Indicators = new List<Indicator>();
         }
 
@@ -28,7 +32,7 @@ namespace Alcuin.BDES
 
         public event EventHandler<ProgressChangedEventArgs> ProgressChanged;
 
-        public Dictionary<string, List<MonitoringMessage>> PublishedMessages { get; }
+        public Dictionary<MonitoringType, List<MonitoringMessage>> PublishedMessages { get; }
 
         public string FilePath { get; }
 
@@ -45,15 +49,29 @@ namespace Alcuin.BDES
             }
         }
 
+        public Exception Exception { get; internal set; }
+
         public string OutputFilePath { get; internal set; }
 
         public string LogFilePath { get; internal set; }
 
         public int ReferenceYear { get; }
 
-        public string CurrentStep { get; private set; }
-
         public bool IsFailed { get; internal set; }
+
+        public Step CurrentStep
+        {
+            get => this.currentStep;
+            internal set
+            {
+                if (this.currentStep != value)
+                {
+                    var oldStep = this.currentStep;
+                    this.currentStep = value;
+                    this.RaiseStepChanged(oldStep, value);
+                }
+            }
+        }
 
         public bool IsFinished
         {
@@ -72,16 +90,16 @@ namespace Alcuin.BDES
 
         public void Run()
         {
-            var workflow = new Workflow.Workflow(this);
-            Task.Factory.StartNew(workflow.Process);
+            var workflow = ServiceLocator.Resolve<IWorkflow>();
+            Task.Factory.StartNew(() => workflow.Process(this));
         }
 
-        internal void AppendMessage(string code, string message)
+        internal void AppendMessage(MonitoringType monitoringType, string message)
         {
-            var monitoringMsg = new MonitoringMessage(code, message, this.CurrentStep);
-            if (!this.PublishedMessages.TryGetValue(monitoringMsg.Code, out var storedMessages))
+            var monitoringMsg = new MonitoringMessage(monitoringType, message, this.CurrentStep);
+            if (!this.PublishedMessages.TryGetValue(monitoringMsg.Type, out var storedMessages))
             {
-                this.PublishedMessages[monitoringMsg.Code] = new List<MonitoringMessage> { monitoringMsg };
+                this.PublishedMessages[monitoringMsg.Type] = new List<MonitoringMessage> { monitoringMsg };
             }
             else
             {
@@ -91,25 +109,20 @@ namespace Alcuin.BDES
             this.MonitoringMsgPublished?.Invoke(this, new MonitoringMsgPublishedEventArgs(monitoringMsg));
         }
 
-        internal void RaiseStepChanged(string step)
-        {
-            if (this.CurrentStep != step)
-            {
-                var oldStep = this.CurrentStep;
-                this.CurrentStep = step;
-                this.StepChanged?.Invoke(this, new StepChangedEventArgs(oldStep, this.CurrentStep));
-            }
-        }
-
-        internal void RaiseProcessFinished()
+        private void RaiseProcessFinished()
         {
             this.ProgressRate = 100;
-            this.ProcessFinished?.Invoke(this, new ProcessFinishedEventArgs(this.IsFailed));
+            this.ProcessFinished?.Invoke(this, new ProcessFinishedEventArgs(this.IsFailed, this.CurrentStep, this.Exception));
         }
 
         private void RaiseProgressChanged()
         {
             this.ProgressChanged?.Invoke(this, new ProgressChangedEventArgs(this.ProgressRate));
+        }
+
+        private void RaiseStepChanged(Step oldStep, Step newStep)
+        {
+            this.StepChanged?.Invoke(this, new StepChangedEventArgs(oldStep, newStep));
         }
     }
 }
