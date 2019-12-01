@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Alcuin.BDES.Indicators;
+using Alcuin.BDES.Interfaces;
 using Alcuin.BDES.Monitoring;
 using Alcuin.BDES.Ninject;
 using Alcuin.BDES.Workflow;

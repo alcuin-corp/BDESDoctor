@@ -3,6 +3,7 @@
 // </copyright>
 
 using System;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -39,9 +40,57 @@ namespace Alcuin.BDES.Helper
             return values.Any(value => str.EqualsTo(value));
         }
 
-        public static bool TryParseToDate(this string str, out DateTime date)
+        public static T ToEnum<T>(this string enumStr)
+            where T : Enum
+        {
+            return (T)Enum.Parse(typeof(T), enumStr);
+        }
+
+        public static string GetEnumDescription<T>(this string enumStr)
+            where T : struct, Enum
+        {
+            if (enumStr.TryParseEnum(out T result))
+            {
+                return result.GetDescription();
+            }
+
+            return enumStr;
+        }
+
+        public static string GetEnumDescription(this string enumStr, Type enumType)
+        {
+            var memberInfo = enumType.GetMember(enumStr);
+            if (memberInfo != null && memberInfo.Length > 0)
+            {
+                var attribs = memberInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
+                if (attribs?.Count() > 0)
+                {
+                    return ((DescriptionAttribute)attribs.ElementAt(0)).Description;
+                }
+            }
+
+            return enumStr;
+        }
+
+        public static bool TryParseEnum<T>(this string enumStr, out T result)
+            where T : struct, Enum
+        {
+            return Enum.TryParse(enumStr, out result);
+        }
+
+        public static bool TryParseDate(this string str, out DateTime date)
         {
             return DateTime.TryParseExact(str, ExpectedDateFormat, CultureInfo, DateTimeStyles.None, out date);
+        }
+
+        public static DateTime ParseDate(this string str)
+        {
+            if (!str.TryParseDate(out var date))
+            {
+                throw new InvalidCastException($"{str} can not be parsed !");
+            }
+
+            return date;
         }
 
         public static string ToFirstUpper(this string str)

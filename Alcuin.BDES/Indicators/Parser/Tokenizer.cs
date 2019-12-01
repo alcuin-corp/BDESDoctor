@@ -14,7 +14,7 @@ namespace Alcuin.BDES.Indicators.Parser
         public Tokenizer()
         {
             this.tokenDefinitions = new List<TokenDefinition>();
-            this.AddTokenDefinition(TokenType.Agregate, "Count|∑|Somme|Moyenne|Moy|Avg", 1);
+            this.AddTokenDefinition(TokenType.Agregate, "Count|∑|Moyenne|Moy|Avg", 1);
             this.AddTokenDefinition(TokenType.Where, "where|dont", 1);
             this.AddTokenDefinition(TokenType.GroupBy, "par|by", 1);
             this.AddTokenDefinition(TokenType.And, "et|and", 1);
@@ -38,6 +38,7 @@ namespace Alcuin.BDES.Indicators.Parser
             this.AddTokenDefinition(TokenType.YearOf, "année|YearOf", 1);
             this.AddTokenDefinition(TokenType.Age, "Age", 1);
             this.AddTokenDefinition(TokenType.Reference, "Reference|Référence", 1);
+            //this.AddTokenDefinition(TokenType.Enum, "Enum", 1);
         }
 
         public IEnumerable<Token> Tokenize(string lqlText)

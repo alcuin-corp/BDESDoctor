@@ -1,4 +1,4 @@
-﻿namespace Alcuin.BDES.Workflow
+﻿namespace Alcuin.BDES.Interfaces
 {
     internal interface IWorkflow
     {

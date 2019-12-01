@@ -11,7 +11,7 @@ namespace Alcuin.BDES.Domain
 {
     internal class Sheet
     {
-        public Sheet(FileTab fileTab, bool isMandatory = false)
+        public Sheet(SheetName fileTab, bool isMandatory = false)
         {
             this.FileTab = fileTab;
             this.Name = fileTab.ToLowerString();
@@ -23,7 +23,7 @@ namespace Alcuin.BDES.Domain
 
         public string Name { get; }
 
-        public FileTab FileTab { get; set; }
+        public SheetName FileTab { get; set; }
 
         public bool IsMandatory { get; set; }
 

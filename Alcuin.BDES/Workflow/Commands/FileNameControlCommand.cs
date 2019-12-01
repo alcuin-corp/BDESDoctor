@@ -6,8 +6,7 @@ namespace Alcuin.BDES.Workflow.Commands
 {
     using System;
     using System.IO;
-    using Alcuin.BDES.Domain;
-    using Alcuin.BDES.Monitoring;
+    using Alcuin.BDES.Interfaces;
 
     internal class FileNameControlCommand : Command
     {

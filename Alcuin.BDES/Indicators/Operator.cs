@@ -14,6 +14,7 @@ namespace Alcuin.BDES.Indicators
         GreaterOrEquals,
         LessThan,
         LessOrEquals,
-        Between
+        Between,
+        NotBetween
     }
 }

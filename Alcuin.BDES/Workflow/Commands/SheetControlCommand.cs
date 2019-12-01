@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Alcuin.BDES.Domain;
-using Alcuin.BDES.Monitoring;
+using Alcuin.BDES.Interfaces;
 
 namespace Alcuin.BDES.Workflow.Commands
 {
@@ -14,9 +14,9 @@ namespace Alcuin.BDES.Workflow.Commands
         {
             this.tabs = new List<Sheet>
             {
-                new Sheet(FileTab.Effectifs, true),
-                new Sheet(FileTab.Absences),
-                new Sheet(FileTab.Maladies),
+                new Sheet(SheetName.Effectifs, true),
+                new Sheet(SheetName.Absences),
+                new Sheet(SheetName.Maladies),
             };
         }
 

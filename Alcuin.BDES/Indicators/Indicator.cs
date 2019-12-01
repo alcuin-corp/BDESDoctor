@@ -5,47 +5,60 @@
 using System.Collections.Generic;
 using System.Linq;
 using Alcuin.BDES.Domain;
+using Alcuin.BDES.Indicators.Criterias;
+using Alcuin.BDES.Indicators.Parser;
 
 namespace Alcuin.BDES.Indicators
 {
     internal class Indicator
     {
-        public readonly Dictionary<string, IndicatorValue> groupedValues;
+        private readonly IndicatorDefinition indicatorDefinition;
 
         public Indicator()
         {
-            this.groupedValues = new Dictionary<string, IndicatorValue>();
+            this.GroupedValues = new Dictionary<string, IndicatorValue>();
+            this.Creterias = new List<ICriteria>();
         }
+
+        public Indicator(List<ICriteria> criterias)
+        {
+            this.GroupedValues = new Dictionary<string, IndicatorValue>();
+            this.Creterias = criterias;
+        }
+
+        public Indicator(IndicatorDefinition indicatorDefinition, List<ICriteria> criterias)
+            : this(criterias)
+        {
+            this.indicatorDefinition = indicatorDefinition;
+        }
+
+        public Dictionary<string, IndicatorValue> GroupedValues { get; }
+
+        public IEnumerable<Column> UsedColumns => this.Creterias.Select(x => x.Column).Union(new[] { this.ColumnToAgregate, this.GroupColumn });
 
         internal Column ColumnToAgregate { get; set; }
 
-        internal string ColumnToAgregateName { get; set; }
-
         internal Column GroupColumn { get; set; }
 
-        public string GroupColumnName { get; set; }
+        internal AgregateFunction AgregateFunction => this.indicatorDefinition.AgregateFunction;
 
-        internal AgregateFunction AgregateFunction { get; set; }
+        public string SheetName => this.indicatorDefinition.SheetName;
 
-        public string SheetName { get; set; }
+        public string Domain => this.indicatorDefinition.Domain;
 
-        public string Domain { get; set; }
+        public string SubDomain => this.indicatorDefinition.SubDomain;
 
-        public string SubDomain { get; set; }
+        public string Name => this.indicatorDefinition.Name;
 
-        public string Name { get; set; }
+        public string Field => this.indicatorDefinition.Field;
 
-        public string Field { get; set; }
-
-        public string Formula { get; set; }
-
-        internal List<MatchCondition> MatchConditions { get; set; }
+        internal List<ICriteria> Creterias { get; set; }
 
         public IndicatorValue GetGroupValue(string key)
         {
-            if (!this.groupedValues.TryGetValue(key, out var indicatorValue))
+            if (!this.GroupedValues.TryGetValue(key, out var indicatorValue))
             {
-                indicatorValue = this.groupedValues[key] = new IndicatorValue();
+                indicatorValue = this.GroupedValues[key] = new IndicatorValue();
             }
 
             return indicatorValue;
@@ -53,9 +66,9 @@ namespace Alcuin.BDES.Indicators
 
         public bool IsInclud(Aspose.Cells.Row row, int referenceYear)
         {
-            var first = this.MatchConditions.First();
+            var first = this.Creterias.First();
             var result = first.IsMatch(row, referenceYear);
-            foreach (var item in this.MatchConditions.Skip(1))
+            foreach (var item in this.Creterias.Skip(1))
             {
                 var nextResult = item.IsMatch(row, referenceYear);
                 if (first.LogicalOperatorToNextCondition == LogicalOperator.And)
@@ -71,6 +84,11 @@ namespace Alcuin.BDES.Indicators
             }
 
             return result;
+        }
+
+        public override string ToString()
+        {
+            return this.Name;
         }
     }
 }

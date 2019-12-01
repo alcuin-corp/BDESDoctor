@@ -1,8 +1,6 @@
-﻿using System.IO;
-using System.IO.Abstractions;
-using Alcuin.BDES.Domain;
+﻿using System.IO.Abstractions;
 using Alcuin.BDES.Helper;
-using Alcuin.BDES.Monitoring;
+using Alcuin.BDES.Interfaces;
 using Alcuin.BDES.Ninject;
 
 namespace Alcuin.BDES.Workflow.Commands

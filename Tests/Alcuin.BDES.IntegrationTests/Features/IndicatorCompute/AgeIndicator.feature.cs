@@ -151,14 +151,14 @@ this.ScenarioInitialize(scenarioInfo);
                             "Champs",
                             "Formule"});
                 table4.AddRow(new string[] {
-                            "Effectif",
+                            "Effectifs",
                             "Effectif",
                             "Effectif au 31/12",
                             "Jeunes de 34 ans",
                             "Cadre",
                             "∑ [matricule] par [structure] dont  Age == 34"});
                 table4.AddRow(new string[] {
-                            "Effectif",
+                            "Effectifs",
                             "Effectif",
                             "Effectif au 31/12",
                             "Jeunes de 34 ou 33 ans",
@@ -275,19 +275,19 @@ this.ScenarioInitialize(scenarioInfo);
                             "Champs",
                             "Formule"});
                 table7.AddRow(new string[] {
-                            "Effectif",
+                            "Effectifs",
                             "Effectif",
                             "Effectif au 31/12",
                             "Jeunes de plus de 33 ans",
                             "Cadre",
-                            "∑ [matricule] par [structure] dont  Age >= 33"});
+                            "Count [matricule] par [structure] dont  Age >= 33"});
                 table7.AddRow(new string[] {
-                            "Effectif",
+                            "Effectifs",
                             "Effectif",
                             "Effectif au 31/12",
                             "Jeunes de moins de 33 ans",
                             "Cadre",
-                            "∑ [matricule] par [structure] dont  Age << 33"});
+                            "Count [matricule] par [structure] dont  Age << 33"});
 #line 33
  testRunner.And("I have the folowing indicators definition", ((string)(null)), table7, "And ");
 #line hidden

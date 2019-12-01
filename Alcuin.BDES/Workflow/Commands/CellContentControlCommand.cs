@@ -5,7 +5,7 @@
 using System.Linq;
 using Alcuin.BDES.Domain;
 using Alcuin.BDES.Helper;
-using Alcuin.BDES.Monitoring;
+using Alcuin.BDES.Interfaces;
 
 namespace Alcuin.BDES.Workflow.Commands
 {

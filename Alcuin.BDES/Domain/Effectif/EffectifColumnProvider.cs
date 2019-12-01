@@ -11,7 +11,16 @@ namespace Alcuin.BDES.Domain
 {
     internal class EffectifColumnProvider : IColumnProvider
     {
-        public List<Column> GetColumns()
+        public EffectifColumnProvider()
+        {
+            this.Columns = this.LoadColumns();
+        }
+
+        public List<Column> Columns { get; }
+
+        public List<Column> GetColumns() => this.Columns;
+
+        private List<Column> LoadColumns()
         {
             return new List<Column>
             {
