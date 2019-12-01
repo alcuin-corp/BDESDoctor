@@ -1,4 +1,4 @@
-﻿namespace Alcuin.BDES.Monitoring
+﻿namespace Alcuin.BDES.Interfaces
 {
     internal interface IMonitoringDumper
     {

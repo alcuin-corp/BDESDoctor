@@ -8,6 +8,14 @@ namespace Alcuin.BDES.Helper
 {
     internal static class ObjectExtensions
     {
+        public static void IsNotNull(this object obj, string parameterName)
+        {
+            if (obj == null)
+            {
+                throw new ArgumentNullException($"Parameter {parameterName} should not be null");
+            }
+        }
+
         public static bool IsGreaterThan(this object objToCompare, object referenceObject)
         {
             if (objToCompare.TryUnboxDecimal(out var valueToCompare) && referenceObject.TryUnboxDecimal(out var valueReference))
@@ -37,17 +45,6 @@ namespace Alcuin.BDES.Helper
             }
 
             return decimal.TryParse(value.ToString(), out decimalValue);
-        }
-
-        private static bool TryUnboxDate(this object value, out DateTime date)
-        {
-            if (value is DateTime)
-            {
-                date = (DateTime)value;
-                return true;
-            }
-
-            return value.ToString().TryParseToDate(out date);
         }
     }
 }

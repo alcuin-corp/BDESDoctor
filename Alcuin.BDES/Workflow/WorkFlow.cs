@@ -6,7 +6,7 @@ namespace Alcuin.BDES.Workflow
 {
     using System;
     using System.Collections.Generic;
-    using Alcuin.BDES.Domain;
+    using Alcuin.BDES.Interfaces;
     using Alcuin.BDES.Monitoring;
     using Alcuin.BDES.Workflow.Commands;
 

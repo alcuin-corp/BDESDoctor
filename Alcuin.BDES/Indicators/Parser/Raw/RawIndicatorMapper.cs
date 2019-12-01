@@ -6,9 +6,9 @@ using CsvHelper.Configuration;
 
 namespace Alcuin.BDES.Indicators.Parser.Raw
 {
-    internal sealed class IndicatorMapper : ClassMap<Indicator>
+    internal sealed class RawIndicatorMapper : ClassMap<RawIndicator>
     {
-        public IndicatorMapper()
+        public RawIndicatorMapper()
         {
             this.Map(m => m.Domain).Name("Domaine");
             this.Map(m => m.SubDomain).Name("Sous Domaine");

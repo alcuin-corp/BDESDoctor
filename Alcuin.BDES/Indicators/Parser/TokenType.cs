@@ -31,6 +31,7 @@ namespace Alcuin.BDES.Indicators.Parser
         SequenceTerminator,
         YearOf,
         Age,
-        Reference
+        Reference,
+        Enum
     }
 }

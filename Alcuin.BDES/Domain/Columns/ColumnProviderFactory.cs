@@ -2,25 +2,20 @@
 // Copyright (c) Alcuin. All rights reserved.
 // </copyright>
 
-using System;
+using Alcuin.BDES.Ninject;
 
 namespace Alcuin.BDES.Domain
 {
-    internal class ColumnProviderFactory
+    internal class ColumnProviderFactory : IColumnProviderFactory
     {
-        public IColumnProvider Create(FileTab fileTab)
+        public IColumnProvider Create(string sheetName)
         {
-            switch (fileTab)
-            {
-                case FileTab.Effectifs:
-                    return new EffectifColumnProvider();
-                case FileTab.Maladies:
-                    return new DiseaseColumnProvider();
-                case FileTab.Absences:
-                    return new AbsenceColumnProvider();
-                default:
-                    throw new Exception("Unknown tab name!");
-            }
+            return ServiceLocator.Resolve<IColumnProvider>(sheetName);
+        }
+
+        public IColumnProvider Create(SheetName sheetName)
+        {
+            return this.Create(sheetName.ToString());
         }
     }
 }

@@ -12,6 +12,13 @@ namespace Alcuin.BDES.IntegrationTests.Steps
         {
         }
 
+        [Then(@"I should compute (.*) indicators")]
+        public void ThenIShouldComputeIndicator(int indicatorCount)
+        {
+            var request = this.context.Get<IRequest>() as Request;
+            Assert.AreEqual(indicatorCount, request.Indicators.Count, "Indicator count missmatch !");
+        }
+
         [Then(@"I should found the following indicators")]
         public void IShouldFoundTheFollowingIndicators(Table table)
         {
@@ -22,7 +29,7 @@ namespace Alcuin.BDES.IntegrationTests.Steps
             {
                 Assert.IsTrue(indicators.TryGetValue(row["Indicator"].ToLowerInvariant(), out var indicator), $"Missing indicator {row["Indicator"]} !");
                 var groupName = row["Group"].ToString();
-                Assert.IsTrue(indicator.groupedValues.TryGetValue(groupName, out var value), $"Missing group {groupName}");
+                Assert.IsTrue(indicator.GroupedValues.TryGetValue(groupName, out var value), $"Missing group {groupName}");
                 if (table.Header.Contains("Average"))
                 {
                     var ExpectedAvg = decimal.Parse(row["Average"]);

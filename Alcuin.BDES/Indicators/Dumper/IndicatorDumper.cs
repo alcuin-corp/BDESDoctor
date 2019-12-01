@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.IO;
 using System.IO.Abstractions;
 using Alcuin.BDES.Domain.Columns;
 using Alcuin.BDES.Helper;
-using Alcuin.BDES.Ninject;
 using Aspose.Cells;
 
 namespace Alcuin.BDES.Indicators.Dumper
@@ -29,7 +27,7 @@ namespace Alcuin.BDES.Indicators.Dumper
             foreach (var indicator in indicators)
             {
                 rowId++;
-                foreach (var group in indicator.groupedValues)
+                foreach (var group in indicator.GroupedValues)
                 {
                     var row = worksheet.Cells.Rows[rowId];
                     row[0].Value = group.Key;

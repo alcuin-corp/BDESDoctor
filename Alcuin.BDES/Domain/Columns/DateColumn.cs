@@ -3,6 +3,8 @@
 // </copyright>
 
 using Alcuin.BDES.Helper;
+using Alcuin.BDES.Indicators;
+using Alcuin.BDES.Indicators.Criterias;
 
 namespace Alcuin.BDES.Domain.Columns
 {
@@ -19,7 +21,7 @@ namespace Alcuin.BDES.Domain.Columns
 
         internal override bool IsValidContent(string cellContent, out string errorMessage)
         {
-            if (cellContent.TryParseToDate(out var date))
+            if (cellContent.TryParseDate(out var date))
             {
                 errorMessage = null;
                 return true;
@@ -27,6 +29,18 @@ namespace Alcuin.BDES.Domain.Columns
 
             errorMessage = this.GetInvalidCellContentMessage(cellContent);
             return false;
+        }
+
+        internal override ICriteria GetCriteria(CriteriaDefinition criteriaDefinition)
+        {
+            if (criteriaDefinition.ScalarFunction == ScalarFunction.None)
+            {
+                return new DateCriteria(criteriaDefinition) { Column = this };
+            }
+
+            var criteria = new NumericCriteria(criteriaDefinition) { Column = this };
+
+            return criteria;
         }
 
         protected override string GetInvalidCellContentMessage(string cellContent)

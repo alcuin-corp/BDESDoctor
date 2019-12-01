@@ -2,7 +2,7 @@
 // Copyright (c) Alcuin. All rights reserved.
 // </copyright>
 
-using Alcuin.BDES.Monitoring;
+using Alcuin.BDES.Interfaces;
 
 namespace Alcuin.BDES.Workflow.Commands
 {

@@ -3,6 +3,7 @@
 // </copyright>
 
 using Alcuin.BDES.Domain.Transcodification;
+using Alcuin.BDES.Indicators.Criterias;
 
 namespace Alcuin.BDES.Domain.Columns
 {
@@ -42,6 +43,12 @@ namespace Alcuin.BDES.Domain.Columns
             }
 
             return result;
+        }
+
+        internal override ICriteria GetCriteria(CriteriaDefinition criteriaDefinition)
+        {
+            var criteria = new TextCriteria(criteriaDefinition) { Column = this };
+            return criteria;
         }
 
         protected override string GetInvalidCellContentMessage(string cellContent)

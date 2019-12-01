@@ -14,6 +14,7 @@ namespace Alcuin.BDES.Domain.Transcodification
                 Gender.Male,
                 "Homme",
                 "H",
+                "M",
                 "Male");
 
             this.Map(
