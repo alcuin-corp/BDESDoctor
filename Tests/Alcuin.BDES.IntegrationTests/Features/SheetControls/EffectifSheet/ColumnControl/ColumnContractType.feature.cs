@@ -131,7 +131,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table47.AddRow(new string[] {
-                            "La colonne \'Type de contrat\' de l\'onglet \'effectifs\' est bien prise en compte."});
+                            "La colonne \'Type de contrat\' de l’onglet \'effectifs\' est bien prise en compte."});
 #line 10
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table47, "Then ");
 #line hidden
@@ -194,7 +194,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table49.AddRow(new string[] {
-                            "La colonne \'Type de contrat\' n\'est pas présente dans l\'onglet \'effectifs\', aucun " +
+                            "La colonne \'Type de contrat\' n\'est pas présente dans L\'onglet \'effectifs\', aucun " +
                                 "indicateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 21
  testRunner.Then("I should found the following Warrning messages", ((string)(null)), table49, "Then ");
@@ -306,7 +306,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Alcuin",
                             "Cadre",
                             "Homme",
-                            "invalid data"});
+                            "Contrat"});
 #line 37
  testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table52, "And ");
 #line hidden
@@ -316,9 +316,9 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table53.AddRow(new string[] {
-                            "Dans l\'onglet \'effectifs\', la colonne \'Type de contrat\' contient une donnée non r" +
-                                "econnue [invalid data] (valeurs autorisées [CDI, CDD, CIE, Alternance, Professio" +
-                                "nnalisation, CTT, CUI, CAE])."});
+                            "Dans l\'onglet «effectifs», la colonne «Type de contrat» à une valeur qui texte n’" +
+                                "est pas reconnue \'Contrat\'. Les valeurs pouvant être utilisées sont «CDI, CDD, C" +
+                                "IE, Alternance, Professionnalisation, CTT, CUI, CAE»."});
 #line 41
  testRunner.Then("I should found the following Error messages", ((string)(null)), table53, "Then ");
 #line hidden

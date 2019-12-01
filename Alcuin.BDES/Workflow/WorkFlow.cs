@@ -1,4 +1,8 @@
-﻿namespace Alcuin.BDES.Workflow
+﻿// <copyright file="WorkFlow.cs" company="Alcuin">
+// Copyright (c) Alcuin. All rights reserved.
+// </copyright>
+
+namespace Alcuin.BDES.Workflow
 {
     using System;
     using System.Collections.Generic;

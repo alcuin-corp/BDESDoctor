@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿// <copyright file="Transcoder.cs" company="Alcuin">
+// Copyright (c) Alcuin. All rights reserved.
+// </copyright>
+
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Alcuin.BDES.Domain.Transcodification

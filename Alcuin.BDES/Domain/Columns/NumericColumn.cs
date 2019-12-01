@@ -1,4 +1,8 @@
-﻿using System.Text.RegularExpressions;
+﻿// <copyright file="NumericColumn.cs" company="Alcuin">
+// Copyright (c) Alcuin. All rights reserved.
+// </copyright>
+
+using System.Text.RegularExpressions;
 
 namespace Alcuin.BDES.Domain.Columns
 {
@@ -11,7 +15,7 @@ namespace Alcuin.BDES.Domain.Columns
         public NumericColumn(string columnheader, bool isMandatory = false)
                 : base(columnheader, isMandatory)
         {
-            this.regex = new Regex("^[0-9]*,?[0-9]{1,2}?$");
+            this.regex = new Regex("^([1-9]*[0-9]*|[0-9]),([0-9]{1,2})");
         }
 
         internal override string GetErrorMessageForEmptyCell() => EmptyCellFoundMessage;
@@ -30,7 +34,7 @@ namespace Alcuin.BDES.Domain.Columns
 
         protected override string GetInvalidCellContentMessage(string cellContent)
         {
-            return $"Dans l'onglet '{this.Sheet.Name}', la colonne '{this.Header}' contient une donnée non reconnue [{cellContent}] (format attendu [####,##]).";
+            return $"Dans l'onglet «{this.Sheet.Name}», la colonne «{this.Header}» contient une valeur numérique qui n’est pas dans le bon format. Le format attendu est « ####,## ». Veuillez vérifier que les valeurs numériques respectent ce format.";
         }
     }
 }

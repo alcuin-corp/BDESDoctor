@@ -12,5 +12,5 @@ namespace Alcuin.BDES
 
         [Description("Avertissement")]
         Warrning
-    }
+}
 }

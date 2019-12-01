@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿// <copyright file="Colander.cs" company="Alcuin">
+// Copyright (c) Alcuin. All rights reserved.
+// </copyright>
+
+using System.Collections.Generic;
 using Alcuin.BDES.Indicators;
 using Aspose.Cells;
 

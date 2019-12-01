@@ -1,4 +1,8 @@
-﻿using Alcuin.BDES.Domain.Transcodification;
+﻿// <copyright file="TextColumn.cs" company="Alcuin">
+// Copyright (c) Alcuin. All rights reserved.
+// </copyright>
+
+using Alcuin.BDES.Domain.Transcodification;
 
 namespace Alcuin.BDES.Domain.Columns
 {
@@ -42,7 +46,7 @@ namespace Alcuin.BDES.Domain.Columns
 
         protected override string GetInvalidCellContentMessage(string cellContent)
         {
-            return $"Dans l'onglet '{this.Sheet.Name}', la colonne '{this.Header}' contient la donnée [{cellContent}] qui dépasse la limite des {MaximumTextLenght} caractères.";
+            return $"Dans l'onglet «{this.Sheet.Name}», la colonne «{this.Header}» contient une valeur texte qui dépasse la limite des {MaximumTextLenght} caractères. Veuillez vérifier que les valeurs textes respectent cette limite.";
         }
     }
 }

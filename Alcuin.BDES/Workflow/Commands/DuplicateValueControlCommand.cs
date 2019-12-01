@@ -1,4 +1,8 @@
-﻿using System.Linq;
+﻿// <copyright file="DuplicateValueControlCommand.cs" company="Alcuin">
+// Copyright (c) Alcuin. All rights reserved.
+// </copyright>
+
+using System.Linq;
 using Alcuin.BDES.Domain;
 using Alcuin.BDES.Helper;
 using Alcuin.BDES.Monitoring;
@@ -27,7 +31,7 @@ namespace Alcuin.BDES.Workflow.Commands
 
                 if (duplicatedValues.Any())
                 {
-                    this.PublishError($"Dans l'onglet '{column.Sheet.Name}' des doublons de '{column.Header}' ont été trouvés.");
+                    this.PublishError($"Dans l'onglet «{column.Sheet.Name}» des doublons de «{column.Header}» ont été trouvé. Veuillez vérifier qu’il n’y est pas de «{column.Header}» en double.");
                 }
             }
         }

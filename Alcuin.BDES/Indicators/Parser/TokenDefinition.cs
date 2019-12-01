@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿// <copyright file="TokenDefinition.cs" company="Alcuin">
+// Copyright (c) Alcuin. All rights reserved.
+// </copyright>
+
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace Alcuin.BDES.Indicators.Parser

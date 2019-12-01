@@ -21,7 +21,7 @@ Scenario: Processing file within column 'Structure' in 'effectifs' worksheet sho
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Succes messages
 		| Message                                                                  |
-		| La colonne 'Structure' de l'onglet 'effectifs' est bien prise en compte. |
+		| La colonne 'Structure' de l’onglet 'effectifs' est bien prise en compte. |
 
 Scenario: Processing file with empty cell in column 'Structure' should have a warrning message
 	Given I have a workbook mybook.xlsx
@@ -42,4 +42,4 @@ Scenario: Processing file with invalid cell content in column 'Structure' should
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Error messages
 		| Message                                                                                                                                                                                 |
-		| Dans l'onglet 'effectifs', la colonne 'Structure' contient la donnée [A2542222222222222222222222222222222222222222222222222222222222222222222AAAAAAAAAAAAAAAAAAAAAAAAAAAAnbbbbbbvggggfffffffffdasAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA] qui dépasse la limite des 255 caractères. |
+		| Dans l'onglet «effectifs», la colonne «Structure» contient une valeur texte qui dépasse la limite des 255 caractères. Veuillez vérifier que les valeurs textes respectent cette limite. |

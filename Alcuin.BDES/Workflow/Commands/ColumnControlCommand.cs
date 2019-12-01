@@ -1,4 +1,8 @@
-﻿using System.Linq;
+﻿// <copyright file="SheetColumnControlCommand.cs" company="Alcuin">
+// Copyright (c) Alcuin. All rights reserved.
+// </copyright>
+
+using System.Linq;
 using Alcuin.BDES.Domain;
 using Alcuin.BDES.Helper;
 using Alcuin.BDES.Monitoring;
@@ -67,13 +71,13 @@ namespace Alcuin.BDES.Workflow.Commands
 
         private static string GetMessingOptionalColumnMessage(string columnName, string sheetName)
         {
-            return $"La colonne '{columnName}' n'est pas présente dans l'onglet '{sheetName}', "
+            return $"La colonne '{columnName}' n'est pas présente dans L'onglet '{sheetName}', "
                 + "aucun indicateur lié à cette colonne ne sera calculé lors de la conversion.";
         }
 
         private static string GetColumnFoundMessage(string columnName, string sheetName)
         {
-            return $"La colonne '{columnName}' de l'onglet '{sheetName}' est bien prise en compte.";
+            return $"La colonne '{columnName}' de l’onglet '{sheetName}' est bien prise en compte.";
         }
     }
 }

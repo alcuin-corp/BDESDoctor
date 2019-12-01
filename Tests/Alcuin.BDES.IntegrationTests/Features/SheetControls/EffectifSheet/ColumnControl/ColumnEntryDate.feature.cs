@@ -128,7 +128,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table63.AddRow(new string[] {
-                            "La colonne \'Date d\'entrée\' n\'est pas présente dans l\'onglet \'effectifs\', aucun in" +
+                            "La colonne \'Date d\'entrée\' n\'est pas présente dans L\'onglet \'effectifs\', aucun in" +
                                 "dicateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 10
  testRunner.Then("I should found the following Warrning messages", ((string)(null)), table63, "Then ");
@@ -210,7 +210,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table65 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table65.AddRow(new string[] {
-                            "La colonne \'Date d\'entrée\' de l\'onglet \'effectifs\' est bien prise en compte."});
+                            "La colonne \'Date d\'entrée\' de l’onglet \'effectifs\' est bien prise en compte."});
 #line 21
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table65, "Then ");
 #line hidden
@@ -329,8 +329,9 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table69.AddRow(new string[] {
-                            "Dans l\'onglet \'effectifs\', la colonne \'Date d\'entrée\' contient une donnée non rec" +
-                                "onnue [31/02/2019] (format attendu jj/MM/aaaa)."});
+                            "Dans l\'onglet «effectifs», la colonne «Date d\'entrée» contient une date n’est pas" +
+                                " dans le bon format. Le format attendu est JJ/MM/AAAA. Veuillez vérifier que les" +
+                                " dates respectent ce format."});
 #line 41
  testRunner.Then("I should found the following Error messages", ((string)(null)), table69, "Then ");
 #line hidden

@@ -199,7 +199,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table123 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table123.AddRow(new string[] {
-                            "La colonne \'Structure\' de l\'onglet \'effectifs\' est bien prise en compte."});
+                            "La colonne \'Structure\' de l’onglet \'effectifs\' est bien prise en compte."});
 #line 22
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table123, "Then ");
 #line hidden
@@ -321,7 +321,9 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table127 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table127.AddRow(new string[] {
-                            @"Dans l'onglet 'effectifs', la colonne 'Structure' contient la donnée [A2542222222222222222222222222222222222222222222222222222222222222222222AAAAAAAAAAAAAAAAAAAAAAAAAAAAnbbbbbbvggggfffffffffdasAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA] qui dépasse la limite des 255 caractères."});
+                            "Dans l\'onglet «effectifs», la colonne «Structure» contient une valeur texte qui d" +
+                                "épasse la limite des 255 caractères. Veuillez vérifier que les valeurs textes re" +
+                                "spectent cette limite."});
 #line 43
  testRunner.Then("I should found the following Error messages", ((string)(null)), table127, "Then ");
 #line hidden

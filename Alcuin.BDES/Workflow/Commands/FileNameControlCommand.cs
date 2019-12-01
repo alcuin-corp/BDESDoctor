@@ -1,4 +1,8 @@
-﻿namespace Alcuin.BDES.Workflow.Commands
+﻿// <copyright file="ControlCommand.cs" company="Alucin">
+// Copyright (c) Alucin. All rights reserved.
+// </copyright>
+
+namespace Alcuin.BDES.Workflow.Commands
 {
     using System;
     using System.IO;

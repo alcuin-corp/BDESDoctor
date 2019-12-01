@@ -128,7 +128,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table105 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table105.AddRow(new string[] {
-                            "La colonne \'Salaire mensuel brut\' n\'est pas présente dans l\'onglet \'effectifs\', a" +
+                            "La colonne \'Salaire mensuel brut\' n\'est pas présente dans L\'onglet \'effectifs\', a" +
                                 "ucun indicateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 10
  testRunner.Then("I should found the following Warrning messages", ((string)(null)), table105, "Then ");
@@ -222,7 +222,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table107 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table107.AddRow(new string[] {
-                            "La colonne \'Salaire mensuel brut\' de l\'onglet \'effectifs\' est bien prise en compt" +
+                            "La colonne \'Salaire mensuel brut\' de l’onglet \'effectifs\' est bien prise en compt" +
                                 "e."});
 #line 21
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table107, "Then ");
@@ -350,8 +350,9 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table111 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table111.AddRow(new string[] {
-                            "Dans l\'onglet \'effectifs\', la colonne \'Salaire mensuel brut\' contient une donnée " +
-                                "non reconnue [211.21] (format attendu [####,##])."});
+                            "Dans l\'onglet «effectifs», la colonne «Salaire mensuel brut» contient une valeur " +
+                                "numérique qui n’est pas dans le bon format. Le format attendu est « ####,## ». V" +
+                                "euillez vérifier que les valeurs numériques respectent ce format."});
 #line 42
  testRunner.Then("I should found the following Error messages", ((string)(null)), table111, "Then ");
 #line hidden

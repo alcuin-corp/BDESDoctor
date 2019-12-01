@@ -1,4 +1,8 @@
-﻿using Alcuin.BDES.Monitoring;
+﻿// <copyright file="Command.cs" company="Alcuin">
+// Copyright (c) Alcuin. All rights reserved.
+// </copyright>
+
+using Alcuin.BDES.Monitoring;
 
 namespace Alcuin.BDES.Workflow.Commands
 {

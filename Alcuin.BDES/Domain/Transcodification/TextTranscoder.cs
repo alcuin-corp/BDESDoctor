@@ -1,4 +1,8 @@
-﻿namespace Alcuin.BDES.Domain.Transcodification
+﻿// <copyright file="TextTranscoder.cs" company="Alcuin">
+// Copyright (c) Alcuin. All rights reserved.
+// </copyright>
+
+namespace Alcuin.BDES.Domain.Transcodification
 {
     internal class TextTranscoder : Transcoder<char>
     {

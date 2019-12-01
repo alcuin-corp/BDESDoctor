@@ -9,7 +9,7 @@ Scenario: Processing file within column 'Date de naissance' in 'effectifs' shoul
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Warrning messages
 		| Message                                                                                                                                                  |
-		| La colonne 'Date de naissance' n'est pas présente dans l'onglet 'effectifs', aucun indicateur lié à cette colonne ne sera calculé lors de la conversion. |
+		| La colonne 'Date de naissance' n'est pas présente dans L'onglet 'effectifs', aucun indicateur lié à cette colonne ne sera calculé lors de la conversion. |
 
 Scenario: Processing file within column 'Date de naissance' in 'effectifs' should have a success message
 	Given I have a workbook mybook.xlsx
@@ -20,7 +20,7 @@ Scenario: Processing file within column 'Date de naissance' in 'effectifs' shoul
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Succes messages
 		| Message                                                                          |
-		| La colonne 'Date de naissance' de l'onglet 'effectifs' est bien prise en compte. |
+		| La colonne 'Date de naissance' de l’onglet 'effectifs' est bien prise en compte. |
 
 Scenario: Processing file with empty cell in column 'Date de naissance' should have a warrning message
 	Given I have a workbook mybook.xlsx
@@ -36,8 +36,8 @@ Scenario: Processing file with invalid cell content in column 'Date de naissance
 	Given I have a workbook mybook.xlsx
 	And it has a workSheet effectifs with the following content
 		| Matricule | Structure | CSP   | Sexe  | Date de naissance |
-		| 1254      | Alcuin    | CADRE | Homme | invalid data      |
+		| 1254      | Alcuin    | CADRE | Homme | 2012/02/19        |
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Error messages
-		| Message |
-		| Dans l'onglet 'effectifs', la colonne 'Date de naissance' contient une donnée non reconnue [invalid data] (format attendu jj/MM/aaaa). |
+		| Message                                                                                                                                                                                           |
+		| Dans l'onglet «effectifs», la colonne «Date de naissance» contient une date n’est pas dans le bon format. Le format attendu est JJ/MM/AAAA. Veuillez vérifier que les dates respectent ce format. |

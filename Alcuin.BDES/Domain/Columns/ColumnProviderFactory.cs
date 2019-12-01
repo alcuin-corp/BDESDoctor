@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="ColumnProviderFactory.cs" company="Alcuin">
+// Copyright (c) Alcuin. All rights reserved.
+// </copyright>
+
+using System;
 
 namespace Alcuin.BDES.Domain
 {

@@ -9,7 +9,7 @@ Scenario: Processing file within column 'Salaire mensuel brut' in 'effectifs' sh
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Warrning messages
 		| Message                                                                                                                                                     |
-		| La colonne 'Salaire mensuel brut' n'est pas présente dans l'onglet 'effectifs', aucun indicateur lié à cette colonne ne sera calculé lors de la conversion. |
+		| La colonne 'Salaire mensuel brut' n'est pas présente dans L'onglet 'effectifs', aucun indicateur lié à cette colonne ne sera calculé lors de la conversion. |
 
 Scenario: Processing file within column 'Salaire mensuel brut' in 'effectifs' should have a success log
 	Given I have a workbook mybook.xlsx
@@ -20,7 +20,7 @@ Scenario: Processing file within column 'Salaire mensuel brut' in 'effectifs' sh
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Succes messages
 		| Message                                                                             |
-		| La colonne 'Salaire mensuel brut' de l'onglet 'effectifs' est bien prise en compte. |
+		| La colonne 'Salaire mensuel brut' de l’onglet 'effectifs' est bien prise en compte. |
 
 Scenario: Processing file with empty cell in column 'Salaire mensuel brut' should have a warrning message
 	Given I have a workbook mybook.xlsx
@@ -41,4 +41,4 @@ Scenario: Processing file with invalid cell content in column 'Salaire mensuel b
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Error messages
 		| Message                                                                                                                                                                                                                            |
-		| Dans l'onglet 'effectifs', la colonne 'Salaire mensuel brut' contient une donnée non reconnue [211.21] (format attendu [####,##]). |
+		| Dans l'onglet «effectifs», la colonne «Salaire mensuel brut» contient une valeur numérique qui n’est pas dans le bon format. Le format attendu est « ####,## ». Veuillez vérifier que les valeurs numériques respectent ce format. |

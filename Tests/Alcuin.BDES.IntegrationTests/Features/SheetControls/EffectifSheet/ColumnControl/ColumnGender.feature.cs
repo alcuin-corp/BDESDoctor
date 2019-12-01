@@ -208,7 +208,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table73 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table73.AddRow(new string[] {
-                            "La colonne \'Sexe\' de l\'onglet \'effectifs\' est bien prise en compte."});
+                            "La colonne \'Sexe\' de l’onglet \'effectifs\' est bien prise en compte."});
 #line 21
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table73, "Then ");
 #line hidden
@@ -256,7 +256,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "1254",
                             "Alcuin",
                             "Cadre",
-                            "invalid data"});
+                            "Chat"});
 #line 27
  testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table74, "And ");
 #line hidden
@@ -266,8 +266,8 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table75 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table75.AddRow(new string[] {
-                            "Dans l\'onglet \'effectifs\', la colonne \'Sexe\' contient une donnée non reconnue [in" +
-                                "valid data] (valeurs autorisées [Homme, Femme])."});
+                            "Dans l\'onglet «effectifs», la colonne «Sexe» à une valeur qui texte n’est pas rec" +
+                                "onnue \'Chat\'. Les valeurs pouvant être utilisées sont «Homme, Femme»."});
 #line 31
  testRunner.Then("I should found the following Error messages", ((string)(null)), table75, "Then ");
 #line hidden

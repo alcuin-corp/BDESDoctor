@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="RepositoryColumn.cs" company="Alcuin">
+// Copyright (c) Alcuin. All rights reserved.
+// </copyright>
+
+using System;
 using Alcuin.BDES.Domain.Columns;
 using Alcuin.BDES.Domain.Transcodification;
 using Aspose.Cells;
@@ -50,7 +54,8 @@ namespace Alcuin.BDES.Domain
 
         protected override string GetInvalidCellContentMessage(string cellContent)
         {
-            return $"Dans l'onglet '{this.Sheet.Name}', la colonne '{this.Header}' contient une donnée non reconnue [{cellContent}] (valeurs autorisées [{this.allowedValues}]).";
+            return $"Dans l'onglet «{this.Sheet.Name}», la colonne «{this.Header}» à une valeur qui texte n’est pas reconnue '{cellContent}'."
+                 + $" Les valeurs pouvant être utilisées sont «{this.allowedValues}».";
         }
     }
 }

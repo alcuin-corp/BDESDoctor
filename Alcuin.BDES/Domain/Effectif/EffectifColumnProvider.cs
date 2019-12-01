@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿// <copyright file="EffectifColumnProvider.cs" company="Alcuin">
+// Copyright (c) Alcuin. All rights reserved.
+// </copyright>
+
+using System.Collections.Generic;
 using Alcuin.BDES.Domain.Columns;
 using Alcuin.BDES.Domain.Transcodification;
 using Alcuin.BDES.Model;

@@ -201,7 +201,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table57.AddRow(new string[] {
-                            "La colonne \'CSP\' de l\'onglet \'effectifs\' est bien prise en compte."});
+                            "La colonne \'CSP\' de l’onglet \'effectifs\' est bien prise en compte."});
 #line 22
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table57, "Then ");
 #line hidden
@@ -316,9 +316,9 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table61.AddRow(new string[] {
-                            "Dans l\'onglet \'effectifs\', la colonne \'CSP\' contient une donnée non reconnue [Ing" +
-                                "énieur] (valeurs autorisées [Cadre, Employé, Ouvrier, Agent de maitrise, Technic" +
-                                "ien])."});
+                            "Dans l\'onglet «effectifs», la colonne «CSP» à une valeur qui texte n’est pas reco" +
+                                "nnue \'Ingénieur\'. Les valeurs pouvant être utilisées sont «Cadre, Employé, Ouvri" +
+                                "er, Agent de maitrise, Technicien»."});
 #line 42
  testRunner.Then("I should found the following Error messages", ((string)(null)), table61, "Then ");
 #line hidden

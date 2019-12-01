@@ -9,7 +9,7 @@ Scenario: Processing file within column 'Date d'entrée' in 'effectifs' should h
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Warrning messages
 		| Message                                                                                                                                              |
-		| La colonne 'Date d'entrée' n'est pas présente dans l'onglet 'effectifs', aucun indicateur lié à cette colonne ne sera calculé lors de la conversion. |
+		| La colonne 'Date d'entrée' n'est pas présente dans L'onglet 'effectifs', aucun indicateur lié à cette colonne ne sera calculé lors de la conversion. |
 
 Scenario: Processing file within column 'Date d'entrée' in 'effectifs' worksheet should have a success log
 	Given I have a workbook mybook.xlsx
@@ -20,7 +20,7 @@ Scenario: Processing file within column 'Date d'entrée' in 'effectifs' workshee
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Succes messages
 		| Message                                                                      |
-		| La colonne 'Date d'entrée' de l'onglet 'effectifs' est bien prise en compte. |
+		| La colonne 'Date d'entrée' de l’onglet 'effectifs' est bien prise en compte. |
 
 Scenario: Processing file with empty cell in column 'Date d'entrée' should have a warrning message
 	Given I have a workbook mybook.xlsx
@@ -40,4 +40,4 @@ Scenario: Processing file with invalid cell content in column 'Date d'entrée' s
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Error messages
 		| Message                                                                                                                                                                                       |
-		| Dans l'onglet 'effectifs', la colonne 'Date d'entrée' contient une donnée non reconnue [31/02/2019] (format attendu jj/MM/aaaa). |
+		| Dans l'onglet «effectifs», la colonne «Date d'entrée» contient une date n’est pas dans le bon format. Le format attendu est JJ/MM/AAAA. Veuillez vérifier que les dates respectent ce format. |

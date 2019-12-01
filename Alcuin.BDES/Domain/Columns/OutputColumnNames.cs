@@ -1,4 +1,8 @@
-﻿namespace Alcuin.BDES.Domain.Columns
+﻿// <copyright file="OutputColumnNames.cs" company="Alcuin">
+// Copyright (c) Alcuin. All rights reserved.
+// </copyright>
+
+namespace Alcuin.BDES.Domain.Columns
 {
     public class OutputColumnNames
     {

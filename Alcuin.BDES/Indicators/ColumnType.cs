@@ -1,4 +1,8 @@
-﻿namespace Alcuin.BDES.Indicators
+﻿// <copyright file="ColumnType.cs" company="Alcuin">
+// Copyright (c) Alcuin. All rights reserved.
+// </copyright>
+
+namespace Alcuin.BDES.Indicators
 {
     internal enum ValueType
     {

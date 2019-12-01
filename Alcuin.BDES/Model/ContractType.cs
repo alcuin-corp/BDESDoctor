@@ -1,4 +1,8 @@
-﻿namespace Alcuin.BDES.Domain
+﻿// <copyright file="ContractType.cs" company="Alcuin">
+// Copyright (c) Alcuin. All rights reserved.
+// </copyright>
+
+namespace Alcuin.BDES.Domain
 {
     internal enum ContractType
     {
