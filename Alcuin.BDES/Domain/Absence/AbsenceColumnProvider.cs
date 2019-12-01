@@ -13,7 +13,7 @@ namespace Alcuin.BDES.Domain
         {
             return new List<Column>()
             {
-                new TextColumn(ColumnNames.Identifier, true, false)
+                new TextColumn(ColumnNames.Identifier, true, true)
             };
         }
     }

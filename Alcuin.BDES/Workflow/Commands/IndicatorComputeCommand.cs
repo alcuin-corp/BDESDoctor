@@ -4,7 +4,7 @@
 
 using System.Linq;
 using Alcuin.BDES.Indicators;
-using Alcuin.BDES.Monitoring;
+using Alcuin.BDES.Interfaces;
 
 namespace Alcuin.BDES.Workflow.Commands
 {
@@ -21,9 +21,10 @@ namespace Alcuin.BDES.Workflow.Commands
             foreach (var sheet in processingContext.AvailableSheets)
             {
 
-                foreach (var row in sheet.GetRows())
+                foreach (var indicator in sheet.Indicators)
                 {
-                    foreach (var indicator in sheet.Indicators)
+                    request.Indicators.Add(indicator);
+                    foreach (var row in sheet.GetRows())
                     {
                         request.ProgressRate += (int)rate;
                         var groupKey = indicator.GroupColumn.GetCleanCell(row);

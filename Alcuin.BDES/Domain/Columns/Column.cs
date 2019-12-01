@@ -4,6 +4,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using Alcuin.BDES.Indicators.Criterias;
 using Aspose.Cells;
 
 namespace Alcuin.BDES.Domain
@@ -51,6 +52,8 @@ namespace Alcuin.BDES.Domain
         internal virtual string GetCleanCell(Row row) => this.GetCell(row);
 
         internal abstract bool IsValidContent(string cellContent, out string errorMessage);
+
+        internal abstract ICriteria GetCriteria(CriteriaDefinition criteriaDefinition);
 
         protected abstract string GetInvalidCellContentMessage(string cellContent);
     }

@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Alcuin.BDES.Helper;
+using Alcuin.BDES.Indicators.Criterias;
 
 namespace Alcuin.BDES.Indicators.Parser
 {
@@ -15,15 +16,15 @@ namespace Alcuin.BDES.Indicators.Parser
         private Token lookaheadFirst;
         private Token lookaheadSecond;
 
-        private MatchCondition currentMatchCondition;
+        private CriteriaDefinition currentCriteriaDefinition;
 
         public FormulaAnalyzer(List<Token> tokens)
         {
-            this.MatchConditions = new List<MatchCondition>();
+            this.CriteriaDefinitions = new List<CriteriaDefinition>();
             this.Parse(tokens);
         }
 
-        internal List<MatchCondition> MatchConditions { get; }
+        internal List<CriteriaDefinition> CriteriaDefinitions { get; }
 
         internal AgregateFunction AgregateFunction { get; private set; }
 
@@ -120,7 +121,7 @@ namespace Alcuin.BDES.Indicators.Parser
         {
             if (this.lookaheadFirst.TokenType == TokenType.Agregate)
             {
-                if (this.lookaheadFirst.Value.In("count", "Sum", "∑"))
+                if (this.lookaheadFirst.Value.In("Count", "Sum", "∑"))
                 {
                     return AgregateFunction.Count;
                 }
@@ -176,22 +177,20 @@ namespace Alcuin.BDES.Indicators.Parser
 
         private void YearOfCondition()
         {
-            this.currentMatchCondition.TransformationFunction = this.GetTransformFunction();
-            this.currentMatchCondition.UseFunction = true;
+            this.currentCriteriaDefinition.ScalarFunction = this.GetTransformFunction();
             this.DiscardToken();
-            this.currentMatchCondition.ColumnName = this.ReadColumnName();
+            this.currentCriteriaDefinition.ColumnName = this.ReadColumnName();
             this.EqualityMatchCondition();
         }
 
         private void AgeCondition()
         {
-            this.currentMatchCondition.TransformationFunction = this.GetTransformFunction();
-            this.currentMatchCondition.UseFunction = true;
-            this.currentMatchCondition.ColumnName = "date de naissance";
+            this.currentCriteriaDefinition.ScalarFunction = this.GetTransformFunction();
+            this.currentCriteriaDefinition.ColumnName = "date de naissance";
             this.DiscardToken();
-            this.currentMatchCondition.Operator = this.GetOperator(this.lookaheadFirst);
+            this.currentCriteriaDefinition.Operator = this.GetOperator(this.lookaheadFirst);
             this.DiscardToken();
-            this.currentMatchCondition.Value = this.ReadNumber();
+            this.currentCriteriaDefinition.Values.Add(this.ReadNumber().ToString());
             this.DiscardToken();
             this.MatchConditionNext();
         }
@@ -201,29 +200,29 @@ namespace Alcuin.BDES.Indicators.Parser
             return decimal.Parse(this.ReadToken(TokenType.Number).Value);
         }
 
-        private TransformationFunction GetTransformFunction()
+        private ScalarFunction GetTransformFunction()
         {
             if (this.lookaheadFirst.TokenType == TokenType.YearOf)
             {
-                return TransformationFunction.YearOf;
+                return ScalarFunction.YearOf;
             }
 
-            return TransformationFunction.Age;
+            return ScalarFunction.Age;
         }
 
         private void EqualityMatchCondition()
         {
-            this.currentMatchCondition.ColumnName = this.ReadColumnName();
+            this.currentCriteriaDefinition.ColumnName = this.ReadColumnName();
             this.DiscardToken();
-            this.currentMatchCondition.Operator = this.GetOperator(this.lookaheadFirst);
+            this.currentCriteriaDefinition.Operator = this.GetOperator(this.lookaheadFirst);
             this.DiscardToken();
             if (this.lookaheadFirst.TokenType == TokenType.Reference)
             {
-                this.currentMatchCondition.Value = "reference";
+                this.currentCriteriaDefinition.Values.Add("reference");
             }
             else
             {
-                this.currentMatchCondition.Value = this.ReadString();
+                this.currentCriteriaDefinition.Values.Add(this.ReadString());
             }
 
             this.DiscardToken();
@@ -268,9 +267,9 @@ namespace Alcuin.BDES.Indicators.Parser
 
         private void ParseInCondition(Operator inOperator)
         {
-            this.currentMatchCondition.Operator = inOperator;
+            this.currentCriteriaDefinition.Operator = inOperator;
             //this.currentMatchCondition.Values = new List<string>();
-            this.currentMatchCondition.ColumnName = this.ReadColumnName();
+            this.currentCriteriaDefinition.ColumnName = this.ReadColumnName();
             this.DiscardToken();
 
             if (inOperator == Operator.In)
@@ -332,14 +331,14 @@ namespace Alcuin.BDES.Indicators.Parser
 
         private void AndMatchCondition()
         {
-            this.currentMatchCondition.LogicalOperatorToNextCondition = LogicalOperator.And;
+            this.currentCriteriaDefinition.LogicalOperatorToNextCondition = LogicalOperator.And;
             this.DiscardToken(TokenType.And);
             this.MatchCondition();
         }
 
         private void OrMatchCondition()
         {
-            this.currentMatchCondition.LogicalOperatorToNextCondition = LogicalOperator.Or;
+            this.currentCriteriaDefinition.LogicalOperatorToNextCondition = LogicalOperator.Or;
             this.DiscardToken(TokenType.Or);
             this.MatchCondition();
         }
@@ -382,8 +381,8 @@ namespace Alcuin.BDES.Indicators.Parser
 
         private void CreateNewMatchCondition()
         {
-            this.currentMatchCondition = new MatchCondition();
-            this.MatchConditions.Add(this.currentMatchCondition);
+            this.currentCriteriaDefinition = new CriteriaDefinition();
+            this.CriteriaDefinitions.Add(this.currentCriteriaDefinition);
         }
     }
 }

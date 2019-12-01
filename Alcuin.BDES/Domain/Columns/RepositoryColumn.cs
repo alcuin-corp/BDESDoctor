@@ -5,12 +5,14 @@
 using System;
 using Alcuin.BDES.Domain.Columns;
 using Alcuin.BDES.Domain.Transcodification;
+using Alcuin.BDES.Helper;
+using Alcuin.BDES.Indicators.Criterias;
 using Aspose.Cells;
 
 namespace Alcuin.BDES.Domain
 {
     internal class RepositoryColumn<T> : TextColumn
-        where T : Enum
+        where T : struct, Enum
     {
         private readonly Transcoder<T> transcoder;
 
@@ -50,6 +52,22 @@ namespace Alcuin.BDES.Domain
         {
             var value = this.GetCell(row);
             return this.CleanValue(value);
+        }
+
+        internal override ICriteria GetCriteria(CriteriaDefinition criteriaDefinition)
+        {
+            var criteria = new RepositoryCriteria<T>(criteriaDefinition) { Column = this };
+            foreach (var value in criteriaDefinition.Values)
+            {
+                if (!this.transcoder.TryTranscode(value, out T result) && !value.TryParseEnum(out result))
+                {
+                    throw new InvalidCastException($"{value}  can not be parsed !");
+                }
+
+                criteria.Values.Add(result);
+            }
+
+            return criteria;
         }
 
         protected override string GetInvalidCellContentMessage(string cellContent)

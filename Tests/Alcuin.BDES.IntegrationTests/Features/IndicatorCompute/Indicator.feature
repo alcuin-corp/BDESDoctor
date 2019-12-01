@@ -10,12 +10,12 @@ Scenario: Load and compute indicators
 		| 1257      | CGI       | Femme | Cadre   | Francaise   | CDI             | dem                         | 16/03/1987        |
 		| 1235      | Alcuin    | Femme | ouvrier | Autre       | CDI             | dem                         | 16/03/1983        |
 	And I have the folowing indicators definition
-		| Onglet   | Domaine  | Sous Domaine      | Indicateur        | Champs            | Formule                                                                                       |
-		| Effectif | Effectif | Effectif au 31/12 | Naissance 1986    | Cadre             | ∑ [matricule] par [structure] dont [CSP] est 'Cadre' et année[date de naissance] >> reference |
-		| Effectif | Effectif | Effectif au 31/12 | total des cadres  | Agent de Maitrise | ∑ [matricule] par [structure] dont [CSP] est 'Cadre'                                          |
-		| Effectif | Effectif | Effectif au 31/12 | total des ouvrier | Agent de Maitrise | ∑ [matricule] par [structure] dont [CSP] est 'ouv'                                            |
-		| Effectif | Effectif | Effectif au 31/12 | indicateur 1      | Agent de Maitrise | ∑ [matricule] par [structure] dont [CSP] est 'Cadre' et [sexe] est 'H'                        |
-		| Effectif | Effectif | Effectif au 31/12 | indicateur 2      | Agent de Maitrise | ∑ [matricule] par [structure] dont [CSP] est 'Cadre' et [Salaire mensuel brut] == '3500'      |
+		| Onglet    | Domaine  | Sous Domaine      | Indicateur        | Champs            | Formule                                                                                    |
+		| Effectifs | Effectif | Effectif au 31/12 | Naissance 1986    | Cadre             | Count [matricule] par [structure] dont [CSP] est 'Cadre' et année[date de naissance] >> '1986' |
+		| Effectifs | Effectif | Effectif au 31/12 | total des cadres  | Agent de Maitrise | Count [matricule] par [structure] dont [CSP] est 'Cadre'                                       |
+		| Effectifs | Effectif | Effectif au 31/12 | total des ouvrier | Agent de Maitrise | Count [matricule] par [structure] dont [CSP] est 'ouv'                                         |
+		| Effectifs | Effectif | Effectif au 31/12 | indicateur 1      | Agent de Maitrise | Count [matricule] par [structure] dont [CSP] est 'Cadre' et [sexe] est 'H'                     |
+		| Effectifs | Effectif | Effectif au 31/12 | indicateur 2      | Agent de Maitrise | Count [matricule] par [structure] dont [CSP] est 'Cadre' et [Salaire mensuel brut] == '3500'   |
 	When I start processing the file mybook.xlsx for the period of 1986
 	Then I should found the following indicators
 		| Indicator         | Group  | Count |
@@ -28,5 +28,5 @@ Scenario: Load and compute indicators
 		| indicateur 1      | Alcuin | 2     |
 		| indicateur 1      | CGI    | 1     |
 	And I should found the following Warrning messages
-		| Message                                                                                                                                        |
-		| L'indicateur 'indicateur 2' ne sera pas calculé, il se base sur la colonne 'salaire mensuel brut' qui est manquante dans l'onglet 'effectifs'. |
+		| Message                                          |
+		| L'indicateur 'indicateur 2' ne sera pas calculé. |

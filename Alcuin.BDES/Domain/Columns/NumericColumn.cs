@@ -3,6 +3,7 @@
 // </copyright>
 
 using System.Text.RegularExpressions;
+using Alcuin.BDES.Indicators.Criterias;
 
 namespace Alcuin.BDES.Domain.Columns
 {
@@ -30,6 +31,12 @@ namespace Alcuin.BDES.Domain.Columns
 
             errorMessage = this.GetInvalidCellContentMessage(cellContent);
             return false;
+        }
+
+        internal override ICriteria GetCriteria(CriteriaDefinition criteriaDefinition)
+        {
+            var criteria = new NumericCriteria(criteriaDefinition) { Column = this };
+            return criteria;
         }
 
         protected override string GetInvalidCellContentMessage(string cellContent)

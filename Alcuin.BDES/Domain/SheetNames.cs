@@ -4,7 +4,7 @@
 
 namespace Alcuin.BDES.Domain
 {
-    public enum FileTab
+    public enum SheetName
     {
         Effectifs = 1,
         Maladies,

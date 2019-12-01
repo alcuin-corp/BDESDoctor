@@ -1,5 +1,5 @@
 ﻿using System;
-using Alcuin.BDES.Domain;
+using Alcuin.BDES.Interfaces;
 using Alcuin.BDES.Ninject;
 
 namespace Alcuin.BDES.Monitoring

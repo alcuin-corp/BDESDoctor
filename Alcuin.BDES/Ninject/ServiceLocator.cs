@@ -17,7 +17,10 @@ namespace Alcuin.BDES.Ninject
             return Kernel.Get<T>();
         }
 
-
+        public static T Resolve<T>(string name)
+        {
+            return Kernel.Get<T>(name);
+        }
 
         public static void Resolve<T>(out T instance)
         {
