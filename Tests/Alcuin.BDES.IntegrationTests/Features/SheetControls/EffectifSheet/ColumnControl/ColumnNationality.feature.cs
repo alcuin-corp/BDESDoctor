@@ -128,7 +128,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table97 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table97.AddRow(new string[] {
-                            "La colonne \'Nationalité\' n\'est pas présente dans L\'onglet \'effectifs\', aucun indi" +
+                            "La colonne \'Nationalité\' n\'est pas présente dans l\'onglet \'effectifs\', aucun indi" +
                                 "cateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 10
  testRunner.Then("I should found the following Warrning messages", ((string)(null)), table97, "Then ");
@@ -189,7 +189,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table99 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table99.AddRow(new string[] {
-                            "La colonne \'Nationalité\' de l’onglet \'effectifs\' est bien prise en compte."});
+                            "La colonne \'Nationalité\' de l\'onglet \'effectifs\' est bien prise en compte."});
 #line 20
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table99, "Then ");
 #line hidden
@@ -300,7 +300,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Alcuin",
                             "Cadre",
                             "Homme",
-                            "Australienne"});
+                            "invalid data"});
 #line 36
  testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table102, "And ");
 #line hidden
@@ -310,9 +310,8 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table103 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table103.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs», la colonne «Nationalité» à une valeur qui texte n’est " +
-                                "pas reconnue \'Australienne\'. Les valeurs pouvant être utilisées sont «Francaise," +
-                                " autre»."});
+                            "Dans l\'onglet \'effectifs\', la colonne \'Nationalité\' contient une donnée non recon" +
+                                "nue [invalid data] (valeurs autorisées [Francaise, autre])."});
 #line 40
  testRunner.Then("I should found the following Error messages", ((string)(null)), table103, "Then ");
 #line hidden

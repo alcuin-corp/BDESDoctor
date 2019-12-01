@@ -1,6 +1,4 @@
-﻿using System.IO;
-using System.IO.Abstractions;
-using Alcuin.BDES.Domain;
+﻿using System.IO.Abstractions;
 using Alcuin.BDES.Helper;
 using Alcuin.BDES.Monitoring;
 using Alcuin.BDES.Ninject;

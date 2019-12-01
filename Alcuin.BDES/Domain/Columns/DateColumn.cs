@@ -1,8 +1,4 @@
-﻿// <copyright file="DateColumn.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-using Alcuin.BDES.Helper;
+﻿using Alcuin.BDES.Helper;
 
 namespace Alcuin.BDES.Domain.Columns
 {
@@ -31,7 +27,7 @@ namespace Alcuin.BDES.Domain.Columns
 
         protected override string GetInvalidCellContentMessage(string cellContent)
         {
-            return $"Dans l'onglet «{this.Sheet.Name}», la colonne «{this.Header}» contient une date n’est pas dans le bon format. Le format attendu est JJ/MM/AAAA. Veuillez vérifier que les dates respectent ce format.";
+            return $"Dans l'onglet '{this.Sheet.Name}', la colonne '{this.Header}' contient une donnée non reconnue [{cellContent}] (format attendu jj/MM/aaaa).";
         }
     }
 }

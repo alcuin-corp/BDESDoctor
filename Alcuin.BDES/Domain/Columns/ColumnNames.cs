@@ -1,8 +1,4 @@
-﻿// <copyright file="ColumnNames.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-namespace Alcuin.BDES.Domain
+﻿namespace Alcuin.BDES.Domain
 {
     internal class ColumnNames
     {

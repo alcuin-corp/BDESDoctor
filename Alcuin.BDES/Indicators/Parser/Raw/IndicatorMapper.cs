@@ -1,8 +1,4 @@
-﻿// <copyright file="IndicatorMapper.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-using CsvHelper.Configuration;
+﻿using CsvHelper.Configuration;
 
 namespace Alcuin.BDES.Indicators.Parser.Raw
 {

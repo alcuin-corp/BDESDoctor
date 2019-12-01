@@ -1,8 +1,4 @@
-﻿// <copyright file="MonitoringEventArgs.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-using System;
+﻿using System;
 using Alcuin.BDES.Monitoring;
 
 namespace Alcuin.BDES

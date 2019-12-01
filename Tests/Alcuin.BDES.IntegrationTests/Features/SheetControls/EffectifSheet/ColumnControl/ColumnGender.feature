@@ -20,17 +20,17 @@ Scenario: Processing file within column 'Sexe' in 'effectifs' worksheet should h
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Succes messages
 		| Message                                                             |
-		| La colonne 'Sexe' de l’onglet 'effectifs' est bien prise en compte. |
+		| La colonne 'Sexe' de l'onglet 'effectifs' est bien prise en compte. |
 
 Scenario: Processing file with invalid cell content in column 'Sexe' should have an error message
 	Given I have a workbook mybook.xlsx
 	And it has a workSheet effectifs with the following content
 		| Matricule | Structure | CSP   | Sexe |
-		| 1254      | Alcuin    | Cadre | Chat |
+		| 1254      | Alcuin    | Cadre | invalid data |
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Error messages
 		| Message                                                                                                                                                |
-		| Dans l'onglet «effectifs», la colonne «Sexe» à une valeur qui texte n’est pas reconnue 'Chat'. Les valeurs pouvant être utilisées sont «Homme, Femme». |
+		| Dans l'onglet 'effectifs', la colonne 'Sexe' contient une donnée non reconnue [invalid data] (valeurs autorisées [Homme, Femme]). |
 
 Scenario: Processing file with empty cell in column 'Sexe' should have a warrning message
 	Given I have a workbook mybook.xlsx

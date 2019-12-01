@@ -1,8 +1,4 @@
-﻿// <copyright file="IndicatorParser.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.IO.Abstractions;
 using Alcuin.BDES.Ninject;

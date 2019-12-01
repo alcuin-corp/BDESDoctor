@@ -128,7 +128,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table113 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table113.AddRow(new string[] {
-                            "La colonne \'Type de reconnaissance\' n\'est pas présente dans L\'onglet \'effectifs\'," +
+                            "La colonne \'Type de reconnaissance\' n\'est pas présente dans l\'onglet \'effectifs\'," +
                                 " aucun indicateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 10
  testRunner.Then("I should found the following Warrning messages", ((string)(null)), table113, "Then ");
@@ -195,7 +195,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table115 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table115.AddRow(new string[] {
-                            "La colonne \'Type de reconnaissance\' de l’onglet \'effectifs\' est bien prise en com" +
+                            "La colonne \'Type de reconnaissance\' de l\'onglet \'effectifs\' est bien prise en com" +
                                 "pte."});
 #line 21
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table115, "Then ");
@@ -307,7 +307,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Alcuin",
                             "Cadre",
                             "Homme",
-                            "HTTP"});
+                            "invalid data"});
 #line 37
  testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table118, "And ");
 #line hidden
@@ -317,8 +317,8 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table119 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table119.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs», la colonne «Type de reconnaissance» à une valeur qui t" +
-                                "exte n’est pas reconnue \'HTTP\'. Les valeurs pouvant être utilisées sont «RQTH»."});
+                            "Dans l\'onglet \'effectifs\', la colonne \'Type de reconnaissance\' contient une donné" +
+                                "e non reconnue [invalid data] (valeurs autorisées [RQTH])."});
 #line 41
  testRunner.Then("I should found the following Error messages", ((string)(null)), table119, "Then ");
 #line hidden

@@ -21,7 +21,7 @@ Scenario: Processing file within column 'CSP' in 'effectifs' should have a succe
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Succes messages
 		| Message                                                            |
-		| La colonne 'CSP' de l’onglet 'effectifs' est bien prise en compte. |
+		| La colonne 'CSP' de l'onglet 'effectifs' est bien prise en compte. |
 
 Scenario: Processing file with empty cell in column 'CSP' should have a warrning message
 	Given I have a workbook mybook.xlsx
@@ -41,4 +41,4 @@ Scenario: Processing file with invalid cell content in column 'CSP' should an er
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Error messages
 		| Message                                                                                                                                                                                              |
-		| Dans l'onglet «effectifs», la colonne «CSP» à une valeur qui texte n’est pas reconnue 'Ingénieur'. Les valeurs pouvant être utilisées sont «Cadre, Employé, Ouvrier, Agent de maitrise, Technicien». |
+		| Dans l'onglet 'effectifs', la colonne 'CSP' contient une donnée non reconnue [Ingénieur] (valeurs autorisées [Cadre, Employé, Ouvrier, Agent de maitrise, Technicien]). |

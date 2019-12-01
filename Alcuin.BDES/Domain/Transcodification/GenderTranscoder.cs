@@ -1,8 +1,4 @@
-﻿// <copyright file="SexTranscoder.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-using Alcuin.BDES.Model;
+﻿using Alcuin.BDES.Model;
 
 namespace Alcuin.BDES.Domain.Transcodification
 {

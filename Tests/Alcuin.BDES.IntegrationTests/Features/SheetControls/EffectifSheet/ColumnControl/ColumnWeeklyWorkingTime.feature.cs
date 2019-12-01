@@ -128,7 +128,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table129 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table129.AddRow(new string[] {
-                            "La colonne \'Durée du temps de travail hebdomadaire\' n\'est pas présente dans L\'ong" +
+                            "La colonne \'Durée du temps de travail hebdomadaire\' n\'est pas présente dans l\'ong" +
                                 "let \'effectifs\', aucun indicateur lié à cette colonne ne sera calculé lors de la" +
                                 " conversion."});
 #line 10
@@ -196,7 +196,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table131 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table131.AddRow(new string[] {
-                            "La colonne \'Durée du temps de travail hebdomadaire\' de l’onglet \'effectifs\' est b" +
+                            "La colonne \'Durée du temps de travail hebdomadaire\' de l\'onglet \'effectifs\' est b" +
                                 "ien prise en compte."});
 #line 21
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table131, "Then ");
@@ -318,10 +318,8 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table135 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table135.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs», la colonne «Durée du temps de travail hebdomadaire» co" +
-                                "ntient une valeur numérique qui n’est pas dans le bon format. Le format attendu " +
-                                "est « ####,## ». Veuillez vérifier que les valeurs numériques respectent ce form" +
-                                "at."});
+                            "Dans l\'onglet \'effectifs\', la colonne \'Durée du temps de travail hebdomadaire\' co" +
+                                "ntient une donnée non reconnue [211.21] (format attendu [####,##])."});
 #line 41
  testRunner.Then("I should found the following Error messages", ((string)(null)), table135, "Then ");
 #line hidden

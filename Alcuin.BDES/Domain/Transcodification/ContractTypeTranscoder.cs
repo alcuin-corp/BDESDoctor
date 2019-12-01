@@ -1,8 +1,4 @@
-﻿// <copyright file="ContractTypeTranscoder.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-namespace Alcuin.BDES.Domain.Transcodification
+﻿namespace Alcuin.BDES.Domain.Transcodification
 {
     internal class ContractTypeTranscoder : Transcoder<ContractType>
     {

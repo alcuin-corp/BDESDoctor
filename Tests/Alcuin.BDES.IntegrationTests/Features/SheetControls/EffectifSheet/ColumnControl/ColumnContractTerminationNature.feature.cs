@@ -152,7 +152,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table39.AddRow(new string[] {
-                            "La colonne \'Nature de la fin de contrat\' de l’onglet \'effectifs\' est bien prise e" +
+                            "La colonne \'Nature de la fin de contrat\' de l\'onglet \'effectifs\' est bien prise e" +
                                 "n compte."});
 #line 10
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table39, "Then ");
@@ -216,7 +216,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table41.AddRow(new string[] {
-                            "La colonne \'Nature de la fin de contrat\' n\'est pas présente dans L\'onglet \'effect" +
+                            "La colonne \'Nature de la fin de contrat\' n\'est pas présente dans l\'onglet \'effect" +
                                 "ifs\', aucun indicateur lié à cette colonne ne sera calculé lors de la conversion" +
                                 "."});
 #line 21
@@ -329,7 +329,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Alcuin",
                             "Cadre",
                             "Homme",
-                            "Contrat"});
+                            "invalid data"});
 #line 37
  testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table44, "And ");
 #line hidden
@@ -339,10 +339,9 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table45.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs», la colonne «Nature de la fin de contrat» à une valeur " +
-                                "qui texte n’est pas reconnue \'Contrat\'. Les valeurs pouvant être utilisées sont " +
-                                "«Retraite, Démission, Fin de CDD, Licenciement, Licenciement économique, Pré-ret" +
-                                "raite»."});
+                            "Dans l\'onglet \'effectifs\', la colonne \'Nature de la fin de contrat\' contient une " +
+                                "donnée non reconnue [invalid data] (valeurs autorisées [Retraite, Démission, Fin" +
+                                " de CDD, Licenciement, Licenciement économique, Pré-retraite])."});
 #line 41
  testRunner.Then("I should found the following Error messages", ((string)(null)), table45, "Then ");
 #line hidden

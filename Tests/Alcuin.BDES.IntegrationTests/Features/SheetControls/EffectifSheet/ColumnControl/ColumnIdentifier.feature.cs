@@ -190,7 +190,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table81 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table81.AddRow(new string[] {
-                            "La colonne \'Matricule\' de l’onglet \'effectifs\' est bien prise en compte."});
+                            "La colonne \'Matricule\' de l\'onglet \'effectifs\' est bien prise en compte."});
 #line 21
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table81, "Then ");
 #line hidden
@@ -253,8 +253,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table83 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table83.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs» des doublons de «Matricule» ont été trouvé. Veuillez vé" +
-                                "rifier qu’il n’y est pas de «Matricule» en double."});
+                            "Dans l\'onglet \'effectifs\' des doublons de \'Matricule\' ont été trouvés."});
 #line 32
  testRunner.Then("I should found the following Error messages", ((string)(null)), table83, "Then ");
 #line hidden
@@ -376,9 +375,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table87 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table87.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs», la colonne «Matricule» contient une valeur texte qui d" +
-                                "épasse la limite des 255 caractères. Veuillez vérifier que les valeurs textes re" +
-                                "spectent cette limite."});
+                            @"Dans l'onglet 'effectifs', la colonne 'Matricule' contient la donnée [125422222222222222222222222222222222222222222222222222222222222222222221111111111111111111111111111nbbbbbbvggggfffffffffdas11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111] qui dépasse la limite des 255 caractères."});
 #line 53
  testRunner.Then("I should found the following Error messages", ((string)(null)), table87, "Then ");
 #line hidden

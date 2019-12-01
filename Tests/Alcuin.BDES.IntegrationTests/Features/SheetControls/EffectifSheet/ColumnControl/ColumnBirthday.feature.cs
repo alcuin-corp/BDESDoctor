@@ -128,7 +128,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table31.AddRow(new string[] {
-                            "La colonne \'Date de naissance\' n\'est pas présente dans L\'onglet \'effectifs\', aucu" +
+                            "La colonne \'Date de naissance\' n\'est pas présente dans l\'onglet \'effectifs\', aucu" +
                                 "n indicateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 10
  testRunner.Then("I should found the following Warrning messages", ((string)(null)), table31, "Then ");
@@ -204,7 +204,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table33.AddRow(new string[] {
-                            "La colonne \'Date de naissance\' de l’onglet \'effectifs\' est bien prise en compte."});
+                            "La colonne \'Date de naissance\' de l\'onglet \'effectifs\' est bien prise en compte."});
 #line 21
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table33, "Then ");
 #line hidden
@@ -315,7 +315,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Alcuin",
                             "CADRE",
                             "Homme",
-                            "2012/02/19"});
+                            "invalid data"});
 #line 37
  testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table36, "And ");
 #line hidden
@@ -325,9 +325,8 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table37.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs», la colonne «Date de naissance» contient une date n’est" +
-                                " pas dans le bon format. Le format attendu est JJ/MM/AAAA. Veuillez vérifier que" +
-                                " les dates respectent ce format."});
+                            "Dans l\'onglet \'effectifs\', la colonne \'Date de naissance\' contient une donnée non" +
+                                " reconnue [invalid data] (format attendu jj/MM/aaaa)."});
 #line 41
  testRunner.Then("I should found the following Error messages", ((string)(null)), table37, "Then ");
 #line hidden

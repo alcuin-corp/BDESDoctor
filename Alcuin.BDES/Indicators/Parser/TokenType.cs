@@ -1,8 +1,4 @@
-﻿// <copyright file="TokenType.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-namespace Alcuin.BDES.Indicators.Parser
+﻿namespace Alcuin.BDES.Indicators.Parser
 {
     internal enum TokenType
     {

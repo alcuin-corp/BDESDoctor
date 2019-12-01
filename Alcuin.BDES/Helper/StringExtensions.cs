@@ -1,8 +1,4 @@
-﻿// <copyright file="StringExtensions.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-using System;
+﻿using System;
 using System.Globalization;
 using System.Linq;
 using System.Text;
