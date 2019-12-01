@@ -6,7 +6,6 @@ using Aspose.Cells;
 
 namespace Alcuin.BDES.Indicators.Criterias
 {
-
     internal class RepositoryCriteria<T> : Criteria
         where T : Enum
     {

@@ -1,8 +1,4 @@
-﻿// <copyright file="IndicatorComputeCommand.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-using System.Linq;
+﻿using System.Linq;
 using Alcuin.BDES.Indicators;
 using Alcuin.BDES.Interfaces;
 

@@ -1,8 +1,4 @@
-﻿// <copyright file="ContractType.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace Alcuin.BDES.Domain
 {

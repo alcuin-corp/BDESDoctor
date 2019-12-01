@@ -1,8 +1,4 @@
-﻿// <copyright file="IndicatorValue.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-using System.Threading;
+﻿using System.Threading;
 
 namespace Alcuin.BDES.Indicators
 {

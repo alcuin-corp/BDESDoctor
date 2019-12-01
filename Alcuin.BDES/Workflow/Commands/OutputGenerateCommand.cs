@@ -1,8 +1,4 @@
-﻿// <copyright file="OutputGenerateCommand.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using Alcuin.BDES.Indicators.Dumper;
 using Alcuin.BDES.Interfaces;

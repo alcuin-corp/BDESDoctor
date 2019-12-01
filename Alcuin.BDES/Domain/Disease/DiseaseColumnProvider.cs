@@ -1,8 +1,4 @@
-﻿// <copyright file="DiseaseColumnProvider.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Alcuin.BDES.Domain.Columns;
 
 namespace Alcuin.BDES.Domain

@@ -1,8 +1,4 @@
-﻿// <copyright file="RepositoryColumn.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-using System;
+﻿using System;
 using Alcuin.BDES.Domain.Columns;
 using Alcuin.BDES.Domain.Transcodification;
 using Alcuin.BDES.Helper;

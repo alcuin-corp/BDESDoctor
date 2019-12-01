@@ -1,8 +1,4 @@
-﻿// <copyright file="DateColumn.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-using Alcuin.BDES.Helper;
+﻿using Alcuin.BDES.Helper;
 using Alcuin.BDES.Indicators;
 using Alcuin.BDES.Indicators.Criterias;
 

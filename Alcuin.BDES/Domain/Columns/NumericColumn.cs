@@ -1,8 +1,4 @@
-﻿// <copyright file="NumericColumn.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using Alcuin.BDES.Indicators.Criterias;
 
 namespace Alcuin.BDES.Domain.Columns

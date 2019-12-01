@@ -1,8 +1,4 @@
-﻿// <copyright file="ColumnProviderFactory.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-using Alcuin.BDES.Ninject;
+﻿using Alcuin.BDES.Ninject;
 
 namespace Alcuin.BDES.Domain
 {

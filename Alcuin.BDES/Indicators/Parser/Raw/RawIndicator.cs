@@ -24,7 +24,5 @@ namespace Alcuin.BDES.Indicators.Parser.Raw
         public string Field { get; set; }
 
         public string Formula { get; set; }
-
-        
     }
 }

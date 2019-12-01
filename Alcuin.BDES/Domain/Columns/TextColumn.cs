@@ -1,8 +1,4 @@
-﻿// <copyright file="TextColumn.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-using Alcuin.BDES.Domain.Transcodification;
+﻿using Alcuin.BDES.Domain.Transcodification;
 using Alcuin.BDES.Indicators.Criterias;
 
 namespace Alcuin.BDES.Domain.Columns

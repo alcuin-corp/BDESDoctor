@@ -48,7 +48,5 @@ namespace Alcuin.BDES.Indicators.Parser
             clone.CriteriaDefinitions = new List<CriteriaDefinition>(this.CriteriaDefinitions);
             return clone;
         }
-
-       
     }
 }

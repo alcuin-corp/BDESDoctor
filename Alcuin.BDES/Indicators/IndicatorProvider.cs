@@ -1,8 +1,4 @@
-﻿// <copyright file="IndicatorProvider.cs" company="Alcuin">
-// Copyright (c) Alcuin. All rights reserved.
-// </copyright>
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Alcuin.BDES.Domain;
@@ -17,7 +13,6 @@ namespace Alcuin.BDES.Indicators
     {
         private readonly IColumnProviderFactory columnProviderFactory;
         private readonly IRawIndicatorReader rawIndicatorReader;
-
 
         public IndicatorProvider(IRawIndicatorReader rawIndicatorReader, IColumnProviderFactory columnProviderFactory)
         {
