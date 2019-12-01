@@ -16,7 +16,7 @@ namespace Alcuin.BDES.Domain.Columns
         public NumericColumn(string columnheader, bool isMandatory = false)
                 : base(columnheader, isMandatory)
         {
-            this.regex = new Regex("^([1-9]*[0-9]*|[0-9]),([0-9]{1,2})");
+            this.regex = new Regex("^[0-9]*,?[0-9]{1,2}?$");
         }
 
         internal override string GetErrorMessageForEmptyCell() => EmptyCellFoundMessage;
