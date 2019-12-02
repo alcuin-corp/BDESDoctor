@@ -123,7 +123,6 @@
     <Compile Include="Domain\Columns\ColumnProviderFactory.cs" />
     <Compile Include="Domain\Exceptions\DataExtractionException.cs" />
     <Compile Include="Model\ContractType.cs" />
-    <Compile Include="Domain\Disease\DiseaseColumnProvider.cs" />
     <Compile Include="Domain\Effectif\EffectifColumnProvider.cs" />
     <Compile Include="Domain\SheetNames.cs" />
     <Compile Include="Domain\Columns\IColumnProvider.cs" />
@@ -146,7 +145,6 @@
     <Compile Include="Model\CSP.cs" />
     <Compile Include="Domain\Sheet.cs" />
     <Compile Include="RequestFactory.cs" />
-    <Compile Include="Model\Disease.cs" />
     <Compile Include="Interfaces\IMonitoringManager.cs" />
     <Compile Include="MonitoringType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

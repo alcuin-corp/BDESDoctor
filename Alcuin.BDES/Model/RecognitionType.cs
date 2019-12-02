@@ -2,6 +2,7 @@
 {
     internal enum RecognitionType
     {
-        RQTH = 1
+        None,
+        RQTH
     }
 }

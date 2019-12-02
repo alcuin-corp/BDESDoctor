@@ -23,9 +23,9 @@ namespace Alcuin.BDES.Indicators
             this.rawIndicatorReader = rawIndicatorReader;
         }
 
-        public Dictionary<string, List<Indicator>> Load()
+        public Dictionary<SheetName, List<Indicator>> Load()
         {
-            var result = new Dictionary<string, List<Indicator>>();
+            var result = new Dictionary<SheetName, List<Indicator>>();
 
             var indicatorDefinitions = this.rawIndicatorReader
                 .LoadInidcatorFromFile(@"Ressources\RawIndicators.csv")
@@ -35,7 +35,7 @@ namespace Alcuin.BDES.Indicators
             var groupedIndicators = indicatorDefinitions.GroupBy(x => x.SheetName);
             foreach (var group in groupedIndicators)
             {
-                var list = result[group.Key.ToLowerInvariant()] = new List<Indicator>();
+                var list = result[group.Key.ToEnum<SheetName>()] = new List<Indicator>();
                 var genericIndicators = new List<IndicatorDefinition>();
                 var expectedColumns = this.GetColumns(group);
                 foreach (var indicatorDefinition in group)
@@ -75,6 +75,7 @@ namespace Alcuin.BDES.Indicators
                         criteriaClone.Values = criteriaDef.Values.Select(x => x.Replace("Enum", name)).ToList();
                         var clone = indicatorDefinition.Clone();
                         clone.Name = clone.Name.Replace($"[{column.Header}]", name.GetEnumDescription(genericArgument));
+                        clone.Field = clone.Field.Replace($"[{column.Header}]", name.GetEnumDescription(genericArgument));
                         var index = clone.CriteriaDefinitions.IndexOf(criteriaDef);
                         clone.CriteriaDefinitions[index] = criteriaClone;
                         foreach (var indicator in HandleGenericIndicator(clone, expectedColumns))

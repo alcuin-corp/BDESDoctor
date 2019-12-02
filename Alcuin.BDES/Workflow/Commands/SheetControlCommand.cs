@@ -26,7 +26,7 @@ namespace Alcuin.BDES.Workflow.Commands
 
             foreach (var tab in this.tabs)
             {
-                if (availableTabNames.TryGetValue(tab.Name, out var worksheet))
+                if (availableTabNames.TryGetValue(tab.Name.ToLowerInvariant(), out var worksheet))
                 {
                     this.PublishSucces($"L’onglet '{tab.Name}' est bien pris en compte.");
                     tab.RawSheet = worksheet;
@@ -59,7 +59,7 @@ namespace Alcuin.BDES.Workflow.Commands
 
         private string GetMessageForMessingOptionalTab(string tabName)
         {
-            return $"L'onglet '{tabName}' n'est pas présent dans votre fichier, aucun indicateur lié aux {tabName} ne sera calculé lors de la conversion.";
+            return $"L'onglet '{tabName}' n'est pas présent dans votre fichier, aucun indicateur lié aux {tabName.ToLowerInvariant()} ne sera calculé lors de la conversion.";
         }
     }
 }

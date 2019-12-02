@@ -22,6 +22,7 @@ namespace Alcuin.BDES.Indicators.Parser
             this.CriteriaDefinitions = analyzer.CriteriaDefinitions;
             this.AgregateFunction = analyzer.AgregateFunction;
             this.Name = this.rawIndicator.Name;
+            this.Field = this.rawIndicator.Field;
         }
 
         public AgregateFunction AgregateFunction { get; private set; }
@@ -30,11 +31,11 @@ namespace Alcuin.BDES.Indicators.Parser
 
         public string SubDomain => this.rawIndicator.SubDomain;
 
-        public string Name { get; set; }
+        public string Name { get; internal set; }
 
         public string SheetName => this.rawIndicator.SheetName;
 
-        public string Field => this.rawIndicator.Field;
+        public string Field { get; internal set; }
 
         public List<CriteriaDefinition> CriteriaDefinitions { get; set; }
 

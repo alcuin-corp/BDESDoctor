@@ -21,23 +21,12 @@ namespace Alcuin.BDES.Workflow.Commands
             {
                 foreach (var cell in column.GetCells())
                 {
-                    if (cell.IsEmpty())
+                    if (!column.IsValidContent(cell, out var errorMessage))
                     {
-                        this.PublishWarning(column.GetErrorMessageForEmptyCell());
-                    }
-                    else
-                    {
-                        this.CheckCellContent(cell, column);
+                        this.PublishError(errorMessage);
+                        break;
                     }
                 }
-            }
-        }
-
-        private void CheckCellContent(string cellContent, Column column)
-        {
-            if (!column.IsValidContent(cellContent, out var errorMessage))
-            {
-                this.PublishError(errorMessage);
             }
         }
     }

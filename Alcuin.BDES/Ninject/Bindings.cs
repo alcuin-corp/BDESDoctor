@@ -4,7 +4,6 @@ using Alcuin.BDES.Indicators.Dumper;
 using Alcuin.BDES.Indicators.Parser.Raw;
 using Alcuin.BDES.Interfaces;
 using Alcuin.BDES.Monitoring;
-using Alcuin.BDES.Workflow;
 using Ninject.Modules;
 
 namespace Alcuin.BDES.Ninject
@@ -36,10 +35,6 @@ namespace Alcuin.BDES.Ninject
             this.Bind<IColumnProvider>().To<AbsenceColumnProvider>()
                 .InSingletonScope()
                 .Named(SheetName.Absences.ToString());
-
-            this.Bind<IColumnProvider>().To<DiseaseColumnProvider>()
-                .InSingletonScope()
-                .Named(SheetName.Maladies.ToString());
         }
     }
 }

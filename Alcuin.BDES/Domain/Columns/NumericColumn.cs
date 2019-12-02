@@ -1,12 +1,11 @@
 ﻿using System.Text.RegularExpressions;
+using Alcuin.BDES.Helper;
 using Alcuin.BDES.Indicators.Criterias;
 
 namespace Alcuin.BDES.Domain.Columns
 {
     internal class NumericColumn : Column
     {
-        private const string EmptyCellFoundMessage = "Certaines cellules numériques sont vides dans votre fichier, les données vides ne seront pas prises en compte dans les calculs.";
-
         private readonly Regex regex;
 
         public NumericColumn(string columnheader, bool isMandatory = false)
@@ -15,17 +14,25 @@ namespace Alcuin.BDES.Domain.Columns
             this.regex = new Regex("^[0-9]*,?[0-9]{1,2}?$");
         }
 
-        internal override string GetErrorMessageForEmptyCell() => EmptyCellFoundMessage;
+        internal override string GetErrorMessageForEmptyCell() => $"Dans l'onglet «{this.Sheet.Name}», la colonne «{this.Header}» contient des cellules date vides.";
 
         internal override bool IsValidContent(string cellContent, out string errorMessage)
         {
-            if (this.regex.IsMatch(cellContent))
+            if (cellContent.IsNotEmpty() && this.regex.IsMatch(cellContent))
             {
                 errorMessage = null;
                 return true;
             }
 
-            errorMessage = this.GetInvalidCellContentMessage(cellContent);
+            if (cellContent.IsEmpty())
+            {
+                errorMessage = this.GetErrorMessageForEmptyCell();
+            }
+            else
+            {
+                errorMessage = this.GetInvalidCellContentMessage(cellContent);
+            }
+
             return false;
         }
 

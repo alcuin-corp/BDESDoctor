@@ -1,4 +1,5 @@
 ﻿using Alcuin.BDES.Domain.Transcodification;
+using Alcuin.BDES.Helper;
 using Alcuin.BDES.Indicators.Criterias;
 
 namespace Alcuin.BDES.Domain.Columns
@@ -17,13 +18,21 @@ namespace Alcuin.BDES.Domain.Columns
 
         internal override bool IsValidContent(string cellContent, out string errorMessage)
         {
-            if (cellContent.Length <= MaximumTextLenght)
+            if (cellContent.IsNotEmpty() && cellContent.Length <= MaximumTextLenght)
             {
                 errorMessage = null;
                 return true;
             }
 
-            errorMessage = this.GetInvalidCellContentMessage(cellContent);
+            if (cellContent.IsEmpty())
+            {
+                errorMessage = this.GetErrorMessageForEmptyCell();
+            }
+            else
+            {
+                errorMessage = this.GetInvalidCellContentMessage(cellContent);
+            }
+
             return false;
         }
 

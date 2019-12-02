@@ -39,7 +39,7 @@ namespace Alcuin.BDES.Helper
         public static T ToEnum<T>(this string enumStr)
             where T : Enum
         {
-            return (T)Enum.Parse(typeof(T), enumStr);
+                return (T)Enum.Parse(typeof(T), enumStr);
         }
 
         public static string GetEnumDescription<T>(this string enumStr)

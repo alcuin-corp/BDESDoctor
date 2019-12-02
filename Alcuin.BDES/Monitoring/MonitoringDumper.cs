@@ -35,6 +35,7 @@ namespace Alcuin.BDES.Monitoring
             var logFilePath = this.GetLogPath(request);
             var logFileLines = this.GetLogLines(request);
             this.CreateFile(logFileLines, logFilePath);
+            request.LogFilePath = logFilePath;
         }
 
         private void CreateFile(List<string> logLines, string logFilePath)
@@ -78,7 +79,7 @@ namespace Alcuin.BDES.Monitoring
 
         private string GetLogPath(Request request)
         {
-            var logFileName = $"Log-{Path.GetFileNameWithoutExtension(request.FilePath)}.txt";
+            var logFileName = $"{Path.GetFileNameWithoutExtension(request.FilePath)}-log.txt";
             var workingDirectory = Path.GetDirectoryName(request.FilePath);
             return Path.Combine(workingDirectory, logFileName);
         }
