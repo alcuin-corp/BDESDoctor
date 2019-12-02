@@ -9,7 +9,7 @@ Scenario: Processing file with missing column 'Sexe' in 'effectifs' worksheet sh
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Error messages
 		| Message                                                                                                                                                                                             |
-		| Dans l'onglet 'effectifs' la colonne 'Sexe' n'est pas présente. Cette colonne est obligatoire, veuillez vérifier que la colonne est correctement nommée et que celle-ci est présente dans l’onglet. |
+		| Dans l'onglet 'Effectifs' la colonne 'Sexe' n'est pas présente. Cette colonne est obligatoire, veuillez vérifier que la colonne est correctement nommée et que celle-ci est présente dans l’onglet. |
 
 Scenario: Processing file within column 'Sexe' in 'effectifs' worksheet should have a success message
 	Given I have a workbook mybook.xlsx
@@ -20,7 +20,7 @@ Scenario: Processing file within column 'Sexe' in 'effectifs' worksheet should h
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Succes messages
 		| Message                                                             |
-		| La colonne 'Sexe' de l’onglet 'effectifs' est bien prise en compte. |
+		| La colonne 'Sexe' de l’onglet 'Effectifs' est bien prise en compte. |
 
 Scenario: Processing file with invalid cell content in column 'Sexe' should have an error message
 	Given I have a workbook mybook.xlsx
@@ -30,7 +30,7 @@ Scenario: Processing file with invalid cell content in column 'Sexe' should have
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Error messages
 		| Message                                                                                                                                                |
-		| Dans l'onglet «effectifs», la colonne «Sexe» à une valeur qui texte n’est pas reconnue 'Chat'. Les valeurs pouvant être utilisées sont «Homme, Femme». |
+		| Dans l'onglet «Effectifs», la colonne «Sexe» à une valeur qui texte n’est pas reconnue 'Chat'. Les valeurs pouvant être utilisées sont «Homme, Femme». |
 
 Scenario: Processing file with empty cell in column 'Sexe' should have a warrning message
 	Given I have a workbook mybook.xlsx

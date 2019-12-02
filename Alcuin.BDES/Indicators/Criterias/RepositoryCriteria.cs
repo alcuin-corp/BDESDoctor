@@ -7,7 +7,7 @@ using Aspose.Cells;
 namespace Alcuin.BDES.Indicators.Criterias
 {
     internal class RepositoryCriteria<T> : Criteria
-        where T : Enum
+        where T : struct, Enum
     {
         public List<T> Values;
 
@@ -19,7 +19,13 @@ namespace Alcuin.BDES.Indicators.Criterias
 
         public override bool IsMatch(Row row, int referenceYear)
         {
-            var cellValue = this.Column.GetCleanCell(row).ToEnum<T>();
+            var cleanValue = this.Column.GetCleanCell(row);
+            T value = default;
+            if(!cleanValue.TryParseEnum<T>(out value))
+            {
+
+            }
+            var cellValue = value;
             switch (this.Operator)
             {
                 case Operator.Equals:

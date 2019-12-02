@@ -26,9 +26,9 @@ namespace Alcuin.BDES.Indicators.Dumper
             var rowId = 0;
             foreach (var indicator in indicators)
             {
-                rowId++;
                 foreach (var group in indicator.GroupedValues)
                 {
+                    rowId++;
                     var row = worksheet.Cells.Rows[rowId];
                     row[0].Value = group.Key;
                     row[1].Value = indicator.Domain;
@@ -36,6 +36,15 @@ namespace Alcuin.BDES.Indicators.Dumper
                     row[3].Value = indicator.Name;
                     row[4].Value = indicator.Field;
                     row[7].Value = "Numerique";
+                    switch (indicator.AgregateFunction)
+                    {
+                        case AgregateFunction.Avg:
+                            row[9].Value = group.Value.Average;
+                            break;
+                        default:
+                            row[9].Value = group.Value.Count;
+                            break;
+                    }
                 }
             }
 

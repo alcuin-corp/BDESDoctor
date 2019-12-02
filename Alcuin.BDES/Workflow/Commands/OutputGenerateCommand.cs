@@ -20,9 +20,10 @@ namespace Alcuin.BDES.Workflow.Commands
         {
             var fileNameWithoutExtension = Path.GetFileNameWithoutExtension(request.FilePath);
             var workingDirectory = Path.GetDirectoryName(request.FilePath);
-            var targetFilePath = Path.Combine(workingDirectory, $"{fileNameWithoutExtension}-Output.xlsx");
+            var targetFilePath = Path.Combine(workingDirectory, $"{fileNameWithoutExtension}-output.xls");
             var allIndicators = processingContext.AvailableSheets.SelectMany(x => x.Indicators);
             this.indicatorDumper.Dump(allIndicators, targetFilePath);
+            request.OutputFilePath = targetFilePath;
         }
     }
 }

@@ -117,7 +117,7 @@ namespace Alcuin.BDES.Indicators.Parser
         {
             if (this.lookaheadFirst.TokenType == TokenType.Agregate)
             {
-                if (this.lookaheadFirst.Value.In("Count", "Sum", "∑"))
+                if (this.lookaheadFirst.Value.In("Count", "Nombre", "Sum", "∑"))
                 {
                     return AgregateFunction.Count;
                 }

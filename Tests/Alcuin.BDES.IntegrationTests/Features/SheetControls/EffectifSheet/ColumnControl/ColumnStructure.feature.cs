@@ -131,7 +131,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table126 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table126.AddRow(new string[] {
-                            "Dans l\'onglet \'effectifs\' la colonne \'Structure\' n\'est pas présente. Cette colonn" +
+                            "Dans l\'onglet \'Effectifs\' la colonne \'Structure\' n\'est pas présente. Cette colonn" +
                                 "e est obligatoire, veuillez vérifier que la colonne est correctement nommée et q" +
                                 "ue celle-ci est présente dans l’onglet."});
 #line 11
@@ -199,7 +199,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table128 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table128.AddRow(new string[] {
-                            "La colonne \'Structure\' de l’onglet \'effectifs\' est bien prise en compte."});
+                            "La colonne \'Structure\' de l’onglet \'Effectifs\' est bien prise en compte."});
 #line 22
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table128, "Then ");
 #line hidden
@@ -321,7 +321,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table132 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table132.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs», la colonne «Structure» contient une valeur texte qui d" +
+                            "Dans l\'onglet «Effectifs», la colonne «Structure» contient une valeur texte qui d" +
                                 "épasse la limite des 255 caractères. Veuillez vérifier que les valeurs textes re" +
                                 "spectent cette limite."});
 #line 43

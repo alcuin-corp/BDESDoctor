@@ -128,7 +128,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table36.AddRow(new string[] {
-                            "La colonne \'Date de naissance\' n\'est pas présente dans L\'onglet \'effectifs\', aucu" +
+                            "La colonne \'Date de naissance\' n\'est pas présente dans L\'onglet \'Effectifs\', aucu" +
                                 "n indicateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 10
  testRunner.Then("I should found the following Warrning messages", ((string)(null)), table36, "Then ");
@@ -204,7 +204,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table38.AddRow(new string[] {
-                            "La colonne \'Date de naissance\' de l’onglet \'effectifs\' est bien prise en compte."});
+                            "La colonne \'Date de naissance\' de l’onglet \'Effectifs\' est bien prise en compte."});
 #line 21
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table38, "Then ");
 #line hidden
@@ -264,10 +264,10 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table40.AddRow(new string[] {
-                            "Certaines cellules dates sont vides dans votre fichier, les données vides ne sero" +
-                                "nt pas prises en compte dans les calculs."});
+                            "Dans l\'onglet «Effectifs», la colonne «Date de naissance» contient des cellules d" +
+                                "ate vides."});
 #line 31
- testRunner.Then("I should found the following Warrning messages", ((string)(null)), table40, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table40, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -325,7 +325,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table42.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs», la colonne «Date de naissance» contient une date n’est" +
+                            "Dans l\'onglet «Effectifs», la colonne «Date de naissance» contient une date n’est" +
                                 " pas dans le bon format. Le format attendu est JJ/MM/AAAA. Veuillez vérifier que" +
                                 " les dates respectent ce format."});
 #line 41

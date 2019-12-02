@@ -10,7 +10,7 @@ Scenario: Processing file with missing column 'Structure' in 'effectifs' workshe
 	Then the process should fail
 	And I should found the following Error messages
 		| Message                                                                                                                                                                                                  |
-		| Dans l'onglet 'effectifs' la colonne 'Structure' n'est pas présente. Cette colonne est obligatoire, veuillez vérifier que la colonne est correctement nommée et que celle-ci est présente dans l’onglet. |
+		| Dans l'onglet 'Effectifs' la colonne 'Structure' n'est pas présente. Cette colonne est obligatoire, veuillez vérifier que la colonne est correctement nommée et que celle-ci est présente dans l’onglet. |
 
 Scenario: Processing file within column 'Structure' in 'effectifs' worksheet should have a success message
 	Given I have a workbook mybook.xlsx
@@ -21,7 +21,7 @@ Scenario: Processing file within column 'Structure' in 'effectifs' worksheet sho
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Succes messages
 		| Message                                                                  |
-		| La colonne 'Structure' de l’onglet 'effectifs' est bien prise en compte. |
+		| La colonne 'Structure' de l’onglet 'Effectifs' est bien prise en compte. |
 
 Scenario: Processing file with empty cell in column 'Structure' should have a warrning message
 	Given I have a workbook mybook.xlsx
@@ -42,4 +42,4 @@ Scenario: Processing file with invalid cell content in column 'Structure' should
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Error messages
 		| Message                                                                                                                                                                                 |
-		| Dans l'onglet «effectifs», la colonne «Structure» contient une valeur texte qui dépasse la limite des 255 caractères. Veuillez vérifier que les valeurs textes respectent cette limite. |
+		| Dans l'onglet «Effectifs», la colonne «Structure» contient une valeur texte qui dépasse la limite des 255 caractères. Veuillez vérifier que les valeurs textes respectent cette limite. |

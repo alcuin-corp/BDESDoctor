@@ -11,8 +11,21 @@ namespace Alcuin.BDES.Runner
             var request = RequestFactory.Create(filePath, referenceYear);
             request.ProgressChanged += Request_ProgressChanged;
             request.MonitoringMsgPublished += Request_MonitoringMsgPublished;
+            request.ProcessFinished += Request_ProcessFinished;
             request.Run();
             Console.ReadKey();
+        }
+
+        private static void Request_ProcessFinished(object sender, ProcessFinishedEventArgs e)
+        {
+            if (e.Exception != null)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine($"{e.Exception}");
+            }
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine($"Process finished");
         }
 
         static object obj = new object();
@@ -35,7 +48,7 @@ namespace Alcuin.BDES.Runner
                     default:
                         break;
                 }
-                
+
                 Console.WriteLine($"{e.Message}");
             }
         }

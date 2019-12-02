@@ -128,7 +128,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table118 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table118.AddRow(new string[] {
-                            "La colonne \'Type de reconnaissance\' n\'est pas présente dans L\'onglet \'effectifs\'," +
+                            "La colonne \'Type de reconnaissance\' n\'est pas présente dans L\'onglet \'Effectifs\'," +
                                 " aucun indicateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 10
  testRunner.Then("I should found the following Warrning messages", ((string)(null)), table118, "Then ");
@@ -195,7 +195,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table120 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table120.AddRow(new string[] {
-                            "La colonne \'Type de reconnaissance\' de l’onglet \'effectifs\' est bien prise en com" +
+                            "La colonne \'Type de reconnaissance\' de l’onglet \'Effectifs\' est bien prise en com" +
                                 "pte."});
 #line 21
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table120, "Then ");
@@ -317,7 +317,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table124 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table124.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs», la colonne «Type de reconnaissance» à une valeur qui t" +
+                            "Dans l\'onglet «Effectifs», la colonne «Type de reconnaissance» à une valeur qui t" +
                                 "exte n’est pas reconnue \'HTTP\'. Les valeurs pouvant être utilisées sont «RQTH»."});
 #line 41
  testRunner.Then("I should found the following Error messages", ((string)(null)), table124, "Then ");

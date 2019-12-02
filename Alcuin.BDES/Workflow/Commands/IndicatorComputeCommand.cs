@@ -7,7 +7,7 @@ namespace Alcuin.BDES.Workflow.Commands
     internal class IndicatorComputeCommand : Command
     {
         public IndicatorComputeCommand(IMonitoringManager monitoringManager)
-            : base(Step.DataAnalyzing, monitoringManager, 95)
+            : base(Step.IndicatorComputing, monitoringManager, 95)
         {
         }
 
@@ -16,7 +16,6 @@ namespace Alcuin.BDES.Workflow.Commands
             var rate = this.ComputeProgressionStep(processingContext, request);
             foreach (var sheet in processingContext.AvailableSheets)
             {
-
                 foreach (var indicator in sheet.Indicators)
                 {
                     request.Indicators.Add(indicator);

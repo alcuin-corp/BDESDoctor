@@ -128,7 +128,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table110 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table110.AddRow(new string[] {
-                            "La colonne \'Salaire mensuel brut\' n\'est pas présente dans L\'onglet \'effectifs\', a" +
+                            "La colonne \'Salaire mensuel brut\' n\'est pas présente dans L\'onglet \'Effectifs\', a" +
                                 "ucun indicateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 10
  testRunner.Then("I should found the following Warrning messages", ((string)(null)), table110, "Then ");
@@ -222,7 +222,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table112 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table112.AddRow(new string[] {
-                            "La colonne \'Salaire mensuel brut\' de l’onglet \'effectifs\' est bien prise en compt" +
+                            "La colonne \'Salaire mensuel brut\' de l’onglet \'Effectifs\' est bien prise en compt" +
                                 "e."});
 #line 21
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table112, "Then ");
@@ -350,7 +350,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table116 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table116.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs», la colonne «Salaire mensuel brut» contient une valeur " +
+                            "Dans l\'onglet «Effectifs», la colonne «Salaire mensuel brut» contient une valeur " +
                                 "numérique qui n’est pas dans le bon format. Le format attendu est « ####,## ». V" +
                                 "euillez vérifier que les valeurs numériques respectent ce format."});
 #line 42

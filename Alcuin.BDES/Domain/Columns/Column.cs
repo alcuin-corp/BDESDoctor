@@ -7,8 +7,6 @@ namespace Alcuin.BDES.Domain
 {
     internal abstract class Column
     {
-        private const string EmptyCellFoundMessage = "Certaines cellules textes sont vides dans votre fichier, les données vides ne seront pas prises en compte dans les calculs.";
-
         public Column(string columnheader, bool isMandatory = false, bool allowDuplicateValues = true)
         {
             this.Header = columnheader;
@@ -41,7 +39,7 @@ namespace Alcuin.BDES.Domain
 
         public override string ToString() => $"{this.Header}-{this.Sheet.Name}";
 
-        internal virtual string GetErrorMessageForEmptyCell() => EmptyCellFoundMessage;
+        internal virtual string GetErrorMessageForEmptyCell() => $"Dans l'onglet «{this.Sheet.Name}», la colonne «{this.Header}» contient des cellules texte vides.";
 
         internal virtual string CleanValue(string value) => value;
 

@@ -13,6 +13,10 @@ namespace Alcuin.BDES
 
         public bool IsFailed { get; }
 
+        public string OutputFilePath { get; internal set; }
+
+        public string LogFilePath { get; internal set; }
+
         public Step ExitStep { get; }
 
         public Exception Exception { get; }

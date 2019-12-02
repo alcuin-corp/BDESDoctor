@@ -113,7 +113,13 @@ namespace Alcuin.BDES
         private void RaiseProcessFinished()
         {
             this.ProgressRate = 100;
-            this.ProcessFinished?.Invoke(this, new ProcessFinishedEventArgs(this.IsFailed, this.CurrentStep, this.Exception));
+            var processFinishedEventArgs = new ProcessFinishedEventArgs(this.IsFailed, this.CurrentStep, this.Exception)
+            {
+                LogFilePath = this.LogFilePath,
+                OutputFilePath = this.OutputFilePath
+            };
+
+            this.ProcessFinished?.Invoke(this, processFinishedEventArgs);
         }
 
         private void RaiseProgressChanged()

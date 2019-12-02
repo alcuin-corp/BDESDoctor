@@ -128,7 +128,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table68.AddRow(new string[] {
-                            "La colonne \'Date d\'entrée\' n\'est pas présente dans L\'onglet \'effectifs\', aucun in" +
+                            "La colonne \'Date d\'entrée\' n\'est pas présente dans L\'onglet \'Effectifs\', aucun in" +
                                 "dicateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 10
  testRunner.Then("I should found the following Warrning messages", ((string)(null)), table68, "Then ");
@@ -210,7 +210,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table70 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table70.AddRow(new string[] {
-                            "La colonne \'Date d\'entrée\' de l’onglet \'effectifs\' est bien prise en compte."});
+                            "La colonne \'Date d\'entrée\' de l’onglet \'Effectifs\' est bien prise en compte."});
 #line 21
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table70, "Then ");
 #line hidden
@@ -270,10 +270,10 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table72.AddRow(new string[] {
-                            "Certaines cellules dates sont vides dans votre fichier, les données vides ne sero" +
-                                "nt pas prises en compte dans les calculs."});
+                            "Dans l\'onglet «Effectifs», la colonne «Date d\'entrée» contient des cellules date " +
+                                "vides."});
 #line 31
- testRunner.Then("I should found the following Warrning messages", ((string)(null)), table72, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table72, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -329,7 +329,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table74 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table74.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs», la colonne «Date d\'entrée» contient une date n’est pas" +
+                            "Dans l\'onglet «Effectifs», la colonne «Date d\'entrée» contient une date n’est pas" +
                                 " dans le bon format. Le format attendu est JJ/MM/AAAA. Veuillez vérifier que les" +
                                 " dates respectent ce format."});
 #line 41

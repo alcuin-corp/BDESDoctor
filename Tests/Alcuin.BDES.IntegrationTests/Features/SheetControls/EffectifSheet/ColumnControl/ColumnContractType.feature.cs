@@ -131,7 +131,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table52.AddRow(new string[] {
-                            "La colonne \'Type de contrat\' de l’onglet \'effectifs\' est bien prise en compte."});
+                            "La colonne \'Type de contrat\' de l’onglet \'Effectifs\' est bien prise en compte."});
 #line 10
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table52, "Then ");
 #line hidden
@@ -194,7 +194,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table54.AddRow(new string[] {
-                            "La colonne \'Type de contrat\' n\'est pas présente dans L\'onglet \'effectifs\', aucun " +
+                            "La colonne \'Type de contrat\' n\'est pas présente dans L\'onglet \'Effectifs\', aucun " +
                                 "indicateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 21
  testRunner.Then("I should found the following Warrning messages", ((string)(null)), table54, "Then ");
@@ -316,7 +316,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table58 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table58.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs», la colonne «Type de contrat» à une valeur qui texte n’" +
+                            "Dans l\'onglet «Effectifs», la colonne «Type de contrat» à une valeur qui texte n’" +
                                 "est pas reconnue \'Contrat\'. Les valeurs pouvant être utilisées sont «CDI, CDD, C" +
                                 "IE, Alternance, Professionnalisation, CTT, CUI, CAE»."});
 #line 41

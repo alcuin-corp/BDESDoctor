@@ -66,5 +66,9 @@
         /// Type de reconnaissance.
         /// </summary>
         public const string RecognitionType = "Type de reconnaissance";
+
+        public const string AbsenceDayCount = "Nombre de jour d'absence";
+
+        public const string AbsenceCalendarDayCount = "Nombre de jour calendaire d'absence";
     }
 }

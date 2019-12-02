@@ -33,4 +33,4 @@ Scenario: Load and compute generic complexe indicators
 		| Onglet    | Domaine  | Sous Domaine      | Indicateur                                                  | Champs | Formule                                                                                                                  |
 		| Effectifs | Effectif | Effectif au 31/12 | Nombre de [CSP] par [Nature de la fin de contrat] et [Sexe] | Cadre  | Count [matricule] par [structure] dont [CSP] est 'Enum' et [Sexe] est 'Enum' et [Nature de la fin de contrat] est 'Enum' |
 	When I start processing the file mybook.xlsx for the period of 1986
-	Then I should compute 60 indicators
+	Then I should compute 70 indicators

@@ -3,9 +3,14 @@
     internal enum ContractTerminationNature
     {
         /// <summary>
+        /// Still working
+        /// </summary>
+        None,
+
+        /// <summary>
         /// Retraite
         /// </summary>
-        Retirement = 1,
+        Retirement,
 
         /// <summary>
         /// Démision
