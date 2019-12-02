@@ -128,7 +128,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table94 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table94.AddRow(new string[] {
-                            "La colonne \'Date de sortie\' n\'est pas présente dans L\'onglet \'effectifs\', aucun i" +
+                            "La colonne \'Date de sortie\' n\'est pas présente dans L\'onglet \'Effectifs\', aucun i" +
                                 "ndicateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 10
  testRunner.Then("I should found the following Warrning messages", ((string)(null)), table94, "Then ");
@@ -213,7 +213,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table96 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table96.AddRow(new string[] {
-                            "La colonne \'Date de sortie\' de l’onglet \'effectifs\' est bien prise en compte."});
+                            "La colonne \'Date de sortie\' de l’onglet \'Effectifs\' est bien prise en compte."});
 #line 21
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table96, "Then ");
 #line hidden
@@ -334,7 +334,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table100 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table100.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs», la colonne «Date de sortie» contient une date n’est pa" +
+                            "Dans l\'onglet «Effectifs», la colonne «Date de sortie» contient une date n’est pa" +
                                 "s dans le bon format. Le format attendu est JJ/MM/AAAA. Veuillez vérifier que le" +
                                 "s dates respectent ce format."});
 #line 41

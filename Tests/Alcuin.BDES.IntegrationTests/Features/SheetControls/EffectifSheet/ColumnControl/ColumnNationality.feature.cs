@@ -128,7 +128,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table102.AddRow(new string[] {
-                            "La colonne \'Nationalité\' n\'est pas présente dans L\'onglet \'effectifs\', aucun indi" +
+                            "La colonne \'Nationalité\' n\'est pas présente dans L\'onglet \'Effectifs\', aucun indi" +
                                 "cateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 10
  testRunner.Then("I should found the following Warrning messages", ((string)(null)), table102, "Then ");
@@ -189,7 +189,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table104 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table104.AddRow(new string[] {
-                            "La colonne \'Nationalité\' de l’onglet \'effectifs\' est bien prise en compte."});
+                            "La colonne \'Nationalité\' de l’onglet \'Effectifs\' est bien prise en compte."});
 #line 20
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table104, "Then ");
 #line hidden
@@ -310,7 +310,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table108 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table108.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs», la colonne «Nationalité» à une valeur qui texte n’est " +
+                            "Dans l\'onglet «Effectifs», la colonne «Nationalité» à une valeur qui texte n’est " +
                                 "pas reconnue \'Australienne\'. Les valeurs pouvant être utilisées sont «Francaise," +
                                 " autre»."});
 #line 40

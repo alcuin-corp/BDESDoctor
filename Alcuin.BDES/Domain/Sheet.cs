@@ -7,10 +7,10 @@ namespace Alcuin.BDES.Domain
 {
     internal class Sheet
     {
-        public Sheet(SheetName fileTab, bool isMandatory = false)
+        public Sheet(SheetName sheetName, bool isMandatory = false)
         {
-            this.FileTab = fileTab;
-            this.Name = fileTab.ToLowerString();
+            this.SheetName = sheetName;
+            this.Name = sheetName.ToString();
             this.IsMandatory = isMandatory;
             this.AvailableColumns = new List<Column>();
             this.ExpectedColumns = new List<Column>();
@@ -19,7 +19,7 @@ namespace Alcuin.BDES.Domain
 
         public string Name { get; }
 
-        public SheetName FileTab { get; set; }
+        public SheetName SheetName { get; set; }
 
         public bool IsMandatory { get; set; }
 

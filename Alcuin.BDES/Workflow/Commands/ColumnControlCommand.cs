@@ -2,6 +2,7 @@
 using Alcuin.BDES.Domain;
 using Alcuin.BDES.Helper;
 using Alcuin.BDES.Interfaces;
+using Alcuin.BDES.Ninject;
 using Aspose.Cells;
 
 namespace Alcuin.BDES.Workflow.Commands
@@ -13,7 +14,7 @@ namespace Alcuin.BDES.Workflow.Commands
         public ColumnControlCommand(IMonitoringManager monitoringManager)
             : base(Step.FileAnalyzing, monitoringManager, 5)
         {
-            this.columnProviderFactory = new ColumnProviderFactory();
+            ServiceLocator.Resolve(out this.columnProviderFactory);
         }
 
         protected override void Process(ProcessingContext processingContext, Request request)
@@ -21,7 +22,7 @@ namespace Alcuin.BDES.Workflow.Commands
             var foundedSheets = processingContext.AvailableSheets;
             foreach (var sheet in foundedSheets)
             {
-                var columnProvider = this.columnProviderFactory.Create(sheet.FileTab);
+                var columnProvider = this.columnProviderFactory.Create(sheet.SheetName);
                 var headerInSheet = sheet.Cells.Rows[0]
                         .OfType<Cell>()
                         .Where(x => x.StringValue.IsNotEmpty())

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Alcuin.BDES.Domain.Columns;
 using Alcuin.BDES.Domain.Transcodification;
 using Alcuin.BDES.Helper;
@@ -14,16 +15,33 @@ namespace Alcuin.BDES.Domain
 
         private readonly string allowedValues;
 
+        private readonly bool useExtraValueAsOther;
+
+        private readonly T otherValue;
+
+        private readonly T noneValue;
+
         public RepositoryColumn(string columnheader, Transcoder<T> transcoder, bool isMandatory = false)
                 : base(columnheader, isMandatory)
         {
             this.transcoder = transcoder;
             this.allowedValues = string.Join(", ", transcoder.AllowedKeys);
+
+
+            if ("None".TryParseEnum(out this.noneValue))
+            {
+                this.transcoder.AddMapping(this.noneValue, string.Empty);
+            }
+
+            if ("Other".TryParseEnum(out this.otherValue))
+            {
+                this.useExtraValueAsOther = true;
+            }
         }
 
         internal override bool IsValidContent(string cellContent, out string errorMessage)
         {
-            if (this.transcoder.TryTranscode(cellContent, out var result))
+            if (this.transcoder.TryTranscode(cellContent, out var result) || this.useExtraValueAsOther)
             {
                 errorMessage = null;
                 return true;
@@ -41,7 +59,7 @@ namespace Alcuin.BDES.Domain
                 return result.ToString();
             }
 
-            return value;
+            return this.useExtraValueAsOther ? this.otherValue.ToString() : value;
         }
 
         internal override string GetCleanCell(Row row)
@@ -68,7 +86,7 @@ namespace Alcuin.BDES.Domain
 
         protected override string GetInvalidCellContentMessage(string cellContent)
         {
-            return $"Dans l'onglet «{this.Sheet.Name}», la colonne «{this.Header}» à une valeur qui texte n’est pas reconnue '{cellContent}'."
+            return $"Dans l'onglet «{this.Sheet.Name}», la colonne «{this.Header}» à une valeur texte qui n’est pas reconnue '{cellContent}'."
                  + $" Les valeurs pouvant être utilisées sont «{this.allowedValues}».";
         }
     }

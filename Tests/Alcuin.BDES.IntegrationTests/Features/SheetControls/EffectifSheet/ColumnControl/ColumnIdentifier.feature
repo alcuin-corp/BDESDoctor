@@ -9,7 +9,7 @@ Scenario: Processing file with missing column 'Matricule' in the 'effectif' work
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then  I should found the following Error messages
 		| Message                                                                                                                                                                                                  |
-		| Dans l'onglet 'effectifs' la colonne 'Matricule' n'est pas présente. Cette colonne est obligatoire, veuillez vérifier que la colonne est correctement nommée et que celle-ci est présente dans l’onglet. |
+		| Dans l'onglet 'Effectifs' la colonne 'Matricule' n'est pas présente. Cette colonne est obligatoire, veuillez vérifier que la colonne est correctement nommée et que celle-ci est présente dans l’onglet. |
 
 Scenario: Processing file within column 'Matricule' in the 'effectif' worksheet should have a success message
 	Given I have a workbook mybook.xlsx
@@ -20,7 +20,7 @@ Scenario: Processing file within column 'Matricule' in the 'effectif' worksheet 
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Succes messages
 		| Message                                                                  |
-		| La colonne 'Matricule' de l’onglet 'effectifs' est bien prise en compte. |
+		| La colonne 'Matricule' de l’onglet 'Effectifs' est bien prise en compte. |
 
 Scenario: Processing file within duplicate values in column 'Matricule' in the 'effectif' worksheet should have an error message
 	Given I have a workbook mybook.xlsx
@@ -31,7 +31,7 @@ Scenario: Processing file within duplicate values in column 'Matricule' in the '
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Error messages
 		| Message                                                                                                                             |
-		| Dans l'onglet «effectifs» des doublons de «Matricule» ont été trouvé. Veuillez vérifier qu’il n’y est pas de «Matricule» en double. |
+		| Dans l'onglet «Effectifs» des doublons de «Matricule» ont été trouvé. Veuillez vérifier qu’il n’y est pas de «Matricule» en double. |
 
 Scenario: Processing file with empty cell in column 'Matricule' should have a warrning message
 	Given I have a workbook mybook.xlsx
@@ -52,4 +52,4 @@ Scenario: Processing file with invalid cell content in column 'Matricule' should
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Error messages
 		| Message                                                                                                                                                                                 |
-		| Dans l'onglet «effectifs», la colonne «Matricule» contient une valeur texte qui dépasse la limite des 255 caractères. Veuillez vérifier que les valeurs textes respectent cette limite. |
+		| Dans l'onglet «Effectifs», la colonne «Matricule» contient une valeur texte qui dépasse la limite des 255 caractères. Veuillez vérifier que les valeurs textes respectent cette limite. |

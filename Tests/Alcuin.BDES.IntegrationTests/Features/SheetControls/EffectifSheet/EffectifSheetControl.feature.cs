@@ -123,7 +123,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table145 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table145.AddRow(new string[] {
-                            "L\'onglet \'effectifs\' n\'est pas présent dans le fichier, cet onglet est obligatoir" +
+                            "L\'onglet \'Effectifs\' n\'est pas présent dans le fichier, cet onglet est obligatoir" +
                                 "e. Veuillez vérifier que cet onglet est bien nommé ainsi et qu\'il est présent da" +
                                 "ns votre fichier."});
 #line 13
@@ -179,7 +179,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table147 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table147.AddRow(new string[] {
-                            "L’onglet \'effectifs\' est bien pris en compte."});
+                            "L’onglet \'Effectifs\' est bien pris en compte."});
 #line 23
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table147, "Then ");
 #line hidden

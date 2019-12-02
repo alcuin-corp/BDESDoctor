@@ -129,7 +129,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Message"});
                 table134.AddRow(new string[] {
                             "La colonne \'Durée du temps de travail hebdomadaire\' n\'est pas présente dans L\'ong" +
-                                "let \'effectifs\', aucun indicateur lié à cette colonne ne sera calculé lors de la" +
+                                "let \'Effectifs\', aucun indicateur lié à cette colonne ne sera calculé lors de la" +
                                 " conversion."});
 #line 10
  testRunner.Then("I should found the following Warrning messages", ((string)(null)), table134, "Then ");
@@ -196,7 +196,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table136 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table136.AddRow(new string[] {
-                            "La colonne \'Durée du temps de travail hebdomadaire\' de l’onglet \'effectifs\' est b" +
+                            "La colonne \'Durée du temps de travail hebdomadaire\' de l’onglet \'Effectifs\' est b" +
                                 "ien prise en compte."});
 #line 21
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table136, "Then ");
@@ -318,7 +318,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table140 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table140.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs», la colonne «Durée du temps de travail hebdomadaire» co" +
+                            "Dans l\'onglet «Effectifs», la colonne «Durée du temps de travail hebdomadaire» co" +
                                 "ntient une valeur numérique qui n’est pas dans le bon format. Le format attendu " +
                                 "est « ####,## ». Veuillez vérifier que les valeurs numériques respectent ce form" +
                                 "at."});

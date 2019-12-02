@@ -9,7 +9,9 @@ namespace Alcuin.BDES.Domain
         {
             return new List<Column>()
             {
-                new TextColumn(ColumnNames.Identifier, true, true)
+                new TextColumn(ColumnNames.Identifier, true, true),
+                new NumericColumn(ColumnNames.AbsenceDayCount, false),
+                new NumericColumn(ColumnNames.AbsenceCalendarDayCount, false)
             };
         }
     }

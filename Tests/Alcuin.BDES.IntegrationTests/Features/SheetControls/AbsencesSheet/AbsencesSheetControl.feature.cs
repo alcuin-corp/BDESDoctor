@@ -123,7 +123,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table19.AddRow(new string[] {
-                            "L\'onglet \'absences\' n\'est pas présent dans votre fichier, aucun indicateur lié au" +
+                            "L\'onglet \'Absences\' n\'est pas présent dans votre fichier, aucun indicateur lié au" +
                                 "x absences ne sera calculé lors de la conversion."});
 #line 13
  testRunner.And("I should found the following Warrning messages", ((string)(null)), table19, "And ");
@@ -189,7 +189,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table22.AddRow(new string[] {
-                            "L’onglet \'absences\' est bien pris en compte."});
+                            "L’onglet \'Absences\' est bien pris en compte."});
 #line 26
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table22, "Then ");
 #line hidden

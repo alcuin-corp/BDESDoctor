@@ -134,7 +134,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table76 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table76.AddRow(new string[] {
-                            "Dans l\'onglet \'effectifs\' la colonne \'Sexe\' n\'est pas présente. Cette colonne est" +
+                            "Dans l\'onglet \'Effectifs\' la colonne \'Sexe\' n\'est pas présente. Cette colonne est" +
                                 " obligatoire, veuillez vérifier que la colonne est correctement nommée et que ce" +
                                 "lle-ci est présente dans l’onglet."});
 #line 10
@@ -208,7 +208,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table78 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table78.AddRow(new string[] {
-                            "La colonne \'Sexe\' de l’onglet \'effectifs\' est bien prise en compte."});
+                            "La colonne \'Sexe\' de l’onglet \'Effectifs\' est bien prise en compte."});
 #line 21
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table78, "Then ");
 #line hidden
@@ -266,7 +266,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table80 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table80.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs», la colonne «Sexe» à une valeur qui texte n’est pas rec" +
+                            "Dans l\'onglet «Effectifs», la colonne «Sexe» à une valeur qui texte n’est pas rec" +
                                 "onnue \'Chat\'. Les valeurs pouvant être utilisées sont «Homme, Femme»."});
 #line 31
  testRunner.Then("I should found the following Error messages", ((string)(null)), table80, "Then ");

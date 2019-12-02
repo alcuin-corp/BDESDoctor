@@ -125,7 +125,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table84 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table84.AddRow(new string[] {
-                            "Dans l\'onglet \'effectifs\' la colonne \'Matricule\' n\'est pas présente. Cette colonn" +
+                            "Dans l\'onglet \'Effectifs\' la colonne \'Matricule\' n\'est pas présente. Cette colonn" +
                                 "e est obligatoire, veuillez vérifier que la colonne est correctement nommée et q" +
                                 "ue celle-ci est présente dans l’onglet."});
 #line 10
@@ -190,7 +190,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table86.AddRow(new string[] {
-                            "La colonne \'Matricule\' de l’onglet \'effectifs\' est bien prise en compte."});
+                            "La colonne \'Matricule\' de l’onglet \'Effectifs\' est bien prise en compte."});
 #line 21
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table86, "Then ");
 #line hidden
@@ -253,7 +253,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table88 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table88.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs» des doublons de «Matricule» ont été trouvé. Veuillez vé" +
+                            "Dans l\'onglet «Effectifs» des doublons de «Matricule» ont été trouvé. Veuillez vé" +
                                 "rifier qu’il n’y est pas de «Matricule» en double."});
 #line 32
  testRunner.Then("I should found the following Error messages", ((string)(null)), table88, "Then ");
@@ -376,7 +376,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table92 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table92.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs», la colonne «Matricule» contient une valeur texte qui d" +
+                            "Dans l\'onglet «Effectifs», la colonne «Matricule» contient une valeur texte qui d" +
                                 "épasse la limite des 255 caractères. Veuillez vérifier que les valeurs textes re" +
                                 "spectent cette limite."});
 #line 53

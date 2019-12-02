@@ -35,7 +35,7 @@ Scenario: I should receive a notifications with progress rate at the OutputGener
 
 Scenario: I should receive a notifications with progress rate After dumping log file
 	Then I should get a progress rate notification at 100 %
-	And I should found a log file : log-mybook.txt
+	And I should found a log file : mybook-log.txt
 
 Scenario: I should get a log file with all processing errors and warrnings
-	Then the log file log-mybook.txt should contain all error and warrning message
+	Then the log file mybook-log.txt should contain all error and warrning message

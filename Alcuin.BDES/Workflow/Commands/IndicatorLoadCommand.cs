@@ -34,7 +34,7 @@ namespace Alcuin.BDES.Workflow.Commands
                 var availableIndicators = new List<Indicator>();
                 var availableColumn = sheet.AvailableColumns;
 
-                if (allIndicators.TryGetValue(sheet.Name, out var listOfIndicator))
+                if (allIndicators.TryGetValue(sheet.SheetName, out var listOfIndicator))
                 {
                     foreach (var indicator in listOfIndicator)
                     {

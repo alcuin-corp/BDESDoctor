@@ -21,6 +21,10 @@ namespace Alcuin.BDES.Domain.Transcodification
         {
             return this.mapper.TryGetValue(input.ToLowerInvariant(), out result);
         }
+        internal void AddMapping(T value, string key)
+        {
+            this.mapper.Add(key, value);
+        }
 
         protected void Map(T value, string defaultKey, params string[] keys)
         {

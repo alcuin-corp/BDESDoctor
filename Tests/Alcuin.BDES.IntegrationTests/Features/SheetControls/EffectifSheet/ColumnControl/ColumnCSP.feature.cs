@@ -132,7 +132,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table60.AddRow(new string[] {
-                            "Dans l\'onglet \'effectifs\' la colonne \'CSP\' n\'est pas présente. Cette colonne est " +
+                            "Dans l\'onglet \'Effectifs\' la colonne \'CSP\' n\'est pas présente. Cette colonne est " +
                                 "obligatoire, veuillez vérifier que la colonne est correctement nommée et que cel" +
                                 "le-ci est présente dans l’onglet."});
 #line 11
@@ -201,7 +201,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table62.AddRow(new string[] {
-                            "La colonne \'CSP\' de l’onglet \'effectifs\' est bien prise en compte."});
+                            "La colonne \'CSP\' de l’onglet \'Effectifs\' est bien prise en compte."});
 #line 22
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table62, "Then ");
 #line hidden
@@ -210,11 +210,11 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Processing file with empty cell in column \'CSP\' should have a warrning message")]
-        public virtual void ProcessingFileWithEmptyCellInColumnCSPShouldHaveAWarrningMessage()
+        [NUnit.Framework.DescriptionAttribute("Processing file with empty cell in column \'CSP\' should have an error message")]
+        public virtual void ProcessingFileWithEmptyCellInColumnCSPShouldHaveAnErrorMessage()
         {
             string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Processing file with empty cell in column \'CSP\' should have a warrning message", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Processing file with empty cell in column \'CSP\' should have an error message", null, ((string[])(null)));
 #line 26
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -257,10 +257,11 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table64.AddRow(new string[] {
-                            "Certaines cellules textes sont vides dans votre fichier, les données vides ne ser" +
-                                "ont pas prises en compte dans les calculs."});
+                            "Dans l\'onglet «Effectifs», la colonne «CSP» à une valeur texte qui n’est pas reco" +
+                                "nnue \'\'. Les valeurs pouvant être utilisées sont «Cadre, Employé, Ouvrier, Agent" +
+                                " de maitrise, Technicien»."});
 #line 32
- testRunner.Then("I should found the following Warrning messages", ((string)(null)), table64, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table64, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -316,7 +317,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table66 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table66.AddRow(new string[] {
-                            "Dans l\'onglet «effectifs», la colonne «CSP» à une valeur qui texte n’est pas reco" +
+                            "Dans l\'onglet «Effectifs», la colonne «CSP» à une valeur qui texte n’est pas reco" +
                                 "nnue \'Ingénieur\'. Les valeurs pouvant être utilisées sont «Cadre, Employé, Ouvri" +
                                 "er, Agent de maitrise, Technicien»."});
 #line 42

@@ -137,7 +137,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table25.AddRow(new string[] {
-                            "Dans l\'onglet \'absences\' la colonne \'Matricule\' n\'est pas présente. Cette colonne" +
+                            "Dans l\'onglet \'Absences\' la colonne \'Matricule\' n\'est pas présente. Cette colonne" +
                                 " est obligatoire, veuillez vérifier que la colonne est correctement nommée et qu" +
                                 "e celle-ci est présente dans l’onglet."});
 #line 13
@@ -208,7 +208,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table28.AddRow(new string[] {
-                            "La colonne \'Matricule\' de l’onglet \'absences\' est bien prise en compte."});
+                            "La colonne \'Matricule\' de l’onglet \'Absences\' est bien prise en compte."});
 #line 26
  testRunner.Then("I should found the following Succes messages", ((string)(null)), table28, "Then ");
 #line hidden
@@ -277,10 +277,10 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table31.AddRow(new string[] {
-                            "Certaines cellules textes sont vides dans votre fichier, les données vides ne ser" +
-                                "ont pas prises en compte dans les calculs."});
+                            "Dans l\'onglet «Absences», la colonne «Matricule» contient des cellules texte vide" +
+                                "s."});
 #line 39
- testRunner.Then("I should found the following Warrning messages", ((string)(null)), table31, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table31, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -347,7 +347,7 @@ this.ScenarioInitialize(scenarioInfo);
                 TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
                 table34.AddRow(new string[] {
-                            "Dans l\'onglet «absences», la colonne «Matricule» contient une valeur texte qui dé" +
+                            "Dans l\'onglet «Absences», la colonne «Matricule» contient une valeur texte qui dé" +
                                 "passe la limite des 255 caractères. Veuillez vérifier que les valeurs textes res" +
                                 "pectent cette limite."});
 #line 52

@@ -17,6 +17,6 @@ namespace Alcuin.BDES.Model
         Ouvrier,
 
         [Description("Employé")]
-        Employé,
+        Employé
     }
 }

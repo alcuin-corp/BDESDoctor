@@ -12,7 +12,7 @@ Scenario: Processing file with missing 'Absences' worksheet should fail
 	Then the process should fail
 	And I should found the following Warrning messages
 		| Message                                                                                                                            |
-		| L'onglet 'absences' n'est pas présent dans votre fichier, aucun indicateur lié aux absences ne sera calculé lors de la conversion. |
+		| L'onglet 'Absences' n'est pas présent dans votre fichier, aucun indicateur lié aux absences ne sera calculé lors de la conversion. |
 
 Scenario: Processing file within 'Effectifs' worksheet should have a success log
 	Given I have a workbook mybook.xlsx
@@ -25,4 +25,4 @@ Scenario: Processing file within 'Effectifs' worksheet should have a success log
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Succes messages
 		| Message                                      |
-		| L’onglet 'absences' est bien pris en compte. |
+		| L’onglet 'Absences' est bien pris en compte. |
