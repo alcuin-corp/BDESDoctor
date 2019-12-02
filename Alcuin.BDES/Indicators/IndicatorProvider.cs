@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using Alcuin.BDES.Domain;
 using Alcuin.BDES.Helper;
 using Alcuin.BDES.Indicators.Criterias;
@@ -27,8 +29,14 @@ namespace Alcuin.BDES.Indicators
         {
             var result = new Dictionary<string, List<Indicator>>();
 
+            // Get assembly path
+            string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+            UriBuilder uri = new UriBuilder(codeBase);
+            string path = Uri.UnescapeDataString(uri.Path);
+            var assemblyPath = Path.GetDirectoryName(path);
+
             var indicatorDefinitions = this.rawIndicatorReader
-                .LoadInidcatorFromFile(@"Ressources\RawIndicators.csv")
+                .LoadInidcatorFromFile(Path.Combine(assemblyPath, @"Ressources\RawIndicators.csv"))
                 .Select(x => new IndicatorDefinition(x))
                 .ToList();
 

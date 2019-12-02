@@ -21,14 +21,21 @@ namespace Alcuin.BDES.Monitoring
 
         private static Dictionary<Step, string> GetStepMapper()
         {
-            var mapper = new Dictionary<Step, string>();
-            mapper.Add(Step.FileAnalyzing, "Vérification du format du fichier");
-            mapper.Add(Step.DataAnalyzing, "Vérification du format des données");
-            mapper.Add(Step.IndicatorComputing, "Calcul des indicateurs");
-            mapper.Add(Step.OutputGeneration, "Génération des fichiers de sortie");
+            var mapper = new Dictionary<Step, string>
+            {
+                { Step.FileAnalyzing, "Vérification du format du fichier" },
+                { Step.DataAnalyzing, "Vérification du format des données" },
+                { Step.IndicatorComputing, "Calcul des indicateurs" },
+                { Step.OutputGeneration, "Génération des fichiers de sortie" }
+            };
+
+            //mapper.Add(Step.FileAnalyzing, "Vérification du format du fichier");
+            //mapper.Add(Step.DataAnalyzing, "Vérification du format des données");
+            //mapper.Add(Step.IndicatorComputing, "Calcul des indicateurs");
+            //mapper.Add(Step.OutputGeneration, "Génération des fichiers de sortie");
+
             return mapper;
         }
-
 
         public void Dump(Request request)
         {
@@ -45,6 +52,7 @@ namespace Alcuin.BDES.Monitoring
             }
             catch (Exception)
             {
+                //TODO : Return exception and set ProcessFinished with isFailed
             }
         }
 
@@ -80,6 +88,7 @@ namespace Alcuin.BDES.Monitoring
         {
             var logFileName = $"Log-{Path.GetFileNameWithoutExtension(request.FilePath)}.txt";
             var workingDirectory = Path.GetDirectoryName(request.FilePath);
+
             return Path.Combine(workingDirectory, logFileName);
         }
     }

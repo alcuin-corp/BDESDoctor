@@ -39,7 +39,14 @@ namespace Alcuin.BDES.Helper
         public static T ToEnum<T>(this string enumStr)
             where T : Enum
         {
-            return (T)Enum.Parse(typeof(T), enumStr);
+            try
+            {
+                return (T)Enum.Parse(typeof(T), enumStr);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Unable to cast value '{enumStr}' in enum '{typeof(T)}'", ex);
+            }
         }
 
         public static string GetEnumDescription<T>(this string enumStr)
@@ -92,15 +99,12 @@ namespace Alcuin.BDES.Helper
         public static string ToFirstUpper(this string str)
         {
             if (str.IsEmpty())
-            {
-                var strBuilder = new StringBuilder(str);
-                strBuilder[0] = char.ToUpper(strBuilder[0]);
-                return strBuilder.ToString();
-            }
-            else
-            {
                 return str;
-            }
+
+            var strBuilder = new StringBuilder(str);
+            strBuilder[0] = char.ToUpper(strBuilder[0]);
+
+            return strBuilder.ToString();
         }
     }
 }
