@@ -8,53 +8,86 @@ namespace Alcuin.BDES.Indicators.Criterias
 {
     internal class NumericCriteria : Criteria
     {
-        private readonly List<decimal> Values;
+        private readonly List<decimal?> values;
 
         public NumericCriteria(CriteriaDefinition criteriaDefinition)
             : base(criteriaDefinition)
         {
-            this.Values = new List<decimal>();
-            foreach (var value in criteriaDefinition.Values)
+            this.values = new List<decimal?>();
+
+            if (criteriaDefinition.Values.Any(x => x.EqualsTo("reference")))
             {
-                this.Values.Add(decimal.Parse(value));
+                this.UseRequestParameter = true;
+            }
+
+            if (criteriaDefinition.Values.Any(x => x.EqualsTo("Null")))
+            {
+                this.values.Add(null);
+            }
+
+            foreach (var value in criteriaDefinition.Values.Where(x => !x.In("reference", "Null")))
+            {
+
+                this.values.Add(decimal.Parse(value));
             }
         }
 
         public override bool IsMatch(Row row, int referenceYear)
         {
-            var str = this.Column.GetCell(row);
-            var cellValue = this.UseFunction ? this.Transforme(str, referenceYear) : decimal.Parse(str);
+            if (this.UseRequestParameter && !this.values.Contains(referenceYear))
+            {
+                this.values.Add(referenceYear);
+            }
+
+            var cellValue = this.GetCellValue(row, referenceYear);
 
             switch (this.Operator)
             {
                 case Operator.Equals:
-                    return cellValue.Equals(this.Values.First());
+                    return cellValue.Equals(this.values.First());
                 case Operator.NotEquals:
-                    return !cellValue.Equals(this.Values.First());
+                    return !cellValue.Equals(this.values.First());
                 case Operator.In:
-                    return this.Values.Any(x => cellValue.Equals(x));
+                    return this.values.Any(x => cellValue.Equals(x));
                 case Operator.NotIn:
-                    return this.Values.All(x => !cellValue.Equals(x));
+                    return this.values.All(x => !cellValue.Equals(x));
                 case Operator.GreaterThan:
-                    return cellValue > this.Values.First();
+                    return cellValue > this.values.Max();
                 case Operator.GreaterOrEquals:
-                    return cellValue >= this.Values.First();
+                    return cellValue >= this.values.Max();
                 case Operator.LessThan:
-                    return cellValue < this.Values.First();
+                    return cellValue < this.values.Min();
                 case Operator.LessOrEquals:
-                    return cellValue <= this.Values.First();
+                    return cellValue <= this.values.Min();
                 case Operator.Between:
-                    return this.IsBetween(cellValue);
+                    return cellValue.HasValue && this.IsBetween(cellValue.Value);
                 case Operator.NotBetween:
-                    return !this.IsBetween(cellValue);
+                    return cellValue.HasValue && !this.IsBetween(cellValue.Value);
                 default:
                     throw new Exception($"Unknown operator : {this.Operator}");
             }
         }
 
+        private decimal? GetCellValue(Row row, int referenceYear)
+        {
+            var str = this.Column.GetCell(row);
+            if (str.IsEmpty() && this.Column.AllowDuplicateValues)
+            {
+                return null;
+            }
+
+            var cellValue = this.UseFunction ? this.Transforme(str, referenceYear) : decimal.Parse(str);
+            return cellValue;
+        }
+
         private decimal Transforme(string str, int referenceDate)
         {
             var date = str.ParseDate();
+            if (str.IsEmpty() && this.ScalarFunction == ScalarFunction.YearOfOrDefault)
+            {
+                return referenceDate;
+            }
+
             if (this.ScalarFunction == ScalarFunction.YearOf)
             {
                 return date.Year;
@@ -65,7 +98,7 @@ namespace Alcuin.BDES.Indicators.Criterias
 
         private bool IsBetween(decimal cellValue)
         {
-            return this.Values.Max() >= cellValue && this.Values.Min() <= cellValue;
+            return this.values.Max() >= cellValue && this.values.Min() <= cellValue;
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Alcuin.BDES.Indicators.Dumper
             this.headers = this.GetOutputFileHeaders();
         }
 
-        public void Dump(IEnumerable<Indicator> indicators, string outputFilePath)
+        public void Dump(IEnumerable<Indicator> indicators, int referenceYear, string outputFilePath)
         {
             var workBook = new Workbook();
             workBook.Worksheets.Clear();
@@ -35,7 +35,9 @@ namespace Alcuin.BDES.Indicators.Dumper
                     row[2].Value = indicator.SubDomain;
                     row[3].Value = indicator.Name;
                     row[4].Value = indicator.Field;
+
                     row[7].Value = "Numerique";
+                    row[8].Value = referenceYear;
                     switch (indicator.AgregateFunction)
                     {
                         case AgregateFunction.Avg:

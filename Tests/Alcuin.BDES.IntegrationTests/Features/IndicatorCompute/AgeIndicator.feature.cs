@@ -156,14 +156,14 @@ this.ScenarioInitialize(scenarioInfo);
                             "Effectif au 31/12",
                             "Jeunes de 34 ans",
                             "Cadre",
-                            "∑ [matricule] par [structure] dont  Age == 34"});
+                            "∑ [matricule] par [structure] dont  Age == \'34\'"});
                 table4.AddRow(new string[] {
                             "Effectifs",
                             "Effectif",
                             "Effectif au 31/12",
                             "Jeunes de 34 ou 33 ans",
                             "Cadre",
-                            "∑ [matricule] par [structure] dont  Age == 31 ou Age == 33"});
+                            "∑ [matricule] par [structure] dont  Age == \'31\' ou Age == \'33\'"});
 #line 12
  testRunner.And("I have the folowing indicators definition", ((string)(null)), table4, "And ");
 #line hidden
@@ -233,37 +233,43 @@ this.ScenarioInitialize(scenarioInfo);
                             "Structure",
                             "Sexe",
                             "CSP",
-                            "Date de naissance"});
+                            "Date de naissance",
+                            ""});
                 table6.AddRow(new string[] {
                             "1254",
                             "Alcuin",
                             "Homme",
                             "Cadre",
-                            "16/03/1985"});
+                            "16/03/1985",
+                            ""});
                 table6.AddRow(new string[] {
                             "1255",
                             "Alcuin",
                             "Homme",
                             "Cadre",
-                            "16/03/1978"});
+                            "16/03/1978",
+                            ""});
                 table6.AddRow(new string[] {
                             "1256",
                             "CGI",
                             "Homme",
                             "Cadre",
-                            "16/03/1986"});
+                            "16/03/1986",
+                            ""});
                 table6.AddRow(new string[] {
                             "1257",
                             "CGI",
                             "Femme",
                             "Cadre",
-                            "16/03/1988"});
+                            "16/03/1988",
+                            ""});
                 table6.AddRow(new string[] {
                             "1235",
                             "Alcuin",
                             "Femme",
                             "ouvrier",
-                            "16/03/1990"});
+                            "16/03/1990",
+                            ""});
 #line 26
  testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table6, "And ");
 #line hidden
@@ -280,14 +286,14 @@ this.ScenarioInitialize(scenarioInfo);
                             "Effectif au 31/12",
                             "Jeunes de plus de 33 ans",
                             "Cadre",
-                            "Count [matricule] par [structure] dont  Age >= 33"});
+                            "Count [matricule] par [structure] dont  Age >= \'33\'"});
                 table7.AddRow(new string[] {
                             "Effectifs",
                             "Effectif",
                             "Effectif au 31/12",
                             "Jeunes de moins de 33 ans",
                             "Cadre",
-                            "Count [matricule] par [structure] dont  Age << 33"});
+                            "Count [matricule] par [structure] dont  Age << \'33\'"});
 #line 33
  testRunner.And("I have the folowing indicators definition", ((string)(null)), table7, "And ");
 #line hidden

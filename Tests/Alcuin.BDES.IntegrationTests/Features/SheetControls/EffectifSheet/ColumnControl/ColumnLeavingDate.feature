@@ -22,16 +22,6 @@ Scenario: Processing file within column 'Date de sortie' in 'effectifs' workshee
 		| Message                                                                       |
 		| La colonne 'Date de sortie' de l’onglet 'Effectifs' est bien prise en compte. |
 
-Scenario: Processing file with empty cell in column 'Date de sortie' should have a warrning message
-	Given I have a workbook mybook.xlsx
-	And it has a workSheet effectifs with the following content
-		| Matricule | Structure | CSP   | Sexe  | Date de sortie |
-		| 12345     | Alcuin    | Cadre | Homme |                |
-	When I start processing the file mybook.xlsx for the period of 2015
-	Then I should found the following Error messages
-		| Message                                                                                  |
-		| Dans l'onglet «Effectifs», la colonne «Date de sortie» contient des cellules date vides. |
-
 Scenario: Processing file with invalid cell content in column 'Date de sortie' should faild
 	Given I have a workbook mybook.xlsx
 	And it has a workSheet effectifs with the following content

@@ -50,6 +50,12 @@ namespace Alcuin.BDES.Domain
         /// Employment Accompanement Contract
         /// </summary>
         [Description("CAE")]
-        EAC
+        EAC,
+
+        /// <summary>
+        /// Stage
+        /// </summary>
+        [Description("Stage")]
+        Internship,
     }
 }

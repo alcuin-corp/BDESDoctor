@@ -89,7 +89,8 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "Type de contrat",
                         "Nature de la fin de contrat",
                         "Date de naissance",
-                        "Durée du temps de travail hebdomadaire"});
+                        "Durée du temps de travail hebdomadaire",
+                        "Date d\'entrée"});
             table9.AddRow(new string[] {
                         "1254",
                         "Alcuin",
@@ -99,7 +100,8 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "CDI",
                         "dem",
                         "16/03/1986",
-                        "40"});
+                        "40",
+                        "12/12/2012"});
             table9.AddRow(new string[] {
                         "1255",
                         "Alcuin",
@@ -109,7 +111,8 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "CDI",
                         "dem",
                         "16/04/1987",
-                        "40"});
+                        "40",
+                        "12/12/2015"});
             table9.AddRow(new string[] {
                         "1256",
                         "CGI",
@@ -119,7 +122,8 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "CDI",
                         "dem",
                         "16/03/1987",
-                        "40"});
+                        "40",
+                        "12/12/2012"});
             table9.AddRow(new string[] {
                         "1257",
                         "CGI",
@@ -129,7 +133,8 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "CDI",
                         "dem",
                         "16/03/1987",
-                        "40"});
+                        "40",
+                        "12/12/2013"});
             table9.AddRow(new string[] {
                         "1235",
                         "Alcuin",
@@ -139,7 +144,8 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "CDI",
                         "dem",
                         "16/03/1983",
-                        "40"});
+                        "40",
+                        "12/12/2012"});
 #line 5
  testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table9, "And ");
 #line hidden
@@ -323,7 +329,7 @@ this.FeatureBackground();
  testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 36
- testRunner.Then("I should compute 70 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should compute 80 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

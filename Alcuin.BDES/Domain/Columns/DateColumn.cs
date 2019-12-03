@@ -6,16 +6,17 @@ namespace Alcuin.BDES.Domain.Columns
 {
     internal class DateColumn : Column
     {
-        public DateColumn(string columnheader, bool isMandatory = false)
+        public DateColumn(string columnheader, bool isMandatory, bool allowEmptyValues)
                 : base(columnheader, isMandatory, true)
         {
+            this.AllowEmptyValues = allowEmptyValues;
         }
 
         internal override string GetErrorMessageForEmptyCell() => $"Dans l'onglet «{this.Sheet.Name}», la colonne «{this.Header}» contient des cellules date vides.";
 
         internal override bool IsValidContent(string cellContent, out string errorMessage)
         {
-            if (cellContent.IsNotEmpty() && cellContent.TryParseDate(out var date))
+            if (cellContent?.TryParseDate(out var date) == true || (cellContent.IsEmpty() && this.AllowEmptyValues))
             {
                 errorMessage = null;
                 return true;

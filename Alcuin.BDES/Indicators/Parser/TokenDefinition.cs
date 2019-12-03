@@ -5,16 +5,17 @@ namespace Alcuin.BDES.Indicators.Parser
 {
     internal class TokenDefinition
     {
-        private readonly TokenType returnsToken;
         private readonly int precedence;
         private readonly Regex regex;
 
         public TokenDefinition(TokenType returnsToken, string regexPattern, int precedence)
         {
             this.regex = new Regex(regexPattern, RegexOptions.IgnoreCase);
-            this.returnsToken = returnsToken;
+            this.ReturnsToken = returnsToken;
             this.precedence = precedence;
         }
+
+        public TokenType ReturnsToken { get; }
 
         public IEnumerable<TokenMatch> FindMatches(string inputString)
         {
@@ -25,7 +26,7 @@ namespace Alcuin.BDES.Indicators.Parser
                 {
                     StartIndex = matches[i].Index,
                     EndIndex = matches[i].Index + matches[i].Length,
-                    TokenType = this.returnsToken,
+                    TokenType = this.ReturnsToken,
                     Value = matches[i].Value,
                     Precedence = this.precedence
                 };

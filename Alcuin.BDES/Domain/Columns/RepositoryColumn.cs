@@ -27,11 +27,10 @@ namespace Alcuin.BDES.Domain
             this.transcoder = transcoder;
             this.allowedValues = string.Join(", ", transcoder.AllowedKeys);
 
-
-            //if ("None".TryParseEnum(out this.noneValue))
-            //{
-            //    this.transcoder.AddMapping(this.noneValue, string.Empty);
-            //}
+            if ("None".TryParseEnum(out this.noneValue))
+            {
+                this.transcoder.AddMapping(this.noneValue, string.Empty);
+            }
 
             if ("Other".TryParseEnum(out this.otherValue))
             {
