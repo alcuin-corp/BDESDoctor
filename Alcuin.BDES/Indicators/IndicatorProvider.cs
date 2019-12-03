@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Reflection;
 using Alcuin.BDES.Domain;
 using Alcuin.BDES.Helper;
 using Alcuin.BDES.Indicators.Criterias;
 using Alcuin.BDES.Indicators.Parser;
+using Alcuin.BDES.Indicators.Parser.Raw;
 using Alcuin.BDES.Interfaces;
 
 namespace Alcuin.BDES.Indicators
@@ -29,10 +28,19 @@ namespace Alcuin.BDES.Indicators
         {
             var result = new Dictionary<SheetName, List<Indicator>>();
 
-            var indicatorDefinitions = this.rawIndicatorReader
-                .LoadEmbadedRawIndicators()
-                .Select(x => new IndicatorDefinition(x))
-                .ToList();
+            var indicatorDefinitions = new List<IndicatorDefinition>();
+            var badIndicator = new List<RawIndicator>();
+            foreach (var item in this.rawIndicatorReader.LoadEmbadedRawIndicators())
+            {
+                if (IndicatorDefinition.CanParse(item))
+                {
+                    indicatorDefinitions.Add(new IndicatorDefinition(item));
+                }
+                else
+                {
+                    badIndicator.Add(item);
+                }
+            }
 
             var groupedIndicators = indicatorDefinitions.GroupBy(x => x.SheetName);
             foreach (var group in groupedIndicators)
