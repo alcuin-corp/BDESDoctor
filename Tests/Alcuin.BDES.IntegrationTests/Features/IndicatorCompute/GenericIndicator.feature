@@ -35,13 +35,3 @@ Scenario: Load and compute generic complexe indicators
 	When I start processing the file mybook.xlsx for the period of 1986
 	Then I should compute 70 indicators
 
-Scenario: Custom Scenario
-	Given I have the folowing indicators definition
-		| Onglet    | Domaine  | Sous Domaine              | Indicateur                                                                        | Champs | Formule                                                                                                                                     |
-		| Effectifs | Effectif | Effectif au 31/12         | Effectif total au 31/12                                                           | [CSP]  | Nombre [matricule] par [structure] dont [CSP] est 'Enum'                                                                                    |
-		| Effectifs | Effectif | Effectif au 31/12         | Effectif permanent                                                                | [CSP]  | Nombre [matricule] par [structure] dont [type de contrat] est 'CDI' et [Durée du temps de travail hebdomadaire] >= '35' et [CSP] est 'Enum' |
-		| Effectifs | Effectif | Effectif au 31/12         | Nombre de salariés titulaires d'un contrat de travail à durée déterminée au 31/12 | [CSP]  | Nombre [matricule] par [structure] dont [type de contrat] est 'CDD' et [CSP] est 'Enum'                                                     |
-		| Effectifs | Effectif | Répartition de l'effectif | Répartition de l'effectif total au 31/12 pour les [Sexe]s                         | [CSP]  | Nombre [matricule] par [structure] dont [Sexe] est 'Enum' et [CSP] est 'Enum'                                                               |
-		| Effectifs | Effectif | Répartition de l'effectif | Répartition de l'effectif total au 31/12 de nationalité [Nationalité]             | [CSP]  | Nombre [matricule] par [structure] dont [Nationalité] est 'Enum' et [CSP] est 'Enum'                                                        |
-	When I start processing the file mybook.xlsx for the period of 1986
-	Then I should compute 35 indicators

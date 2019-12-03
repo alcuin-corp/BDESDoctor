@@ -5,6 +5,6 @@ namespace Alcuin.BDES.Interfaces
 {
     internal interface IRawIndicatorReader
     {
-        IEnumerable<RawIndicator> LoadInidcatorFromFile(string path);
+        IEnumerable<RawIndicator> LoadEmbadedRawIndicators();
     }
 }

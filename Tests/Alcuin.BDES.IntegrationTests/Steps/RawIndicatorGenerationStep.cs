@@ -1,7 +1,12 @@
 ﻿using System.IO;
 using System.IO.Abstractions;
+using System.Linq;
 using System.Text;
+using Alcuin.BDES.Indicators.Parser.Raw;
+using Alcuin.BDES.IntegrationTests.Hooks;
+using Alcuin.BDES.Interfaces;
 using Alcuin.BDES.Ninject;
+using NSubstitute;
 using TechTalk.SpecFlow;
 
 namespace Alcuin.BDES.IntegrationTests.Steps
@@ -19,16 +24,17 @@ namespace Alcuin.BDES.IntegrationTests.Steps
         [Given(@"I have the folowing indicators definition")]
         public void GivenIHaveTheFolowingIndicatorsDefinition(Table table)
         {
-            var stringbuilder = new StringBuilder();
-            stringbuilder.AppendLine(string.Join(";", table.Header));
-            foreach (var row in table.Rows)
+            var rawIndicators = table.Rows.Select(row => new RawIndicator
             {
-                stringbuilder.AppendLine(string.Join(";", row.Values));
-            }
+                Domain = row["Domaine"],
+                SubDomain = row["Sous Domaine"],
+                Field = row["Champs"],
+                Name = row["Indicateur"],
+                SheetName = row["Onglet"],
+                Formula = row["Formule"]
+            });
 
-            var path = @"Ressources\RawIndicators.csv";
-            this.fileSystem.Directory.CreateDirectory(Path.GetDirectoryName(path));
-            this.fileSystem.File.WriteAllText(path, stringbuilder.ToString());
+            this.context.Get<FakeRawDataReader>().AddRawIndicators(rawIndicators);
         }
 
     }

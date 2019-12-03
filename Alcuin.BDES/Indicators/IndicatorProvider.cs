@@ -29,14 +29,8 @@ namespace Alcuin.BDES.Indicators
         {
             var result = new Dictionary<SheetName, List<Indicator>>();
 
-            // Get assembly path
-            string codeBase = Assembly.GetExecutingAssembly().CodeBase;
-            UriBuilder uri = new UriBuilder(codeBase);
-            string path = Uri.UnescapeDataString(uri.Path);
-            var assemblyPath = Path.GetDirectoryName(path);
-
             var indicatorDefinitions = this.rawIndicatorReader
-                .LoadInidcatorFromFile(Path.Combine(assemblyPath, @"Ressources\RawIndicators.csv"))
+                .LoadEmbadedRawIndicators()
                 .Select(x => new IndicatorDefinition(x))
                 .ToList();
 

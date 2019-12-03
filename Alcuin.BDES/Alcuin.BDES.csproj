@@ -155,9 +155,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <AdditionalFiles Include="stylecop.json" />
-    <None Include="Ressources\RawIndicators.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <EmbeddedResource Include="Ressources\RawIndicators.csv" />
     <Content Include="Ressources\RawIndicators.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
