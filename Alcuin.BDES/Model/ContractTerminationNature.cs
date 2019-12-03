@@ -13,7 +13,7 @@
         Retirement,
 
         /// <summary>
-        /// Démision
+        /// Démission
         /// </summary>
         Resignation,
 

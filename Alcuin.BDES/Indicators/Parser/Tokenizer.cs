@@ -22,8 +22,8 @@ namespace Alcuin.BDES.Indicators.Parser
             this.AddTokenDefinition(TokenType.LessThan, "<<|inférieur", 1);
             this.AddTokenDefinition(TokenType.GreaterOrEquals, ">=", 1);
             this.AddTokenDefinition(TokenType.LessOrEquals, "<=", 1);
-            this.AddTokenDefinition(TokenType.In, "in|Dans", 1);
-            this.AddTokenDefinition(TokenType.NotIn, "pas dans|n'est pas dans|not in", 1);
+            this.AddTokenDefinition(TokenType.In, "Dans", 1);
+            this.AddTokenDefinition(TokenType.NotIn, "n'est pas dans|notin", 1);
             this.AddTokenDefinition(TokenType.NotEquals, "different|<>|!=", 1);
             this.AddTokenDefinition(TokenType.OpenParenthesis, "\\(", 1);
             this.AddTokenDefinition(TokenType.Or, "ou|or", 1);

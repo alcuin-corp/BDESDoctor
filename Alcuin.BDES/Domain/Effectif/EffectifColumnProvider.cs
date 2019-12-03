@@ -27,6 +27,7 @@ namespace Alcuin.BDES.Domain
                 new DateColumn(ColumnNames.LeavingDate, false, true),
                 new NumericColumn(ColumnNames.RawMonthlySalary),
                 new NumericColumn(ColumnNames.WeeklyWorkingTime),
+                new NumericColumn(ColumnNames.Variable),
                 new RepositoryColumn<CSP>(ColumnNames.CSP, new CSPTranscoder(), true),
                 new RepositoryColumn<Gender>(ColumnNames.Gender, new GenderTranscoder(), true),
                 new RepositoryColumn<ContractType>(ColumnNames.ContractType, new ContractTypeTranscoder()),

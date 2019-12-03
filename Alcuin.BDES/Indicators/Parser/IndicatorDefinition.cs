@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Alcuin.BDES.Indicators.Criterias;
 using Alcuin.BDES.Indicators.Parser.Raw;
@@ -32,7 +33,7 @@ namespace Alcuin.BDES.Indicators.Parser
                 var tokens = Tokenizer.Tokenize(rawIndicator.Formula).ToList();
                 var analyzer = new FormulaAnalyzer(tokens);
             }
-            catch
+            catch(Exception ex)
             {
                 return false;
             }
