@@ -28,9 +28,9 @@ Scenario: Processing file with empty cell in column 'Durée du temps de travail 
 		| Matricule | Structure | CSP   | Sexe  | Durée du temps de travail hebdomadaire |
 		| 12345     | Alcuin    | Cadre | Homme |                                        |
 	When I start processing the file mybook.xlsx for the period of 2015
-	Then I should found the following Warrning messages
+	Then I should found the following Error messages
 		| Message                                                                                                                         |
-		| Certaines cellules numériques sont vides dans votre fichier, les données vides ne seront pas prises en compte dans les calculs. |
+		| Dans l'onglet «Effectifs», la colonne «Durée du temps de travail hebdomadaire» contient une valeur numérique qui n’est pas dans le bon format. Le format attendu est « ####,## ». Veuillez vérifier que les valeurs numériques respectent ce format. |
 
 Scenario: Processing file with invalid cell content in column 'Durée du temps de travail hebdomadaire' should faild
 	Given I have a workbook mybook.xlsx

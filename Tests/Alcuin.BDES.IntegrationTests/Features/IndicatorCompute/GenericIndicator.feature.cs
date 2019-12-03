@@ -88,7 +88,8 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "Nationalité",
                         "Type de contrat",
                         "Nature de la fin de contrat",
-                        "Date de naissance"});
+                        "Date de naissance",
+                        "Durée du temps de travail hebdomadaire"});
             table9.AddRow(new string[] {
                         "1254",
                         "Alcuin",
@@ -97,7 +98,8 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "Francaise",
                         "CDI",
                         "dem",
-                        "16/03/1986"});
+                        "16/03/1986",
+                        "40"});
             table9.AddRow(new string[] {
                         "1255",
                         "Alcuin",
@@ -106,7 +108,8 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "Francaise",
                         "CDI",
                         "dem",
-                        "16/04/1987"});
+                        "16/04/1987",
+                        "40"});
             table9.AddRow(new string[] {
                         "1256",
                         "CGI",
@@ -115,7 +118,8 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "Francaise",
                         "CDI",
                         "dem",
-                        "16/03/1987"});
+                        "16/03/1987",
+                        "40"});
             table9.AddRow(new string[] {
                         "1257",
                         "CGI",
@@ -124,7 +128,8 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "Francaise",
                         "CDI",
                         "dem",
-                        "16/03/1987"});
+                        "16/03/1987",
+                        "40"});
             table9.AddRow(new string[] {
                         "1235",
                         "Alcuin",
@@ -133,7 +138,8 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "Autre",
                         "CDI",
                         "dem",
-                        "16/03/1983"});
+                        "16/03/1983",
+                        "40"});
 #line 5
  testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table9, "And ");
 #line hidden
@@ -318,6 +324,94 @@ this.FeatureBackground();
 #line hidden
 #line 36
  testRunner.Then("I should compute 70 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Custom Scenario")]
+        public virtual void CustomScenario()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Custom Scenario", null, ((string[])(null)));
+#line 38
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Onglet",
+                            "Domaine",
+                            "Sous Domaine",
+                            "Indicateur",
+                            "Champs",
+                            "Formule"});
+                table14.AddRow(new string[] {
+                            "Effectifs",
+                            "Effectif",
+                            "Effectif au 31/12",
+                            "Effectif total au 31/12",
+                            "[CSP]",
+                            "Nombre [matricule] par [structure] dont [CSP] est \'Enum\'"});
+                table14.AddRow(new string[] {
+                            "Effectifs",
+                            "Effectif",
+                            "Effectif au 31/12",
+                            "Effectif permanent",
+                            "[CSP]",
+                            "Nombre [matricule] par [structure] dont [type de contrat] est \'CDI\' et [Durée du " +
+                                "temps de travail hebdomadaire] >= \'35\' et [CSP] est \'Enum\'"});
+                table14.AddRow(new string[] {
+                            "Effectifs",
+                            "Effectif",
+                            "Effectif au 31/12",
+                            "Nombre de salariés titulaires d\'un contrat de travail à durée déterminée au 31/12" +
+                                "",
+                            "[CSP]",
+                            "Nombre [matricule] par [structure] dont [type de contrat] est \'CDD\' et [CSP] est " +
+                                "\'Enum\'"});
+                table14.AddRow(new string[] {
+                            "Effectifs",
+                            "Effectif",
+                            "Répartition de l\'effectif",
+                            "Répartition de l\'effectif total au 31/12 pour les [Sexe]s",
+                            "[CSP]",
+                            "Nombre [matricule] par [structure] dont [Sexe] est \'Enum\' et [CSP] est \'Enum\'"});
+                table14.AddRow(new string[] {
+                            "Effectifs",
+                            "Effectif",
+                            "Répartition de l\'effectif",
+                            "Répartition de l\'effectif total au 31/12 de nationalité [Nationalité]",
+                            "[CSP]",
+                            "Nombre [matricule] par [structure] dont [Nationalité] est \'Enum\' et [CSP] est \'En" +
+                                "um\'"});
+#line 39
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table14, "Given ");
+#line hidden
+#line 46
+ testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 47
+ testRunner.Then("I should compute 35 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -39,9 +39,9 @@ Scenario: Processing file with empty cell in column 'Matricule' should have a wa
 		| Matricule | Structure | CSP   | Sexe  |
 		|           | Alcuin    | Cadre | Homme |
 	When I start processing the file mybook.xlsx for the period of 2015
-	Then I should found the following Warrning messages
-		| Message                                                                                                                     |
-		| Certaines cellules textes sont vides dans votre fichier, les données vides ne seront pas prises en compte dans les calculs. |
+	Then I should found the following Error messages
+		| Message                                                                              |
+		| Dans l'onglet «Effectifs», la colonne «Matricule» contient des cellules texte vides. |
 
 Scenario: Processing file with invalid cell content in column 'Matricule' should have an error message
 	Given I have a workbook mybook.xlsx

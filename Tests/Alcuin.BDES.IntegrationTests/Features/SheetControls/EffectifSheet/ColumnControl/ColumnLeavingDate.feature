@@ -28,9 +28,9 @@ Scenario: Processing file with empty cell in column 'Date de sortie' should have
 		| Matricule | Structure | CSP   | Sexe  | Date de sortie |
 		| 12345     | Alcuin    | Cadre | Homme |                |
 	When I start processing the file mybook.xlsx for the period of 2015
-	Then I should found the following Warrning messages
-		| Message                                                                                                                    |
-		| Certaines cellules dates sont vides dans votre fichier, les données vides ne seront pas prises en compte dans les calculs. |
+	Then I should found the following Error messages
+		| Message                                                                                  |
+		| Dans l'onglet «Effectifs», la colonne «Date de sortie» contient des cellules date vides. |
 
 Scenario: Processing file with invalid cell content in column 'Date de sortie' should faild
 	Given I have a workbook mybook.xlsx

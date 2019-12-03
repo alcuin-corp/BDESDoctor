@@ -27,16 +27,6 @@ Scenario: Processing file with empty cell in column 'Nationalité' should have a
 		| Matricule | Structure | CSP   | Sexe  | Nationalité |
 		| 12345     | Alcuin    | Cadre | Homme |             |
 	When I start processing the file mybook.xlsx for the period of 2015
-	Then I should found the following Warrning messages
-		| Message                                                                                                                     |
-		| Certaines cellules textes sont vides dans votre fichier, les données vides ne seront pas prises en compte dans les calculs. |
-
-Scenario: Processing file with invalid cell content in column 'Nationalité' should have an error message
-	Given I have a workbook mybook.xlsx
-	And it has a workSheet effectifs with the following content
-		| Matricule | Structure | CSP   | Sexe  | Nationalité  |
-		| 1254      | Alcuin    | Cadre | Homme | Australienne |
-	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Error messages
-		| Message                                                                                                                                                                   |
-		| Dans l'onglet «Effectifs», la colonne «Nationalité» à une valeur qui texte n’est pas reconnue 'Australienne'. Les valeurs pouvant être utilisées sont «Francaise, autre». |
+		| Message                                                                                                                     |
+		| Dans l'onglet «Effectifs», la colonne «Nationalité» à une valeur texte qui n’est pas reconnue ''. Les valeurs pouvant être utilisées sont «Francaise, autre». |

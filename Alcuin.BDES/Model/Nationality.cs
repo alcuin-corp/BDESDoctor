@@ -7,7 +7,7 @@ namespace Alcuin.BDES.Model
         [Description("Francaise")]
         French = 1,
 
-        [Description("Etrangère")]
+        [Description("Étrangère")]
         Other
     }
 }

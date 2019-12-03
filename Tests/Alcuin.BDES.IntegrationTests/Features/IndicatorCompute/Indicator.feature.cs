@@ -102,7 +102,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
  testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                             "Matricule",
                             "Structure",
                             "Sexe",
@@ -111,7 +111,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Type de contrat",
                             "Nature de la fin de contrat",
                             "Date de naissance"});
-                table14.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "1254",
                             "Alcuin",
                             "Homme",
@@ -120,7 +120,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "CDI",
                             "dem",
                             "16/03/1986"});
-                table14.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "1255",
                             "Alcuin",
                             "Homme",
@@ -129,7 +129,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "CDI",
                             "dem",
                             "16/04/1987"});
-                table14.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "1256",
                             "CGI",
                             "Homme",
@@ -138,7 +138,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "CDI",
                             "dem",
                             "16/03/1987"});
-                table14.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "1257",
                             "CGI",
                             "Femme",
@@ -147,7 +147,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "CDI",
                             "dem",
                             "16/03/1987"});
-                table14.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "1235",
                             "Alcuin",
                             "Femme",
@@ -157,16 +157,16 @@ this.ScenarioInitialize(scenarioInfo);
                             "dem",
                             "16/03/1983"});
 #line 5
- testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table14, "And ");
+ testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table15, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table15.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "Effectifs",
                             "Effectif",
                             "Effectif au 31/12",
@@ -174,28 +174,28 @@ this.ScenarioInitialize(scenarioInfo);
                             "Cadre",
                             "Count [matricule] par [structure] dont [CSP] est \'Cadre\' et année[date de naissan" +
                                 "ce] >> \'1986\'"});
-                table15.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "Effectifs",
                             "Effectif",
                             "Effectif au 31/12",
                             "total des cadres",
                             "Agent de Maitrise",
                             "Count [matricule] par [structure] dont [CSP] est \'Cadre\'"});
-                table15.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "Effectifs",
                             "Effectif",
                             "Effectif au 31/12",
                             "total des ouvrier",
                             "Agent de Maitrise",
                             "Count [matricule] par [structure] dont [CSP] est \'ouv\'"});
-                table15.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "Effectifs",
                             "Effectif",
                             "Effectif au 31/12",
                             "indicateur 1",
                             "Agent de Maitrise",
                             "Count [matricule] par [structure] dont [CSP] est \'Cadre\' et [sexe] est \'H\'"});
-                table15.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "Effectifs",
                             "Effectif",
                             "Effectif au 31/12",
@@ -204,56 +204,56 @@ this.ScenarioInitialize(scenarioInfo);
                             "Count [matricule] par [structure] dont [CSP] est \'Cadre\' et [Salaire mensuel brut" +
                                 "] == \'3500\'"});
 #line 12
- testRunner.And("I have the folowing indicators definition", ((string)(null)), table15, "And ");
+ testRunner.And("I have the folowing indicators definition", ((string)(null)), table16, "And ");
 #line hidden
 #line 19
  testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                             "Indicator",
                             "Group",
                             "Count"});
-                table16.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "Naissance 1986",
                             "Alcuin",
                             "1"});
-                table16.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "Naissance 1986",
                             "CGI",
                             "2"});
-                table16.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "total des cadres",
                             "Alcuin",
                             "2"});
-                table16.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "total des cadres",
                             "CGI",
                             "2"});
-                table16.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "total des ouvrier",
                             "Alcuin",
                             "1"});
-                table16.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "total des ouvrier",
                             "CGI",
                             "0"});
-                table16.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "indicateur 1",
                             "Alcuin",
                             "2"});
-                table16.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "indicateur 1",
                             "CGI",
                             "1"});
 #line 20
- testRunner.Then("I should found the following indicators", ((string)(null)), table16, "Then ");
+ testRunner.Then("I should found the following indicators", ((string)(null)), table17, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
-                table17.AddRow(new string[] {
+                table18.AddRow(new string[] {
                             "L\'indicateur \'indicateur 2\' ne sera pas calculé."});
 #line 30
- testRunner.And("I should found the following Warrning messages", ((string)(null)), table17, "And ");
+ testRunner.And("I should found the following Warrning messages", ((string)(null)), table18, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
