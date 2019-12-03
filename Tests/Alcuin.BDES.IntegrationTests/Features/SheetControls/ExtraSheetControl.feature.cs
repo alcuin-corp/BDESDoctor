@@ -102,44 +102,44 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
  testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table143 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table144 = new TechTalk.SpecFlow.Table(new string[] {
                             "Matricule",
                             "Structure",
                             "CSP",
                             "Sexe"});
-                table143.AddRow(new string[] {
+                table144.AddRow(new string[] {
                             "1254",
                             "Alcuin",
                             "CADRE",
                             "Homme"});
-                table143.AddRow(new string[] {
+                table144.AddRow(new string[] {
                             "1235",
                             "Alcuin",
                             "CADRE",
                             "Femme"});
 #line 5
- testRunner.And("it has a workSheet Effectifs with the following content", ((string)(null)), table143, "And ");
+ testRunner.And("it has a workSheet Effectifs with the following content", ((string)(null)), table144, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table144 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table145 = new TechTalk.SpecFlow.Table(new string[] {
                             "Matricule",
                             "Nom",
                             "Prenom"});
-                table144.AddRow(new string[] {
+                table145.AddRow(new string[] {
                             "1254",
                             "John",
                             "CONNOR"});
 #line 9
- testRunner.And("it has also a workSheet otherSheet with the following content", ((string)(null)), table144, "And ");
+ testRunner.And("it has also a workSheet otherSheet with the following content", ((string)(null)), table145, "And ");
 #line hidden
 #line 12
  testRunner.When("I start processing the file mybook.xlsx for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table145 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table146 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
-                table145.AddRow(new string[] {
+                table146.AddRow(new string[] {
                             "D’autres onglets existent dans votre fichier, ils ne seront pas pris en compte."});
 #line 13
- testRunner.Then("I should found the following Warrning messages", ((string)(null)), table145, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table146, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

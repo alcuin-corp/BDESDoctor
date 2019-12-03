@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.IO.Abstractions;
+using System.Reflection;
 using Alcuin.BDES.Helper;
 using Alcuin.BDES.Interfaces;
 using CsvHelper;
@@ -8,18 +10,19 @@ namespace Alcuin.BDES.Indicators.Parser.Raw
 {
     internal class RawIndicatorReader : IRawIndicatorReader
     {
-        private readonly IFileSystem fileSystem;
+        private readonly string indicatorRessouceName;
 
-        public RawIndicatorReader(IFileSystem fileSystem)
+        private Assembly currentAssembly;
+
+        public RawIndicatorReader()
         {
-            fileSystem.IsNotNull(nameof(fileSystem));
-
-            this.fileSystem = fileSystem;
+            this.currentAssembly = this.GetType().Assembly;
+            this.indicatorRessouceName = this.currentAssembly.GetManifestResourceNames()[0];
         }
 
-        public IEnumerable<RawIndicator> LoadInidcatorFromFile(string path)
+        public IEnumerable<RawIndicator> LoadEmbadedRawIndicators()
         {
-            using (var reader = this.fileSystem.File.OpenText(path))
+            using (var reader = new StreamReader(this.currentAssembly.GetManifestResourceStream(this.indicatorRessouceName)))
             {
                 using (var csv = new CsvReader(reader))
                 {
