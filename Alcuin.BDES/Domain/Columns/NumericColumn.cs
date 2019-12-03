@@ -26,7 +26,7 @@ namespace Alcuin.BDES.Domain.Columns
 
             if (cellContent.IsEmpty())
             {
-                errorMessage = this.GetErrorMessageForEmptyCell();
+                errorMessage = this.GetInvalidCellContentMessage(cellContent);
             }
             else
             {

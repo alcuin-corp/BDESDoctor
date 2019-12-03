@@ -102,7 +102,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
  testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table141 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table136 = new TechTalk.SpecFlow.Table(new string[] {
                             "Matricule",
                             "Structure",
                             "",
@@ -110,7 +110,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Age",
                             "CSP",
                             "Sexe"});
-                table141.AddRow(new string[] {
+                table136.AddRow(new string[] {
                             "1254",
                             "Alcuin",
                             "CAIO",
@@ -118,7 +118,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "33",
                             "CADRE",
                             "Homme"});
-                table141.AddRow(new string[] {
+                table136.AddRow(new string[] {
                             "1235",
                             "Alcuin",
                             "LEGROS",
@@ -127,7 +127,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "CADRE",
                             "Femme"});
 #line 5
- testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table141, "And ");
+ testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table136, "And ");
 #line hidden
 #line 9
  testRunner.When("I start processing the file mybook.xlsx for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

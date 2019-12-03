@@ -104,34 +104,34 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
  testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table101 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table100 = new TechTalk.SpecFlow.Table(new string[] {
                             "Matricule",
                             "Structure",
                             "CSP",
                             "Sexe"});
-                table101.AddRow(new string[] {
+                table100.AddRow(new string[] {
                             "1254",
                             "Alcuin",
                             "CADRE",
                             "Homme"});
-                table101.AddRow(new string[] {
+                table100.AddRow(new string[] {
                             "1235",
                             "Alcuin",
                             "CADRE",
                             "Femme"});
 #line 5
- testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table101, "And ");
+ testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table100, "And ");
 #line hidden
 #line 9
  testRunner.When("I start processing the file mybook.xlsx for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table101 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
-                table102.AddRow(new string[] {
+                table101.AddRow(new string[] {
                             "La colonne \'Nationalité\' n\'est pas présente dans L\'onglet \'Effectifs\', aucun indi" +
                                 "cateur lié à cette colonne ne sera calculé lors de la conversion."});
 #line 10
- testRunner.Then("I should found the following Warrning messages", ((string)(null)), table102, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table101, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -168,30 +168,30 @@ this.ScenarioInitialize(scenarioInfo);
 #line 15
  testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table103 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
                             "Matricule",
                             "Structure",
                             "CSP",
                             "Sexe",
                             "Nationalité"});
-                table103.AddRow(new string[] {
+                table102.AddRow(new string[] {
                             "12345",
                             "Alcuin",
                             "Cadre",
                             "Homme",
                             "Francaise"});
 #line 16
- testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table103, "And ");
+ testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table102, "And ");
 #line hidden
 #line 19
  testRunner.When("I start processing the file mybook.xlsx for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table104 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table103 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
-                table104.AddRow(new string[] {
+                table103.AddRow(new string[] {
                             "La colonne \'Nationalité\' de l’onglet \'Effectifs\' est bien prise en compte."});
 #line 20
- testRunner.Then("I should found the following Succes messages", ((string)(null)), table104, "Then ");
+ testRunner.Then("I should found the following Succes messages", ((string)(null)), table103, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -228,93 +228,31 @@ this.ScenarioInitialize(scenarioInfo);
 #line 25
  testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table105 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table104 = new TechTalk.SpecFlow.Table(new string[] {
                             "Matricule",
                             "Structure",
                             "CSP",
                             "Sexe",
                             "Nationalité"});
-                table105.AddRow(new string[] {
+                table104.AddRow(new string[] {
                             "12345",
                             "Alcuin",
                             "Cadre",
                             "Homme",
                             ""});
 #line 26
- testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table105, "And ");
+ testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table104, "And ");
 #line hidden
 #line 29
  testRunner.When("I start processing the file mybook.xlsx for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table106 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table105 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
-                table106.AddRow(new string[] {
-                            "Certaines cellules textes sont vides dans votre fichier, les données vides ne ser" +
-                                "ont pas prises en compte dans les calculs."});
+                table105.AddRow(new string[] {
+                            "Dans l\'onglet «Effectifs», la colonne «Nationalité» à une valeur texte qui n’est " +
+                                "pas reconnue \'\'. Les valeurs pouvant être utilisées sont «Francaise, autre»."});
 #line 30
- testRunner.Then("I should found the following Warrning messages", ((string)(null)), table106, "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Processing file with invalid cell content in column \'Nationalité\' should have an " +
-            "error message")]
-        public virtual void ProcessingFileWithInvalidCellContentInColumnNationaliteShouldHaveAnErrorMessage()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Processing file with invalid cell content in column \'Nationalité\' should have an " +
-                    "error message", null, ((string[])(null)));
-#line 34
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 35
- testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table107 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Matricule",
-                            "Structure",
-                            "CSP",
-                            "Sexe",
-                            "Nationalité"});
-                table107.AddRow(new string[] {
-                            "1254",
-                            "Alcuin",
-                            "Cadre",
-                            "Homme",
-                            "Australienne"});
-#line 36
- testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table107, "And ");
-#line hidden
-#line 39
- testRunner.When("I start processing the file mybook.xlsx for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table108 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Message"});
-                table108.AddRow(new string[] {
-                            "Dans l\'onglet «Effectifs», la colonne «Nationalité» à une valeur qui texte n’est " +
-                                "pas reconnue \'Australienne\'. Les valeurs pouvant être utilisées sont «Francaise," +
-                                " autre»."});
-#line 40
- testRunner.Then("I should found the following Error messages", ((string)(null)), table108, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table105, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -22,16 +22,6 @@ Scenario: Processing file within column 'Type de reconnaissance' in 'effectifs' 
 		| Message                                                                               |
 		| La colonne 'Type de reconnaissance' de l’onglet 'Effectifs' est bien prise en compte. |
 
-Scenario: Processing file with empty cell in column 'Type de reconnaissance' should have a warrning message
-	Given I have a workbook mybook.xlsx
-	And it has a workSheet effectifs with the following content
-		| Matricule | Structure | CSP   | Sexe  | Type de reconnaissance |
-		| 12345     | Alcuin    | Cadre | Homme |                        |
-	When I start processing the file mybook.xlsx for the period of 2015
-	Then I should found the following Warrning messages
-		| Message                                                                                                                     |
-		| Certaines cellules textes sont vides dans votre fichier, les données vides ne seront pas prises en compte dans les calculs. |
-
 Scenario: Processing file with invalid cell content in column 'Type de reconnaissance' should faild
 	Given I have a workbook mybook.xlsx
 	And it has a workSheet effectifs with the following content
@@ -39,5 +29,5 @@ Scenario: Processing file with invalid cell content in column 'Type de reconnais
 		| 1254      | Alcuin    | Cadre | Homme | HTTP                   |
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Error messages
-		| Message                                                                                                                                                          |
-		| Dans l'onglet «Effectifs», la colonne «Type de reconnaissance» à une valeur qui texte n’est pas reconnue 'HTTP'. Les valeurs pouvant être utilisées sont «RQTH». |
+		| Message                                                                                                                                                        |
+		| Dans l'onglet «Effectifs», la colonne «Type de reconnaissance» à une valeur texte qui n’est pas reconnue 'HTTP'. Les valeurs pouvant être utilisées sont «RQTH». |

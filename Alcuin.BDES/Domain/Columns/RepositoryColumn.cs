@@ -28,10 +28,10 @@ namespace Alcuin.BDES.Domain
             this.allowedValues = string.Join(", ", transcoder.AllowedKeys);
 
 
-            if ("None".TryParseEnum(out this.noneValue))
-            {
-                this.transcoder.AddMapping(this.noneValue, string.Empty);
-            }
+            //if ("None".TryParseEnum(out this.noneValue))
+            //{
+            //    this.transcoder.AddMapping(this.noneValue, string.Empty);
+            //}
 
             if ("Other".TryParseEnum(out this.otherValue))
             {
@@ -41,7 +41,7 @@ namespace Alcuin.BDES.Domain
 
         internal override bool IsValidContent(string cellContent, out string errorMessage)
         {
-            if (this.transcoder.TryTranscode(cellContent, out var result) || this.useExtraValueAsOther)
+            if (this.transcoder.TryTranscode(cellContent, out var result) || (this.useExtraValueAsOther && cellContent.IsNotEmpty()))
             {
                 errorMessage = null;
                 return true;

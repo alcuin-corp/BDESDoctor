@@ -41,4 +41,4 @@ Scenario: Processing file with invalid cell content in column 'CSP' should an er
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Error messages
 		| Message                                                                                                                                                                                              |
-		| Dans l'onglet «Effectifs», la colonne «CSP» à une valeur qui texte n’est pas reconnue 'Ingénieur'. Les valeurs pouvant être utilisées sont «Cadre, Employé, Ouvrier, Agent de maitrise, Technicien». |
+		| Dans l'onglet «Effectifs», la colonne «CSP» à une valeur texte qui n’est pas reconnue 'Ingénieur'. Les valeurs pouvant être utilisées sont «Cadre, Employé, Ouvrier, Agent de maitrise, Technicien». |

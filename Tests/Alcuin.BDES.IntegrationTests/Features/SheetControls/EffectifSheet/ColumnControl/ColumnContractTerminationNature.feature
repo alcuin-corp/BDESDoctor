@@ -9,9 +9,9 @@ Scenario: Processing file within column 'Nature de la fin de contrat' in 'effect
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Succes messages
 		| Message                                                                                    |
-		| La colonne 'Nature de la fin de contrat' de l’onglet 'effectifs' est bien prise en compte. |
+		| La colonne 'Nature de la fin de contrat' de l’onglet 'Effectifs' est bien prise en compte. |
 
-Scenario: Processing file within column 'Nature de la fin de contrat' in 'effectifs' should have a warrning message
+Scenario: Processing file without column 'Nature de la fin de contrat' in 'effectifs' should have a warrning message
 	Given I have a workbook mybook.xlsx
 	And it has a workSheet effectifs with the following content
 		| Matricule | Structure | CSP   | Sexe  |
@@ -20,17 +20,7 @@ Scenario: Processing file within column 'Nature de la fin de contrat' in 'effect
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Warrning messages
 		| Message                                                                                                                                                            |
-		| La colonne 'Nature de la fin de contrat' n'est pas présente dans L'onglet 'effectifs', aucun indicateur lié à cette colonne ne sera calculé lors de la conversion. |
-
-Scenario: Processing file with empty cell in column 'Nature de la fin de contrat' should have a warrning message
-	Given I have a workbook mybook.xlsx
-	And it has a workSheet effectifs with the following content
-		| Matricule | Structure | CSP   | Sexe  | Nature de la fin de contrat |
-		| 12345     | Alcuin    | Cadre | Homme |                             |
-	When I start processing the file mybook.xlsx for the period of 2015
-	Then I should found the following Warrning messages
-		| Message                                                                                                                     |
-		| Certaines cellules textes sont vides dans votre fichier, les données vides ne seront pas prises en compte dans les calculs. |
+		| La colonne 'Nature de la fin de contrat' n'est pas présente dans L'onglet 'Effectifs', aucun indicateur lié à cette colonne ne sera calculé lors de la conversion. |
 
 Scenario: Processing file with invalid cell content in column 'Nature de la fin de contrat' should faild
 	Given I have a workbook mybook.xlsx
@@ -40,4 +30,4 @@ Scenario: Processing file with invalid cell content in column 'Nature de la fin 
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Error messages
 		| Message                                                                                                                                                                                                                                                  |
-		| Dans l'onglet «effectifs», la colonne «Nature de la fin de contrat» à une valeur qui texte n’est pas reconnue 'Contrat'. Les valeurs pouvant être utilisées sont «Retraite, Démission, Fin de CDD, Licenciement, Licenciement économique, Pré-retraite». |
+		| Dans l'onglet «Effectifs», la colonne «Nature de la fin de contrat» à une valeur texte qui n’est pas reconnue 'Contrat'. Les valeurs pouvant être utilisées sont «Retraite, Démission, Fin de CDD, Licenciement, Licenciement économique, Pré-retraite». |

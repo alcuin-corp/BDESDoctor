@@ -28,9 +28,9 @@ Scenario: Processing file with empty cell in column 'Salaire mensuel brut' shoul
 		| Matricule | Structure | CSP   | Sexe  | Salaire mensuel brut |
 		| 12345     | Alcuin    | Cadre | Homme |                      |
 	When I start processing the file mybook.xlsx for the period of 2015
-	Then I should found the following Warrning messages
-		| Message                                                                                                                         |
-		| Certaines cellules numériques sont vides dans votre fichier, les données vides ne seront pas prises en compte dans les calculs. |
+	Then I should found the following Error messages
+		| Message                                                                                                                                                                                                                            |
+		| Dans l'onglet «Effectifs», la colonne «Salaire mensuel brut» contient une valeur numérique qui n’est pas dans le bon format. Le format attendu est « ####,## ». Veuillez vérifier que les valeurs numériques respectent ce format. |
 
 Scenario: Processing file with invalid cell content in column 'Salaire mensuel brut' should faild
 	Given I have a workbook mybook.xlsx
