@@ -22,7 +22,7 @@ namespace Alcuin.BDES.Workflow.Commands
             var workingDirectory = Path.GetDirectoryName(request.FilePath);
             var targetFilePath = Path.Combine(workingDirectory, $"{fileNameWithoutExtension}-output.xls");
             var allIndicators = processingContext.AvailableSheets.SelectMany(x => x.Indicators);
-            this.indicatorDumper.Dump(allIndicators, targetFilePath);
+            this.indicatorDumper.Dump(allIndicators, request.ReferenceYear, targetFilePath);
             request.OutputFilePath = targetFilePath;
         }
     }

@@ -16,6 +16,8 @@ namespace Alcuin.BDES.Domain
 
         public bool AllowDuplicateValues { get; }
 
+        public bool AllowEmptyValues { get; protected set; }
+
         public string Header { get; set; }
 
         public Cell HeaderCell { get; set; }

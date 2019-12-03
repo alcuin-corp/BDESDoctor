@@ -49,6 +49,11 @@
                 ContractType.EAC,
                 "CAE",
                 "Contrat d'accompagnement dans l'emploi");
+
+            this.Map(
+                ContractType.Internship,
+                "Stage",
+                "stagiaire");
         }
     }
 }

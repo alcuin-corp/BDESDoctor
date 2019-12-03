@@ -24,6 +24,8 @@ namespace Alcuin.BDES.Indicators.Criterias
 
         public bool UseFunction => this.ScalarFunction != ScalarFunction.None;
 
+        public bool UseRequestParameter { get; set; }
+
         public ScalarFunction ScalarFunction { get; set; }
 
         public abstract bool IsMatch(Aspose.Cells.Row row, int referenceYear);

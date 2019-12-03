@@ -13,7 +13,7 @@
         Retirement,
 
         /// <summary>
-        /// Démision
+        /// Démission
         /// </summary>
         Resignation,
 
@@ -35,6 +35,11 @@
         /// <summary>
         /// Préretraite
         /// </summary>
-        EarlyRetirement
+        EarlyRetirement,
+
+        /// <summary>
+        /// Décès
+        /// </summary>
+        Death
     }
 }

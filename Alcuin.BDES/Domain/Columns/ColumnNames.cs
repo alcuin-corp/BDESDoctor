@@ -70,5 +70,7 @@
         public const string AbsenceDayCount = "Nombre de jour d'absence";
 
         public const string AbsenceCalendarDayCount = "Nombre de jour calendaire d'absence";
+
+        public const string Variable = "";
     }
 }

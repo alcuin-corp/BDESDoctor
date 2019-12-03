@@ -4,6 +4,7 @@
     {
         None,
         Age,
-        YearOf
+        YearOf,
+        YearOfOrDefault
     }
 }

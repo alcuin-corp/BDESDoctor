@@ -1,12 +1,8 @@
-﻿using System.IO;
-using System.IO.Abstractions;
+﻿using System.IO.Abstractions;
 using System.Linq;
-using System.Text;
 using Alcuin.BDES.Indicators.Parser.Raw;
 using Alcuin.BDES.IntegrationTests.Hooks;
-using Alcuin.BDES.Interfaces;
 using Alcuin.BDES.Ninject;
-using NSubstitute;
 using TechTalk.SpecFlow;
 
 namespace Alcuin.BDES.IntegrationTests.Steps

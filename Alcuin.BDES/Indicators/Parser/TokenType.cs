@@ -20,13 +20,14 @@
         Differente,
         Comma,
         DateTimeValue,
-        Number,
         CloseParenthesis,
         OpenParenthesis,
         StringValue,
         SequenceTerminator,
         YearOf,
         Age,
+        EntryAge,
+        LeavingAge,
         Reference,
         Enum
     }
