@@ -21,10 +21,12 @@ namespace Alcuin.BDES.Indicators.Criterias
         {
             var cleanValue = this.Column.GetCleanCell(row);
             T value = default;
-            if(!cleanValue.TryParseEnum<T>(out value))
+
+            if (!cleanValue.TryParseEnum<T>(out value))
             {
 
             }
+
             var cellValue = value;
             switch (this.Operator)
             {

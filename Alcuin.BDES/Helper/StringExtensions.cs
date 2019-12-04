@@ -99,7 +99,9 @@ namespace Alcuin.BDES.Helper
         public static string ToFirstUpper(this string str)
         {
             if (str.IsEmpty())
+            {
                 return str;
+            }
 
             var strBuilder = new StringBuilder(str);
             strBuilder[0] = char.ToUpper(strBuilder[0]);

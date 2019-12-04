@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.IO.Abstractions;
 using Alcuin.BDES.Domain.Columns;
 using Alcuin.BDES.Helper;
@@ -17,9 +18,10 @@ namespace Alcuin.BDES.Indicators.Dumper
             this.headers = this.GetOutputFileHeaders();
         }
 
-        public void Dump(IEnumerable<Indicator> indicators, int referenceYear, string outputFilePath, string asposeLicense)
+        public void Dump(IEnumerable<Indicator> indicators, int referenceYear, string outputFilePath, Stream asposeLicense = null)
         {
-            if (!string.IsNullOrEmpty(asposeLicense))
+            // Set Aspose.Cells license
+            if (asposeLicense != null)
             {
                 var lic = new License();
                 lic.SetLicense(asposeLicense);

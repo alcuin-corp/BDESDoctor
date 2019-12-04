@@ -8,7 +8,7 @@ namespace Alcuin.BDES.Indicators.Parser
 {
     internal class IndicatorDefinition
     {
-        private readonly static Tokenizer Tokenizer = new Tokenizer();
+        private static readonly Tokenizer Tokenizer = new Tokenizer();
 
         private readonly RawIndicator rawIndicator;
 
@@ -24,21 +24,6 @@ namespace Alcuin.BDES.Indicators.Parser
             this.AgregateFunction = analyzer.AgregateFunction;
             this.Name = this.rawIndicator.Name;
             this.Field = this.rawIndicator.Field;
-        }
-
-        public static bool CanParse(RawIndicator rawIndicator)
-        {
-            try
-            {
-                var tokens = Tokenizer.Tokenize(rawIndicator.Formula).ToList();
-                var analyzer = new FormulaAnalyzer(tokens);
-            }
-            catch(Exception ex)
-            {
-                return false;
-            }
-
-            return true;
         }
 
         public AgregateFunction AgregateFunction { get; private set; }
@@ -58,6 +43,21 @@ namespace Alcuin.BDES.Indicators.Parser
         public string AgregateColumnHeader { get; private set; }
 
         public string GroupColumnHeader { get; private set; }
+
+        public static bool CanParse(RawIndicator rawIndicator)
+        {
+            try
+            {
+                var tokens = Tokenizer.Tokenize(rawIndicator.Formula).ToList();
+                var analyzer = new FormulaAnalyzer(tokens);
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+            return true;
+        }
 
         public IndicatorDefinition Clone()
         {

@@ -19,6 +19,14 @@ namespace Alcuin.BDES.Monitoring
             this.stepMapper = GetStepMapper();
         }
 
+        public void Dump(Request request)
+        {
+            var logFilePath = this.GetLogPath(request);
+            var logFileLines = this.GetLogLines(request);
+            this.CreateFile(logFileLines, logFilePath);
+            request.LogFilePath = logFilePath;
+        }
+
         private static Dictionary<Step, string> GetStepMapper()
         {
             var mapper = new Dictionary<Step, string>
@@ -29,20 +37,7 @@ namespace Alcuin.BDES.Monitoring
                 { Step.OutputGeneration, "Génération des fichiers de sortie" }
             };
 
-            //mapper.Add(Step.FileAnalyzing, "Vérification du format du fichier");
-            //mapper.Add(Step.DataAnalyzing, "Vérification du format des données");
-            //mapper.Add(Step.IndicatorComputing, "Calcul des indicateurs");
-            //mapper.Add(Step.OutputGeneration, "Génération des fichiers de sortie");
-
             return mapper;
-        }
-
-        public void Dump(Request request)
-        {
-            var logFilePath = this.GetLogPath(request);
-            var logFileLines = this.GetLogLines(request);
-            this.CreateFile(logFileLines, logFilePath);
-            request.LogFilePath = logFilePath;
         }
 
         private void CreateFile(List<string> logLines, string logFilePath)

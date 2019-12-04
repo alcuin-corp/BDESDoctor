@@ -6,13 +6,13 @@ namespace Alcuin.BDES.Domain
 {
     internal class Colander
     {
+        public List<Indicator> Indicators { get; set; }
+
+        public List<Colander> Colanders { get; set; }
+
         public bool CanPass(List<Column> columns, Row row)
         {
             return true;
         }
-
-        public List<Indicator> Indicators { get; set; }
-
-        public List<Colander> Colanders { get; set; }
     }
 }

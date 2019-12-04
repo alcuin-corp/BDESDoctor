@@ -22,7 +22,7 @@ namespace Alcuin.BDES.Domain
             {
                 new TextColumn(ColumnNames.Identifier, true, false),
                 new TextColumn(ColumnNames.Structure, true),
-                new DateColumn(ColumnNames.BirthDay,false, false),
+                new DateColumn(ColumnNames.BirthDay, false, false),
                 new DateColumn(ColumnNames.EntryDate, false, false),
                 new DateColumn(ColumnNames.LeavingDate, false, true),
                 new NumericColumn(ColumnNames.RawMonthlySalary),

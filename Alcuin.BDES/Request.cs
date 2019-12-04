@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using Alcuin.BDES.Indicators;
 using Alcuin.BDES.Interfaces;
 using Alcuin.BDES.Monitoring;
 using Alcuin.BDES.Ninject;
-using Alcuin.BDES.Workflow;
 
 namespace Alcuin.BDES
 {
@@ -17,7 +17,7 @@ namespace Alcuin.BDES
         private Step currentStep;
         private int lastProgressRate;
 
-        internal Request(string filePath, int referenceYear, string asposeLicense = null)
+        internal Request(string filePath, int referenceYear, Stream asposeLicense = null)
         {
             this.FilePath = filePath;
             this.ReferenceYear = referenceYear;
@@ -38,7 +38,7 @@ namespace Alcuin.BDES
 
         public string FilePath { get; }
 
-        public string AsposeLicense { get; }
+        public Stream AsposeLicense { get; }
 
         public decimal ProgressRate
         {

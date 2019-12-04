@@ -398,7 +398,6 @@ namespace Alcuin.BDES.Indicators.Parser
             {
                 throw new Exception("Expected LIMIT or the end of the query but found: " + this.lookaheadFirst.Value);
             }
-
         }
 
         private bool IsEqualityOperator(Token token)
