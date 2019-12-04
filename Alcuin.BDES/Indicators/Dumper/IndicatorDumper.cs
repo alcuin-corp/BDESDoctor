@@ -17,8 +17,14 @@ namespace Alcuin.BDES.Indicators.Dumper
             this.headers = this.GetOutputFileHeaders();
         }
 
-        public void Dump(IEnumerable<Indicator> indicators, int referenceYear, string outputFilePath)
+        public void Dump(IEnumerable<Indicator> indicators, int referenceYear, string outputFilePath, string asposeLicense)
         {
+            if (!string.IsNullOrEmpty(asposeLicense))
+            {
+                var lic = new License();
+                lic.SetLicense(asposeLicense);
+            }
+
             var workBook = new Workbook();
             workBook.Worksheets.Clear();
             var worksheet = workBook.Worksheets.Add("Indicateurs");

@@ -1,11 +1,11 @@
-﻿namespace Alcuin.BDES.Workflow
-{
-    using System;
-    using System.Collections.Generic;
-    using Alcuin.BDES.Interfaces;
-    using Alcuin.BDES.Monitoring;
-    using Alcuin.BDES.Workflow.Commands;
+﻿using System;
+using System.Collections.Generic;
+using Alcuin.BDES.Interfaces;
+using Alcuin.BDES.Monitoring;
+using Alcuin.BDES.Workflow.Commands;
 
+namespace Alcuin.BDES.Workflow
+{
     internal class Workflow : IWorkflow
     {
         public void Process(Request request)

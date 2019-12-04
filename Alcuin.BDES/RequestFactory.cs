@@ -2,9 +2,9 @@
 {
     public static class RequestFactory
     {
-        public static IRequest Create(string filePath, int referenceYear)
+        public static IRequest Create(string filePath, int referenceYear, string asposeLisence = null)
         {
-            return new Request(filePath, referenceYear);
+            return new Request(filePath, referenceYear, asposeLisence);
         }
     }
 }

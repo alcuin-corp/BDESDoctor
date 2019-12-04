@@ -12,17 +12,16 @@ namespace Alcuin.BDES
     internal class Request : IRequest
     {
         private int progressRate;
-
         private bool isFinished;
-
         private Step currentStep;
 
-        internal Request(string filePath, int referenceYear)
+        internal Request(string filePath, int referenceYear, string asposeLicense = null)
         {
             this.FilePath = filePath;
             this.ReferenceYear = referenceYear;
             this.PublishedMessages = new Dictionary<MonitoringType, List<MonitoringMessage>>();
             this.Indicators = new List<Indicator>();
+            this.AsposeLicense = asposeLicense;
         }
 
         public event EventHandler<MonitoringMsgPublishedEventArgs> MonitoringMsgPublished;
@@ -36,6 +35,8 @@ namespace Alcuin.BDES
         public Dictionary<MonitoringType, List<MonitoringMessage>> PublishedMessages { get; }
 
         public string FilePath { get; }
+
+        public string AsposeLicense { get; }
 
         public int ProgressRate
         {

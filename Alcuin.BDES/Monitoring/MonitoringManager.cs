@@ -18,7 +18,7 @@ namespace Alcuin.BDES.Monitoring
 
         public void Append(Exception exception)
         {
-            this.AppendMessage(MonitoringType.Error, exception.Message);
+            this.Request.AppendMessage(MonitoringType.Error, exception.Message);
         }
 
         public void AppendMessage(MonitoringType monitoringType, string monitoringMessage)

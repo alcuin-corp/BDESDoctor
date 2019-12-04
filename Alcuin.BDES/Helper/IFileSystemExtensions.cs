@@ -18,18 +18,22 @@ namespace Alcuin.BDES.Helper
                 filePath = Path.Combine(fileSystem.Directory.GetCurrentDirectory(), filePath);
             }
 
-            var stream = fileSystem.FileStream.Create(filePath, FileMode.OpenOrCreate);
-            var memorytream = workbook.SaveToStream();
-            memorytream.WriteTo(stream);
-            stream.Close();
+            using (var stream = fileSystem.FileStream.Create(filePath, FileMode.OpenOrCreate))
+            {
+                using (var memorytream = workbook.SaveToStream())
+                {
+                    memorytream.WriteTo(stream);
+                }
+            }
         }
 
         public static Workbook LoadWorkbook(this IFileSystem fileSystem, string filePath)
         {
-            var fstream = fileSystem.FileStream.Create(filePath, FileMode.Open);
-            var workbook = new Workbook(fstream);
-            fstream.Close();
-            return workbook;
+            using (var fstream = fileSystem.FileStream.Create(filePath, FileMode.Open))
+            {
+                var workbook = new Workbook(fstream);
+                return workbook;
+            }
         }
     }
 }
