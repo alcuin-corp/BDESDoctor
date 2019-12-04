@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using Alcuin.BDES.Domain.Columns;
+using Alcuin.BDES.Domain.Transcodification;
+using Alcuin.BDES.Model;
 
 namespace Alcuin.BDES.Domain
 {
@@ -10,6 +12,7 @@ namespace Alcuin.BDES.Domain
             return new List<Column>()
             {
                 new TextColumn(ColumnNames.Identifier, true, true),
+                new RepositoryColumn<AbsenceKind>(ColumnNames.AbsenceKind, new AbsenceKindTranscoder()),
                 new NumericColumn(ColumnNames.AbsenceDayCount, false),
                 new NumericColumn(ColumnNames.AbsenceCalendarDayCount, false)
             };
