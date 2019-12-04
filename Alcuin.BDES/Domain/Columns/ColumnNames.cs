@@ -71,6 +71,8 @@
 
         public const string AbsenceCalendarDayCount = "Nombre de jour calendaire d'absence";
 
-        public const string Variable = "";
+        public const string AbsenceKind = "Nature de l'absence";
+
+        public const string Variable = "Var";
     }
 }

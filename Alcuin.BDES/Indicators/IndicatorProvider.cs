@@ -5,7 +5,6 @@ using Alcuin.BDES.Domain;
 using Alcuin.BDES.Helper;
 using Alcuin.BDES.Indicators.Criterias;
 using Alcuin.BDES.Indicators.Parser;
-using Alcuin.BDES.Indicators.Parser.Raw;
 using Alcuin.BDES.Interfaces;
 
 namespace Alcuin.BDES.Indicators

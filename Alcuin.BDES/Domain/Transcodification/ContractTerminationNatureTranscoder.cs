@@ -8,6 +8,8 @@ namespace Alcuin.BDES.Domain.Transcodification
         {
             this.Map(ContractTerminationNature.Retirement, "Retraite");
 
+            this.Map(ContractTerminationNature.Death, "Décès");
+
             this.Map(
                 ContractTerminationNature.Resignation,
                 "Démission",

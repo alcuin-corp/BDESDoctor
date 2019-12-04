@@ -16,7 +16,7 @@ namespace Alcuin.BDES.Indicators.Criterias
             this.Values = new List<DateTime>();
             foreach (var value in criteriaDefinition.Values)
             {
-                this.Values.Add(value.ParseDate());
+                    this.Values.Add(value.ParseDate());
             }
         }
 

@@ -64,6 +64,7 @@
     <Compile Include="Domain\Columns\NumericColumn.cs" />
     <Compile Include="Domain\Columns\OutputColumnNames.cs" />
     <Compile Include="Domain\Columns\TextColumn.cs" />
+    <Compile Include="Domain\Transcodification\AbsenceKindTranscoder.cs" />
     <Compile Include="Events\ProgressChangedEventArgs.cs" />
     <Compile Include="Helper\EnumExtensions.cs" />
     <Compile Include="Helper\IFileSystemExtensions.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="IRequest.cs" />
     <Compile Include="Events\MonitoringMsgPublishedEventArgs.cs" />
     <Compile Include="Interfaces\IMonitoringDumper.cs" />
+    <Compile Include="Model\AbsenceKind.cs" />
     <Compile Include="Monitoring\MonitoringDumper.cs" />
     <Compile Include="Monitoring\MonitoringManager.cs" />
     <Compile Include="Events\ProcessFinishedEventArgs.cs" />
@@ -109,7 +111,7 @@
     <Compile Include="Events\StepChangedEventArgs.cs" />
     <Compile Include="Workflow\Commands\ColumnControlCommand.cs" />
     <Compile Include="Workflow\Commands\CellContentControlCommand.cs" />
-    <Compile Include="Domain\Absence\AbsenceColumnProvider.cs" />
+    <Compile Include="Domain\Columns\AbsenceColumnProvider.cs" />
     <Compile Include="Domain\Columns\ColumnNames.cs" />
     <Compile Include="Domain\Columns\Column.cs" />
     <Compile Include="Workflow\Commands\Command.cs" />
@@ -123,7 +125,7 @@
     <Compile Include="Domain\Columns\ColumnProviderFactory.cs" />
     <Compile Include="Domain\Exceptions\DataExtractionException.cs" />
     <Compile Include="Model\ContractType.cs" />
-    <Compile Include="Domain\Effectif\EffectifColumnProvider.cs" />
+    <Compile Include="Domain\Columns\EffectifColumnProvider.cs" />
     <Compile Include="Domain\SheetNames.cs" />
     <Compile Include="Domain\Columns\IColumnProvider.cs" />
     <Compile Include="Indicators\Indicator.cs" />
