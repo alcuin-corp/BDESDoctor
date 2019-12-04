@@ -11,11 +11,13 @@ namespace Alcuin.BDES
 {
     internal class Request : IRequest
     {
-        private int progressRate;
+        private decimal progressRate;
 
         private bool isFinished;
 
         private Step currentStep;
+
+        private int lastProgressRate;
 
         internal Request(string filePath, int referenceYear)
         {
@@ -37,16 +39,13 @@ namespace Alcuin.BDES
 
         public string FilePath { get; }
 
-        public int ProgressRate
+        public decimal ProgressRate
         {
             get => this.progressRate;
             set
             {
-                if (this.progressRate != value)
-                {
-                    this.progressRate = value;
-                    this.RaiseProgressChanged();
-                }
+                this.progressRate = value;
+                this.RaiseProgressChanged();
             }
         }
 
@@ -124,7 +123,12 @@ namespace Alcuin.BDES
 
         private void RaiseProgressChanged()
         {
-            this.ProgressChanged?.Invoke(this, new ProgressChangedEventArgs(this.ProgressRate));
+            var currentProgress = (int)this.ProgressRate;
+            if (this.lastProgressRate < currentProgress)
+            {
+                this.lastProgressRate = currentProgress;
+                this.ProgressChanged?.Invoke(this, new ProgressChangedEventArgs((int)this.ProgressRate));
+            }
         }
 
         private void RaiseStepChanged(Step oldStep, Step newStep)

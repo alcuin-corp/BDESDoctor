@@ -48,6 +48,11 @@ namespace Alcuin.BDES.Workflow.Commands
                         }
                     }
                 }
+
+                if (sheet.Indicators.Count > 0)
+                {
+                    this.PublishSucces($"Le process va calculer {sheet.Indicators.Count}/{listOfIndicator.Count} indicateur(s) pour l'onglet '{sheet.Name}'");
+                }
             }
         }
     }

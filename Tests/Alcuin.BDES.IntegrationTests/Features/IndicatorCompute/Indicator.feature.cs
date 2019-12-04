@@ -101,7 +101,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "CDI",
                         "dem",
                         "16/03/1986",
-                        "40",
+                        "15",
                         "12/12/2012",
                         ""});
             table14.AddRow(new string[] {
@@ -610,6 +610,66 @@ this.FeatureBackground();
  testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 67
+ testRunner.Then("I should compute 1 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Generating indicator :  Nombre de salariés en temps partiel (autres formes de tem" +
+            "ps partiel)")]
+        public virtual void GeneratingIndicatorNombreDeSalariesEnTempsPartielAutresFormesDeTempsPartiel()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator :  Nombre de salariés en temps partiel (autres formes de tem" +
+                    "ps partiel)", null, ((string[])(null)));
+#line 69
+ this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Onglet",
+                            "Domaine",
+                            "Sous Domaine",
+                            "Indicateur",
+                            "Champs",
+                            "Formule"});
+                table23.AddRow(new string[] {
+                            "Effectifs",
+                            "Conditions générales d\'emploi",
+                            "Durée et organisation du travail",
+                            "Nombre de salariés en temps partiel (autres formes de temps partiel)",
+                            "[Sexe]",
+                            "Nombre [matricule] par [structure] dont [Durée du temps de travail hebdomadaire] " +
+                                "entre \'30\' et \'35\' ou [Durée du temps de travail hebdomadaire] << \'20\' et [Sexe]" +
+                                " est \'Enum\' et année[Date de sortie] dans (\'reference\',\'null\')"});
+#line 70
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table23, "Given ");
+#line hidden
+#line 73
+ testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 74
  testRunner.Then("I should compute 1 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

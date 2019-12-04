@@ -4,7 +4,7 @@ Background:
 	Given I have a workbook mybook.xlsx
 	And it has a workSheet effectifs with the following content
 		| Matricule | Structure | Sexe  | CSP     | Nationalité | Type de contrat | Nature de la fin de contrat | Date de naissance | Durée du temps de travail hebdomadaire | Date d'entrée | Date de sortie |
-		| 1254      | Alcuin    | Homme | Cadre   | Francaise   | CDI             | dem                         | 16/03/1986        | 40                                     | 12/12/2012    |                |
+		| 1254      | Alcuin    | Homme | Cadre   | Francaise   | CDI             | dem                         | 16/03/1986        | 15                                     | 12/12/2012    |                |
 		| 1255      | Alcuin    | Homme | Cadre   | Francaise   | CDI             | dem                         | 16/04/1987        | 40                                     | 12/12/2012    | 13/05/2013     |
 		| 1256      | CGI       | Homme | Cadre   | Francaise   | CDI             | dem                         | 16/03/1987        | 33                                     | 12/12/2012    | 16/03/1986     |
 		| 1257      | CGI       | Femme | Cadre   | Francaise   | CDI             | dem                         | 16/03/1987        | 40                                     | 12/12/2012    | 30/06/2019     |
@@ -65,3 +65,12 @@ Scenario: Generating indicator : Nombre de sorties de l'année
 		| Effectifs | Effectif | Répartition de l'effectif | Nombre d'embauche | Cadre  | Nombre [matricule] par [structure] dont année[Date de sortie] dans ('reference','null') et [CSP] est 'Cadre' |
 	When I start processing the file mybook.xlsx for the period of 1986
 	Then I should compute 1 indicators
+
+	Scenario: Generating indicator :  Nombre de salariés en temps partiel (autres formes de temps partiel)
+	Given I have the folowing indicators definition
+		| Onglet    | Domaine                       | Sous Domaine                     | Indicateur                                                           | Champs | Formule                                                                                                                                                                                                                          |
+		| Effectifs | Conditions générales d'emploi | Durée et organisation du travail | Nombre de salariés en temps partiel (autres formes de temps partiel) | [Sexe]  | Nombre [matricule] par [structure] dont [Durée du temps de travail hebdomadaire] entre '30' et '35' ou [Durée du temps de travail hebdomadaire] << '20' et [Sexe] est 'Enum' et année[Date de sortie] dans ('reference','null') |
+	When I start processing the file mybook.xlsx for the period of 1986
+	Then I should compute 1 indicators
+
+	
