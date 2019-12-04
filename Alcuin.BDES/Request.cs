@@ -15,10 +15,8 @@ namespace Alcuin.BDES
 
         private bool isFinished;
         private Step currentStep;
-
         private int lastProgressRate;
 
-        internal Request(string filePath, int referenceYear)
         internal Request(string filePath, int referenceYear, string asposeLicense = null)
         {
             this.FilePath = filePath;
@@ -40,10 +38,9 @@ namespace Alcuin.BDES
 
         public string FilePath { get; }
 
-        public decimal ProgressRate
         public string AsposeLicense { get; }
 
-        public int ProgressRate
+        public decimal ProgressRate
         {
             get => this.progressRate;
             set
