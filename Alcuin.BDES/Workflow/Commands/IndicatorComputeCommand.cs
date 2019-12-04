@@ -21,7 +21,7 @@ namespace Alcuin.BDES.Workflow.Commands
                     request.Indicators.Add(indicator);
                     foreach (var row in sheet.GetRows())
                     {
-                        request.ProgressRate += (int)rate;
+                        request.ProgressRate += rate;
                         var groupKey = indicator.GroupColumn.GetCleanCell(row);
                         var indicatorValue = indicator.GetGroupValue(groupKey);
                         if (indicator.IsInclud(row, request.ReferenceYear))

@@ -15,7 +15,7 @@ namespace Alcuin.BDES.Indicators.Criterias
         {
             this.values = new List<decimal?>();
 
-            if (criteriaDefinition.Values.Any(x => x.EqualsTo("reference")))
+            if (criteriaDefinition.Values.Any(x => x.EqualsTo("référence")))
             {
                 this.UseRequestParameter = true;
             }
@@ -25,9 +25,8 @@ namespace Alcuin.BDES.Indicators.Criterias
                 this.values.Add(null);
             }
 
-            foreach (var value in criteriaDefinition.Values.Where(x => !x.In("reference", "Null")))
+            foreach (var value in criteriaDefinition.Values.Where(x => !x.In("référence", "Null")))
             {
-
                 this.values.Add(decimal.Parse(value));
             }
         }
