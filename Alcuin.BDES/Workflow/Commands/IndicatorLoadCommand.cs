@@ -20,7 +20,7 @@ namespace Alcuin.BDES.Workflow.Commands
         {
             if (request.PublishedMessages.TryGetValue(MonitoringType.Error, out var errors) && errors.Any())
             {
-                //throw new ProcessingException("Le processus ne peut pas continuer à cause des erreurs detectées");
+                throw new ProcessingException("Le processus ne peut pas continuer à cause des erreurs detectées");
             }
 
             base.Execute(processingContext, request);

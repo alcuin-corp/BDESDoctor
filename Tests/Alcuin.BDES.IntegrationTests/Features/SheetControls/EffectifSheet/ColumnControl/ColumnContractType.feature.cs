@@ -257,7 +257,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table59.AddRow(new string[] {
                             "Dans l\'onglet «Effectifs», la colonne «Type de contrat» à une valeur texte qui n’" +
                                 "est pas reconnue \'\'. Les valeurs pouvant être utilisées sont «CDI, CDD, CIE, Alt" +
-                                "ernance, Professionnalisation, CTT, CUI, CAE»."});
+                                "ernance, Professionnalisation, CTT, CUI, CAE, Stage»."});
 #line 31
  testRunner.Then("I should found the following Error messages", ((string)(null)), table59, "Then ");
 #line hidden
@@ -319,7 +319,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table61.AddRow(new string[] {
                             "Dans l\'onglet «Effectifs», la colonne «Type de contrat» à une valeur texte qui n’" +
                                 "est pas reconnue \'Contrat\'. Les valeurs pouvant être utilisées sont «CDI, CDD, C" +
-                                "IE, Alternance, Professionnalisation, CTT, CUI, CAE»."});
+                                "IE, Alternance, Professionnalisation, CTT, CUI, CAE, Stage»."});
 #line 41
  testRunner.Then("I should found the following Error messages", ((string)(null)), table61, "Then ");
 #line hidden

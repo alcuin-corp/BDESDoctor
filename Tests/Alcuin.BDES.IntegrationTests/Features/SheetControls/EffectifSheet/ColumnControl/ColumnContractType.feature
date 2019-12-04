@@ -29,8 +29,8 @@ Scenario: Processing file with empty cell in column 'Type de contrat' should hav
 		| 12345     | Alcuin    | Cadre | Homme |                 |
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Error messages
-		| Message                                                                                                                                                                                                         |
-		| Dans l'onglet «Effectifs», la colonne «Type de contrat» à une valeur texte qui n’est pas reconnue ''. Les valeurs pouvant être utilisées sont «CDI, CDD, CIE, Alternance, Professionnalisation, CTT, CUI, CAE». |
+		| Message                                                                                                                                                                                                                |
+		| Dans l'onglet «Effectifs», la colonne «Type de contrat» à une valeur texte qui n’est pas reconnue ''. Les valeurs pouvant être utilisées sont «CDI, CDD, CIE, Alternance, Professionnalisation, CTT, CUI, CAE, Stage». |
 
 Scenario: Processing file with invalid cell content in column 'Type de contrat' should faild
 	Given I have a workbook mybook.xlsx
@@ -39,5 +39,5 @@ Scenario: Processing file with invalid cell content in column 'Type de contrat' 
 		| 1254      | Alcuin    | Cadre | Homme | Contrat         |
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Error messages
-		| Message                                                                                                                                                                                                                |
-		| Dans l'onglet «Effectifs», la colonne «Type de contrat» à une valeur texte qui n’est pas reconnue 'Contrat'. Les valeurs pouvant être utilisées sont «CDI, CDD, CIE, Alternance, Professionnalisation, CTT, CUI, CAE». |
+		| Message                                                                                                                                                                                                                       |
+		| Dans l'onglet «Effectifs», la colonne «Type de contrat» à une valeur texte qui n’est pas reconnue 'Contrat'. Les valeurs pouvant être utilisées sont «CDI, CDD, CIE, Alternance, Professionnalisation, CTT, CUI, CAE, Stage». |

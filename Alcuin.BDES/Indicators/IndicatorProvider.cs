@@ -28,19 +28,10 @@ namespace Alcuin.BDES.Indicators
         {
             var result = new Dictionary<SheetName, List<Indicator>>();
 
-            var indicatorDefinitions = new List<IndicatorDefinition>();
-            var badIndicator = new List<RawIndicator>();
-            foreach (var item in this.rawIndicatorReader.LoadEmbadedRawIndicators())
-            {
-                if (IndicatorDefinition.CanParse(item))
-                {
-                    indicatorDefinitions.Add(new IndicatorDefinition(item));
-                }
-                else
-                {
-                    badIndicator.Add(item);
-                }
-            }
+            var indicatorDefinitions = this.rawIndicatorReader.LoadEmbadedRawIndicators()
+                .Where(IndicatorDefinition.CanParse)
+                .Select(x => new IndicatorDefinition(x))
+                .ToList();
 
             var groupedIndicators = indicatorDefinitions.GroupBy(x => x.SheetName);
             foreach (var group in groupedIndicators)
