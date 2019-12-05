@@ -27,6 +27,7 @@ namespace Alcuin.BDES.Indicators
         {
             var result = new Dictionary<SheetName, List<Indicator>>();
 
+            IndicatorDefinition.CanParse(this.rawIndicatorReader.LoadEmbadedRawIndicators().Last());
             var indicatorDefinitions = this.rawIndicatorReader.LoadEmbadedRawIndicators()
                 .Where(IndicatorDefinition.CanParse)
                 .Select(x => new IndicatorDefinition(x))

@@ -10,12 +10,6 @@ namespace Alcuin.BDES.Indicators
     {
         private readonly IndicatorDefinition indicatorDefinition;
 
-        public Indicator()
-        {
-            this.GroupedValues = new Dictionary<string, IndicatorValue>();
-            this.Creterias = new List<ICriteria>();
-        }
-
         public Indicator(List<ICriteria> criterias)
         {
             this.GroupedValues = new Dictionary<string, IndicatorValue>();
@@ -62,6 +56,21 @@ namespace Alcuin.BDES.Indicators
 
         public bool IsInclud(Aspose.Cells.Row row, int referenceYear)
         {
+            if (this.Creterias.Count == 0)
+            {
+                return true;
+            }
+
+            return this.CheckCriterias(row, referenceYear);
+        }
+
+        public override string ToString()
+        {
+            return this.indicatorDefinition.Formula;
+        }
+
+        private bool CheckCriterias(Aspose.Cells.Row row, int referenceYear)
+        {
             var first = this.Creterias.First();
             var result = first.IsMatch(row, referenceYear);
             foreach (var item in this.Creterias.Skip(1))
@@ -80,11 +89,6 @@ namespace Alcuin.BDES.Indicators
             }
 
             return result;
-        }
-
-        public override string ToString()
-        {
-            return this.Name;
         }
     }
 }
