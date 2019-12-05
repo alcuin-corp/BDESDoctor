@@ -86,7 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Aspose.Cells, Version=18.12.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Aspose.Cells.18.12.0\lib\net40\Aspose.Cells.dll</HintPath>
+      <HintPath>..\..\packages\Aspose.Cells.18.12.0\lib\net40\Aspose.Cells.dll</HintPath>
     </Reference>
     <Reference Include="BoDi, Version=1.4.1.0, Culture=neutral, PublicKeyToken=ff7cd5ea2744b496, processorArchitecture=MSIL">
       <HintPath>..\..\packages\BoDi.1.4.1\lib\net45\BoDi.dll</HintPath>
