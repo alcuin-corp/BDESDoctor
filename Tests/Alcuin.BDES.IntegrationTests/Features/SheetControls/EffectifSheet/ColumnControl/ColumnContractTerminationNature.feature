@@ -30,4 +30,4 @@ Scenario: Processing file with invalid cell content in column 'Nature de la fin 
 	When I start processing the file mybook.xlsx for the period of 2015
 	Then I should found the following Error messages
 		| Message                                                                                                                                                                                                                                                  |
-		| Dans l'onglet «Effectifs», la colonne «Nature de la fin de contrat» à une valeur texte qui n’est pas reconnue 'Contrat'. Les valeurs pouvant être utilisées sont «Retraite, Démission, Fin de CDD, Licenciement, Licenciement économique, Pré-retraite». |
+		| Dans l'onglet «Effectifs», la colonne «Nature de la fin de contrat» à une valeur texte qui n’est pas reconnue 'Contrat'. Les valeurs pouvant être utilisées sont «Retraite, Décès, Démission, Fin de CDD, Licenciement, Licenciement économique, Pré-retraite». |

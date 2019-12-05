@@ -280,8 +280,8 @@ this.ScenarioInitialize(scenarioInfo);
                 table54.AddRow(new string[] {
                             "Dans l\'onglet «Effectifs», la colonne «Nature de la fin de contrat» à une valeur " +
                                 "texte qui n’est pas reconnue \'Contrat\'. Les valeurs pouvant être utilisées sont " +
-                                "«Retraite, Démission, Fin de CDD, Licenciement, Licenciement économique, Pré-ret" +
-                                "raite»."});
+                                "«Retraite, Décès, Démission, Fin de CDD, Licenciement, Licenciement économique, " +
+                                "Pré-retraite»."});
 #line 31
  testRunner.Then("I should found the following Error messages", ((string)(null)), table54, "Then ");
 #line hidden

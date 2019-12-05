@@ -22,8 +22,6 @@ namespace Alcuin.BDES.Helper
             {
                 workbook.Save(stream, new XlsSaveOptions(SaveFormat.Xlsx));
             }
-
-            workbook.Dispose();
         }
 
         public static Workbook LoadWorkbook(this IFileSystem fileSystem, string filePath)
