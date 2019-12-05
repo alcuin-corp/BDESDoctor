@@ -18,7 +18,11 @@ namespace Alcuin.BDES.Helper
                 filePath = Path.Combine(fileSystem.Directory.GetCurrentDirectory(), filePath);
             }
 
-            workbook.Save(filePath, SaveFormat.Xlsx);
+            using (var stream = fileSystem.FileStream.Create(filePath, FileMode.OpenOrCreate))
+            {
+                workbook.Save(stream, new XlsSaveOptions(SaveFormat.Xlsx));
+            }
+
             workbook.Dispose();
         }
 
