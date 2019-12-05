@@ -17,8 +17,9 @@ namespace Alcuin.BDES
         private Step currentStep;
         private int lastProgressRate;
 
-        internal Request(string filePath, int referenceYear, Stream asposeLicense = null)
+        internal Request(string id, string filePath, int referenceYear, Stream asposeLicense = null)
         {
+            this.Id = id;
             this.FilePath = filePath;
             this.ReferenceYear = referenceYear;
             this.PublishedMessages = new Dictionary<MonitoringType, List<MonitoringMessage>>();
@@ -37,6 +38,8 @@ namespace Alcuin.BDES
         public Dictionary<MonitoringType, List<MonitoringMessage>> PublishedMessages { get; }
 
         public string FilePath { get; }
+
+        public string Id { get; }
 
         public Stream AsposeLicense { get; }
 

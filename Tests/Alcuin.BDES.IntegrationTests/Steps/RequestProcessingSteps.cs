@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using TechTalk.SpecFlow;
 
@@ -21,8 +22,9 @@ namespace Alcuin.BDES.IntegrationTests.Steps
         [When(@"I start processing the file (.*) for the period of (.*)")]
         public void WhenIStartProcessingTheFile(string filePath, string yearStr)
         {
+            var id = Guid.NewGuid().ToString();
             var year = int.Parse(yearStr);
-            var request = RequestFactory.Create(filePath, year);
+            var request = RequestFactory.Create(id, filePath, year);
             this.context.Set(request);
             SubscribeToEvents(request);
             RunAndWaitForProcessing(request);

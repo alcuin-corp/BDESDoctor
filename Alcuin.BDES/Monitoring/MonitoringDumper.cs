@@ -82,7 +82,7 @@ namespace Alcuin.BDES.Monitoring
 
         private string GetLogPath(Request request)
         {
-            var logFileName = $"{Path.GetFileNameWithoutExtension(request.FilePath)}-log.txt";
+            var logFileName = $"{request.Id}.txt";
             var workingDirectory = Path.GetDirectoryName(request.FilePath);
 
             return Path.Combine(workingDirectory, logFileName);

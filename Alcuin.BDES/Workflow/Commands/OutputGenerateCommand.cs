@@ -18,9 +18,8 @@ namespace Alcuin.BDES.Workflow.Commands
 
         protected override void Process(ProcessingContext processingContext, Request request)
         {
-            var fileNameWithoutExtension = Path.GetFileNameWithoutExtension(request.FilePath);
             var workingDirectory = Path.GetDirectoryName(request.FilePath);
-            var targetFilePath = Path.Combine(workingDirectory, $"{fileNameWithoutExtension}-output.xlsx");
+            var targetFilePath = Path.Combine(workingDirectory, $"{request.Id}.xlsx");
             var allIndicators = processingContext.AvailableSheets.SelectMany(x => x.Indicators);
             this.indicatorDumper.Dump(allIndicators, request.ReferenceYear, targetFilePath, request.AsposeLicense);
             request.OutputFilePath = targetFilePath;

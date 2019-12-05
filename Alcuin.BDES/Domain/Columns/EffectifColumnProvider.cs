@@ -24,7 +24,7 @@ namespace Alcuin.BDES.Domain
                 new TextColumn(ColumnNames.Structure, true),
                 new DateColumn(ColumnNames.BirthDay, false, false),
                 new DateColumn(ColumnNames.EntryDate, false, false),
-                new DateColumn(ColumnNames.LeavingDate, false, true),
+                new DateColumn(ColumnNames.LeavingDate, true, true),
                 new NumericColumn(ColumnNames.RawMonthlySalary),
                 new NumericColumn(ColumnNames.WeeklyWorkingTime),
                 new NumericColumn(ColumnNames.Variable),

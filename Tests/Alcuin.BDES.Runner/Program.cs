@@ -8,7 +8,7 @@ namespace Alcuin.BDES.Runner
         {
             var filePath = @"C:\Alcuin\Data\input_sage.xlsx";
             var referenceYear = 2018;
-            var request = RequestFactory.Create(filePath, referenceYear);
+            var request = RequestFactory.Create(Guid.NewGuid().ToString(), filePath, referenceYear);
             request.ProgressChanged += Request_ProgressChanged;
             request.MonitoringMsgPublished += Request_MonitoringMsgPublished;
             request.ProcessFinished += Request_ProcessFinished;
