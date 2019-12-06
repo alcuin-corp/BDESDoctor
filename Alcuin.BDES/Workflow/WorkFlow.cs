@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using Alcuin.BDES.Interfaces;
 using Alcuin.BDES.Monitoring;
 using Alcuin.BDES.Workflow.Commands;
@@ -10,6 +11,10 @@ namespace Alcuin.BDES.Workflow
     {
         public void Process(Request request)
         {
+            var frenchCulture = new System.Globalization.CultureInfo("fr-FR");
+            Thread.CurrentThread.CurrentCulture = frenchCulture;
+            Thread.CurrentThread.CurrentUICulture = frenchCulture;
+
             var monitoringManager = new MonitoringManager(request);
             var processingContext = new ProcessingContext();
             try
