@@ -61,6 +61,7 @@
     <None Include="Features\IndicatorCompute\AgeIndicator.feature" />
     <None Include="Features\IndicatorCompute\GenericIndicator.feature" />
     <None Include="Features\IndicatorCompute\Indicator.feature" />
+    <None Include="Features\IndicatorCompute\AbsenceIndicators.feature" />
     <None Include="Features\SheetControls\AbsencesSheet\AbsencesSheetControl.feature" />
     <None Include="Features\SheetControls\AbsencesSheet\ColumnControl\ColumnIdentifier.feature" />
     <None Include="Features\SheetControls\EffectifSheet\ColumnControl\ColumnCSP.feature" />

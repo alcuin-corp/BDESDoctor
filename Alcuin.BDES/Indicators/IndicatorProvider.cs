@@ -27,6 +27,7 @@ namespace Alcuin.BDES.Indicators
         {
             var result = new Dictionary<SheetName, List<Indicator>>();
 
+            IndicatorDefinition.CanParse(this.rawIndicatorReader.LoadEmbadedRawIndicators().Last());
             var indicatorDefinitions = this.rawIndicatorReader.LoadEmbadedRawIndicators()
                 .Where(IndicatorDefinition.CanParse)
                 .Select(x => new IndicatorDefinition(x))
@@ -75,7 +76,7 @@ namespace Alcuin.BDES.Indicators
                         criteriaClone.Values = criteriaDef.Values.Select(x => x.Replace("Enum", name)).ToList();
                         var clone = indicatorDefinition.Clone();
                         clone.Name = clone.Name.Replace($"[{column.Header}]", name.GetEnumDescription(genericArgument).ToLowerInvariant());
-                        clone.Field = clone.Field.Replace($"[{column.Header}]", name.GetEnumDescription(genericArgument).ToLowerInvariant());
+                        clone.Field = clone.Field.Replace($"[{column.Header}]", name.GetEnumDescription(genericArgument));
                         var index = clone.CriteriaDefinitions.IndexOf(criteriaDef);
                         clone.CriteriaDefinitions[index] = criteriaClone;
                         foreach (var indicator in HandleGenericIndicator(clone, expectedColumns))

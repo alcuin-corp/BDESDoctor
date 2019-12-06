@@ -126,6 +126,11 @@ namespace Alcuin.BDES.Indicators.Parser
                 {
                     return AgregateFunction.Avg;
                 }
+
+                if (this.lookaheadFirst.Value.In("Total", "Somme", "Sum"))
+                {
+                    return AgregateFunction.Sum;
+                }
             }
 
             throw new Exception($"Unknowen agregate function {this.lookaheadFirst.Value}");

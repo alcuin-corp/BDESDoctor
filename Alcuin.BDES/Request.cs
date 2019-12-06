@@ -12,7 +12,6 @@ namespace Alcuin.BDES
     internal class Request : IRequest
     {
         private decimal progressRate;
-
         private bool isFinished;
         private Step currentStep;
         private int lastProgressRate;

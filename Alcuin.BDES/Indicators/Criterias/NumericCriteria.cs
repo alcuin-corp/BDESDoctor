@@ -92,7 +92,7 @@ namespace Alcuin.BDES.Indicators.Criterias
                 return date.Year;
             }
 
-            return referenceDate - date.Year;
+            return (referenceDate + 1) - date.Year;
         }
 
         private bool IsBetween(decimal cellValue)

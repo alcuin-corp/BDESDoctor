@@ -104,7 +104,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
  testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table140 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table153 = new TechTalk.SpecFlow.Table(new string[] {
                             "Matricule",
                             "Structure",
                             "Nom",
@@ -112,7 +112,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Age",
                             "CSP",
                             "Sexe"});
-                table140.AddRow(new string[] {
+                table153.AddRow(new string[] {
                             "1254",
                             "Alcuin",
                             "CAIO",
@@ -120,7 +120,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "33",
                             "CADRE",
                             "Homme"});
-                table140.AddRow(new string[] {
+                table153.AddRow(new string[] {
                             "1235",
                             "Alcuin",
                             "LEGROS",
@@ -129,18 +129,18 @@ this.ScenarioInitialize(scenarioInfo);
                             "CADRE",
                             "Femme"});
 #line 5
- testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table140, "And ");
+ testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table153, "And ");
 #line hidden
 #line 9
  testRunner.When("I start processing the file mybook.xlsx for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table141 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table154 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
-                table141.AddRow(new string[] {
+                table154.AddRow(new string[] {
                             "Des colonnes non reconnues sont présentes dans votre fichier, elles ne seront pas" +
                                 " prises en compte. Veuillez vérifier que les colonnes sont bien nommées."});
 #line 10
- testRunner.Then("I should found the following Warrning messages", ((string)(null)), table141, "Then ");
+ testRunner.Then("I should found the following Warrning messages", ((string)(null)), table154, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

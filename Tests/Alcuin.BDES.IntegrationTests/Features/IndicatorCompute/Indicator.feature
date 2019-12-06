@@ -66,11 +66,16 @@ Scenario: Generating indicator : Nombre de sorties de l'année
 	When I start processing the file mybook.xlsx for the period of 1986
 	Then I should compute 1 indicators
 
-	Scenario: Generating indicator :  Nombre de salariés en temps partiel (autres formes de temps partiel)
+Scenario: Generating indicator :  Nombre de salariés en temps partiel (autres formes de temps partiel)
 	Given I have the folowing indicators definition
-		| Onglet    | Domaine                       | Sous Domaine                     | Indicateur                                                           | Champs | Formule                                                                                                                                                                                                                          |
-		| Effectifs | Conditions générales d'emploi | Durée et organisation du travail | Nombre de salariés en temps partiel (autres formes de temps partiel) | [Sexe]  | Nombre [matricule] par [structure] dont [Durée du temps de travail hebdomadaire] entre '30' et '35' ou [Durée du temps de travail hebdomadaire] << '20' et [Sexe] est 'Enum' et année[Date de sortie] dans ('reference','null') |
+		| Onglet    | Domaine                       | Sous Domaine                     | Indicateur                                                           | Champs | Formule                                                                                                                                                                                                                         |
+		| Effectifs | Conditions générales d'emploi | Durée et organisation du travail | Nombre de salariés en temps partiel (autres formes de temps partiel) | [Sexe] | Nombre [matricule] par [structure] dont [Durée du temps de travail hebdomadaire] entre '30' et '35' ou [Durée du temps de travail hebdomadaire] << '20' et [Sexe] est 'Enum' et année[Date de sortie] dans ('reference','null') |
 	When I start processing the file mybook.xlsx for the period of 1986
 	Then I should compute 1 indicators
 
-	
+Scenario: Generating indicator :  Nombre de salariés
+	Given I have the folowing indicators definition
+		| Onglet    | Domaine                       | Sous Domaine                     | Indicateur         | Champs   | Formule                            |
+		| Effectifs | Conditions générales d'emploi | Durée et organisation du travail | Nombre de salariés | salariés | Nombre [matricule] par [structure] |
+	When I start processing the file mybook.xlsx for the period of 1986
+	Then I should compute 1 indicators

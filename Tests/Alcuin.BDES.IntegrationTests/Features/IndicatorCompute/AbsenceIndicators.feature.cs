@@ -20,22 +20,22 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Indicator computations")]
-    public partial class IndicatorComputationsFeature
+    [NUnit.Framework.DescriptionAttribute("Absence Indicators")]
+    public partial class AbsenceIndicatorsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "Indicator.feature"
+#line 1 "AbsenceIndicators.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Indicator computations", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Absence Indicators", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,7 +80,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
 #line 4
  testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Matricule",
                         "Structure",
                         "Sexe",
@@ -92,7 +92,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "Durée du temps de travail hebdomadaire",
                         "Date d\'entrée",
                         "Date de sortie"});
-            table26.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "1254",
                         "Alcuin",
                         "Homme",
@@ -104,7 +104,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "15",
                         "12/12/2012",
                         ""});
-            table26.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "1255",
                         "Alcuin",
                         "Homme",
@@ -116,7 +116,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "40",
                         "12/12/2012",
                         "13/05/2013"});
-            table26.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "1256",
                         "CGI",
                         "Homme",
@@ -128,7 +128,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "33",
                         "12/12/2012",
                         "16/03/1986"});
-            table26.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "1257",
                         "CGI",
                         "Femme",
@@ -140,7 +140,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "40",
                         "12/12/2012",
                         "30/06/2019"});
-            table26.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "1235",
                         "Alcuin",
                         "Femme",
@@ -153,17 +153,57 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "12/12/2012",
                         ""});
 #line 5
- testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table26, "And ");
+ testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table3, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Matricule",
+                        "Structure",
+                        "CSP",
+                        "Nature de l\'absence",
+                        "Nombre de jour d\'absence",
+                        "Sexe"});
+            table4.AddRow(new string[] {
+                        "1254",
+                        "Alcuin",
+                        "Cadre",
+                        "RTT",
+                        "5",
+                        "H"});
+            table4.AddRow(new string[] {
+                        "1254",
+                        "Alcuin",
+                        "Cadre",
+                        "CP",
+                        "3",
+                        "H"});
+            table4.AddRow(new string[] {
+                        "1254",
+                        "Alcuin",
+                        "Cadre",
+                        "RTT",
+                        "1",
+                        "H"});
+            table4.AddRow(new string[] {
+                        "1555",
+                        "CGI",
+                        "CADRE",
+                        "Maladie",
+                        "10",
+                        "F"});
+#line 12
+ testRunner.And("it has also a workSheet Absences with the following content", ((string)(null)), table4, "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Generating indicator : Effectif total au 31/12")]
-        public virtual void GeneratingIndicatorEffectifTotalAu3112()
+        [NUnit.Framework.DescriptionAttribute("Generating indicator :  Nombre de salariés ayant bénéficié d\'un repos compensateu" +
+            "r au titre du présent code")]
+        public virtual void GeneratingIndicatorNombreDeSalariesAyantBeneficieDunReposCompensateurAuTitreDuPresentCode()
         {
             string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator : Effectif total au 31/12", null, ((string[])(null)));
-#line 13
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator :  Nombre de salariés ayant bénéficié d\'un repos compensateu" +
+                    "r au titre du présent code", null, ((string[])(null)));
+#line 19
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -186,84 +226,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table27.AddRow(new string[] {
-                            "Effectifs",
-                            "Effectif",
-                            "Effectif au 31/12",
-                            "Effectif total au 31/12",
+                table5.AddRow(new string[] {
+                            "Absences",
+                            "Autres conditions de travail",
+                            "Durée et aménagement du temps de travail",
+                            "Nombre de salariés ayant bénéficié d\'un repos compensateur au titre du présent co" +
+                                "de",
                             "[CSP]",
-                            "Nombre [matricule] par [structure] dont [CSP] est \'Enum\'"});
-#line 14
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table27, "Given ");
-#line hidden
-#line 17
- testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 18
- testRunner.Then("I should compute 5 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Generating indicator : Effectif permanent")]
-        public virtual void GeneratingIndicatorEffectifPermanent()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator : Effectif permanent", null, ((string[])(null)));
+                            "Nombre [Matricule] par [Structure] dont [Nature de l\'absence] est \'repos compensa" +
+                                "teur équivalent\' et [CSP] est \'Enum\'"});
 #line 20
-this.ScenarioInitialize(scenarioInfo);
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table5, "Given ");
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Onglet",
-                            "Domaine",
-                            "Sous Domaine",
-                            "Indicateur",
-                            "Champs",
-                            "Formule"});
-                table28.AddRow(new string[] {
-                            "Effectifs",
-                            "Effectif",
-                            "Effectif au 31/12",
-                            "Effectif permanent",
-                            "[CSP]",
-                            "Nombre [matricule] par [structure] dont [type de contrat] est \'CDI\' et [Durée du " +
-                                "temps de travail hebdomadaire] >= \'35\' et [CSP] est \'Enum\'"});
-#line 21
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table28, "Given ");
+#line 23
+ testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 24
- testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 25
  testRunner.Then("I should compute 5 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -271,14 +256,14 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Generating indicator : Nombre de salariés titulaires d\'un contrat de travail à du" +
-            "rée déterminée au 31/12")]
-        public virtual void GeneratingIndicatorNombreDeSalariesTitulairesDunContratDeTravailADureeDetermineeAu3112()
+        [NUnit.Framework.DescriptionAttribute("Generating indicator :  Nombre de salariés ayant bénéficié d\'un repos compensateu" +
+            "r au titre d\'un régime conventionnel")]
+        public virtual void GeneratingIndicatorNombreDeSalariesAyantBeneficieDunReposCompensateurAuTitreDunRegimeConventionnel()
         {
             string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator : Nombre de salariés titulaires d\'un contrat de travail à du" +
-                    "rée déterminée au 31/12", null, ((string[])(null)));
-#line 27
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator :  Nombre de salariés ayant bénéficié d\'un repos compensateu" +
+                    "r au titre d\'un régime conventionnel", null, ((string[])(null)));
+#line 26
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -301,29 +286,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table29.AddRow(new string[] {
-                            "Effectifs",
-                            "Effectif",
-                            "Effectif au 31/12",
-                            "Nombre de salariés titulaires d\'un contrat de travail à durée déterminée au 31/12" +
-                                "",
+                table6.AddRow(new string[] {
+                            "Absences",
+                            "Autres conditions de travail",
+                            "Durée et aménagement du temps de travail",
+                            "Nombre de salariés ayant bénéficié d\'un repos compensateur au titre d\'un régime c" +
+                                "onventionnel",
                             "[CSP]",
-                            "Nombre [matricule] par [structure] dont [type de contrat] est \'CDD\' et [CSP] est " +
-                                "\'Enum\'"});
-#line 28
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table29, "Given ");
+                            "Nombre [Matricule] par [Structure] dont [Nature de l\'absence] est \'repos compensa" +
+                                "teur nuit\' et [CSP] est \'Enum\'"});
+#line 27
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table6, "Given ");
+#line hidden
+#line 30
+ testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 31
- testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 32
  testRunner.Then("I should compute 5 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -331,12 +316,12 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Generating indicator : Répartition de l\'effectif total au 31/12 par sexe")]
-        public virtual void GeneratingIndicatorRepartitionDeLeffectifTotalAu3112ParSexe()
+        [NUnit.Framework.DescriptionAttribute("Generating indicator :  Nombre de journées d\'absence pour maladie")]
+        public virtual void GeneratingIndicatorNombreDeJourneesDabsencePourMaladie()
         {
             string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator : Répartition de l\'effectif total au 31/12 par sexe", null, ((string[])(null)));
-#line 34
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator :  Nombre de journées d\'absence pour maladie", null, ((string[])(null)));
+#line 33
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -359,40 +344,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table30.AddRow(new string[] {
-                            "Effectifs",
-                            "Effectif",
-                            "Répartition de l\'effectif",
-                            "Répartition de l\'effectif total au 31/12 pour les [Sexe]s",
+                table7.AddRow(new string[] {
+                            "Absences",
+                            "Conditions de travail",
+                            "Absentéisme",
+                            "Nombre de journées d\'absence pour maladie",
                             "[CSP]",
-                            "Nombre [matricule] par [structure] dont [Sexe] est \'Enum\' et [CSP] est \'Enum\'"});
-#line 35
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table30, "Given ");
+                            "Somme [Nombre de jour d\'absence] par [Structure] dont [nature de l\'absence] est \'" +
+                                "maladie\' et [CSP] est \'Enum\'"});
+#line 34
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table7, "Given ");
+#line hidden
+#line 37
+ testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 38
- testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 39
- testRunner.Then("I should compute 10 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should compute 5 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Generating indicator : Répartition de l\'effectif total au 31/12 par nationalité")]
-        public virtual void GeneratingIndicatorRepartitionDeLeffectifTotalAu3112ParNationalite()
+        [NUnit.Framework.DescriptionAttribute("Generating indicator : Nombre de journées d\'absence imputables à d\'autres causes")]
+        public virtual void GeneratingIndicatorNombreDeJourneesDabsenceImputablesADautresCauses()
         {
             string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator : Répartition de l\'effectif total au 31/12 par nationalité", null, ((string[])(null)));
-#line 41
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator : Nombre de journées d\'absence imputables à d\'autres causes", null, ((string[])(null)));
+#line 40
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -415,43 +401,42 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table31.AddRow(new string[] {
-                            "Effectifs",
-                            "Effectif",
-                            "Répartition de l\'effectif",
-                            "Répartition de l\'effectif total au 31/12 de nationalité [Nationalité]",
+                table8.AddRow(new string[] {
+                            "Absences",
+                            "Conditions de travail",
+                            "Absentéisme",
+                            "Nombre de journées d\'absence imputables à d\'autres causes",
                             "[CSP]",
-                            "Nombre [matricule] par [structure] dont [Nationalité] est \'Enum\' et [CSP] est \'En" +
-                                "um\'"});
-#line 42
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table31, "Given ");
+                            "Somme [Nombre de jour d\'absence] par [structure] dont [Nature de l\'absence] notin" +
+                                " (\'évènement familial\',\'congés spéciaux\',\'maternité\', \'maladie professionnelle\'," +
+                                " \'accident de travail\', \'accident de trajet\', \'maladie\') et [CSP] est \'Enum\'"});
+#line 41
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table8, "Given ");
+#line hidden
+#line 44
+ testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 45
- testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 46
- testRunner.Then("I should compute 10 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should compute 5 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Generating indicator : Nombre de salariés employés en autres formes de temps part" +
-            "iel")]
-        public virtual void GeneratingIndicatorNombreDeSalariesEmployesEnAutresFormesDeTempsPartiel()
+        [NUnit.Framework.DescriptionAttribute("Generating indicator : Nombre de journées d\'absence pour congés autorisés")]
+        public virtual void GeneratingIndicatorNombreDeJourneesDabsencePourCongesAutorises()
         {
             string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator : Nombre de salariés employés en autres formes de temps part" +
-                    "iel", null, ((string[])(null)));
-#line 48
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator : Nombre de journées d\'absence pour congés autorisés", null, ((string[])(null)));
+#line 47
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -474,41 +459,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table32.AddRow(new string[] {
-                            "Effectifs",
-                            "Effectif",
-                            "Répartition de l\'effectif",
-                            "Nombre de salariés employés en autres formes de temps partiel",
-                            "Cadre",
-                            "Nombre [matricule] par [structure] dont [Durée du temps de travail hebdomadaire] " +
-                                "entre \'30\' et \'35\' et [CSP] est \'Cadre\'"});
-#line 49
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table32, "Given ");
+                table9.AddRow(new string[] {
+                            "Absences",
+                            "Conditions de travail",
+                            "Absentéisme",
+                            "Nombre de journées d\'absence pour congés autorisés",
+                            "[CSP]",
+                            "Somme [Nombre de jour d\'absence] par [Structure] dont [nature de l\'absence] dans " +
+                                "(\'évènement familial\',\'congé spécial\') et [CSP] est \'Enum\'"});
+#line 48
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table9, "Given ");
+#line hidden
+#line 51
+ testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 52
- testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 53
- testRunner.Then("I should compute 1 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should compute 5 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Generating indicator : Nombre d\'embauche de l\'année")]
-        public virtual void GeneratingIndicatorNombreDembaucheDeLannee()
+        [NUnit.Framework.DescriptionAttribute("Generating indicator : Nombre de journées d\'absence pour maternité")]
+        public virtual void GeneratingIndicatorNombreDeJourneesDabsencePourMaternite()
         {
             string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator : Nombre d\'embauche de l\'année", null, ((string[])(null)));
-#line 55
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator : Nombre de journées d\'absence pour maternité", null, ((string[])(null)));
+#line 54
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -531,41 +516,43 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table33.AddRow(new string[] {
-                            "Effectifs",
-                            "Effectif",
-                            "Répartition de l\'effectif",
-                            "Nombre d\'embauche",
-                            "Cadre",
-                            "Nombre [matricule] par [structure] dont année[Date d\'entrée] est \'reference\' et [" +
-                                "CSP] est \'Cadre\'"});
-#line 56
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table33, "Given ");
+                table10.AddRow(new string[] {
+                            "Absences",
+                            "Conditions de travail",
+                            "Absentéisme",
+                            "Nombre de journées d\'absence pour maternité",
+                            "[CSP]",
+                            "Somme [Nombre de jour d\'absence] par [Structure] dont [nature de l\'absence] est \'" +
+                                "absence maternité\' et [CSP] est \'Enum\'"});
+#line 55
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table10, "Given ");
+#line hidden
+#line 58
+ testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 59
- testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 60
- testRunner.Then("I should compute 1 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should compute 5 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Generating indicator : Nombre de sorties de l\'année")]
-        public virtual void GeneratingIndicatorNombreDeSortiesDeLannee()
+        [NUnit.Framework.DescriptionAttribute("Generating indicator : Nombre de journées d\'absence pour accident de travail, acc" +
+            "ident de trajet ou maladie professionnelle")]
+        public virtual void GeneratingIndicatorNombreDeJourneesDabsencePourAccidentDeTravailAccidentDeTrajetOuMaladieProfessionnelle()
         {
             string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator : Nombre de sorties de l\'année", null, ((string[])(null)));
-#line 62
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator : Nombre de journées d\'absence pour accident de travail, acc" +
+                    "ident de trajet ou maladie professionnelle", null, ((string[])(null)));
+#line 61
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -588,43 +575,43 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table34.AddRow(new string[] {
-                            "Effectifs",
-                            "Effectif",
-                            "Répartition de l\'effectif",
-                            "Nombre d\'embauche",
-                            "Cadre",
-                            "Nombre [matricule] par [structure] dont année[Date de sortie] dans (\'reference\',\'" +
-                                "null\') et [CSP] est \'Cadre\'"});
-#line 63
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table34, "Given ");
+                table11.AddRow(new string[] {
+                            "Absences",
+                            "Conditions de travail, santé et sécurité au travail",
+                            "Conditions de travail, santé et sécurité au travail",
+                            "Nombre de journées d\'absence pour accident de travail, accident de trajet ou mala" +
+                                "die professionnelle",
+                            "[CSP]",
+                            "Somme [Nombre de jour d\'absence] par [Structure] dont [nature de l\'absence]  dans" +
+                                " (\'maladie professionnelle\',\'accident de travail\',\'accident de trajet\') et [CSP]" +
+                                " est  \'Enum\'"});
+#line 62
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table11, "Given ");
+#line hidden
+#line 65
+ testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 66
- testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 67
- testRunner.Then("I should compute 1 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should compute 5 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Generating indicator :  Nombre de salariés en temps partiel (autres formes de tem" +
-            "ps partiel)")]
-        public virtual void GeneratingIndicatorNombreDeSalariesEnTempsPartielAutresFormesDeTempsPartiel()
+        [NUnit.Framework.DescriptionAttribute("Generating indicator : Nombre d\'accidents avec arrêts de travail")]
+        public virtual void GeneratingIndicatorNombreDaccidentsAvecArretsDeTravail()
         {
             string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator :  Nombre de salariés en temps partiel (autres formes de tem" +
-                    "ps partiel)", null, ((string[])(null)));
-#line 69
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator : Nombre d\'accidents avec arrêts de travail", null, ((string[])(null)));
+#line 68
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -647,42 +634,43 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table35.AddRow(new string[] {
-                            "Effectifs",
-                            "Conditions générales d\'emploi",
-                            "Durée et organisation du travail",
-                            "Nombre de salariés en temps partiel (autres formes de temps partiel)",
+                table12.AddRow(new string[] {
+                            "Absences",
+                            "Condition de travail et Articulation entre vie professionnelle et personnelle",
+                            "Accident de travail et trajet",
+                            "Nombre d\'accidents avec arrêts de travail",
                             "[Sexe]",
-                            "Nombre [matricule] par [structure] dont [Durée du temps de travail hebdomadaire] " +
-                                "entre \'30\' et \'35\' ou [Durée du temps de travail hebdomadaire] << \'20\' et [Sexe]" +
-                                " est \'Enum\' et année[Date de sortie] dans (\'reference\',\'null\')"});
-#line 70
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table35, "Given ");
+                            "Nombre [Matricule] par [structure] dont [Nature de l\'absence] dans (\'accident de " +
+                                "travail\', \'accident de trajet\') et [Sexe] est \'Enum\'"});
+#line 69
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table12, "Given ");
+#line hidden
+#line 72
+ testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 73
- testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 74
- testRunner.Then("I should compute 1 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should compute 2 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Generating indicator :  Nombre de salariés")]
-        public virtual void GeneratingIndicatorNombreDeSalaries()
+        [NUnit.Framework.DescriptionAttribute("Generating indicator : Nombre d\'accidents de trajet ayant entrainé un arrêt de tr" +
+            "avail (par sexe)")]
+        public virtual void GeneratingIndicatorNombreDaccidentsDeTrajetAyantEntraineUnArretDeTravailParSexe()
         {
             string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator :  Nombre de salariés", null, ((string[])(null)));
-#line 76
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator : Nombre d\'accidents de trajet ayant entrainé un arrêt de tr" +
+                    "avail (par sexe)", null, ((string[])(null)));
+#line 75
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -705,28 +693,88 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table36.AddRow(new string[] {
-                            "Effectifs",
-                            "Conditions générales d\'emploi",
-                            "Durée et organisation du travail",
-                            "Nombre de salariés",
-                            "salariés",
-                            "Nombre [matricule] par [structure]"});
-#line 77
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table36, "Given ");
+                table13.AddRow(new string[] {
+                            "Absences",
+                            "Conditions de travail, santé et sécurité au travail",
+                            "Conditions de travail, santé et sécurité au travail",
+                            "Nombre d\'accidents de trajet ayant entrainé un arrêt de travail (par sexe)",
+                            "[Sexe]",
+                            "Nombre [Matricule] par [structure] dont [Nature de l\'absence] est \'accident de tr" +
+                                "ajet\'  et [Sexe] est \'Enum\'"});
+#line 76
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table13, "Given ");
 #line hidden
-#line 80
+#line 79
  testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 81
- testRunner.Then("I should compute 1 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 80
+ testRunner.Then("I should compute 2 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Generating indicator : Nombre d\'accidents de travail ayant entrainé un arrêt de t" +
+            "ravail")]
+        public virtual void GeneratingIndicatorNombreDaccidentsDeTravailAyantEntraineUnArretDeTravail()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generating indicator : Nombre d\'accidents de travail ayant entrainé un arrêt de t" +
+                    "ravail", null, ((string[])(null)));
+#line 82
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Onglet",
+                            "Domaine",
+                            "Sous Domaine",
+                            "Indicateur",
+                            "Champs",
+                            "Formule"});
+                table14.AddRow(new string[] {
+                            "Absences",
+                            "Conditions de travail, santé et sécurité au travail",
+                            "Conditions de travail, santé et sécurité au travail",
+                            "Nombre d\'accidents de travail ayant entrainé un arrêt de travail",
+                            "[Sexe]",
+                            "Nombre [Matricule] par [structure] dont [Nature de l\'absence] est \'accident de tr" +
+                                "avail\'  et [Sexe] est \'Enum\'"});
+#line 83
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table14, "Given ");
+#line hidden
+#line 86
+ testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 87
+ testRunner.Then("I should compute 2 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

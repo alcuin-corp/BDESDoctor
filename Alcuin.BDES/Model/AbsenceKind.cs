@@ -24,5 +24,20 @@ namespace Alcuin.BDES.Model
 
         [Description("Accident de trajet")]
         AccidentDeTrajet,
+
+        [Description("RTT")]
+        RTT,
+
+        [Description("Congés payés")]
+        CongesPayes,
+
+        [Description("Maladie")]
+        Maladie,
+
+        [Description("Repos compensateur de nuit")]
+        ReposCompensateurDeNuit,
+
+        [Description("Repos compensateur équivalent")]
+        ReposCompensateurEquivalent
     }
 }

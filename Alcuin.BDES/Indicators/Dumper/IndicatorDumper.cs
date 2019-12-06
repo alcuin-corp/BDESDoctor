@@ -43,22 +43,27 @@ namespace Alcuin.BDES.Indicators.Dumper
                     row[2].Value = indicator.SubDomain;
                     row[3].Value = indicator.Name;
                     row[4].Value = indicator.Field;
-
                     row[7].Value = "Numerique";
                     row[8].Value = referenceYear;
-                    switch (indicator.AgregateFunction)
-                    {
-                        case AgregateFunction.Avg:
-                            row[9].Value = group.Value.Average;
-                            break;
-                        default:
-                            row[9].Value = group.Value.Count;
-                            break;
-                    }
+                    decimal value = GetGroupValue(indicator, group.Value);
+                    row[9].Value = value;
                 }
             }
 
             this.fileSystem.SaveWorkbook(workBook, outputFilePath);
+        }
+
+        private static decimal GetGroupValue(Indicator indicator, IndicatorValue group)
+        {
+            switch (indicator.AgregateFunction)
+            {
+                case AgregateFunction.Avg:
+                    return group.Average;
+                case AgregateFunction.Sum:
+                    return group.Total;
+                default:
+                    return group.Count;
+            }
         }
 
         private void AppendHeaders(Worksheet worksheet)

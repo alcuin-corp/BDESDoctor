@@ -30,6 +30,8 @@ namespace Alcuin.BDES.Indicators.Parser
 
         public string Domain => this.rawIndicator.Domain;
 
+        public string Formula => this.rawIndicator.Formula;
+
         public string SubDomain => this.rawIndicator.SubDomain;
 
         public string Name { get; internal set; }

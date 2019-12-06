@@ -22,12 +22,12 @@ namespace Alcuin.BDES.Workflow.Commands
                     foreach (var row in sheet.GetRows())
                     {
                         request.ProgressRate += rate;
-                        var groupKey = indicator.GroupColumn.GetCleanCell(row);
+                        var groupKey = indicator.GroupColumn?.GetCleanCell(row) ?? "Tous";
                         var indicatorValue = indicator.GetGroupValue(groupKey);
                         if (indicator.IsInclud(row, request.ReferenceYear))
                         {
                             indicatorValue.Increment();
-                            if (indicator.AgregateFunction == AgregateFunction.Avg)
+                            if (indicator.AgregateFunction != AgregateFunction.Count)
                             {
                                 var value = decimal.Parse(indicator.ColumnToAgregate.GetCell(row));
                                 indicatorValue.AddTotal(value);
