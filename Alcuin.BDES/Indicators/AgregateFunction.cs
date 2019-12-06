@@ -3,6 +3,7 @@
     internal enum AgregateFunction
     {
         Count,
+        Sum,
         Avg
     }
 }

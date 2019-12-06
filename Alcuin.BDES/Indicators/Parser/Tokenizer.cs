@@ -10,7 +10,7 @@ namespace Alcuin.BDES.Indicators.Parser
         public Tokenizer()
         {
             this.tokenDefinitions = new List<TokenDefinition>();
-            this.AddTokenDefinition(TokenType.Agregate, "Nombre|Count|∑|Moyenne|Moy|Avg", 1);
+            this.AddTokenDefinition(TokenType.Agregate, "Nombre|Count|∑|Moyenne|Moy|Avg|Somme|Total|Sum", 1);
             this.AddTokenDefinition(TokenType.Where, "where|dont", 1);
             this.AddTokenDefinition(TokenType.GroupBy, "par|by", 1);
             this.AddTokenDefinition(TokenType.And, "et|and", 1);

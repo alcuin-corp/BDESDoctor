@@ -80,27 +80,27 @@ namespace Alcuin.BDES.IntegrationTests.Features.WorkFlow
 #line 4
  testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table150 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table162 = new TechTalk.SpecFlow.Table(new string[] {
                         "Matricule",
                         "Structure",
                         "CSP",
                         "Sexe"});
-            table150.AddRow(new string[] {
+            table162.AddRow(new string[] {
                         "1254",
                         "Alcuin",
                         "Cadre",
                         "Homme"});
 #line 5
- testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table150, "And ");
+ testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table162, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table151 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table163 = new TechTalk.SpecFlow.Table(new string[] {
                         "Onglet",
                         "Domaine",
                         "Sous Domaine",
                         "Indicateur",
                         "Champs",
                         "Formule"});
-            table151.AddRow(new string[] {
+            table163.AddRow(new string[] {
                         "Effectifs",
                         "Effectif",
                         "Effectif au 31/12",
@@ -108,7 +108,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.WorkFlow
                         "Cadre",
                         "∑ [matricule] par [structure] dont [CSP] == \'Cadre\'"});
 #line 8
- testRunner.And("I have the folowing indicators definition", ((string)(null)), table151, "And ");
+ testRunner.And("I have the folowing indicators definition", ((string)(null)), table163, "And ");
 #line hidden
 #line 11
  testRunner.When("I start processing the file mybook.xlsx for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

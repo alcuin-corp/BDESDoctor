@@ -27,7 +27,7 @@ namespace Alcuin.BDES.Workflow.Commands
                         if (indicator.IsInclud(row, request.ReferenceYear))
                         {
                             indicatorValue.Increment();
-                            if (indicator.AgregateFunction == AgregateFunction.Avg)
+                            if (indicator.AgregateFunction != AgregateFunction.Count)
                             {
                                 var value = decimal.Parse(indicator.ColumnToAgregate.GetCell(row));
                                 indicatorValue.AddTotal(value);

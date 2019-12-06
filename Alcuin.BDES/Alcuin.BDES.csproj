@@ -68,6 +68,7 @@
     <Compile Include="Helper\EnumExtensions.cs" />
     <Compile Include="Helper\IFileSystemExtensions.cs" />
     <Compile Include="Helper\ObjectExtensions.cs" />
+    <Compile Include="Indicators\ColumnAggregator.cs" />
     <Compile Include="Indicators\Criterias\CriteriaDefinition.cs" />
     <Compile Include="Indicators\Criterias\ICriteria.cs" />
     <Compile Include="Indicators\Criterias\RepositoryCriteria.cs" />

@@ -8,14 +8,15 @@ namespace Alcuin.BDES.Domain.Transcodification
         {
             this.Map(
                 AbsenceKind.AbsenceMaternite,
-                "Abs. Maternité",
-                "Absence Maternité");
+                "Absence Maternité",
+                "Maternité",
+                "Abs. Maternité");
 
             this.Map(
                 AbsenceKind.AbsencePaternite,
-                "abs. Paternité",
                 "absence paternité",
-                "paternité");
+                "abs. Paternité",
+                "Paternité");
 
             this.Map(
                 AbsenceKind.EvenementFamilial,
@@ -25,6 +26,7 @@ namespace Alcuin.BDES.Domain.Transcodification
             this.Map(
                 AbsenceKind.CongesSpeciaux,
                 "congés spéciaux",
+                "congé spécial",
                 "Congé Spéciaux");
 
             this.Map(
@@ -42,6 +44,31 @@ namespace Alcuin.BDES.Domain.Transcodification
                 AbsenceKind.AccidentDeTrajet,
                 "accident de trajet",
                 "acc. Trajet");
+
+            this.Map(
+                AbsenceKind.RTT,
+                "RTT",
+                "R.T.T");
+
+            this.Map(
+                AbsenceKind.CongesPayes,
+                "Congés payés",
+                "CP",
+                "C.P",
+                "C.P.");
+
+            this.Map(
+                AbsenceKind.ReposCompensateurDeNuit,
+                "Repos compensateur nuit",
+                "Repos compensateur de nuit");
+
+            this.Map(
+                AbsenceKind.ReposCompensateurEquivalent,
+                "Repos compensateur équivalent",
+                "Repos compensateur equivalent",
+                "Repos compensateur");
+
+            this.Map(AbsenceKind.Maladie, "maladie");
         }
     }
 }

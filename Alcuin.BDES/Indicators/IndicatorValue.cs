@@ -2,15 +2,15 @@
 
 namespace Alcuin.BDES.Indicators
 {
-    public class IndicatorValue
+    internal class IndicatorValue
     {
         private int count;
 
-        private decimal total;
-
         public int Count => this.count;
 
-        public decimal Average => this.total != 0 ? this.count / this.total : 0;
+        public decimal Total { get; private set; }
+
+        public decimal Average => this.count == 0 ? 0 : this.Total / this.count;
 
         internal int Increment()
         {
@@ -22,10 +22,10 @@ namespace Alcuin.BDES.Indicators
         {
             lock (this)
             {
-                this.total += value;
+                this.Total += value;
             }
 
-            return this.total;
+            return this.Total;
         }
     }
 }
