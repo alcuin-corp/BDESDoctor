@@ -103,16 +103,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
  testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
                             "Matricule",
                             "Nom",
                             "Prenom"});
-                table37.AddRow(new string[] {
+                table36.AddRow(new string[] {
                             "1254",
                             "John",
                             "CONNOR"});
 #line 8
- testRunner.And("it has a workSheet Effectifs with the following content", ((string)(null)), table37, "And ");
+ testRunner.And("it has a workSheet Effectifs with the following content", ((string)(null)), table36, "And ");
 #line hidden
 #line 11
  testRunner.When("I start processing the file mybook.xlsx for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -120,13 +120,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 12
  testRunner.Then("the process should fail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
-                table38.AddRow(new string[] {
+                table37.AddRow(new string[] {
                             "L\'onglet \'Absences\' n\'est pas présent dans votre fichier, aucun indicateur lié au" +
                                 "x absences ne sera calculé lors de la conversion."});
 #line 13
- testRunner.And("I should found the following Warrning messages", ((string)(null)), table38, "And ");
+ testRunner.And("I should found the following Warrning messages", ((string)(null)), table37, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -161,37 +161,37 @@ this.ScenarioInitialize(scenarioInfo);
 #line 18
  testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
                             "Matricul",
+                            "Nom",
+                            "Prenom"});
+                table38.AddRow(new string[] {
+                            "1254",
+                            "John",
+                            "CONNOR"});
+#line 19
+ testRunner.And("it has a workSheet Effectifs with the following content", ((string)(null)), table38, "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Matricule",
                             "Nom",
                             "Prenom"});
                 table39.AddRow(new string[] {
                             "1254",
                             "John",
                             "CONNOR"});
-#line 19
- testRunner.And("it has a workSheet Effectifs with the following content", ((string)(null)), table39, "And ");
-#line hidden
-                TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Matricule",
-                            "Nom",
-                            "Prenom"});
-                table40.AddRow(new string[] {
-                            "1254",
-                            "John",
-                            "CONNOR"});
 #line 22
- testRunner.And("it has also a workSheet Absences with the following content", ((string)(null)), table40, "And ");
+ testRunner.And("it has also a workSheet Absences with the following content", ((string)(null)), table39, "And ");
 #line hidden
 #line 25
  testRunner.When("I start processing the file mybook.xlsx for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
-                table41.AddRow(new string[] {
+                table40.AddRow(new string[] {
                             "L’onglet \'Absences\' est bien pris en compte."});
 #line 26
- testRunner.Then("I should found the following Succes messages", ((string)(null)), table41, "Then ");
+ testRunner.Then("I should found the following Succes messages", ((string)(null)), table40, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

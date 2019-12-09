@@ -9,8 +9,8 @@ namespace Alcuin.BDES.Indicators.Parser
     internal class FormulaAnalyzer
     {
         private Stack<Token> tokenSequence;
-        private Token lookaheadFirst;
-        private Token lookaheadSecond;
+        private Token head;
+        private Token next;
 
         private CriteriaDefinition currentCriteriaDefinition;
 
@@ -31,7 +31,8 @@ namespace Alcuin.BDES.Indicators.Parser
         public void Parse(List<Token> tokens)
         {
             this.LoadSequenceStack(tokens);
-            this.PrepareLookaheads();
+            this.head = this.tokenSequence.Pop();
+            this.next = this.tokenSequence.Pop();
             this.Extract();
             this.DiscardToken(TokenType.SequenceTerminator);
         }
@@ -46,56 +47,50 @@ namespace Alcuin.BDES.Indicators.Parser
             }
         }
 
-        private void PrepareLookaheads()
-        {
-            this.lookaheadFirst = this.tokenSequence.Pop();
-            this.lookaheadSecond = this.tokenSequence.Pop();
-        }
-
         private Token ReadToken(TokenType tokenType)
         {
-            if (this.lookaheadFirst.TokenType != tokenType)
+            if (this.head.TokenType != tokenType)
             {
-                throw new Exception($"Expected {tokenType.ToString().ToUpper()} but found: {this.lookaheadFirst.Value}");
+                throw new Exception($"Expected {tokenType.ToString().ToUpper()} but found: {this.head.Value}");
             }
 
-            return this.lookaheadFirst;
+            return this.head;
         }
 
-        private void DiscardToken()
+        private void MoveNext()
         {
-            this.lookaheadFirst = this.lookaheadSecond.Clone();
+            this.head = this.next.Clone();
 
             if (this.tokenSequence.Any())
             {
-                this.lookaheadSecond = this.tokenSequence.Pop();
+                this.next = this.tokenSequence.Pop();
             }
             else
             {
-                this.lookaheadSecond = new Token(TokenType.SequenceTerminator, string.Empty);
+                this.next = new Token(TokenType.SequenceTerminator, string.Empty);
             }
         }
 
-        private void DiscardToken(TokenType tokenType)
+        private void MoveNext(TokenType tokenType)
         {
-            if (this.lookaheadFirst.TokenType != tokenType)
+            if (this.head.TokenType != tokenType)
             {
-                throw new Exception($"Expected {tokenType.ToString().ToUpper()} but found: {this.lookaheadFirst.Value}");
+                throw new Exception($"Expected {tokenType.ToString().ToUpper()} but found: {this.head.Value}");
             }
 
-            this.DiscardToken();
+            this.MoveNext();
         }
 
         private void Extract()
         {
             this.AgregateFunction = this.GetAgregateFunction();
-            this.DiscardToken();
+            this.MoveNext();
             this.ColumnToAgregate = this.ReadColumnName();
-            this.DiscardToken();
-            this.DiscardToken(TokenType.GroupBy);
+            this.MoveNext();
+            this.MoveNext(TokenType.GroupBy);
             this.GroupByColumn = this.ReadColumnName();
-            this.DiscardToken();
-            this.DiscardToken(TokenType.Where);
+            this.MoveNext();
+            this.MoveNext(TokenType.Where);
             this.MatchCondition();
         }
 
@@ -109,31 +104,27 @@ namespace Alcuin.BDES.Indicators.Parser
 
         private string ReadString()
         {
-            return this.ReadToken(TokenType.StringValue).Value
-                .Replace("'", string.Empty);
+            return this.ReadToken(TokenType.StringValue).Value.Replace("'", string.Empty);
         }
 
         private AgregateFunction GetAgregateFunction()
         {
-            if (this.lookaheadFirst.TokenType == TokenType.Agregate)
+            if (this.head.TokenType != TokenType.Agregate)
             {
-                if (this.lookaheadFirst.Value.In("Count", "Nombre", "Sum", "∑"))
-                {
-                    return AgregateFunction.Count;
-                }
-
-                if (this.lookaheadFirst.Value.In("Avg", "Moy", "Moyenne"))
-                {
-                    return AgregateFunction.Avg;
-                }
-
-                if (this.lookaheadFirst.Value.In("Total", "Somme", "Sum"))
-                {
-                    return AgregateFunction.Sum;
-                }
+                throw new Exception($"Unknowen agregate function {this.head.Value}");
             }
 
-            throw new Exception($"Unknowen agregate function {this.lookaheadFirst.Value}");
+            if (this.head.Value.EqualsTo("Avg"))
+            {
+                return AgregateFunction.Avg;
+            }
+
+            if (this.head.Value.EqualsTo("Sum"))
+            {
+                return AgregateFunction.Sum;
+            }
+
+            return AgregateFunction.Count;
         }
 
         private void MatchCondition(bool createNewMatch = true)
@@ -143,53 +134,55 @@ namespace Alcuin.BDES.Indicators.Parser
                 this.CreateNewMatchCondition();
             }
 
-            if (this.lookaheadFirst.TokenType == TokenType.Column)
+            switch (this.head.TokenType)
             {
-                if (this.IsEqualityOperator(this.lookaheadSecond))
-                {
-                    this.EqualityMatchCondition();
-                }
-                else if (this.lookaheadSecond.TokenType == TokenType.In)
-                {
-                    this.InCondition();
-                }
-                else if (this.lookaheadSecond.TokenType == TokenType.NotIn)
-                {
-                    this.NotInCondition();
-                }
-                else if (this.lookaheadSecond.TokenType == TokenType.Between)
-                {
-                    this.BetweenCondition();
-                }
-                else
-                {
-                    throw new Exception($"Value not expected {this.lookaheadSecond.Value}");
-                }
+                case TokenType.Column:
 
-                this.MatchConditionNext();
-            }
-            else if (this.lookaheadFirst.TokenType == TokenType.YearOf)
-            {
-                this.YearOfCondition();
-            }
-            else
-            if (this.lookaheadFirst.TokenType == TokenType.Age)
-            {
-                this.AgeCondition();
-            }
-            else
-            {
-                throw new Exception($"Value not expected {this.lookaheadFirst.Value}");
+                    if (this.IsEqualityOperator(this.next))
+                    {
+                        this.EqualityMatchCondition();
+                    }
+                    else if (this.next.TokenType == TokenType.In)
+                    {
+                        this.InCondition();
+                    }
+                    else if (this.next.TokenType == TokenType.NotIn)
+                    {
+                        this.NotInCondition();
+                    }
+                    else if (this.next.TokenType == TokenType.Between)
+                    {
+                        this.BetweenCondition();
+                    }
+                    else
+                    {
+                        throw new Exception($"Value not expected {this.next.Value}");
+                    }
+
+                    this.MatchConditionNext();
+                    break;
+                case TokenType.YearOf:
+                    this.HandleYearOfFunction();
+                    break;
+                case TokenType.Age:
+                    this.AgeFunction();
+                    break;
+
+                case TokenType.Seniority:
+                    this.SeniorityFunction();
+                    break;
+                default:
+                    throw new Exception($"Value not expected {this.head.Value}");
             }
         }
 
         private void BetweenCondition()
         {
             this.currentCriteriaDefinition.ColumnName = this.ReadColumnName();
-            this.DiscardToken();
+            this.MoveNext();
             this.currentCriteriaDefinition.Operator = Operator.Between;
-            this.DiscardToken(TokenType.Between);
-            if (this.lookaheadFirst.TokenType == TokenType.Reference)
+            this.MoveNext(TokenType.Between);
+            if (this.head.TokenType == TokenType.Reference)
             {
                 this.currentCriteriaDefinition.Values.Add("reference");
             }
@@ -198,9 +191,9 @@ namespace Alcuin.BDES.Indicators.Parser
                 this.currentCriteriaDefinition.Values.Add(this.ReadString());
             }
 
-            this.DiscardToken();
-            this.DiscardToken(TokenType.And);
-            if (this.lookaheadFirst.TokenType == TokenType.Reference)
+            this.MoveNext();
+            this.MoveNext(TokenType.And);
+            if (this.head.TokenType == TokenType.Reference)
             {
                 this.currentCriteriaDefinition.Values.Add("reference");
             }
@@ -209,31 +202,43 @@ namespace Alcuin.BDES.Indicators.Parser
                 this.currentCriteriaDefinition.Values.Add(this.ReadString());
             }
 
-            this.DiscardToken();
+            this.MoveNext();
         }
 
-        private void YearOfCondition()
+        private void HandleYearOfFunction()
         {
             this.currentCriteriaDefinition.ScalarFunction = this.GetTransformFunction();
-            this.DiscardToken();
+            this.MoveNext();
             this.MatchCondition(false);
         }
 
-        private void AgeCondition()
+        private void SeniorityFunction()
         {
             this.currentCriteriaDefinition.ScalarFunction = this.GetTransformFunction();
-            this.currentCriteriaDefinition.ColumnName = "date de naissance";
-            this.DiscardToken();
-            this.currentCriteriaDefinition.Operator = this.GetOperator(this.lookaheadFirst);
-            this.DiscardToken();
+            this.currentCriteriaDefinition.ColumnName = "Date d'entrée";
+            this.MoveNext();
+            this.currentCriteriaDefinition.Operator = this.GetOperator(this.head);
+            this.MoveNext();
             this.currentCriteriaDefinition.Values.Add(this.ReadString());
-            this.DiscardToken();
+            this.MoveNext();
+            this.MatchConditionNext();
+        }
+
+        private void AgeFunction()
+        {
+            this.currentCriteriaDefinition.ScalarFunction = this.GetTransformFunction();
+            this.currentCriteriaDefinition.ColumnName = "Date de naissance";
+            this.MoveNext();
+            this.currentCriteriaDefinition.Operator = this.GetOperator(this.head);
+            this.MoveNext();
+            this.currentCriteriaDefinition.Values.Add(this.ReadString());
+            this.MoveNext();
             this.MatchConditionNext();
         }
 
         private ScalarFunction GetTransformFunction()
         {
-            if (this.lookaheadFirst.TokenType == TokenType.YearOf)
+            if (this.head.TokenType == TokenType.YearOf)
             {
                 return ScalarFunction.YearOf;
             }
@@ -244,10 +249,10 @@ namespace Alcuin.BDES.Indicators.Parser
         private void EqualityMatchCondition()
         {
             this.currentCriteriaDefinition.ColumnName = this.ReadColumnName();
-            this.DiscardToken();
-            this.currentCriteriaDefinition.Operator = this.GetOperator(this.lookaheadFirst);
-            this.DiscardToken();
-            if (this.lookaheadFirst.TokenType == TokenType.Reference)
+            this.MoveNext();
+            this.currentCriteriaDefinition.Operator = this.GetOperator(this.head);
+            this.MoveNext();
+            if (this.head.TokenType == TokenType.Reference)
             {
                 this.currentCriteriaDefinition.Values.Add("reference");
             }
@@ -256,7 +261,7 @@ namespace Alcuin.BDES.Indicators.Parser
                 this.currentCriteriaDefinition.Values.Add(this.ReadString());
             }
 
-            this.DiscardToken();
+            this.MoveNext();
         }
 
         private Operator GetOperator(Token token)
@@ -305,7 +310,7 @@ namespace Alcuin.BDES.Indicators.Parser
         private void ParseInCondition(Operator inOperator)
         {
             this.currentCriteriaDefinition.ColumnName = this.ReadColumnName();
-            this.DiscardToken();
+            this.MoveNext();
             this.currentCriteriaDefinition.Operator = inOperator;
 
             if (inOperator == Operator.In)
@@ -332,7 +337,7 @@ namespace Alcuin.BDES.Indicators.Parser
 
         private void StringLiteralListNext()
         {
-            if (this.lookaheadFirst.TokenType == TokenType.Comma)
+            if (this.head.TokenType == TokenType.Comma)
             {
                 this.DiscardToken(TokenType.Comma);
                 this.currentCriteriaDefinition.Values.Add(this.ReadString());
@@ -343,26 +348,26 @@ namespace Alcuin.BDES.Indicators.Parser
 
         private void MatchConditionNext()
         {
-            if (this.lookaheadFirst.TokenType == TokenType.SequenceTerminator)
+            if (this.head.TokenType == TokenType.SequenceTerminator)
             {
                 return;
             }
 
-            if (this.lookaheadFirst.TokenType == TokenType.And)
+            if (this.head.TokenType == TokenType.And)
             {
                 this.AndMatchCondition();
             }
-            else if (this.lookaheadFirst.TokenType == TokenType.Or)
+            else if (this.head.TokenType == TokenType.Or)
             {
                 this.OrMatchCondition();
             }
-            else if (this.lookaheadFirst.TokenType == TokenType.Between)
+            else if (this.head.TokenType == TokenType.Between)
             {
                 this.DateCondition();
             }
             else
             {
-                throw new Exception("Expected AND, OR or BETWEEN but found: " + this.lookaheadFirst.Value);
+                throw new Exception("Expected AND, OR or BETWEEN but found: " + this.head.Value);
             }
         }
 
@@ -395,13 +400,13 @@ namespace Alcuin.BDES.Indicators.Parser
 
         private void DateConditionNext()
         {
-            if (lookaheadFirst.TokenType == TokenType.SequenceTerminator)
+            if (head.TokenType == TokenType.SequenceTerminator)
             {
                 // nothing
             }
             else
             {
-                throw new Exception("Expected LIMIT or the end of the query but found: " + this.lookaheadFirst.Value);
+                throw new Exception("Expected LIMIT or the end of the query but found: " + this.head.Value);
             }
         }
 

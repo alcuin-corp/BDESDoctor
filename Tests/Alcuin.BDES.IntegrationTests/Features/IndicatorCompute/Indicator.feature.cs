@@ -80,7 +80,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
 #line 4
  testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "Matricule",
                         "Structure",
                         "Sexe",
@@ -92,7 +92,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "Durée du temps de travail hebdomadaire",
                         "Date d\'entrée",
                         "Date de sortie"});
-            table26.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "1254",
                         "Alcuin",
                         "Homme",
@@ -104,7 +104,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "15",
                         "12/12/2012",
                         ""});
-            table26.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "1255",
                         "Alcuin",
                         "Homme",
@@ -116,7 +116,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "40",
                         "12/12/2012",
                         "13/05/2013"});
-            table26.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "1256",
                         "CGI",
                         "Homme",
@@ -128,7 +128,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "33",
                         "12/12/2012",
                         "16/03/1986"});
-            table26.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "1257",
                         "CGI",
                         "Femme",
@@ -140,7 +140,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "40",
                         "12/12/2012",
                         "30/06/2019"});
-            table26.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "1235",
                         "Alcuin",
                         "Femme",
@@ -153,7 +153,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "12/12/2012",
                         ""});
 #line 5
- testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table26, "And ");
+ testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table25, "And ");
 #line hidden
         }
         
@@ -186,14 +186,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table27.AddRow(new string[] {
+                table26.AddRow(new string[] {
                             "Effectifs",
                             "Effectif",
                             "Effectif au 31/12",
@@ -201,7 +201,7 @@ this.FeatureBackground();
                             "[CSP]",
                             "Nombre [matricule] par [structure] dont [CSP] est \'Enum\'"});
 #line 14
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table27, "Given ");
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table26, "Given ");
 #line hidden
 #line 17
  testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -242,14 +242,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table28.AddRow(new string[] {
+                table27.AddRow(new string[] {
                             "Effectifs",
                             "Effectif",
                             "Effectif au 31/12",
@@ -258,7 +258,7 @@ this.FeatureBackground();
                             "Nombre [matricule] par [structure] dont [type de contrat] est \'CDI\' et [Durée du " +
                                 "temps de travail hebdomadaire] >= \'35\' et [CSP] est \'Enum\'"});
 #line 21
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table28, "Given ");
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table27, "Given ");
 #line hidden
 #line 24
  testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -301,14 +301,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table29.AddRow(new string[] {
+                table28.AddRow(new string[] {
                             "Effectifs",
                             "Effectif",
                             "Effectif au 31/12",
@@ -318,7 +318,7 @@ this.FeatureBackground();
                             "Nombre [matricule] par [structure] dont [type de contrat] est \'CDD\' et [CSP] est " +
                                 "\'Enum\'"});
 #line 28
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table29, "Given ");
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table28, "Given ");
 #line hidden
 #line 31
  testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -359,14 +359,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table30.AddRow(new string[] {
+                table29.AddRow(new string[] {
                             "Effectifs",
                             "Effectif",
                             "Répartition de l\'effectif",
@@ -374,7 +374,7 @@ this.FeatureBackground();
                             "[CSP]",
                             "Nombre [matricule] par [structure] dont [Sexe] est \'Enum\' et [CSP] est \'Enum\'"});
 #line 35
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table30, "Given ");
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table29, "Given ");
 #line hidden
 #line 38
  testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -415,14 +415,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table31.AddRow(new string[] {
+                table30.AddRow(new string[] {
                             "Effectifs",
                             "Effectif",
                             "Répartition de l\'effectif",
@@ -431,7 +431,7 @@ this.FeatureBackground();
                             "Nombre [matricule] par [structure] dont [Nationalité] est \'Enum\' et [CSP] est \'En" +
                                 "um\'"});
 #line 42
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table31, "Given ");
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table30, "Given ");
 #line hidden
 #line 45
  testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -474,14 +474,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table32.AddRow(new string[] {
+                table31.AddRow(new string[] {
                             "Effectifs",
                             "Effectif",
                             "Répartition de l\'effectif",
@@ -490,7 +490,7 @@ this.FeatureBackground();
                             "Nombre [matricule] par [structure] dont [Durée du temps de travail hebdomadaire] " +
                                 "entre \'30\' et \'35\' et [CSP] est \'Cadre\'"});
 #line 49
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table32, "Given ");
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table31, "Given ");
 #line hidden
 #line 52
  testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -531,14 +531,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table33.AddRow(new string[] {
+                table32.AddRow(new string[] {
                             "Effectifs",
                             "Effectif",
                             "Répartition de l\'effectif",
@@ -547,7 +547,7 @@ this.FeatureBackground();
                             "Nombre [matricule] par [structure] dont année[Date d\'entrée] est \'reference\' et [" +
                                 "CSP] est \'Cadre\'"});
 #line 56
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table33, "Given ");
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table32, "Given ");
 #line hidden
 #line 59
  testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -588,14 +588,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table34.AddRow(new string[] {
+                table33.AddRow(new string[] {
                             "Effectifs",
                             "Effectif",
                             "Répartition de l\'effectif",
@@ -604,7 +604,7 @@ this.FeatureBackground();
                             "Nombre [matricule] par [structure] dont année[Date de sortie] dans (\'reference\',\'" +
                                 "null\') et [CSP] est \'Cadre\'"});
 #line 63
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table34, "Given ");
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table33, "Given ");
 #line hidden
 #line 66
  testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -647,14 +647,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table35.AddRow(new string[] {
+                table34.AddRow(new string[] {
                             "Effectifs",
                             "Conditions générales d\'emploi",
                             "Durée et organisation du travail",
@@ -664,7 +664,7 @@ this.FeatureBackground();
                                 "entre \'30\' et \'35\' ou [Durée du temps de travail hebdomadaire] << \'20\' et [Sexe]" +
                                 " est \'Enum\' et année[Date de sortie] dans (\'reference\',\'null\')"});
 #line 70
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table35, "Given ");
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table34, "Given ");
 #line hidden
 #line 73
  testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -705,14 +705,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table36.AddRow(new string[] {
+                table35.AddRow(new string[] {
                             "Effectifs",
                             "Conditions générales d\'emploi",
                             "Durée et organisation du travail",
@@ -720,7 +720,7 @@ this.FeatureBackground();
                             "salariés",
                             "Nombre [matricule] par [structure]"});
 #line 77
- testRunner.Given("I have the folowing indicators definition", ((string)(null)), table36, "Given ");
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table35, "Given ");
 #line hidden
 #line 80
  testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

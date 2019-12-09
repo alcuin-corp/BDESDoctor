@@ -26,9 +26,8 @@
         SequenceTerminator,
         YearOf,
         Age,
-        EntryAge,
-        LeavingAge,
         Reference,
+        Seniority,
         Enum
     }
 }

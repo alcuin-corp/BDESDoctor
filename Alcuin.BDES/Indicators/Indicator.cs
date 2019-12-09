@@ -71,6 +71,8 @@ namespace Alcuin.BDES.Indicators
 
         private bool CheckCriterias(Aspose.Cells.Row row, int referenceYear)
         {
+            var cri = this.Creterias
+
             var first = this.Creterias.First();
             var result = first.IsMatch(row, referenceYear);
             foreach (var item in this.Creterias.Skip(1))
