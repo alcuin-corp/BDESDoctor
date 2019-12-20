@@ -34,7 +34,7 @@ namespace Alcuin.BDES.Indicators.Parser
             this.head = this.tokenSequence.Pop();
             this.next = this.tokenSequence.Pop();
             this.Extract();
-            this.DiscardToken(TokenType.SequenceTerminator);
+            this.MoveNext(TokenType.SequenceTerminator);
         }
 
         private void LoadSequenceStack(List<Token> tokens)
@@ -90,6 +90,11 @@ namespace Alcuin.BDES.Indicators.Parser
             this.MoveNext(TokenType.GroupBy);
             this.GroupByColumn = this.ReadColumnName();
             this.MoveNext();
+            if (this.head.TokenType == TokenType.SequenceTerminator)
+            {
+                return;
+            }
+
             this.MoveNext(TokenType.Where);
             this.MatchCondition();
         }
@@ -315,23 +320,23 @@ namespace Alcuin.BDES.Indicators.Parser
 
             if (inOperator == Operator.In)
             {
-                this.DiscardToken(TokenType.In);
+                this.MoveNext(TokenType.In);
             }
             else if (inOperator == Operator.NotIn)
             {
-                this.DiscardToken(TokenType.NotIn);
+                this.MoveNext(TokenType.NotIn);
             }
 
-            this.DiscardToken(TokenType.OpenParenthesis);
+            this.MoveNext(TokenType.OpenParenthesis);
             this.StringLiteralList();
-            this.DiscardToken(TokenType.CloseParenthesis);
+            this.MoveNext(TokenType.CloseParenthesis);
             this.MatchConditionNext();
         }
 
         private void StringLiteralList()
         {
             this.currentCriteriaDefinition.Values.Add(this.ReadString());
-            this.DiscardToken(TokenType.StringValue);
+            this.MoveNext(TokenType.StringValue);
             this.StringLiteralListNext();
         }
 
@@ -339,9 +344,9 @@ namespace Alcuin.BDES.Indicators.Parser
         {
             if (this.head.TokenType == TokenType.Comma)
             {
-                this.DiscardToken(TokenType.Comma);
+                this.MoveNext(TokenType.Comma);
                 this.currentCriteriaDefinition.Values.Add(this.ReadString());
-                this.DiscardToken(TokenType.StringValue);
+                this.MoveNext(TokenType.StringValue);
                 this.StringLiteralListNext();
             }
         }
@@ -374,27 +379,27 @@ namespace Alcuin.BDES.Indicators.Parser
         private void AndMatchCondition()
         {
             this.currentCriteriaDefinition.LogicalOperatorToNextCondition = LogicalOperator.And;
-            this.DiscardToken(TokenType.And);
+            this.MoveNext(TokenType.And);
             this.MatchCondition();
         }
 
         private void OrMatchCondition()
         {
             this.currentCriteriaDefinition.LogicalOperatorToNextCondition = LogicalOperator.Or;
-            this.DiscardToken(TokenType.Or);
+            this.MoveNext(TokenType.Or);
             this.MatchCondition();
         }
 
         private void DateCondition()
         {
-            this.DiscardToken(TokenType.Between);
+            this.MoveNext(TokenType.Between);
 
             //_queryModel.DateRange = new DateRange();
             //_queryModel.DateRange.From = DateTime.ParseExact(ReadToken(TokenType.DateTimeValue).Value, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
-            DiscardToken(TokenType.DateTimeValue);
-            DiscardToken(TokenType.And);
+            this.MoveNext(TokenType.DateTimeValue);
+            this.MoveNext(TokenType.And);
             //_queryModel.DateRange.To = DateTime.ParseExact(ReadToken(TokenType.DateTimeValue).Value, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
-            this.DiscardToken(TokenType.DateTimeValue);
+            this.MoveNext(TokenType.DateTimeValue);
             this.DateConditionNext();
         }
 

@@ -530,8 +530,8 @@ this.FeatureBackground();
                                 "die professionnelle",
                             "[CSP]",
                             "Sum [Nombre de jour d\'absence] Group by [Structure] Where [nature de l\'absence]  " +
-                                "dans (\'maladie professionnelle\',\'accident de travail\',\'accident de trajet\') And " +
-                                "[CSP] est  \'Enum\'"});
+                                "In (\'maladie professionnelle\',\'accident de travail\',\'accident de trajet\') And [C" +
+                                "SP] = \'Enum\'"});
 #line 57
  testRunner.Given("I have the folowing indicators definition", ((string)(null)), table11, "Given ");
 #line hidden

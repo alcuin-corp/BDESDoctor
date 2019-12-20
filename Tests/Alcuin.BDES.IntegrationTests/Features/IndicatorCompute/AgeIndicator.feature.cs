@@ -171,8 +171,8 @@ this.FeatureBackground();
                             "Effectif au 31/12",
                             "Jeunes de 34 ou 33 ans",
                             "Cadre",
-                            "∑ [matricule] par [structure] dont age > 20 ou Age >= \'31\' ou Age <> \'33\' ou age " +
-                                "= 20"});
+                            "Count [matricule] group by [structure] where age > \'20\' or Age >= \'31\' or Age <> " +
+                                "\'33\' Or age = \'20\'"});
 #line 14
  testRunner.Given("I have the folowing indicators definition", ((string)(null)), table16, "Given ");
 #line hidden
@@ -186,7 +186,7 @@ this.FeatureBackground();
                 table17.AddRow(new string[] {
                             "Jeunes de 34 ou 33 ans",
                             "Alcuin",
-                            "0"});
+                            "3"});
                 table17.AddRow(new string[] {
                             "Jeunes de 34 ou 33 ans",
                             "CGI",
@@ -242,14 +242,14 @@ this.FeatureBackground();
                             "Effectif au 31/12",
                             "Jeunes de plus de 33 ans",
                             "Cadre",
-                            "Count [matricule] par [structure] dont  Age >= \'33\'"});
+                            "Count [matricule] group by [structure] Where  Age >= \'33\'"});
                 table18.AddRow(new string[] {
                             "Effectifs",
                             "Effectif",
                             "Effectif au 31/12",
                             "Jeunes de moins de 33 ans",
                             "Cadre",
-                            "Count [matricule] par [structure] dont  Age << \'33\'"});
+                            "Count [matricule] group by [structure] Where  Age < \'33\'"});
 #line 24
  testRunner.Given("I have the folowing indicators definition", ((string)(null)), table18, "Given ");
 #line hidden

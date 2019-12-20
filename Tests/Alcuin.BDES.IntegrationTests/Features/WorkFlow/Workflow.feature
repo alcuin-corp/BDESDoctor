@@ -6,8 +6,8 @@ Background:
 		| Matricule | Structure | CSP   | Sexe  |
 		| 1254      | Alcuin    | Cadre | Homme |
 	And I have the folowing indicators definition
-		| Onglet    | Domaine  | Sous Domaine      | Indicateur     | Champs | Formule                                             |
-		| Effectifs | Effectif | Effectif au 31/12 | Naissance 1986 | Cadre  | ∑ [matricule] par [structure] dont [CSP] == 'Cadre' |
+		| Onglet    | Domaine  | Sous Domaine      | Indicateur     | Champs | Formule                                                      |
+		| Effectifs | Effectif | Effectif au 31/12 | Naissance 1986 | Cadre  | Count [matricule] group by [structure] where [CSP] = 'Cadre' |
 	When I start processing the file mybook.xlsx for the period of 2015
 
 Scenario: I should receive a notification when the process is finished

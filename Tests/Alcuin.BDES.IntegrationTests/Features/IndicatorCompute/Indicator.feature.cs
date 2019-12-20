@@ -199,7 +199,7 @@ this.FeatureBackground();
                             "Effectif au 31/12",
                             "Effectif total au 31/12",
                             "[CSP]",
-                            "Nombre [matricule] par [structure] dont [CSP] est \'Enum\'"});
+                            "Count [matricule] group by [structure] where [CSP] is \'Enum\'"});
 #line 14
  testRunner.Given("I have the folowing indicators definition", ((string)(null)), table26, "Given ");
 #line hidden
@@ -255,8 +255,8 @@ this.FeatureBackground();
                             "Effectif au 31/12",
                             "Effectif permanent",
                             "[CSP]",
-                            "Nombre [matricule] par [structure] dont [type de contrat] est \'CDI\' et [Durée du " +
-                                "temps de travail hebdomadaire] >= \'35\' et [CSP] est \'Enum\'"});
+                            "Count [matricule] group by [structure] where [type de contrat] is \'CDI\' and [Duré" +
+                                "e du temps de travail hebdomadaire] >= \'35\' and [CSP] = \'Enum\'"});
 #line 21
  testRunner.Given("I have the folowing indicators definition", ((string)(null)), table27, "Given ");
 #line hidden
@@ -315,8 +315,8 @@ this.FeatureBackground();
                             "Nombre de salariés titulaires d\'un contrat de travail à durée déterminée au 31/12" +
                                 "",
                             "[CSP]",
-                            "Nombre [matricule] par [structure] dont [type de contrat] est \'CDD\' et [CSP] est " +
-                                "\'Enum\'"});
+                            "Count [matricule] group by [structure] where [type de contrat] is \'CDD\' and [CSP]" +
+                                " is \'Enum\'"});
 #line 28
  testRunner.Given("I have the folowing indicators definition", ((string)(null)), table28, "Given ");
 #line hidden
@@ -372,7 +372,8 @@ this.FeatureBackground();
                             "Répartition de l\'effectif",
                             "Répartition de l\'effectif total au 31/12 pour les [Sexe]s",
                             "[CSP]",
-                            "Nombre [matricule] par [structure] dont [Sexe] est \'Enum\' et [CSP] est \'Enum\'"});
+                            "Count [matricule] group by [structure] where [Sexe] is \'Enum\' and [CSP] is \'Enum\'" +
+                                ""});
 #line 35
  testRunner.Given("I have the folowing indicators definition", ((string)(null)), table29, "Given ");
 #line hidden
@@ -428,8 +429,8 @@ this.FeatureBackground();
                             "Répartition de l\'effectif",
                             "Répartition de l\'effectif total au 31/12 de nationalité [Nationalité]",
                             "[CSP]",
-                            "Nombre [matricule] par [structure] dont [Nationalité] est \'Enum\' et [CSP] est \'En" +
-                                "um\'"});
+                            "Count [matricule] group by [structure] where [Nationalité] is \'Enum\' and [CSP] is" +
+                                " \'Enum\'"});
 #line 42
  testRunner.Given("I have the folowing indicators definition", ((string)(null)), table30, "Given ");
 #line hidden
@@ -487,8 +488,8 @@ this.FeatureBackground();
                             "Répartition de l\'effectif",
                             "Nombre de salariés employés en autres formes de temps partiel",
                             "Cadre",
-                            "Nombre [matricule] par [structure] dont [Durée du temps de travail hebdomadaire] " +
-                                "entre \'30\' et \'35\' et [CSP] est \'Cadre\'"});
+                            "Count [matricule] group by [structure] where [Durée du temps de travail hebdomada" +
+                                "ire] between \'30\' and \'35\' and [CSP] is \'Cadre\'"});
 #line 49
  testRunner.Given("I have the folowing indicators definition", ((string)(null)), table31, "Given ");
 #line hidden
@@ -544,8 +545,8 @@ this.FeatureBackground();
                             "Répartition de l\'effectif",
                             "Nombre d\'embauche",
                             "Cadre",
-                            "Nombre [matricule] par [structure] dont année[Date d\'entrée] est \'reference\' et [" +
-                                "CSP] est \'Cadre\'"});
+                            "Count [matricule] group by [structure] where Yearof[Date d\'entrée] is \'reference\'" +
+                                " and [CSP] is \'Cadre\'"});
 #line 56
  testRunner.Given("I have the folowing indicators definition", ((string)(null)), table32, "Given ");
 #line hidden
@@ -601,8 +602,8 @@ this.FeatureBackground();
                             "Répartition de l\'effectif",
                             "Nombre d\'embauche",
                             "Cadre",
-                            "Nombre [matricule] par [structure] dont année[Date de sortie] dans (\'reference\',\'" +
-                                "null\') et [CSP] est \'Cadre\'"});
+                            "Count [matricule] Group by [structure] where YearOf[Date de sortie] In (\'referenc" +
+                                "e\',\'null\') and [CSP] is \'Cadre\'"});
 #line 63
  testRunner.Given("I have the folowing indicators definition", ((string)(null)), table33, "Given ");
 #line hidden
@@ -660,9 +661,9 @@ this.FeatureBackground();
                             "Durée et organisation du travail",
                             "Nombre de salariés en temps partiel (autres formes de temps partiel)",
                             "[Sexe]",
-                            "Nombre [matricule] par [structure] dont [Durée du temps de travail hebdomadaire] " +
-                                "entre \'30\' et \'35\' ou [Durée du temps de travail hebdomadaire] << \'20\' et [Sexe]" +
-                                " est \'Enum\' et année[Date de sortie] dans (\'reference\',\'null\')"});
+                            "count [matricule] group by [structure] where [Durée du temps de travail hebdomada" +
+                                "ire] between \'30\' and \'35\' or [Durée du temps de travail hebdomadaire] < \'20\' an" +
+                                "d [Sexe] is \'Enum\' and YearOf[Date de sortie] in (\'reference\',\'null\')"});
 #line 70
  testRunner.Given("I have the folowing indicators definition", ((string)(null)), table34, "Given ");
 #line hidden
@@ -670,7 +671,7 @@ this.FeatureBackground();
  testRunner.When("I start processing the file mybook.xlsx for the period of 1986", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 74
- testRunner.Then("I should compute 1 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should compute 2 indicators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -718,7 +719,7 @@ this.FeatureBackground();
                             "Durée et organisation du travail",
                             "Nombre de salariés",
                             "salariés",
-                            "Nombre [matricule] par [structure]"});
+                            "Count [matricule] Group by [structure]"});
 #line 77
  testRunner.Given("I have the folowing indicators definition", ((string)(null)), table35, "Given ");
 #line hidden

@@ -106,7 +106,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.WorkFlow
                         "Effectif au 31/12",
                         "Naissance 1986",
                         "Cadre",
-                        "∑ [matricule] par [structure] dont [CSP] == \'Cadre\'"});
+                        "Count [matricule] group by [structure] where [CSP] = \'Cadre\'"});
 #line 8
  testRunner.And("I have the folowing indicators definition", ((string)(null)), table162, "And ");
 #line hidden

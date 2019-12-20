@@ -55,8 +55,8 @@ Scenario: Generating indicator : Nombre de journées d'absence pour maternité
 
 Scenario: Generating indicator : Nombre de journées d'absence pour accident de travail, accident de trajet ou maladie professionnelle
 	Given I have the folowing indicators definition
-		| Onglet   | Domaine                                             | Sous Domaine                                        | Indicateur                                                                                           | Champs | Formule                                                                                                                                                                            |
-		| Absences | Conditions de travail, santé et sécurité au travail | Conditions de travail, santé et sécurité au travail | Nombre de journées d'absence pour accident de travail, accident de trajet ou maladie professionnelle | [CSP]  | Sum [Nombre de jour d'absence] Group by [Structure] Where [nature de l'absence]  dans ('maladie professionnelle','accident de travail','accident de trajet') And [CSP] est  'Enum' |
+		| Onglet   | Domaine                                             | Sous Domaine                                        | Indicateur                                                                                           | Champs | Formule                                                                                                                                                                       |
+		| Absences | Conditions de travail, santé et sécurité au travail | Conditions de travail, santé et sécurité au travail | Nombre de journées d'absence pour accident de travail, accident de trajet ou maladie professionnelle | [CSP]  | Sum [Nombre de jour d'absence] Group by [Structure] Where [nature de l'absence]  In ('maladie professionnelle','accident de travail','accident de trajet') And [CSP] = 'Enum' |
 	When I start processing the file mybook.xlsx for the period of 1986
 	Then I should compute 5 indicators
 

@@ -16,7 +16,7 @@ namespace Alcuin.BDES.Indicators.Parser
             this.AddTokenDefinition(TokenType.And, "and", 1);
             this.AddTokenDefinition(TokenType.Between, "between", 1);
             this.AddTokenDefinition(TokenType.Comma, ",", 1);
-            this.AddTokenDefinition(TokenType.Equals, "=", 2);
+            this.AddTokenDefinition(TokenType.Equals, "=|is", 2);
             this.AddTokenDefinition(TokenType.GreaterThan, ">", 2);
             this.AddTokenDefinition(TokenType.LessThan, "<", 2);
             this.AddTokenDefinition(TokenType.GreaterOrEquals, ">=", 1);

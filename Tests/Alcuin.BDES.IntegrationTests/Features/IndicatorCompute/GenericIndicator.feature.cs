@@ -90,7 +90,8 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "Nature de la fin de contrat",
                         "Date de naissance",
                         "Durée du temps de travail hebdomadaire",
-                        "Date d\'entrée"});
+                        "Date d\'entrée",
+                        "Date de sortie"});
             table20.AddRow(new string[] {
                         "1254",
                         "Alcuin",
@@ -101,7 +102,8 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "dem",
                         "16/03/1986",
                         "40",
-                        "12/12/2012"});
+                        "12/12/2012",
+                        ""});
             table20.AddRow(new string[] {
                         "1255",
                         "Alcuin",
@@ -112,7 +114,8 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "dem",
                         "16/04/1987",
                         "40",
-                        "12/12/2015"});
+                        "12/12/2015",
+                        ""});
             table20.AddRow(new string[] {
                         "1256",
                         "CGI",
@@ -123,7 +126,8 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "dem",
                         "16/03/1987",
                         "40",
-                        "12/12/2012"});
+                        "12/12/2012",
+                        ""});
             table20.AddRow(new string[] {
                         "1257",
                         "CGI",
@@ -134,7 +138,8 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "dem",
                         "16/03/1987",
                         "40",
-                        "12/12/2013"});
+                        "12/12/2013",
+                        ""});
             table20.AddRow(new string[] {
                         "1235",
                         "Alcuin",
@@ -145,7 +150,8 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
                         "dem",
                         "16/03/1983",
                         "40",
-                        "12/12/2012"});
+                        "12/12/2012",
+                        ""});
 #line 5
  testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table20, "And ");
 #line hidden
@@ -193,7 +199,7 @@ this.FeatureBackground();
                             "Effectif au 31/12",
                             "Nombre de [CSP]",
                             "Cadre",
-                            "Count [matricule] par [structure] dont [CSP] est \'Enum\'"});
+                            "Count [matricule] group by [structure] where [CSP] = \'Enum\'"});
 #line 14
  testRunner.Given("I have the folowing indicators definition", ((string)(null)), table21, "Given ");
 #line hidden
@@ -264,7 +270,8 @@ this.FeatureBackground();
                             "Effectif au 31/12",
                             "Nombre de [CSP] [sexe]",
                             "Cadre",
-                            "Count [matricule] par [structure] dont [CSP] est \'Enum\' et [Sexe] est \'Enum\'"});
+                            "Count [matricule] group by [structure] where [CSP] is \'Enum\' and [Sexe] is \'Enum\'" +
+                                ""});
 #line 25
  testRunner.Given("I have the folowing indicators definition", ((string)(null)), table23, "Given ");
 #line hidden
@@ -320,8 +327,8 @@ this.FeatureBackground();
                             "Effectif au 31/12",
                             "Nombre de [CSP] par [Nature de la fin de contrat] et [Sexe]",
                             "Cadre",
-                            "Count [matricule] par [structure] dont [CSP] est \'Enum\' et [Sexe] est \'Enum\' et [" +
-                                "Nature de la fin de contrat] est \'Enum\'"});
+                            "Count [matricule] group by [structure] where [CSP] = \'Enum\' and [Sexe] = \'Enum\' a" +
+                                "nd [Nature de la fin de contrat] = \'Enum\'"});
 #line 32
  testRunner.Given("I have the folowing indicators definition", ((string)(null)), table24, "Given ");
 #line hidden
