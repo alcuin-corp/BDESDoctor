@@ -42,6 +42,5 @@ namespace Alcuin.BDES.IntegrationTests.Steps
                 }
             }
         }
-
     }
 }

@@ -102,26 +102,26 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
  testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table76 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table75 = new TechTalk.SpecFlow.Table(new string[] {
                             "Matricule",
                             "Structure",
                             "Nom",
                             "Prenom",
                             "Age"});
-                table76.AddRow(new string[] {
+                table75.AddRow(new string[] {
                             "1254",
                             "Alcuin",
                             "CAIO",
                             "John",
                             "33"});
-                table76.AddRow(new string[] {
+                table75.AddRow(new string[] {
                             "1235",
                             "Alcuin",
                             "LEGROS",
                             "Isabelle",
                             "33"});
 #line 5
- testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table76, "And ");
+ testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table75, "And ");
 #line hidden
 #line 9
  testRunner.When("I start processing the file mybook.xlsx for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -129,14 +129,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 10
  testRunner.Then("the process should fail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table77 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table76 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
-                table77.AddRow(new string[] {
+                table76.AddRow(new string[] {
                             "Dans l\'onglet \'Effectifs\' la colonne \'CSP\' n\'est pas présente. Cette colonne est " +
                                 "obligatoire, veuillez vérifier que la colonne est correctement nommée et que cel" +
                                 "le-ci est présente dans l’onglet."});
 #line 11
- testRunner.And("I should found the following Error messages", ((string)(null)), table77, "And ");
+ testRunner.And("I should found the following Error messages", ((string)(null)), table76, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -171,21 +171,21 @@ this.ScenarioInitialize(scenarioInfo);
 #line 16
  testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table78 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table77 = new TechTalk.SpecFlow.Table(new string[] {
                             "Matricule",
                             "Structure",
                             "Nom",
                             "Prenom",
                             "Age",
                             "CSP"});
-                table78.AddRow(new string[] {
+                table77.AddRow(new string[] {
                             "1254",
                             "Alcuin",
                             "CAIO",
                             "John",
                             "33",
                             "CADRE"});
-                table78.AddRow(new string[] {
+                table77.AddRow(new string[] {
                             "1235",
                             "Alcuin",
                             "LEGROS",
@@ -193,17 +193,17 @@ this.ScenarioInitialize(scenarioInfo);
                             "33",
                             "CADRE"});
 #line 17
- testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table78, "And ");
+ testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table77, "And ");
 #line hidden
 #line 21
  testRunner.When("I start processing the file mybook.xlsx for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table79 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table78 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
-                table79.AddRow(new string[] {
+                table78.AddRow(new string[] {
                             "La colonne \'CSP\' de l’onglet \'Effectifs\' est bien prise en compte."});
 #line 22
- testRunner.Then("I should found the following Succes messages", ((string)(null)), table79, "Then ");
+ testRunner.Then("I should found the following Succes messages", ((string)(null)), table78, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -238,30 +238,30 @@ this.ScenarioInitialize(scenarioInfo);
 #line 27
  testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table80 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table79 = new TechTalk.SpecFlow.Table(new string[] {
                             "Matricule",
                             "Structure",
                             "CSP",
                             "Sexe"});
-                table80.AddRow(new string[] {
+                table79.AddRow(new string[] {
                             "12345",
                             "Alcuin",
                             "",
                             "Homme"});
 #line 28
- testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table80, "And ");
+ testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table79, "And ");
 #line hidden
 #line 31
  testRunner.When("I start processing the file mybook.xlsx for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table81 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table80 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
-                table81.AddRow(new string[] {
+                table80.AddRow(new string[] {
                             "Dans l\'onglet «Effectifs», la colonne «CSP» à une valeur texte qui n’est pas reco" +
                                 "nnue \'\'. Les valeurs pouvant être utilisées sont «Cadre, Employé, Ouvrier, Agent" +
                                 " de maitrise, Technicien»."});
 #line 32
- testRunner.Then("I should found the following Error messages", ((string)(null)), table81, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table80, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -298,30 +298,30 @@ this.ScenarioInitialize(scenarioInfo);
 #line 37
  testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table82 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table81 = new TechTalk.SpecFlow.Table(new string[] {
                             "Matricule",
                             "Structure",
                             "CSP",
                             "Sexe"});
-                table82.AddRow(new string[] {
+                table81.AddRow(new string[] {
                             "1254",
                             "Alcuin",
                             "Ingénieur",
                             "Homme"});
 #line 38
- testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table82, "And ");
+ testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table81, "And ");
 #line hidden
 #line 41
  testRunner.When("I start processing the file mybook.xlsx for the period of 2015", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table83 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table82 = new TechTalk.SpecFlow.Table(new string[] {
                             "Message"});
-                table83.AddRow(new string[] {
+                table82.AddRow(new string[] {
                             "Dans l\'onglet «Effectifs», la colonne «CSP» à une valeur texte qui n’est pas reco" +
                                 "nnue \'Ingénieur\'. Les valeurs pouvant être utilisées sont «Cadre, Employé, Ouvri" +
                                 "er, Agent de maitrise, Technicien»."});
 #line 42
- testRunner.Then("I should found the following Error messages", ((string)(null)), table83, "Then ");
+ testRunner.Then("I should found the following Error messages", ((string)(null)), table82, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -54,7 +54,7 @@ namespace Alcuin.BDES.IntegrationTests.Steps
         [Then(@"the log file (.*) should contain all error and warrning message")]
         public void ThenTheLogFileShouldContainAllErrorAndWarrningMessage(string logFileName)
         {
-            Assert.IsTrue(this.fileSystem.File.Exists(logFileName));
+            Assert.IsTrue(this.fileSystem.File.Exists("*.txt"));
             var logMessages = this.fileSystem.File.ReadAllLines(logFileName);
         }
 

@@ -73,6 +73,60 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 3
+#line hidden
+#line 4
+ testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Matricule",
+                        "Structure",
+                        "Sexe",
+                        "CSP",
+                        "Date de naissance",
+                        "Date de sortie"});
+            table15.AddRow(new string[] {
+                        "1254",
+                        "Alcuin",
+                        "Homme",
+                        "Cadre",
+                        "16/03/1985",
+                        ""});
+            table15.AddRow(new string[] {
+                        "1255",
+                        "Alcuin",
+                        "Homme",
+                        "Cadre",
+                        "16/03/1978",
+                        ""});
+            table15.AddRow(new string[] {
+                        "1256",
+                        "CGI",
+                        "Homme",
+                        "Cadre",
+                        "16/03/1986",
+                        ""});
+            table15.AddRow(new string[] {
+                        "1257",
+                        "CGI",
+                        "Femme",
+                        "Cadre",
+                        "16/03/1988",
+                        ""});
+            table15.AddRow(new string[] {
+                        "1235",
+                        "Alcuin",
+                        "Femme",
+                        "ouvrier",
+                        "16/03/1990",
+                        ""});
+#line 5
+ testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table15, "And ");
+#line hidden
+        }
+        
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Load and compute indicator withing \'Age equals value\' computation in filter crete" +
             "ria")]
@@ -81,7 +135,7 @@ namespace Alcuin.BDES.IntegrationTests.Features.IndicatorCompute
             string[] tagsOfScenario = ((string[])(null));
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Load and compute indicator withing \'Age equals value\' computation in filter crete" +
                     "ria", null, ((string[])(null)));
-#line 3
+#line 13
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -101,47 +155,8 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 4
- testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Matricule",
-                            "Structure",
-                            "Sexe",
-                            "CSP",
-                            "Date de naissance"});
-                table15.AddRow(new string[] {
-                            "1254",
-                            "Alcuin",
-                            "Homme",
-                            "Cadre",
-                            "16/03/1985"});
-                table15.AddRow(new string[] {
-                            "1255",
-                            "Alcuin",
-                            "Homme",
-                            "Cadre",
-                            "16/03/1978"});
-                table15.AddRow(new string[] {
-                            "1256",
-                            "CGI",
-                            "Homme",
-                            "Cadre",
-                            "16/03/1986"});
-                table15.AddRow(new string[] {
-                            "1257",
-                            "CGI",
-                            "Femme",
-                            "Cadre",
-                            "16/03/1988"});
-                table15.AddRow(new string[] {
-                            "1235",
-                            "Alcuin",
-                            "Femme",
-                            "ouvrier",
-                            "16/03/1990"});
-#line 5
- testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table15, "And ");
+#line 3
+this.FeatureBackground();
 #line hidden
                 TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
@@ -154,20 +169,14 @@ this.ScenarioInitialize(scenarioInfo);
                             "Effectifs",
                             "Effectif",
                             "Effectif au 31/12",
-                            "Jeunes de 34 ans",
-                            "Cadre",
-                            "∑ [matricule] par [structure] dont  Age == \'34\'"});
-                table16.AddRow(new string[] {
-                            "Effectifs",
-                            "Effectif",
-                            "Effectif au 31/12",
                             "Jeunes de 34 ou 33 ans",
                             "Cadre",
-                            "∑ [matricule] par [structure] dont  Age == \'31\' ou Age == \'33\'"});
-#line 12
- testRunner.And("I have the folowing indicators definition", ((string)(null)), table16, "And ");
+                            "Count [matricule] group by [structure] where age > \'20\' or Age >= \'31\' or Age <> " +
+                                "\'33\' Or age = \'20\'"});
+#line 14
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table16, "Given ");
 #line hidden
-#line 16
+#line 17
  testRunner.When("I start processing the file mybook.xlsx for the period of 2019", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
@@ -175,22 +184,14 @@ this.ScenarioInitialize(scenarioInfo);
                             "Group",
                             "Count"});
                 table17.AddRow(new string[] {
-                            "Jeunes de 34 ans",
-                            "Alcuin",
-                            "1"});
-                table17.AddRow(new string[] {
-                            "Jeunes de 34 ans",
-                            "CGI",
-                            "0"});
-                table17.AddRow(new string[] {
                             "Jeunes de 34 ou 33 ans",
                             "Alcuin",
-                            "0"});
+                            "3"});
                 table17.AddRow(new string[] {
                             "Jeunes de 34 ou 33 ans",
                             "CGI",
                             "2"});
-#line 17
+#line 18
  testRunner.Then("I should found the following indicators", ((string)(null)), table17, "Then ");
 #line hidden
             }
@@ -205,7 +206,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = ((string[])(null));
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Load and compute indicator withing \'Age less than value\' computation in filter cr" +
                     "eteria", null, ((string[])(null)));
-#line 24
+#line 23
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -225,103 +226,58 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 25
- testRunner.Given("I have a workbook mybook.xlsx", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 3
+this.FeatureBackground();
 #line hidden
                 TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Matricule",
-                            "Structure",
-                            "Sexe",
-                            "CSP",
-                            "Date de naissance",
-                            ""});
-                table18.AddRow(new string[] {
-                            "1254",
-                            "Alcuin",
-                            "Homme",
-                            "Cadre",
-                            "16/03/1985",
-                            ""});
-                table18.AddRow(new string[] {
-                            "1255",
-                            "Alcuin",
-                            "Homme",
-                            "Cadre",
-                            "16/03/1978",
-                            ""});
-                table18.AddRow(new string[] {
-                            "1256",
-                            "CGI",
-                            "Homme",
-                            "Cadre",
-                            "16/03/1986",
-                            ""});
-                table18.AddRow(new string[] {
-                            "1257",
-                            "CGI",
-                            "Femme",
-                            "Cadre",
-                            "16/03/1988",
-                            ""});
-                table18.AddRow(new string[] {
-                            "1235",
-                            "Alcuin",
-                            "Femme",
-                            "ouvrier",
-                            "16/03/1990",
-                            ""});
-#line 26
- testRunner.And("it has a workSheet effectifs with the following content", ((string)(null)), table18, "And ");
-#line hidden
-                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                             "Onglet",
                             "Domaine",
                             "Sous Domaine",
                             "Indicateur",
                             "Champs",
                             "Formule"});
-                table19.AddRow(new string[] {
+                table18.AddRow(new string[] {
                             "Effectifs",
                             "Effectif",
                             "Effectif au 31/12",
                             "Jeunes de plus de 33 ans",
                             "Cadre",
-                            "Count [matricule] par [structure] dont  Age >= \'33\'"});
-                table19.AddRow(new string[] {
+                            "Count [matricule] group by [structure] Where  Age >= \'33\'"});
+                table18.AddRow(new string[] {
                             "Effectifs",
                             "Effectif",
                             "Effectif au 31/12",
                             "Jeunes de moins de 33 ans",
                             "Cadre",
-                            "Count [matricule] par [structure] dont  Age << \'33\'"});
-#line 33
- testRunner.And("I have the folowing indicators definition", ((string)(null)), table19, "And ");
+                            "Count [matricule] group by [structure] Where  Age < \'33\'"});
+#line 24
+ testRunner.Given("I have the folowing indicators definition", ((string)(null)), table18, "Given ");
 #line hidden
-#line 37
+#line 28
  testRunner.When("I start processing the file mybook.xlsx for the period of 2019", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                             "Indicator",
                             "Group",
                             "Count"});
-                table20.AddRow(new string[] {
+                table19.AddRow(new string[] {
                             "Jeunes de plus de 33 ans",
                             "Alcuin",
                             "2"});
-                table20.AddRow(new string[] {
+                table19.AddRow(new string[] {
                             "Jeunes de plus de 33 ans",
                             "CGI",
                             "1"});
-                table20.AddRow(new string[] {
+                table19.AddRow(new string[] {
                             "Jeunes de moins de 33 ans",
                             "Alcuin",
                             "1"});
-                table20.AddRow(new string[] {
+                table19.AddRow(new string[] {
                             "Jeunes de moins de 33 ans",
                             "CGI",
                             "1"});
-#line 38
- testRunner.Then("I should found the following indicators", ((string)(null)), table20, "Then ");
+#line 29
+ testRunner.Then("I should found the following indicators", ((string)(null)), table19, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

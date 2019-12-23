@@ -4,6 +4,7 @@
     {
         None,
         Age,
+        Seniority,
         YearOf,
         YearOfOrDefault
     }

@@ -107,7 +107,7 @@ namespace Alcuin.BDES.Indicators
             criterias = new List<ICriteria>();
             foreach (var criteriaDef in indicatorDefinition.CriteriaDefinitions)
             {
-                var column = expectedColumns[criteriaDef.ColumnName];
+                var column = expectedColumns[criteriaDef.ColumnName.ToLowerInvariant()];
                 if (criteriaDef.Values.Contains("Enum") && column.GetType().IsGenericType)
                 {
                     return false;
